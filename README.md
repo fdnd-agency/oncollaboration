@@ -15,7 +15,7 @@ https://www.avl.nl/
 
 [Design](https://www.figma.com/design/PbMAVjDmeSEX5hj85mbNhB/Webinar-RT?m=auto&t=AkmaF32XGHtGSAzK-6)
 
-[Design Rationale Sergio Eijben]()
+[Design Rationale Sergio Eijben](https://github.com/fdnd-agency/antoni-van-leeuwenhoek-oncology/blob/b8293576444a304d8d2ee2cb7201a18f54aed069/design/Sergio-Eijben-Design-Rationale.pdf)
 
 [Promo video](https://www.youtube.com/watch?v=T60O_DsR09E)
 
