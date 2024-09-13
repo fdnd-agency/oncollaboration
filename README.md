@@ -4,10 +4,10 @@ Het Antoni van Leeuwenhoek is hét in kanker gespecialiseerde ziekenhuis en onde
 https://www.avl.nl/
 
 ## Oncollaboration
-...
+Oncollaboration is het afstudeerwerk van oud-CMD student Sergio Eijben. Sergio is in opdracht van radiotherapeute Judi van Diessen van het Antoni van Leeuwenhoek ziekenhuis afgestudeerd op de vraag over hoe de samenwerking en kennisdeling tussen Indoneschische en Nederlandse radiotherapeuten te verbeteren. Oncollaboration is zijn ontwerp voor een online platform voor samenwerking en kennisdeling tussen Indoneschische en Nederlandse radiotherapeuten.
 
 ## Design challenge
-...
+Ontwikkel en ontwerp op basis van het aangeleverde ontwerp het online platform Oncollabration.
 
 ## Resources
 
