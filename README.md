@@ -25,5 +25,3 @@ Ontwikkel en ontwerp op basis van het aangeleverde ontwerp het online platform O
 [Promo video](https://www.youtube.com/watch?v=T60O_DsR09E)
 
 [Content](https://github.com/fdnd-agency/antoni-van-leeuwenhoek-oncology/tree/main/content)
-
-[API](...)
