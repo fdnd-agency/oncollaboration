@@ -16,7 +16,7 @@ Ontwikkel en ontwerp op basis van het aangeleverde ontwerp het online platform O
 
 ## Resources
 
-[Backlog](https://github.com/orgs/fdnd-agency/projects/35)
+<!-- [Backlog](https://github.com/orgs/fdnd-agency/projects/35) -->
 
 [Design](https://www.figma.com/design/PbMAVjDmeSEX5hj85mbNhB/Webinar-RT?m=auto&t=AkmaF32XGHtGSAzK-6)
 
