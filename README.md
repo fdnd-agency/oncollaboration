@@ -19,12 +19,22 @@ There currently are multiple things you can do on this platform, like:
 - Comment on webinars/contourings
 
 ### 📸 Home
-<img width="300" alt="OnCollaboration Home iPhone SE" src="https://github.com/user-attachments/assets/62edf36e-d55e-4168-a511-5cc217003b9c">
-<img width="600" alt="OnCollaboration Home MacBook Pro" src="https://github.com/user-attachments/assets/178795c5-86a1-4cfe-a511-229e72a37c55">
+<img width="300" alt="Oncollaboration Home iPhone SE" src="https://github.com/user-attachments/assets/b51ca67e-25a2-4f80-93fd-f761a95d71a9">
+
+<img width="800" alt="Oncollaboration Home MacBook Pro" src="https://github.com/user-attachments/assets/ab754959-790a-41c2-9d9a-1d92b747a21a">
 
 ### 📸 Webinars
-<img width="300" alt="OnCollaboration Webinars iPhone SE" src="https://github.com/user-attachments/assets/6dda7889-13e1-405d-821e-cbbbbdc824fa">
-<img width="600" alt="OnCollaboration Webinars MacBook Pro" src="https://github.com/user-attachments/assets/ebf2c9b6-2710-47c3-9b0a-525e72bf9a72">
+<img width="300" alt="Oncollaboration Webinars iPhone SE" src="https://github.com/user-attachments/assets/6a86a6fd-dc47-4822-9398-67a08f010f9e">
+
+<img width="800" alt="Oncollaboration Webinars MacBook Pro" src="https://github.com/user-attachments/assets/6f99a009-15bc-44ae-9adf-fe3eb08ecf6f">
+
+### 📸 Contourings
+<img width="300" alt="Oncollaboration Contourings iPhone SE" src="https://github.com/user-attachments/assets/a031715c-9ce5-4aa4-88c7-d360a78a44e3">
+
+<img width="800" alt="Oncollaboration Contourings MacBook Pro" src="https://github.com/user-attachments/assets/82a21d8c-687e-4eab-ab73-adb353f8db16">
+
+### 📸 Commentsection
+<img width="400" alt="Oncollaboration Commentsection" src="https://github.com/user-attachments/assets/80a2be30-12c2-4536-a663-641cf9c97cf7" />
 
 You can watch the website live here: 🌐 [oncollaboration.agency.fdnd.nl](https://oncollaboration.agency.fdnd.nl/)) 
 
