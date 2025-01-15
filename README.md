@@ -36,7 +36,7 @@ There currently are multiple things you can do on this platform, like:
 ### 📸 Commentsection
 <img width="400" alt="Oncollaboration Commentsection" src="https://github.com/user-attachments/assets/80a2be30-12c2-4536-a663-641cf9c97cf7" />
 
-You can watch the website live here: 🌐 [oncollaboration.agency.fdnd.nl](https://oncollaboration.agency.fdnd.nl/)) 
+You can watch the website live here: 🌐 [oncollaboration.agency.fdnd.nl](https://oncollaboration.agency.fdnd.nl/) 
 
 ## Features
 When building this website, we used SvelteKit. We utilized components and made the website dynamic with data from Directus. The database is built from 6 tables, and you can find the data model [here](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/24#issuecomment-2375264843):
