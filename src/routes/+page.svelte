@@ -36,10 +36,6 @@
 </main>
 
 <style>
-  h1 {
-    font-size: var(--font-size-2xl);
-  }
-
   h2 {
     font-size: var(--font-size-lg);
     margin-bottom: 0.5em;
@@ -104,10 +100,6 @@
   }
 
   @media only screen and (min-width: 600px) {
-    h1 {
-      font-size: var(--font-size-4xl);
-    }
-
     h2 {
       font-size: var(--font-size-3xl);
     }
