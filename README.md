@@ -1,5 +1,6 @@
 # Oncollaboration
-Oncollaboration is een platform waar radiologen uit Indonesie en Nederland bij elkaar samen kunnen komen om nieuwe ontwikkelingen te bespreken.
+Oncollaboration is a platform where radiologists from Indonesia and The Netherlands can unite to share their knowledge, and 
+discuss recent developments in their medical field.
 
 ## Table of contents
 
@@ -12,7 +13,10 @@ Oncollaboration is een platform waar radiologen uit Indonesie en Nederland bij e
   * [License](#license)
 
 ## Description
-Je kunt op dit platform webinars bekijken en vragen daarover stellen. Ook kun je contourings bekijken en hierover discussies houden.
+There currently are multiple things you can do on this platform, like:
+- Watch webinars
+- Watch contourings
+- Comment on webinars/contourings
 
 ### 📸 Home
 <img width="300" alt="OnCollaboration Home iPhone SE" src="https://github.com/user-attachments/assets/62edf36e-d55e-4168-a511-5cc217003b9c">
@@ -22,7 +26,7 @@ Je kunt op dit platform webinars bekijken en vragen daarover stellen. Ook kun je
 <img width="300" alt="OnCollaboration Webinars iPhone SE" src="https://github.com/user-attachments/assets/6dda7889-13e1-405d-821e-cbbbbdc824fa">
 <img width="600" alt="OnCollaboration Webinars MacBook Pro" src="https://github.com/user-attachments/assets/ebf2c9b6-2710-47c3-9b0a-525e72bf9a72">
 
-De website kun je live bekijken op 🌐 [oncollaboration.vercel.app](https://oncollaboration.vercel.app/) 
+You can watch the website live here: 🌐 [oncollaboration.agency.fdnd.nl](https://oncollaboration.agency.fdnd.nl/)) 
 
 ## Features
 Bij het bouwen van deze website hebben we gebruik gemaakt van SvelteKit. We hebben gebruik gemaakt van componenten en we hebben de website dynamisch gemaakt met data uit Directus.
@@ -63,7 +67,8 @@ Naast deze issues zijn wij ookal begonnen aan:
 Er moet nog een hele hoop toegevoegd worden aan de website. Al deze issues staan in ons [projectboard](https://github.com/users/Ryank2004/projects/5).
 
 ### Sprint 16
-We zijn overgestapt van repo en projectboard zodat we onze code via een pullrequest op de fdnd avl repo kunnen zetten. Deze sprint heeft iedereen zich gefocused op een component om die goed werkend, toegankelijk en responsive te maken. Ook hebben we gewerkt aan kleine veerbeter puntjes van onze website. Hier is een lijst van alle issues die wij hebben opgelost deze sprint:
+In sprint 16, we changed from repo and projectboard, so we can eventually pull our code to the FDND organization repo using a pull request. This sprint, we all focused on a component to make sure it works well, it is WCAG compatible and responsive. We also worked on smaller points of improvement for our site. This is a list of all the issues we worked on this sprint:
+
 - [Search functie bouwen](https://github.com/fdnd-agency/avl/issues/25)
 - [Filteren op categorie functie](https://github.com/fdnd-agency/avl/issues/26)
 - [Q&A form voor de contourings en webinars.](https://github.com/fdnd-agency/avl/issues/34)
@@ -73,8 +78,41 @@ We zijn overgestapt van repo en projectboard zodat we onze code via een pullrequ
 - [Error page bouwen](https://github.com/fdnd-agency/avl/issues/27)
 - [Featured article design](https://github.com/fdnd-agency/avl/issues/20)
 
-We hebben ons [projectboard](https://github.com/orgs/fdnd-agency/projects/35) bijgewerkt met alles wat nog gedaan moet worden. 
+We updated our [projectboard](https://github.com/orgs/fdnd-agency/projects/35) with every task that still needs to be completed.
 
+### Sprint 17
+This sprint, we all did three creative code spikes. This is a list of all the spikes:
+
+> Scroll driven animation:
+- [Eef: Glitzy holographic surreal](https://github.com/fdnd-agency/avl/issues/78)
+- [Ryan: 90s space psychedelia](https://github.com/fdnd-agency/avl/issues/72)
+- [Zoë: Electrical pop-art](https://github.com/fdnd-agency/avl/issues/73)
+- [Damian: Delayed Risoprint](https://github.com/fdnd-agency/avl/issues/74)
+
+> View transition
+- [Eef: Freaky experimental escapist](https://github.com/fdnd-agency/avl/issues/77)
+- [Ryan: Glitzy digital dreamscape](https://github.com/fdnd-agency/avl/issues/79)
+- [Zoë: Pretty hippy chique](https://github.com/fdnd-agency/avl/issues/75)
+- [Damian: Magical Baroque](https://github.com/fdnd-agency/avl/issues/76)
+
+> Christmas theme
+- [Eef: Inspiring Pastel Christmas theme](https://github.com/fdnd-agency/avl/issues/80)
+- [Ryan: Wintery Gothic Christmas theme](https://github.com/fdnd-agency/avl/issues/82)
+- [Zoë: Heartwarming Geometrical Christmas theme](https://github.com/fdnd-agency/avl/issues/81)
+- [Damian: Heavenly Gothic Christmas theme](https://github.com/fdnd-agency/avl/issues/83)
+
+### Sprint 18
+Sprint 18 was all about coming to a release candidate. We determined what needed fixing before pulling this whole project to the FDND Agency organization repository. Here is a list of issues we attended to:
+
+- [Webbinar detail page](https://github.com/fdnd-agency/avl/issues/31)
+- [Section "Watch Next"](https://github.com/fdnd-agency/avl/issues/87)
+- [Breadcrumbs for detail page](https://github.com/fdnd-agency/avl/issues/92)
+- [Description for the video](https://github.com/fdnd-agency/avl/issues/89)
+- [Video header (video, title, views, date, categories)](https://github.com/fdnd-agency/avl/issues/91)
+- [Sorting filter results](https://github.com/fdnd-agency/avl/issues/65)
+- [New branding](https://github.com/fdnd-agency/avl/issues/86)
+- [Section "About the speaker"](https://github.com/fdnd-agency/avl/issues/88)
+- [Filteroption ALL fix](https://github.com/fdnd-agency/avl/issues/66)
 
 ## Sources
 - [SvelteKit tutorial](https://learn.svelte.dev/tutorial/introducing-sveltekit)
@@ -82,5 +120,4 @@ We hebben ons [projectboard](https://github.com/orgs/fdnd-agency/projects/35) bi
 - [Directus fields](https://docs.directus.io/app/data-model/fields.html)
 
 ## License
-
 This project is licensed under the terms of the [MIT license](./LICENSE).
