@@ -1,17 +1,17 @@
 # Oncollaboration
 Oncollaboration is een platform waar radiologen uit Indonesie en Nederland bij elkaar samen kunnen komen om nieuwe ontwikkelingen te bespreken.
 
-## Inhoudsopgave
+## Table of contents
 
-  * [Beschrijving](#beschrijving)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Gebruik](#gebruik)
+  * [Description](#description)
+  * [Features](#features)
+  * [Installation](#installation)
+  * [Usage](#usage)
   * [Changelog](#changelog)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
+  * [Sources](#sources)
+  * [License](#license)
 
-## Beschrijving
+## Description
 Je kunt op dit platform webinars bekijken en vragen daarover stellen. Ook kun je contourings bekijken en hierover discussies houden.
 
 ### 📸 Home
@@ -24,7 +24,7 @@ Je kunt op dit platform webinars bekijken en vragen daarover stellen. Ook kun je
 
 De website kun je live bekijken op 🌐 [oncollaboration.vercel.app](https://oncollaboration.vercel.app/) 
 
-## Kenmerken
+## Features
 Bij het bouwen van deze website hebben we gebruik gemaakt van SvelteKit. We hebben gebruik gemaakt van componenten en we hebben de website dynamisch gemaakt met data uit Directus.
 De database is opgebouwt uit 6 tabellen, waarvan je het datamodel [hier](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/24#issuecomment-2375264843) kunt vinden:
 - [Webinars](https://fdnd-agency.directus.app/items/avl_webinars)
@@ -36,12 +36,12 @@ De database is opgebouwt uit 6 tabellen, waarvan je het datamodel [hier](https:/
 
 Tijdens het bouwen hebben we mobile first gewerkt. Ook hebben we Progressive Inhancement toegepast zodat iedereen deze website kan gebruiken.
 
-## Installatie
+## Installation
 Om aan dit project te werken kun je deze repo clonen. 
 Zodra je dit hebt gedaan moet je alle benodigde bestande installeren met het comando `npm install`.
 Als je dit heb gedaan kun je het op je localhost runnen met `npm run dev`.
 
-## Gebruik
+## Usage
 Op de website kun je scrollen door de webinars en contourings. Als het uiteindelijk af is kun je de webinars bekijken en vragen in de comments achterlaten. Ook kun je met je collegas de contourings bespreken.
 
 ## Changelog
@@ -76,11 +76,11 @@ We zijn overgestapt van repo en projectboard zodat we onze code via een pullrequ
 We hebben ons [projectboard](https://github.com/orgs/fdnd-agency/projects/35) bijgewerkt met alles wat nog gedaan moet worden. 
 
 
-## Bronnen
+## Sources
 - [SvelteKit tutorial](https://learn.svelte.dev/tutorial/introducing-sveltekit)
 - [Dynamic component](https://www.youtube.com/watch?v=7h6slC4HcpI)
 - [Directus fields](https://docs.directus.io/app/data-model/fields.html)
 
-## Licentie
+## License
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
