@@ -29,8 +29,7 @@ There currently are multiple things you can do on this platform, like:
 You can watch the website live here: 🌐 [oncollaboration.agency.fdnd.nl](https://oncollaboration.agency.fdnd.nl/)) 
 
 ## Features
-Bij het bouwen van deze website hebben we gebruik gemaakt van SvelteKit. We hebben gebruik gemaakt van componenten en we hebben de website dynamisch gemaakt met data uit Directus.
-De database is opgebouwt uit 6 tabellen, waarvan je het datamodel [hier](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/24#issuecomment-2375264843) kunt vinden:
+When building this website, we used SvelteKit. We utilized components and made the website dynamic with data from Directus. The database is built from 6 tables, and you can find the data model [here](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/24#issuecomment-2375264843):
 - [Webinars](https://fdnd-agency.directus.app/items/avl_webinars)
 - [Speakers](https://fdnd-agency.directus.app/items/avl_speakers)
 - [Contourings](https://fdnd-agency.directus.app/items/avl_contourings)
@@ -38,19 +37,17 @@ De database is opgebouwt uit 6 tabellen, waarvan je het datamodel [hier](https:/
 - [Categories](https://fdnd-agency.directus.app/items/avl_categories)
 - [Users](https://fdnd-agency.directus.app/items/avl_users)
 
-Tijdens het bouwen hebben we mobile first gewerkt. Ook hebben we Progressive Inhancement toegepast zodat iedereen deze website kan gebruiken.
+During the development, we worked with a mobile-first approach. We also applied Progressive Enhancement so that everyone can use this website.
 
 ## Installation
-Om aan dit project te werken kun je deze repo clonen. 
-Zodra je dit hebt gedaan moet je alle benodigde bestande installeren met het comando `npm install`.
-Als je dit heb gedaan kun je het op je localhost runnen met `npm run dev`.
+To work on this project, you can clone this repository. Once you have done this, you need to install all the necessary files using the command `npm install`. After that, you can run it on your localhost with `npm run dev`.
 
 ## Usage
-Op de website kun je scrollen door de webinars en contourings. Als het uiteindelijk af is kun je de webinars bekijken en vragen in de comments achterlaten. Ook kun je met je collegas de contourings bespreken.
+You can browse through the webinars and contourings, leave comments on them, and search for specific ones. Additionally, you can filter them by category. Webinars are available to watch, and you can download the resources used for both the webinars and contourings.
 
 ## Changelog
 ### Sprint 14
-Deze sprint hebben we een start gemaakt aan dit project. We hebben gewerkt aan de userstory: [Als gebruiker moet ik presentaties makkelijk kunnen terug vinden.](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/9) We hebben ons heel erg gefocust op het maken van de homepage, en het maken van componenten die we op verschillende platsen gaan gebruiken. Hier is een lijst van issues die wij hebben opgelost deze sprint:
+This sprint, we made a start on this project. We worked on the user story: [Als gebruiker moet ik presentaties makkelijk kunnen terug vinden.](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/9) We focused heavily on creating the homepage and developing components that we will use in various places. Here is a list of issues we resolved during this sprint:
 - [Het maken van de Navigatiebalk](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/15)
 - [Bouwen van kaartjes voor de contourings](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/14)
 - [Bouwen van preview kaartjes voor de webinars](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/13)
@@ -60,11 +57,12 @@ Deze sprint hebben we een start gemaakt aan dit project. We hebben gewerkt aan d
 - [Scroll lijst bouwen voor de preview kaartjes in html/css](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/16)
 - [Consider importing a nav component](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/51)
 
-Naast deze issues zijn wij ookal begonnen aan:
+
+In addition to these issues, we have also started working on:
 - [Logo voor Oncollaboration designen](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/45)
 - [Featured article redesign](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/23)
 
-Er moet nog een hele hoop toegevoegd worden aan de website. Al deze issues staan in ons [projectboard](https://github.com/users/Ryank2004/projects/5).
+There is still a lot that needs to be added to the website. All of these issues are listed on our [projectboard](https://github.com/users/Ryank2004/projects/5).
 
 ### Sprint 16
 In sprint 16, we changed from repo and projectboard, so we can eventually pull our code to the FDND organization repo using a pull request. This sprint, we all focused on a component to make sure it works well, it is WCAG compatible and responsive. We also worked on smaller points of improvement for our site. This is a list of all the issues we worked on this sprint:
