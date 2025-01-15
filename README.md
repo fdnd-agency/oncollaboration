@@ -3,7 +3,6 @@ Oncollaboration is a platform where radiologists from Indonesia and The Netherla
 discuss recent developments in their medical field.
 
 ## Table of contents
-
   * [Description](#description)
   * [Features](#features)
   * [Installation](#installation)
