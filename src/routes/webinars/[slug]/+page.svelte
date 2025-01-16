@@ -8,7 +8,7 @@
 
   // Assuming `data.webinar.description` contains the description text
   const description = data.webinar.description;
-  const transcript = data.webinar.transcript;
+
   // Function to truncate text
   function truncateText(text, limit = 199) {
     return text.length > limit ? text.slice(0, limit) + "..." : text;
@@ -56,7 +56,7 @@
   {#if showTranscript}
     <section class="transcript" transition:fade>
       <h2>Transcript</h2>
-      {@html transcript}
+      {@html data.webinar.transcript}
     </section>
   {/if}
 
