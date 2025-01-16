@@ -1,4 +1,5 @@
 import fetchJson from "$lib/fetch-json"
+import formatDate from "$lib/format-date";
 
 const baseURL = 'https://fdnd-agency.directus.app/items/'
 
@@ -11,6 +12,7 @@ export default async function fetchReplies(commentIds) {
   // Unlimited replies
   for (const reply of replies.data) {
     reply.replies = await fetchReplies(reply.replies); 
+    reply.time_posted = formatDate(reply.time_posted);
   }
 
   return replies.data;

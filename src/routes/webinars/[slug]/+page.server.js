@@ -15,6 +15,7 @@ export async function load({params}) {
   // Unlimited replies
   for (const comment of comments.data) {
     comment.replies = await fetchReplies(comment.replies); 
+    comment.time_posted = formatDate(comment.time_posted);
   }
 
   // Format filesize to KB MB GB etc

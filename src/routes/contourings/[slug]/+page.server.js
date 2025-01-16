@@ -1,6 +1,7 @@
 import fetchJson from "$lib/fetch-json"
 import fetchReplies from "$lib/fetch-replies"
 import formatBytes from "$lib/format-bytes"
+import formatDate from "$lib/format-date"
 
 
 const baseURL = 'https://fdnd-agency.directus.app/items/'
@@ -15,6 +16,7 @@ export async function load({params}) {
   // Unlimited replies
   for (const comment of comments.data) {
     comment.replies = await fetchReplies(comment.replies);
+    comment.time_posted = formatDate(comment.time_posted);
   }
   
   // Format filesize to KB MB GB etc
