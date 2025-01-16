@@ -5,6 +5,8 @@
 </script>
 
 <main>
+  <h1>Contourings</h1>
+
   <Search />
 
   <Filter activeCategory={data.category} currentPage="contourings"/>
@@ -29,8 +31,13 @@
     width: 100%;
   }
 
+  h1 {
+    font-size: var(--font-size-sm);
+    opacity: 0;
+  }
+
   h2 {
-    margin: 1em 0 0 1em;
+    margin: 1em 0 0 1rem;
   }
 
   ul {

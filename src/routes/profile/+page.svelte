@@ -3,9 +3,8 @@
 </script>
 
 <main>
-  <h2>My profile</h2>
+  <h1>My profile</h1>
 </main>
 
 <style>
-
 </style>

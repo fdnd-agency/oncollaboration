@@ -7,6 +7,7 @@
 </script>
 
 <main>
+  <h1>Home</h1>
 
   <Search />
 
@@ -36,6 +37,11 @@
 </main>
 
 <style>
+  h1 {
+    font-size: var(--font-size-sm);
+    opacity: 0;
+  }
+
   h2 {
     font-size: var(--font-size-lg);
     margin-bottom: 0.5em;
