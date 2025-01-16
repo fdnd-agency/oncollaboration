@@ -10,7 +10,7 @@
 <article>
   <a href="/webinars/{slug}">
     <div class="container-image">
-      <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}?width=384&fit=cover&format=avif" alt="{thumbnail.title}" width="384px" height="384px"/>
+      <img src="https://fdnd-agency.directus.app/assets/{thumbnail.id}?width=384&fit=cover&format=avif" alt="{thumbnail.title}" width="384" height="384"/>
       <p class="duration">{duration}</p>
     </div>
     <h3>{title}</h3>
