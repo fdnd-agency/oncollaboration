@@ -93,8 +93,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-btn {
+  margin-top: .5rem;
   background: transparent;
   padding-block: var(--padding-label);
+  color: var(--text-color);
   border: transparent;
   width: fit-content;
   cursor: pointer;

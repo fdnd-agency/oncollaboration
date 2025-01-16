@@ -128,11 +128,9 @@
     border-radius: var(--border-radius-sm);
     padding: 5px;
     text-transform: capitalize;
-    font-weight: bold;
   }
 
   .action-link a {
-    display: block;
     background-color: var(--primary-color);
     color: white;
     padding: 5px;
