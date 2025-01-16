@@ -15,9 +15,9 @@
 
 <main>
   <div class="video-header">
+    <!-- svelte-ignore a11y-media-has-caption -->
     <video controls width="250" poster="https://fdnd-agency.directus.app/assets/{data.webinar.thumbnail}?format=avif">
       <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video}">
-      <track kind="captions">
     </video>
     
     <h1>{data.webinar.title}</h1>
