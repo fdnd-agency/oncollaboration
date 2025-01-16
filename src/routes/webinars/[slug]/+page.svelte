@@ -217,6 +217,11 @@
     padding: 0.4rem 0.8em;
     border-radius: var(--border-radius-sm);
     text-transform: capitalize;
+    transition: .2s;
+  }
+
+  .expand-text-btn:hover {
+    background-color: var(--hover-state-color);
   }
 
   .speakers {
