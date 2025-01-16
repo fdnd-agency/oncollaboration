@@ -417,13 +417,13 @@
 
     .q-a {
       grid-column: 2;
-      grid-row: 1/ 111;
+      grid-row: 1/2;
       width: 100%;
       margin-top: 0;
     }
 
     .watch-next{
-      grid-row: 2/111;
+      grid-row: 2/10;
       grid-column: 2;
       margin-top: 2rem;
     }
