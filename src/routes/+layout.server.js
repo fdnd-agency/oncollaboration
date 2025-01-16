@@ -4,7 +4,7 @@ const baseURL = 'https://fdnd-agency.directus.app/items/';
 
 export async function load({ url }) {
   // Define API endpoint URLs to fetch webinars en countourings data
-  const webinarsURL = `${baseURL}avl_webinars?fields=slug,thumbnail.id,thumbnail.title,duration,title,speakers.avl_speakers_id.fullname,categories.avl_categories_id.name&sort[]=-date`;
+  const webinarsURL = `${baseURL}avl_webinars?fields=slug,thumbnail.id,thumbnail.title,duration,title,date,speakers.avl_speakers_id.fullname,categories.avl_categories_id.name&sort[]=-date`;
   const contouringsURL = `${baseURL}avl_contourings?fields=slug,image_scan.id,title,user_id.fullname,categories.avl_categories_id.name`;
   const FeaturedWebinarURL = `${baseURL}avl_webinars?fields=thumbnail,slug,duration,title,description,categories.avl_categories_id.name&filter[featured]=true`;
 
