@@ -425,7 +425,6 @@
     .watch-next{
       grid-row: 2/10;
       grid-column: 2;
-      margin-top: 2rem;
     }
 
     .watch-next ul{

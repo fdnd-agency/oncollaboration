@@ -127,7 +127,7 @@
 
   @media (hover: hover) {
     .comments {
-      height: 450px;
+      height: 300px;
       overflow-y: scroll;
     }
 
@@ -141,7 +141,7 @@
 
   @media only screen and (min-width: 1080px) {
     .comments {
-      height: 450px;
+      height: calc(524px - 165px);
       overflow-y: scroll;
     }
 
