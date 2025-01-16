@@ -12,7 +12,7 @@
   <article>
     <div class="container-image">
       <a href="/webinars/{slug}">
-        <img src="https://fdnd-agency.directus.app/assets/{thumbnail}?width=412&fit=cover&format=avif" alt="{title}" width="412px" height="322px" />
+        <img src="https://fdnd-agency.directus.app/assets/{thumbnail}?width=412&fit=cover&format=avif" alt="{title}" width="412" height="322" />
         <span class="duration">{duration}</span>
       </a>
     </div>
@@ -41,7 +41,11 @@
 </section>
 
 <style>
-  section{
+  * {
+    display: block;
+  }
+
+  section {
     container-type: inline-size;
     container-name: main-container;
     padding-block: 1em;
@@ -124,7 +128,6 @@
     border-radius: var(--border-radius-sm);
     padding: 5px;
     text-transform: capitalize;
-    font-weight: bold;
   }
 
   .action-link a {
@@ -133,7 +136,6 @@
     padding: 5px;
     border-radius: var(--border-radius-sm);
     text-transform: capitalize;
-    transition: 0.2s;
     grid-area: d;
     transition: .2s;
   }

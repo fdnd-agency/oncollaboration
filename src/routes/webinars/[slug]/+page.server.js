@@ -1,7 +1,7 @@
 import fetchJson from "$lib/fetch-json"
 import fetchReplies from "$lib/fetch-replies"
 import formatBytes from "$lib/format-bytes"
-
+import formatDate from "$lib/format-date"
 
 const baseURL = 'https://fdnd-agency.directus.app/items/'
 
@@ -38,6 +38,8 @@ export async function load({params}) {
     webinar.data = updatedData;
   }
 
+  webinar.data[0].date = formatDate(webinar.data[0].date);
+  
   return {
     webinar: webinar.data[0],
     comments: comments.data

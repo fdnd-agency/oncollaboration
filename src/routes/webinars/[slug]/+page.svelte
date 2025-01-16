@@ -1,8 +1,10 @@
 <script>
   import { QandA, Resources } from "$lib/index.js";
+  import { fade } from 'svelte/transition'
   export let data;
 
   let showFullDescription = false;
+  let showTranscript = false;
 
   // Assuming `data.webinar.description` contains the description text
   const description = data.webinar.description;
@@ -11,13 +13,19 @@
   function truncateText(text, limit = 199) {
     return text.length > limit ? text.slice(0, limit) + "..." : text;
   }
+
+  function nav_back() {
+    window.history.back();
+  }
 </script>
+
+<button type="button" on:click={nav_back} class="back-btn">Back</button>
 
 <main>
   <div class="video-header">
+    <!-- svelte-ignore a11y-media-has-caption -->
     <video controls width="250" poster="https://fdnd-agency.directus.app/assets/{data.webinar.thumbnail}?format=avif">
       <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video}">
-      <track kind="captions">
     </video>
     
     <h1>{data.webinar.title}</h1>
@@ -47,6 +55,17 @@
     </div>
   </div>
 
+  <button type="button" class="transcript-btn" on:click={() => {showTranscript = !showTranscript;}}>
+    {showTranscript ? "Close Transcript" : "Read Transcript"}  
+  </button>
+
+  {#if showTranscript}
+    <section class="transcript" transition:fade>
+      <h2>Transcript</h2>
+      {@html data.webinar.transcript}
+    </section>
+  {/if}
+
   <div class="description">
     <!-- Dynamically update the content based on `showFullDescription` -->
     {#if showFullDescription}
@@ -56,7 +75,7 @@
     {/if}
   </div>
 
-  <button on:click={() => {showFullDescription = !showFullDescription;}} class="button-expand-text">
+  <button on:click={() => {showFullDescription = !showFullDescription;}} class="expand-text-btn">
     {showFullDescription ? "Read Less" : "Read More"}
   </button>
   
@@ -69,7 +88,7 @@
 
     {#each data.webinar.speakers as speaker}
       <section class="speaker-info">
-        <img src="https://fdnd-agency.directus.app/assets/{speaker.avl_speakers_id.profile_picture}?format=avif" alt="{speaker.avl_speakers_id.fullname}" width="90px" height="90px">
+        <img src="https://fdnd-agency.directus.app/assets/{speaker.avl_speakers_id.profile_picture}?format=avif" alt="{speaker.avl_speakers_id.fullname}" width="90" height="90">
 
         <div>
           <h3>{speaker.avl_speakers_id.fullname}</h3>
@@ -77,7 +96,7 @@
         </div>
 
         <a href="/speakers/{speaker.avl_speakers_id.slug}">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="30" height="30" viewBox="0 0 48 48">
             <circle cx="24" cy="24" r="20" fill="var(--alt-text-color)" />
             <path d="M24,4C12.972,4,4,12.972,4,24s8.972,20,20,20s20-8.972,20-20S35.028,4,24,4z M25.5,33.5c0,0.828-0.672,1.5-1.5,1.5	s-1.5-0.672-1.5-1.5v-11c0-0.828,0.672-1.5,1.5-1.5s1.5,0.672,1.5,1.5V33.5z M24,18c-1.105,0-2-0.895-2-2c0-1.105,0.895-2,2-2	s2,0.895,2,2C26,17.105,25.105,18,24,18z"></path>
           </svg>
@@ -149,6 +168,68 @@
     text-transform: capitalize;
   }
 
+  .transcript-btn {
+    margin-block: 1rem;
+    width: 100%;
+    height: 34px;
+    padding: 0.4rem 0.8em;
+    font-size: var(--font-size-md);
+    color: var(--primary-color);
+    background-color: var(--background-category-color);
+    border: solid 2px var(--primary-color);
+    cursor: pointer;
+    border-radius: var(--border-radius-sm);
+    text-transform: capitalize;
+    transition: .2s;
+  }
+
+  .transcript-btn:hover {
+    background-color: var(--hover-state-color);
+    color: var(--alt-text-color);
+  }
+
+  .transcript {
+    max-height: 200px;
+    overflow-y: scroll;
+    scrollbar-width: 12px;
+    scrollbar-color: var(--primary-color) var(--background-category-color);
+    margin: 1rem;
+  }
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--border-radius-sm);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background-category-color);
+    border-radius: var(--border-radius-sm);
+  }
+
+  .expand-text-btn {
+    margin-top: 1rem;
+    background-color: var(--primary-color);
+    color: var(--alt-text-color);
+    border: transparent;
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    width: fit-content;
+    height: 34px;
+    padding: 0.4rem 0.8em;
+    border-radius: var(--border-radius-sm);
+    text-transform: capitalize;
+    transition: .2s;
+  }
+
+  .expand-text-btn:hover {
+    background-color: var(--hover-state-color);
+  }
+
   .speakers {
     padding-block: 2rem;
     max-width: 900px;
@@ -195,22 +276,7 @@
   .q-a {
     width: 90vw;
     max-width: 500px;
-    margin: 0 auto;
-  }
-
-  button {
-    margin-top: 1rem;
-    padding: var(--padding-label);
-    background-color: var(--primary-color);
-    color: var(--alt-text-color);
-    border: transparent;
-    cursor: pointer;
-    font-size: var(--font-size-md);
-    width: fit-content;
-    height: 34px;
-    padding: 0.4rem 0.8em;
-    border-radius: var(--border-radius-sm);
-    text-transform: uppercase;
+    margin: 1rem auto;
   }
 
   @media only screen and (min-width: 900px){
@@ -263,7 +329,7 @@
     
     .video-header,
     .description,
-    .button-expand-text,
+    .expand-text-btn,
     .speakers,
     .resources {
       grid-column: 1;
@@ -272,6 +338,7 @@
     .q-a {
       grid-column: 2;
       grid-row: 1/ 111;
+      width: 100%;
     }
   }
 </style>

@@ -1,7 +1,13 @@
 <script>
   import { QandA, Resources } from "$lib/index.js";
   export let data;
+
+  function nav_back() {
+    window.history.back();
+  }
 </script>
+
+<button type="button" on:click={nav_back} class="back-btn">Back</button>
 
 <main>
   <section class="container">
@@ -27,7 +33,7 @@
     width: fit-content;
     margin: 0 auto;
   }
-  
+
   .container {
     display: grid;
     margin: 30px auto;
