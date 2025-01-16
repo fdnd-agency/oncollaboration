@@ -41,6 +41,10 @@
 </section>
 
 <style>
+  * {
+    display: block;
+  }
+
   section{
     container-type: inline-size;
     container-name: main-container;
@@ -124,7 +128,6 @@
     border-radius: var(--border-radius-sm);
     padding: 5px;
     text-transform: capitalize;
-    font-weight: bold;
   }
 
   .action-link a {
@@ -133,7 +136,6 @@
     padding: 5px;
     border-radius: var(--border-radius-sm);
     text-transform: capitalize;
-    transition: 0.2s;
     grid-area: d;
     transition: .2s;
   }
