@@ -4,15 +4,13 @@
   export let data;
 
   // Retrieves other data from diffrent tables through let and a joins structure
- 
-    let newestWebinars = data.webinars.slice(0,4).map(webinar => ({
+  let newestWebinars = data.webinars.slice(0,4).map(webinar => ({
     title: webinar.title,
     speaker: webinar.speakers.map(s => s.avl_speakers_id.fullname).join(', '),
     date: webinar.date,
     thumbnail: webinar.thumbnail,
     slug: webinar.slug
   }));
-
 
   let showFullDescription = false;
   let showTranscript = false;
@@ -312,13 +310,14 @@
     height: auto;
     max-width: 500px;
     width: 90vw;
-    margin: 0 auto;
+    margin: 1rem auto;
     position: relative;
-    z-index: 99;
   }
+
   .watch-next a{
     text-decoration: none;
   }
+
   .watch-next ul{
     display: flex;
     overflow-x: auto;
@@ -330,12 +329,14 @@
     padding: 10px 0;
     transition: all .3s ease;
   }
+
   .watch-next li{
     flex: 0 0 calc(100% - 20%);
     scroll-snap-align: start;
     border-radius: 10px;
     box-sizing: border-box;
   }
+
   .watch-next img{
     grid-area: a;
     height: auto;
@@ -421,7 +422,7 @@
     }
 
     .watch-next{
-      grid-row: 4;
+      grid-row: 2/111;
       grid-column: 2;
     }
 

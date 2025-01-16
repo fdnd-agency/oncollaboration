@@ -125,9 +125,23 @@
     }
   }
 
-  @media (hover: hover){
+  @media (hover: hover) {
     .comments {
-      height: 500px;
+      height: 450px;
+      overflow-y: scroll;
+    }
+
+    .comments h3 {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background-color: var(--background-color);
+    }
+  }
+
+  @media only screen and (min-width: 1080px) {
+    .comments {
+      height: 450px;
       overflow-y: scroll;
     }
 
