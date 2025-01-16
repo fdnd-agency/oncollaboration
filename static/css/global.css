@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 .back-btn {
   background: transparent;
   padding-block: var(--padding-label);
-  color: var(--alt-text-color);
+  color: var(--text-color);
   border: transparent;
   width: fit-content;
   cursor: pointer;
