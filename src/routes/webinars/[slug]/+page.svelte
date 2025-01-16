@@ -10,6 +10,7 @@
   // Function to truncate text
   function truncateText(text, limit = 199) {
     return text.length > limit ? text.slice(0, limit) + "..." : text;
+  }
 
   function nav_back() {
     window.history.back();
