@@ -41,7 +41,11 @@
 </section>
 
 <style>
-  section{
+  * {
+    display: block;
+  }
+
+  section {
     container-type: inline-size;
     container-name: main-container;
     padding-block: 1em;
@@ -128,12 +132,12 @@
   }
 
   .action-link a {
+    display: block;
     background-color: var(--primary-color);
     color: white;
     padding: 5px;
     border-radius: var(--border-radius-sm);
     text-transform: capitalize;
-    transition: 0.2s;
     grid-area: d;
     transition: .2s;
   }
