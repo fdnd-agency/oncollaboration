@@ -92,3 +92,16 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
 }
 
+.back-btn {
+  background: transparent;
+  padding-block: var(--padding-label);
+  border: transparent;
+  width: fit-content;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.back-btn:hover {
+  color: var(--hover-state-color);
+  text-decoration: underline;
+}
