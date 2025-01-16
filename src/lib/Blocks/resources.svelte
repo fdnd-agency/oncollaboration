@@ -112,7 +112,6 @@
     height: 25px;
     border-radius: 50%;
     background-color: var(--primary-color);
-    margin-left: .3rem;
     margin-right: .1rem;
     transition: .2s;
   }
@@ -123,5 +122,11 @@
   
   .resource-links a path {
     fill: var(--alt-text-color);
+  }
+
+  @media only screen and (min-width: 370px) {
+    .resource-links a {
+      margin-left: .3rem;
+    }
   }
 </style>
