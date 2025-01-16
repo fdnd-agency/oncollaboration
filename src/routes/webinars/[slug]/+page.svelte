@@ -88,7 +88,7 @@
 
     {#each data.webinar.speakers as speaker}
       <section class="speaker-info">
-        <img src="https://fdnd-agency.directus.app/assets/{speaker.avl_speakers_id.profile_picture}?width=90&fit=cover&format=avif" alt="{speaker.avl_speakers_id.fullname}" width="90" height="90">
+        <img src="https://fdnd-agency.directus.app/assets/{speaker.avl_speakers_id.profile_picture}?format=avif" alt="{speaker.avl_speakers_id.fullname}" width="90" height="90">
 
         <div>
           <h3>{speaker.avl_speakers_id.fullname}</h3>
