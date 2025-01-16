@@ -3,10 +3,11 @@
   export let data;
 
   let showFullDescription = false;
+  let showTranscript = false;
 
   // Assuming `data.webinar.description` contains the description text
   const description = data.webinar.description;
-
+  const transcript = data.webinar.transcript;
   // Function to truncate text
   function truncateText(text, limit = 199) {
     return text.length > limit ? text.slice(0, limit) + "..." : text;
@@ -47,6 +48,17 @@
     </div>
   </div>
 
+  <button type="button" class="transcript-btn" on:click={() => {showTranscript = !showTranscript;}}>
+    {showTranscript ? "Close Transcript" : "Read Transcript"}  
+  </button>
+
+  {#if showTranscript}
+    <section class="transcript">
+      <h2>Transcript</h2>
+      {@html transcript}
+    </section>
+  {/if}
+
   <div class="description">
     <!-- Dynamically update the content based on `showFullDescription` -->
     {#if showFullDescription}
@@ -56,7 +68,7 @@
     {/if}
   </div>
 
-  <button on:click={() => {showFullDescription = !showFullDescription;}} class="button-expand-text">
+  <button on:click={() => {showFullDescription = !showFullDescription;}} class="expand-text-btn">
     {showFullDescription ? "Read Less" : "Read More"}
   </button>
   
@@ -149,6 +161,63 @@
     text-transform: capitalize;
   }
 
+  .transcript-btn {
+    margin-block: 1rem;
+    width: 100%;
+    height: 34px;
+    padding: 0.4rem 0.8em;
+    font-size: var(--font-size-md);
+    color: var(--primary-color);
+    background-color: var(--background-category-color);
+    border: solid 2px var(--primary-color);
+    cursor: pointer;
+    border-radius: var(--border-radius-sm);
+    text-transform: capitalize;
+    transition: .2s;
+  }
+
+  .transcript-btn:hover {
+    background-color: var(--hover-state-color);
+    color: var(--alt-text-color);
+  }
+
+  .transcript {
+    max-height: 200px;
+    overflow-y: scroll;
+    scrollbar-width: 12px;
+    scrollbar-color: var(--primary-color) var(--background-category-color);
+    margin: 1rem;
+  }
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--border-radius-sm);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background-category-color);
+    border-radius: var(--border-radius-sm);
+  }
+
+  .expand-text-btn {
+    margin-top: 1rem;
+    background-color: var(--primary-color);
+    color: var(--alt-text-color);
+    border: transparent;
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    width: fit-content;
+    height: 34px;
+    padding: 0.4rem 0.8em;
+    border-radius: var(--border-radius-sm);
+    text-transform: capitalize;
+  }
+
   .speakers {
     padding-block: 2rem;
     max-width: 900px;
@@ -196,21 +265,6 @@
     width: 90vw;
     max-width: 500px;
     margin: 0 auto;
-  }
-
-  button {
-    margin-top: 1rem;
-    padding: var(--padding-label);
-    background-color: var(--primary-color);
-    color: var(--alt-text-color);
-    border: transparent;
-    cursor: pointer;
-    font-size: var(--font-size-md);
-    width: fit-content;
-    height: 34px;
-    padding: 0.4rem 0.8em;
-    border-radius: var(--border-radius-sm);
-    text-transform: uppercase;
   }
 
   @media only screen and (min-width: 900px){
@@ -263,7 +317,7 @@
     
     .video-header,
     .description,
-    .button-expand-text,
+    .expand-text-btn,
     .speakers,
     .resources {
       grid-column: 1;
