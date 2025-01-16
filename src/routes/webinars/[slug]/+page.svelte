@@ -56,7 +56,7 @@
     {/if}
   </div>
 
-  <button on:click={() => {showFullDescription = !showFullDescription;}} class="button-expand-text">
+  <button on:click={() => {showFullDescription = !showFullDescription;}} class="expand-text-btn">
     {showFullDescription ? "Read Less" : "Read More"}
   </button>
   
@@ -149,6 +149,26 @@
     text-transform: capitalize;
   }
 
+  .expand-text-btn {
+    margin-top: 1rem;
+    padding: var(--padding-label);
+    background-color: var(--primary-color);
+    color: var(--alt-text-color);
+    border: transparent;
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    width: fit-content;
+    height: 34px;
+    padding: 0.4rem 0.8em;
+    border-radius: var(--border-radius-sm);
+    text-transform: capitalize;
+    transition: .2s;
+  }
+
+  .expand-text-btn:hover {
+    background-color: var(--hover-state-color);
+  }
+
   .speakers {
     padding-block: 2rem;
     max-width: 900px;
@@ -196,21 +216,6 @@
     width: 90vw;
     max-width: 500px;
     margin: 0 auto;
-  }
-
-  button {
-    margin-top: 1rem;
-    padding: var(--padding-label);
-    background-color: var(--primary-color);
-    color: var(--alt-text-color);
-    border: transparent;
-    cursor: pointer;
-    font-size: var(--font-size-md);
-    width: fit-content;
-    height: 34px;
-    padding: 0.4rem 0.8em;
-    border-radius: var(--border-radius-sm);
-    text-transform: uppercase;
   }
 
   @media only screen and (min-width: 900px){
@@ -263,7 +268,7 @@
     
     .video-header,
     .description,
-    .button-expand-text,
+    .expand-text-btn,
     .speakers,
     .resources {
       grid-column: 1;
