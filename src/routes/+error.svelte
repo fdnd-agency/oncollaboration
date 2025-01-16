@@ -1,12 +1,19 @@
 <script>
   import { page } from '$app/stores'
+
+  function nav_back() {
+    window.history.back();
+  }
 </script>
 
 <section>
   <img src="/images/error-page.png" alt="Something went wrong">
   <h2>Oops, something went wrong!</h2>
   <p>{$page.status} - {$page.error.message}</p>
-  <a href="/">Back to home</a>
+  <div>
+    <a href="/" class="back-to-btn">Back to home</a>
+    <button type="button" on:click={nav_back} class="back-to-btn">Back to previous page</button>
+  </div>
 </section>
 
 <style>
@@ -33,16 +40,30 @@
     color: var(--primary-color);
   }
 
-  section a {
-    display: inline-flex;
+  section div {
+    margin: 3em;
+    display: grid;
+    gap: 1rem;
+  }
+
+  section .back-to-btn {
     color: var(--alt-text-color);
     background-color: var(--primary-color);
-    font-size: var(--font-size-sm);
-    font-weight: 700;
+    font-size: var(--font-size-md);
     padding: 5px 20px;
     border-radius: var(--border-radius-sm);
-    margin: 3em;
-    text-transform: uppercase;
+    text-transform: capitalize;
+    transition: .2s;
+    text-decoration: none;
+  }
+
+  button.back-to-btn {
+    border: transparent;
+    background-color: var(--accent-color-1);
+  }
+
+  section .back-to-btn:hover {
+    background-color: var(--hover-state-color);
   }
 
   @media only screen and (min-width: 767px) {
