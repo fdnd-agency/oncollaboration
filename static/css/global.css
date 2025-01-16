@@ -54,7 +54,7 @@
   /* ---------- Misc ---------- */
   --gap: .5rem;
   --card-max-width: 384px;
-  --focus: solid 2px blue;
+  --focus: solid 2px hsl(161, 48%, 50%);
 }
 
 html {
