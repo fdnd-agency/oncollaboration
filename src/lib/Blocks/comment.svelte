@@ -37,7 +37,7 @@
         <img src="/images/profilepic.png" alt="error" width="40" height="40">
         <h4>Name Surname</h4>
       {:else}
-        <img src="https://fdnd-agency.directus.app/assets/{comment.user_id.profile_picture.id}?format=avif" alt="{comment.user_id.profile_picture.title}" width="40" height="40">
+        <img src="https://fdnd-agency.directus.app/assets/{comment.user_id.profile_picture.id}?width=40&fit=cover&format=avif" alt="{comment.user_id.profile_picture.title}" width="40" height="40">
         <h4>{comment.user_id.fullname}</h4>
       {/if}
 
