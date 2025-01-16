@@ -1,5 +1,6 @@
 <script>
   import { QandA, Resources } from "$lib/index.js";
+  import { fade } from 'svelte/transition'
   export let data;
 
   let showFullDescription = false;
@@ -53,7 +54,7 @@
   </button>
 
   {#if showTranscript}
-    <section class="transcript">
+    <section class="transcript" transition:fade>
       <h2>Transcript</h2>
       {@html transcript}
     </section>
