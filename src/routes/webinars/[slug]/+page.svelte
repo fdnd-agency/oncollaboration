@@ -276,7 +276,7 @@
   .q-a {
     width: 90vw;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 1rem auto;
   }
 
   @media only screen and (min-width: 900px){
