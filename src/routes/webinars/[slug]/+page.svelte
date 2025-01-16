@@ -10,8 +10,13 @@
   // Function to truncate text
   function truncateText(text, limit = 199) {
     return text.length > limit ? text.slice(0, limit) + "..." : text;
+
+  function nav_back() {
+    window.history.back();
   }
 </script>
+
+<button type="button" on:click={nav_back} class="back-btn">Back</button>
 
 <main>
   <div class="video-header">

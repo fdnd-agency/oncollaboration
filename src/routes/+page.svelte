@@ -38,7 +38,8 @@
 
 <style>
   h1 {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-sm);
+    opacity: 0;
   }
 
   h2 {
@@ -105,10 +106,6 @@
   }
 
   @media only screen and (min-width: 600px) {
-    h1 {
-      font-size: var(--font-size-4xl);
-    }
-
     h2 {
       font-size: var(--font-size-3xl);
     }

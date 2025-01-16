@@ -4,6 +4,8 @@
 </script>
 
 <main>
+  <h1>Webinars</h1>
+
   <Search />
 
   <Filter activeCategory={data.category} currentPage="webinars" />
@@ -29,6 +31,11 @@
 <style>
   main {
     width: 100%;
+  }
+
+  h1 {
+    font-size: var(--font-size-sm);
+    opacity: 0;
   }
 
   ul {
