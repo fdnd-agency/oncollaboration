@@ -42,9 +42,9 @@
   </div>
 {/if}
 
-<footer>
+<div class="footer">
   <Footer />
-</footer>
+</div>
 
 <style>
   main {
@@ -57,7 +57,7 @@
     margin-left: 1em;
   }
 
-  footer {
+  .footer {
     height: 115px;
     background-color: var(--background-color);
   }
@@ -74,7 +74,7 @@
       padding-bottom: 0;
     }
 
-    footer {
+    .footer {
       height: 115px;
       background-color: #f0f0f0;
     }
