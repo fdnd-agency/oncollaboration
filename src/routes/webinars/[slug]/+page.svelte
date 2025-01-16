@@ -338,6 +338,7 @@
     .q-a {
       grid-column: 2;
       grid-row: 1/ 111;
+      width: 100%;
     }
   }
 </style>
