@@ -1,8 +1,10 @@
 <script>
   import { QandA, Resources } from "$lib/index.js";
+  import { fade } from 'svelte/transition'
   export let data;
 
   let showFullDescription = false;
+  let showTranscript = false;
 
   // Assuming `data.webinar.description` contains the description text
   const description = data.webinar.description;
@@ -52,6 +54,17 @@
       {/each} 
     </div>
   </div>
+
+  <button type="button" class="transcript-btn" on:click={() => {showTranscript = !showTranscript;}}>
+    {showTranscript ? "Close Transcript" : "Read Transcript"}  
+  </button>
+
+  {#if showTranscript}
+    <section class="transcript" transition:fade>
+      <h2>Transcript</h2>
+      {@html data.webinar.transcript}
+    </section>
+  {/if}
 
   <div class="description">
     <!-- Dynamically update the content based on `showFullDescription` -->
@@ -155,9 +168,51 @@
     text-transform: capitalize;
   }
 
+  .transcript-btn {
+    margin-block: 1rem;
+    width: 100%;
+    height: 34px;
+    padding: 0.4rem 0.8em;
+    font-size: var(--font-size-md);
+    color: var(--primary-color);
+    background-color: var(--background-category-color);
+    border: solid 2px var(--primary-color);
+    cursor: pointer;
+    border-radius: var(--border-radius-sm);
+    text-transform: capitalize;
+    transition: .2s;
+  }
+
+  .transcript-btn:hover {
+    background-color: var(--hover-state-color);
+    color: var(--alt-text-color);
+  }
+
+  .transcript {
+    max-height: 200px;
+    overflow-y: scroll;
+    scrollbar-width: 12px;
+    scrollbar-color: var(--primary-color) var(--background-category-color);
+    margin: 1rem;
+  }
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--border-radius-sm);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background-category-color);
+    border-radius: var(--border-radius-sm);
+  }
+
   .expand-text-btn {
     margin-top: 1rem;
-    padding: var(--padding-label);
     background-color: var(--primary-color);
     color: var(--alt-text-color);
     border: transparent;
