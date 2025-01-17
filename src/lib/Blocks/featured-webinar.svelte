@@ -45,7 +45,7 @@
     display: block;
   }
 
-  section{
+  section {
     container-type: inline-size;
     container-name: main-container;
     padding-block: 1em;
