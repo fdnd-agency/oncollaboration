@@ -105,7 +105,6 @@ This sprint, we all did three creative code spikes. This is a list of all the sp
 > Christmas theme
 - [Eef: Inspiring Pastel Christmas theme](https://github.com/fdnd-agency/avl/issues/80)
 - [Ryan: Wintery Gothic Christmas theme](https://github.com/fdnd-agency/avl/issues/82)
-- [Zoë: Heartwarming Geometrical Christmas theme](https://github.com/fdnd-agency/avl/issues/81)
 - [Damian: Heavenly Gothic Christmas theme](https://github.com/fdnd-agency/avl/issues/83)
 
 ### Sprint 18
