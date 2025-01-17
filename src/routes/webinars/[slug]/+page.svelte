@@ -1,13 +1,14 @@
 <script>
   import { QandA, Resources } from "$lib/index.js";
-  import { fade } from 'svelte/transition'
+  import { fade } from 'svelte/transition';
+  import formatDate from '$lib/format-date.js';
   export let data;
 
   // Retrieves other data from diffrent tables through let and a joins structure
   let newestWebinars = data.webinars.slice(0,4).map(webinar => ({
     title: webinar.title,
     speaker: webinar.speakers.map(s => s.avl_speakers_id.fullname).join(', '),
-    date: webinar.date,
+    date: formatDate(webinar.date),
     thumbnail: webinar.thumbnail,
     slug: webinar.slug
   }));
@@ -425,6 +426,7 @@
     .watch-next{
       grid-row: 2/10;
       grid-column: 2;
+      width: 100%;
     }
 
     .watch-next ul{
