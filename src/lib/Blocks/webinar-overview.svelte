@@ -74,7 +74,6 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     line-clamp: 1;
-    word-break: break-all;
     font-size: var(--font-size-sm);
     overflow: hidden;
     text-overflow: ellipsis;

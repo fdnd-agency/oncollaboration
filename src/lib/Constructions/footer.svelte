@@ -1,17 +1,19 @@
 <footer>
-  <p>&copy; 2024 - Antoni van Leeuwenhoek</p>
-  <ul class="dot-divider">
-    <li>
-      <a href="/">Disclaimer</a>
-    </li>
-    <li>
-      <a href="/">Privacystatement</a>
-    </li>
-    <li>
-      <a href="/">Cookiestatement</a>
-    </li>
-  </ul>
-  <img src="/images/AVL-Logo-white.svg" alt="Antoni van Leeuwenhoek">
+  <div>
+    <p>&copy; 2024 - Antoni van Leeuwenhoek</p>
+    <ul class="dot-divider">
+      <li>
+        <a href="/">Disclaimer</a>
+      </li>
+      <li>
+        <a href="/">Privacystatement</a>
+      </li>
+      <li>
+        <a href="/">Cookiestatement</a>
+      </li>
+    </ul>
+    <img src="/images/AVL-Logo-white.svg" alt="Antoni van Leeuwenhoek">
+  </div>
 </footer>
 
 <style>
@@ -27,7 +29,7 @@
       align-items: center;
       justify-content: space-between;
       background-color: var(--primary-color);
-      padding: 2rem 4rem;
+      padding: 1rem 0rem;
       color: var(--alt-text-color);
     }
 
@@ -38,6 +40,14 @@
     footer li {
       padding: 0 0.8rem;
       position: relative;
+    }
+    
+    footer div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 85vw;
     }
 
     footer img {
