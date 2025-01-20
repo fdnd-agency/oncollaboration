@@ -46,6 +46,10 @@
     opacity: 0;
   }
 
+  h2 {
+    margin: 1em 0;
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;

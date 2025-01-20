@@ -62,6 +62,10 @@
     grid-template-columns: 1fr;
   }
 
+  h2 {
+    margin: 1em 0;
+  }
+
   a {
     color: var(--text-color);
     text-decoration: none;

@@ -28,7 +28,8 @@
 
 <style>
   main {
-    width: 100%;
+    width: 85vw;
+    margin: 0 auto;
   }
 
   h1 {
@@ -37,7 +38,7 @@
   }
 
   h2 {
-    margin: 1em 0 0 1rem;
+    margin: 1em 0;
   }
 
   ul {
@@ -45,7 +46,6 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    margin: 2em 1em 0 1em;
   }
 
   @media screen and (min-width: 1080px) {
