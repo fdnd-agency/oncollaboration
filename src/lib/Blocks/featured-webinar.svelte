@@ -95,7 +95,7 @@
   }
 
   .featured-webinar-info h3 {
-    margin: 0.5em 0;
+    margin: 0;
     font-size: var(--font-size-2xl);
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;

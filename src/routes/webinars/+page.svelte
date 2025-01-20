@@ -16,21 +16,29 @@
   {#each data.FeaturedWebinars as featuredWebinar}
     <FeaturedWebinar {...featuredWebinar}/>
   {/each}
-  <h2>All webinars</h2>
   {/if}
+
+  <section>
+    <h2>All webinars</h2>
+    <ul>
   
-  <ul>
-    {#each data.webinars as webinar}
-    <li>
-      <WebinarOverview {...webinar}/>
-    </li>
-    {/each}
-  </ul>
+      {#each data.webinars as webinar}
+      <li>
+        <WebinarOverview {...webinar}/>
+      </li>
+      {/each}
+    </ul>
+  </section>
 </main>
 
 <style>
   main {
-    width: 100%;
+    width: 85vw;
+    margin: 0 auto;
+  }
+
+  section {
+    margin: 4em 0;
   }
 
   h1 {
@@ -42,7 +50,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
   }
 
   li {
@@ -50,13 +57,7 @@
   }
 
   @media only screen and (min-width: 600px) {
-    h2 {
-      margin-left: 1em;
-      margin-top: 2em;
-    }
-
     ul {
-      margin: 2em 1em 0 1em;
       gap: 50px;
     }
   }
