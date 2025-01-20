@@ -90,7 +90,7 @@
     }
 
     h3 {
-      font-size: var(--font-size-2xl);
+      font-size: var(--font-size-xl);
     }
 
     p {
