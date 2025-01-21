@@ -30,6 +30,7 @@
   main {
     width: 85vw;
     margin: 0 auto;
+    margin-bottom: 6rem;
   }
 
   h1 {

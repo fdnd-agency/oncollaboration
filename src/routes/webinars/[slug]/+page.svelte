@@ -152,6 +152,7 @@
 <style>
   main {
     margin-block: 1rem;
+    margin-bottom: 6rem;
   }
 
   .bread-crumbs {
