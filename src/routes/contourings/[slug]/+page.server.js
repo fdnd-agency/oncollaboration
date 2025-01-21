@@ -1,7 +1,7 @@
-import fetchJson from "$lib/fetch-json"
-import fetchReplies from "$lib/fetch-replies"
-import formatBytes from "$lib/format-bytes"
-import formatDate from "$lib/format-date"
+import fetchJson from "$lib/JavaScript/fetch-json"
+import fetchReplies from "$lib/JavaScript/fetch-replies"
+import formatBytes from "$lib/JavaScript/format-bytes"
+import formatDate from "$lib/JavaScript/format-date"
 
 
 const baseURL = 'https://fdnd-agency.directus.app/items/'
