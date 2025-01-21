@@ -46,10 +46,6 @@
     margin: 1em 0;
   }
 
-  p {
-    margin-left: 1em;
-  }
-
   ul {
     display: flex;
     justify-content: center;
