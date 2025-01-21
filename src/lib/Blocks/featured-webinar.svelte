@@ -127,10 +127,17 @@
   }
 
   .bottom-featured-card p {
-    background-color: var(--background-category-color);
-    border-radius: var(--border-radius-sm);
-    padding: 5px;
+    margin: .2rem 0;
+    padding: var(--padding-button);
     text-transform: capitalize;
+    background-color: var(--background-category-color);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    flex-shrink: 0;
+    cursor: pointer;
+    color: inherit;
+    transition: .2s;
+    font-weight: 700;
   }
 
   .action-link a {
