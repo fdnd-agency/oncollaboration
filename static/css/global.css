@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(/fonts/Poppins-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url(/fonts/Lato-Regular.ttf) format("truetype");
+}
+
+:root {
+  --font: "Lato", sans-serif;
+  --heading-font: "Poppins", sans-serif;
+
+  /* ---------- Font sizes ---------- */
+  --font-size-xs: 0.5rem;
+  --font-size-sm: 0.75rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.875rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.5rem;
+
+  /* ---------- Colors: Text ---------- */
+  --text-color: #000;
+  --alt-text-color: #fff;
+
+  /* ---------- Colors: General ---------- */
+  --primary-color: hsl(217, 44%, 23%);
+  --background-color: hsl(34, 41%, 93%);
+  --background-color-alt: hsl(0, 0%, 100%);
+  --background-category-color: hsl(170, 23%, 79%);
+  --hover-state-color: hsl(216, 37%, 38%);
+  --accent-color-1: hsl(161, 48%, 24%);
+
+  /* ---------- Paddings ---------- */
+  --padding-button: 8px 16px;
+  --padding-label: 4px;
+
+  /* ---------- Border radius ---------- */
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-nav: 3px solid var(--primary-color);
+
+  /* ---------- Misc ---------- */
+  --gap: .5rem;
+  --card-max-width: 384px;
+  --focus: solid 3px hsl(321, 58%, 55%);
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  width: 85vw;
+  margin: 0 auto;
+}
+
+ul li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 400;
+}
+
+:focus {
+  outline: var(--focus);
+  border-radius: var(--border-radius-sm);
+}
+
+:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+::placeholder {
+  color: var(--text-color);
+}
+
+.back-btn {
+  display: inline-flex;
+  color: var(--alt-text-color);
+  background-color: var(--primary-color);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  font-weight: 700;
+  padding: var(--padding-button);
+  border-radius: var(--border-radius-sm);
+  margin: 1em 0;
+  text-transform: capitalize;
+  transition: .2s;
+  border: transparent;
+}
+
+.back-btn:hover {
+  background-color: var(--hover-state-color);
+  text-decoration: underline;
+}
