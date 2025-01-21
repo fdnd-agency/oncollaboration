@@ -23,8 +23,8 @@
     </div>
 
     <div class="featured-webinar-info">
-      <a href="/webinars/{slug}">
-        <h3>{title}</h3>
+      <a href="/webinars/{slug}" tabindex="0">
+        {title}
       </a>
       <p class="speakers">
         {#each speakers as speaker}
@@ -75,8 +75,9 @@
   article a {
     text-decoration: none;
     color: inherit;
+    font-family: var(--heading-font);
   }
-  
+
   article .speakers span {
     text-transform: uppercase;
     color: var(--primary-color);
@@ -96,7 +97,7 @@
   }
 
   @media screen and (min-width: 600px) {
-    h3 {
+    article a {
       font-size: var(--font-size-xl);
     }
 
@@ -106,7 +107,7 @@
   }
 
   @media screen and (min-width: 882px) {
-    h3 {
+    article a {
       font-size: var(--font-size-xl);
     }
 
@@ -148,7 +149,7 @@
     }
   }
   @media screen and (min-width: 1180px) {
-    h3 {
+    article a {
       font-size: var(--font-size-2xl);
     }
 
