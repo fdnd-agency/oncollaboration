@@ -1,4 +1,4 @@
-import fetchJson from "$lib/fetch-json";
+import fetchJson from "$lib/JavaScript/fetch-json";
 
 const baseURL = 'https://fdnd-agency.directus.app/items/';
 
