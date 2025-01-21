@@ -12,18 +12,22 @@
   <Filter activeCategory={data.category} currentPage="contourings"/>
 
   {#if data.category != 'all'}
-  <h2>Contouring results for {data.category}</h2>
+    <h2>Contouring results for {data.category}</h2>
   {:else}
-  <h2>All contourings</h2>
+    <h2>All contourings</h2>
   {/if}
   
-  <ul>
-    {#each data.contourings as contouring}
-    <li>
-      <ContouringOverview {...contouring} {viewtransition}/>
-    </li>
-    {/each}
-  </ul>
+  {#if data.contourings.length != 0}
+    <ul>
+      {#each data.contourings as contouring}
+      <li>
+        <ContouringOverview {...contouring} {viewtransition}/>
+      </li>
+      {/each}
+    </ul>
+  {:else}
+    <p>No contourings found for {data.category}.</p>
+  {/if}
 </main>
 
 <style>
@@ -40,6 +44,10 @@
 
   h2 {
     margin: 1em 0;
+  }
+
+  p {
+    margin-left: 1em;
   }
 
   ul {

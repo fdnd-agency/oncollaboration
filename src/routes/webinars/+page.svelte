@@ -10,24 +10,27 @@
 
   <Filter activeCategory={data.category} currentPage="webinars" />
 
-  {#if data.category != 'all'}
-  <h2>Webinar results for {data.category}</h2>
-  {:else}
-  {#each data.FeaturedWebinars as featuredWebinar}
-    <FeaturedWebinar {...featuredWebinar}/>
-  {/each}
-  {/if}
-
   <section>
-    <h2>All webinars</h2>
-    <ul>
-  
-      {#each data.webinars as webinar}
-      <li>
-        <WebinarOverview {...webinar}/>
-      </li>
+    {#if data.category != 'all'}
+      <h2>Webinar results for {data.category}</h2>
+    {:else}
+      {#each data.FeaturedWebinars as featuredWebinar}
+        <FeaturedWebinar {...featuredWebinar}/>
       {/each}
-    </ul>
+      <h2>All webinars</h2>
+    {/if}
+
+    {#if data.webinars.length != 0}
+      <ul>
+        {#each data.webinars as webinar}
+          <li>
+            <WebinarOverview {...webinar}/>
+          </li>
+        {/each}
+      </ul>
+    {:else}
+      <p>No webinars found for {data.category}.</p>
+    {/if}
   </section>
 </main>
 

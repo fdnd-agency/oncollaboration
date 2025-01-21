@@ -1,7 +1,7 @@
 <script>
   import { QandA, Resources } from "$lib/index.js";
   import { fade } from 'svelte/transition';
-  import formatDate from '$lib/format-date.js';
+  import formatDate from '$lib/JavaScript/format-date.js';
   export let data;
 
   // Retrieves other data from diffrent tables through let and a joins structure
