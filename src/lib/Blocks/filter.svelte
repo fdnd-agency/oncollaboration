@@ -63,6 +63,7 @@
     cursor: pointer;
     color: inherit;
     transition: .2s;
+    font-weight: 700;
   }
   
   button:hover {
