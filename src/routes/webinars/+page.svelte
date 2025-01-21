@@ -11,21 +11,25 @@
   <Filter activeCategory={data.category} currentPage="webinars" />
 
   {#if data.category != 'all'}
-  <h2>Webinar results for {data.category}</h2>
+    <h2>Webinar results for {data.category}</h2>
   {:else}
-  {#each data.FeaturedWebinars as featuredWebinar}
-    <FeaturedWebinar {...featuredWebinar}/>
-  {/each}
-  <h2>All webinars</h2>
+    {#each data.FeaturedWebinars as featuredWebinar}
+      <FeaturedWebinar {...featuredWebinar}/>
+    {/each}
+    <h2>All webinars</h2>
   {/if}
   
-  <ul>
-    {#each data.webinars as webinar}
-    <li>
-      <WebinarOverview {...webinar}/>
-    </li>
-    {/each}
-  </ul>
+  {#if data.webinars.length != 0}
+    <ul>
+      {#each data.webinars as webinar}
+      <li>
+        <WebinarOverview {...webinar}/>
+      </li>
+      {/each}
+    </ul>
+  {:else}
+    <p>No webinars found for {data.category}.</p>
+  {/if}
 </main>
 
 <style>
@@ -36,6 +40,10 @@
   h1 {
     font-size: var(--font-size-sm);
     opacity: 0;
+  }
+
+  p {
+    margin-left: 1rem;
   }
 
   ul {
@@ -51,7 +59,7 @@
 
   @media only screen and (min-width: 600px) {
     h2 {
-      margin-left: 1em;
+      margin-left: 1rem;
       margin-top: 2em;
     }
 
