@@ -48,7 +48,8 @@
     overflow-x: auto;
     width: 99%;
     -webkit-mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);
-    mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);;
+    mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);
+    margin: 4em 0;
   }
 
   button {
@@ -62,6 +63,7 @@
     cursor: pointer;
     color: inherit;
     transition: .2s;
+    font-weight: 700;
   }
   
   button:hover {

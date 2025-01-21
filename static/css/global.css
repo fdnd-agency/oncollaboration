@@ -70,6 +70,11 @@ body {
   margin: 0;
 }
 
+main {
+  width: 85vw;
+  margin: 0 auto;
+}
+
 ul li {
   list-style: none;
 }
@@ -93,17 +98,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-btn {
-  margin-top: .5rem;
-  background: transparent;
-  padding-block: var(--padding-label);
-  color: var(--text-color);
-  border: transparent;
-  width: fit-content;
-  cursor: pointer;
+  display: inline-flex;
+  color: var(--alt-text-color);
+  background-color: var(--primary-color);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  font-weight: 700;
+  padding: var(--padding-button);
+  border-radius: var(--border-radius-sm);
+  margin: 1em 0;
+  text-transform: capitalize;
   transition: .2s;
+  border: transparent;
 }
 
 .back-btn:hover {
-  color: var(--hover-state-color);
+  background-color: var(--hover-state-color);
   text-decoration: underline;
 }

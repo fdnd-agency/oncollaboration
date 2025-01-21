@@ -74,7 +74,6 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     line-clamp: 1;
-    word-break: break-all;
     font-size: var(--font-size-sm);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -82,12 +81,14 @@
 
   article .speakers {
     display: inline;
+    margin-bottom: 0.2rem;
+    margin-top: 0;
   }
 
   article .speakers span {
     text-transform: uppercase;
     color: var(--primary-color);
-    margin-block: .2rem;
+    font-size: var(--font-size-md);
   }
 
   article .speakers span:not(:first-child)::before {
@@ -100,13 +101,17 @@
   }
 
   article .categories .category {
-    display: none;
-    margin-inline-end: .5rem;
-    padding: var(--padding-label);
-    width: fit-content;
-    background-color: var(--background-category-color);
-    border-radius: var(--border-radius-sm);
+    margin: .4rem 0;
+    padding: var(--padding-button);
     text-transform: capitalize;
+    background-color: var(--background-category-color);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    flex-shrink: 0;
+    cursor: pointer;
+    color: inherit;
+    transition: .2s;
+    font-weight: 700;
   }
 
   article:first-of-type {
@@ -126,7 +131,7 @@
     article h3 {
       -webkit-line-clamp: 2;
       line-clamp: 2;
-      font-size: var(--font-size-2xl);
+      font-size: var(--font-size-xl);
     }
 
     article .categories .category {

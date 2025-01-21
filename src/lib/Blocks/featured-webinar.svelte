@@ -48,8 +48,8 @@
   section {
     container-type: inline-size;
     container-name: main-container;
-    padding-block: 1em;
-    width: 90%;
+    width: 85vw;
+    margin: 4em auto;
   }
 
   article {
@@ -60,6 +60,10 @@
       "c";
     gap: .5em;
     grid-template-columns: 1fr;
+  }
+
+  h2 {
+    margin: 1em 0;
   }
 
   a {
@@ -95,9 +99,8 @@
   }
 
   .featured-webinar-info h3 {
-    margin: 0.5em 0;
-    font-size: var(--font-size-xl);
-    display: -webkit-box;
+    margin: 0;
+    font-size: var(--font-size-2xl);
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     line-clamp: 1;
@@ -124,10 +127,17 @@
   }
 
   .bottom-featured-card p {
-    background-color: var(--background-category-color);
-    border-radius: var(--border-radius-sm);
-    padding: 5px;
+    margin: .2rem 0;
+    padding: var(--padding-button);
     text-transform: capitalize;
+    background-color: var(--background-category-color);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    flex-shrink: 0;
+    cursor: pointer;
+    color: inherit;
+    transition: .2s;
+    font-weight: 700;
   }
 
   .action-link a {
@@ -191,10 +201,6 @@
     }
   }
 
-  @media only screen and (min-width: 600px){
-    section {
-      padding: 1em;
-      width: 100%;
-    }
+  @media only screen and (min-width: 600px) {
   }
 </style>
