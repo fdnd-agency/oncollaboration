@@ -1,4 +1,5 @@
 <script>
+  import formatDate from "$lib/JavaScript/format-date";
   export let thumbnail = "";
   export let slug = "";
   export let duration = "";
@@ -6,6 +7,8 @@
   export let speakers = [];
   export let date = "";
   export let categories = "";
+
+  date = formatDate(date);
 </script>
 
 <section>
