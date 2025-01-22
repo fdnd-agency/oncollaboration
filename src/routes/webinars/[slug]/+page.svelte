@@ -204,24 +204,27 @@
     text-transform: capitalize;
   }
 
-  .transcript-btn {
+  button {
     margin-block: 1rem;
-    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--alt-text-color);
+    border: transparent;
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    width: fit-content;
     height: 34px;
     padding: 0.4rem 0.8em;
-    font-size: var(--font-size-md);
-    color: var(--primary-color);
-    background-color: var(--background-category-color);
-    border: solid 2px var(--primary-color);
-    cursor: pointer;
     border-radius: var(--border-radius-sm);
     text-transform: capitalize;
     transition: .2s;
   }
 
-  .transcript-btn:hover {
+  button:hover {
     background-color: var(--hover-state-color);
-    color: var(--alt-text-color);
+  }
+
+  .transcript-btn {
+    width: 100%;
   }
 
   .transcript {
@@ -245,25 +248,6 @@
   ::-webkit-scrollbar-track {
     background: var(--background-category-color);
     border-radius: var(--border-radius-sm);
-  }
-
-  .expand-text-btn {
-    margin-top: 1rem;
-    background-color: var(--primary-color);
-    color: var(--alt-text-color);
-    border: transparent;
-    cursor: pointer;
-    font-size: var(--font-size-md);
-    width: fit-content;
-    height: 34px;
-    padding: 0.4rem 0.8em;
-    border-radius: var(--border-radius-sm);
-    text-transform: capitalize;
-    transition: .2s;
-  }
-
-  .expand-text-btn:hover {
-    background-color: var(--hover-state-color);
   }
 
   .speakers {
