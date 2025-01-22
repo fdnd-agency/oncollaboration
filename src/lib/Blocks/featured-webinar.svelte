@@ -100,10 +100,6 @@
     .featured-webinar-info a {
       font-size: var(--font-size-xl);
     }
-
-    article {
-      margin: 32px 16px;
-    }
   }
 
   @media screen and (min-width: 882px) {
@@ -151,10 +147,6 @@
   @media screen and (min-width: 1180px) {
     .featured-webinar-info a {
       font-size: var(--font-size-2xl);
-    }
-
-    article {
-      margin: 32px 32px;
     }
 
     article .speakers span {
