@@ -30,7 +30,7 @@ There currently are multiple things you can do on this platform, like:
 ### 📸 Contourings
 <img width="300" alt="Oncollaboration Contourings iPhone SE" src="https://github.com/user-attachments/assets/ccfc249d-ec6a-45f6-a9d7-de6a63c40636">
 
-<img width="800" alt="Oncollaboration Contourings MacBook Pro" src="https://github.com/user-attachments/assets/2c52b56e-8152-4575-9d64-58bc3000df5f">
+<img width="800" alt="Oncollaboration Contourings MacBook Pro" src="https://github.com/user-attachments/assets/a0332433-64ba-4721-aa4a-c88f99e0ec47">
 
 ### 📸 Commentsection
 <img width="400" alt="Oncollaboration Commentsection" src="https://github.com/user-attachments/assets/80a2be30-12c2-4536-a663-641cf9c97cf7" />
