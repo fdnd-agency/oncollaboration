@@ -23,9 +23,9 @@ There currently are multiple things you can do on this platform, like:
 <img width="800" alt="Oncollaboration Home MacBook Pro" src="https://github.com/user-attachments/assets/fe60bd74-4ed1-4649-8f19-e56f15c22ac8">
 
 ### 📸 Webinars
-<img width="300" alt="Oncollaboration Webinars iPhone SE" src="https://github.com/user-attachments/assets/6a86a6fd-dc47-4822-9398-67a08f010f9e">
+<img width="300" alt="Oncollaboration Webinars iPhone SE" src="">
 
-<img width="800" alt="Oncollaboration Webinars MacBook Pro" src="https://github.com/user-attachments/assets/6f99a009-15bc-44ae-9adf-fe3eb08ecf6f">
+<img width="800" alt="Oncollaboration Webinars MacBook Pro" src="">
 
 ### 📸 Contourings
 <img width="300" alt="Oncollaboration Contourings iPhone SE" src="https://github.com/user-attachments/assets/ccfc249d-ec6a-45f6-a9d7-de6a63c40636">
