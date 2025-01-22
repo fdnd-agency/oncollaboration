@@ -14,9 +14,12 @@
     {#if data.category != 'all'}
       <h2>Webinar results for {data.category}</h2>
     {:else}
-      {#each data.FeaturedWebinars as featuredWebinar}
-        <FeaturedWebinar {...featuredWebinar}/>
-      {/each}
+      <h2>Featured Webinar</h2>
+        <section class="featured-webinar">
+          {#each data.FeaturedWebinars as featuredWebinar}
+            <FeaturedWebinar {...featuredWebinar}/>
+          {/each}
+        </section>
       <h2>All webinars</h2>
     {/if}
 
@@ -47,6 +50,12 @@
   h1 {
     font-size: var(--font-size-sm);
     opacity: 0;
+  }
+  
+  .featured-webinar {
+    display: flex;
+    justify-content: center;
+    margin: 0;
   }
 
   h2 {

@@ -2,6 +2,7 @@
 Oncollaboration is a platform where radiologists from Indonesia and The Netherlands can unite to share their knowledge, and 
 discuss recent developments in their medical field.
 
+> Team: [Eva Haller](https://github.com/itsValyria), [Ryan Korver](https://github.com/Ryank2004), [Damian Romeijn](https://github.com/DamianR2004) & [Zoë Penner](https://github.com/zoepje)
 ## Table of contents
   * [Description](#description)
   * [Features](#features)
