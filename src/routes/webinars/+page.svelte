@@ -10,34 +10,41 @@
 
   <Filter activeCategory={data.category} currentPage="webinars" />
 
-  {#if data.category != 'all'}
-    <h2>Webinar results for {data.category}</h2>
-  {:else}
-    <h2>Featured Webinar</h2>
-      <section class="featured-webinar">
-        {#each data.FeaturedWebinars as featuredWebinar}
-          <FeaturedWebinar {...featuredWebinar}/>
+  <section>
+    {#if data.category != 'all'}
+      <h2>Webinar results for {data.category}</h2>
+    {:else}
+      <h2>Featured Webinar</h2>
+        <section class="featured-webinar">
+          {#each data.FeaturedWebinars as featuredWebinar}
+            <FeaturedWebinar {...featuredWebinar}/>
+          {/each}
+        </section>
+      <h2>All webinars</h2>
+    {/if}
+
+    {#if data.webinars.length != 0}
+      <ul>
+        {#each data.webinars as webinar}
+          <li>
+            <WebinarOverview {...webinar}/>
+          </li>
         {/each}
-      </section>
-    <h2>All webinars</h2>
-  {/if}
-  
-  {#if data.webinars.length != 0}
-    <ul>
-      {#each data.webinars as webinar}
-      <li>
-        <WebinarOverview {...webinar}/>
-      </li>
-      {/each}
-    </ul>
-  {:else}
-    <p>No webinars found for {data.category}.</p>
-  {/if}
+      </ul>
+    {:else}
+      <p>No webinars found for {data.category}.</p>
+    {/if}
+  </section>
 </main>
 
 <style>
   main {
-    width: 100%;
+    width: 85vw;
+    margin: 0 auto;
+  }
+
+  section {
+    margin: 4em 0;
   }
 
   h1 {
@@ -48,17 +55,17 @@
   .featured-webinar {
     display: flex;
     justify-content: center;
+    margin: 0;
   }
 
-  p {
-    margin-left: 1rem;
+  h2 {
+    margin: 1em 0;
   }
 
   ul {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
   }
 
   li {
@@ -66,13 +73,7 @@
   }
 
   @media only screen and (min-width: 600px) {
-    h2 {
-      margin-left: 1rem;
-      margin-top: 2em;
-    }
-
     ul {
-      margin: 2em 1em 0 1em;
       gap: 50px;
     }
   }

@@ -29,7 +29,9 @@
   }
 </script>
 
-<button type="button" on:click={nav_back} class="back-btn">Back</button>
+<div class="bread-crumbs">
+  <button type="button" on:click={nav_back} class="back-btn">Back</button>
+</div>
 
 <main>
   <div class="video-header">
@@ -150,6 +152,12 @@
 <style>
   main {
     margin-block: 1rem;
+    margin-bottom: 6rem;
+  }
+
+  .bread-crumbs {
+    width: 85vw;
+    margin: 0 auto;
   }
 
   .description :global(p) {

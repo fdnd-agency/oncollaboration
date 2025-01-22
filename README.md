@@ -18,19 +18,19 @@ There currently are multiple things you can do on this platform, like:
 - Comment on webinars/contourings
 
 ### 📸 Home
-<img width="300" alt="Oncollaboration Home iPhone SE" src="https://github.com/user-attachments/assets/b51ca67e-25a2-4f80-93fd-f761a95d71a9">
+<img width="300" alt="Oncollaboration Home iPhone SE" src="https://github.com/user-attachments/assets/221680e4-31af-4aa9-b131-cb67b9d48fe8">
 
-<img width="800" alt="Oncollaboration Home MacBook Pro" src="https://github.com/user-attachments/assets/ab754959-790a-41c2-9d9a-1d92b747a21a">
+<img width="800" alt="Oncollaboration Home MacBook Pro" src="https://github.com/user-attachments/assets/fe60bd74-4ed1-4649-8f19-e56f15c22ac8">
 
 ### 📸 Webinars
-<img width="300" alt="Oncollaboration Webinars iPhone SE" src="https://github.com/user-attachments/assets/6a86a6fd-dc47-4822-9398-67a08f010f9e">
+<img width="300" alt="Oncollaboration Webinars iPhone SE" src="">
 
-<img width="800" alt="Oncollaboration Webinars MacBook Pro" src="https://github.com/user-attachments/assets/6f99a009-15bc-44ae-9adf-fe3eb08ecf6f">
+<img width="800" alt="Oncollaboration Webinars MacBook Pro" src="">
 
 ### 📸 Contourings
-<img width="300" alt="Oncollaboration Contourings iPhone SE" src="https://github.com/user-attachments/assets/a031715c-9ce5-4aa4-88c7-d360a78a44e3">
+<img width="300" alt="Oncollaboration Contourings iPhone SE" src="https://github.com/user-attachments/assets/ccfc249d-ec6a-45f6-a9d7-de6a63c40636">
 
-<img width="800" alt="Oncollaboration Contourings MacBook Pro" src="https://github.com/user-attachments/assets/82a21d8c-687e-4eab-ab73-adb353f8db16">
+<img width="800" alt="Oncollaboration Contourings MacBook Pro" src="https://github.com/user-attachments/assets/a0332433-64ba-4721-aa4a-c88f99e0ec47">
 
 ### 📸 Commentsection
 <img width="400" alt="Oncollaboration Commentsection" src="https://github.com/user-attachments/assets/80a2be30-12c2-4536-a663-641cf9c97cf7" />

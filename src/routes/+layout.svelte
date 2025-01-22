@@ -58,7 +58,6 @@
   }
 
   .footer {
-    height: 115px;
     background-color: var(--background-color);
   }
 
@@ -75,7 +74,6 @@
     }
 
     .footer {
-      height: 115px;
       background-color: #f0f0f0;
     }
   }

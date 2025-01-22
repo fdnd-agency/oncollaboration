@@ -36,6 +36,10 @@
 </main>
 
 <style>
+  section {
+    margin: 4em 0;
+  }
+
   h1 {
     font-size: var(--font-size-sm);
     opacity: 0;

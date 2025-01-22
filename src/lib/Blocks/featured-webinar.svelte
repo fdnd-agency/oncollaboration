@@ -160,7 +160,7 @@
     article .speakers span {
       font-size: var(--font-size-lg);
     }
-
+    
     .date {
       display: block;
       font-size: var(--font-size-lg);

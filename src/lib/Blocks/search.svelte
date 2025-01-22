@@ -29,7 +29,7 @@
   form {
     margin: 1rem auto;
     display: flex;
-    width: 80vw;
+    width: 85vw;
   }
 
   input {
