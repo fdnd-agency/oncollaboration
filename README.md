@@ -24,9 +24,9 @@ There currently are multiple things you can do on this platform, like:
 <img width="800" alt="Oncollaboration Home MacBook Pro" src="https://github.com/user-attachments/assets/fe60bd74-4ed1-4649-8f19-e56f15c22ac8">
 
 ### 📸 Webinars
-<img width="300" alt="Oncollaboration Webinars iPhone SE" src="">
+<img width="300" alt="Oncollaboration Webinars iPhone SE" src="https://github.com/user-attachments/assets/2292ac15-cadc-463a-a9fd-55dc91447acf">
 
-<img width="800" alt="Oncollaboration Webinars MacBook Pro" src="">
+<img width="800" alt="Oncollaboration Webinars MacBook Pro" src="https://github.com/user-attachments/assets/d76abc2a-2ac8-4d16-a564-12a8effa2580">
 
 ### 📸 Contourings
 <img width="300" alt="Oncollaboration Contourings iPhone SE" src="https://github.com/user-attachments/assets/ccfc249d-ec6a-45f6-a9d7-de6a63c40636">
@@ -34,12 +34,12 @@ There currently are multiple things you can do on this platform, like:
 <img width="800" alt="Oncollaboration Contourings MacBook Pro" src="https://github.com/user-attachments/assets/a0332433-64ba-4721-aa4a-c88f99e0ec47">
 
 ### 📸 Commentsection
-<img width="400" alt="Oncollaboration Commentsection" src="https://github.com/user-attachments/assets/80a2be30-12c2-4536-a663-641cf9c97cf7" />
+<img width="400" alt="Oncollaboration Commentsection" src="https://github.com/user-attachments/assets/c5fc5e4e-53e4-44c1-a6bc-6d6a7d975ad1" />
 
 You can watch the website live here: 🌐 [oncollaboration.agency.fdnd.nl](https://oncollaboration.agency.fdnd.nl/) 
 
 ## Features
-When building this website, we used SvelteKit. We utilized components and made the website dynamic with data from Directus. The database is built from 6 tables, and you can find the data model [here](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/24#issuecomment-2375264843):
+When building this website, we used SvelteKit 4. We utilized components and made the website dynamic with data from Directus. The database is built from 6 tables, and you can find the data model [here](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/24#issuecomment-2375264843):
 - [Webinars](https://fdnd-agency.directus.app/items/avl_webinars)
 - [Speakers](https://fdnd-agency.directus.app/items/avl_speakers)
 - [Contourings](https://fdnd-agency.directus.app/items/avl_contourings)
