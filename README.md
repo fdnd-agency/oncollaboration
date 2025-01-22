@@ -57,7 +57,7 @@ You can browse through the webinars and contourings, leave comments on them, and
 
 ## Changelog
 ### Sprint 14
-This sprint, we made a start on this project. We worked on the user story: [Als gebruiker moet ik presentaties makkelijk kunnen terug vinden.](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/9) We focused heavily on creating the homepage and developing components that we will use in various places. Here is a list of issues we resolved during this sprint:
+This sprint, we made a start on this project on [repo](https://github.com/Ryank2004/Oncollaboration-Sprint-14). We worked on the user story: [Als gebruiker moet ik presentaties makkelijk kunnen terug vinden.](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/9) We focused heavily on creating the homepage and developing components that we will use in various places. Here is a list of issues we resolved during this sprint:
 - [Het maken van de Navigatiebalk](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/15)
 - [Bouwen van kaartjes voor de contourings](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/14)
 - [Bouwen van preview kaartjes voor de webinars](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/13)
@@ -75,7 +75,7 @@ In addition to these issues, we have also started working on:
 There is still a lot that needs to be added to the website. All of these issues are listed on our [projectboard](https://github.com/users/Ryank2004/projects/5).
 
 ### Sprint 16
-In sprint 16, we changed from repo and projectboard, so we can eventually pull our code to the FDND organization repo using a pull request. This sprint, we all focused on a component to make sure it works well, it is WCAG compatible and responsive. We also worked on smaller points of improvement for our site. This is a list of all the issues we worked on this sprint:
+In sprint 16, we changed from [repo](https://github.com/itsValyria/Oncollaboration) and [projectboard](https://github.com/orgs/fdnd-agency/projects/35), so we can eventually pull our code to the FDND organization repo using a pull request. This sprint, we all focused on a component to make sure it works well, it is WCAG compatible and responsive. We also worked on smaller points of improvement for our site. This is a list of all the issues we worked on this sprint:
 
 - [Search functie bouwen](https://github.com/fdnd-agency/avl/issues/25)
 - [Filteren op categorie functie](https://github.com/fdnd-agency/avl/issues/26)
