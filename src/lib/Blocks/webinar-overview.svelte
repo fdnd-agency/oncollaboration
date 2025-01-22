@@ -88,7 +88,6 @@
   article .speakers span {
     text-transform: uppercase;
     color: var(--primary-color);
-    font-size: var(--font-size-md);
   }
 
   article .speakers span:not(:first-child)::before {
