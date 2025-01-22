@@ -70,6 +70,7 @@
   .resource-head {
     display: flex;
     gap: 1rem;
+    width: 80%;
   }
 
   .resource-svg {
