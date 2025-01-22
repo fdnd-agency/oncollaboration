@@ -76,11 +76,11 @@
   }
 
   h3 {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
   }
 
   p {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
   }
 
   @media only screen and (min-width: 600px) {

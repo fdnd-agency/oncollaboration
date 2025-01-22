@@ -44,7 +44,7 @@
   }
 
   article p {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
   }
 
   article .container-image {
@@ -74,7 +74,7 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     line-clamp: 1;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -88,6 +88,7 @@
   article .speakers span {
     text-transform: uppercase;
     color: var(--primary-color);
+    font-size: var(--font-size-sm);
   }
 
   article .speakers span:not(:first-child)::before {
@@ -111,6 +112,7 @@
     color: inherit;
     transition: .2s;
     font-weight: 700;
+    font-size: var(--font-size-sm);
   }
 
   article:first-of-type {

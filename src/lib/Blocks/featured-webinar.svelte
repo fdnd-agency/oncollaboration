@@ -53,6 +53,12 @@
     max-width: var(--card-max-width);
   }
 
+  article a {
+    text-decoration: none;
+    color: inherit;
+    font-family: var(--heading-font);
+  }
+
   article .container-image {
     position: relative;
   }
@@ -67,18 +73,14 @@
   article .container-image .duration {
     position: absolute;
     background-color: #1f000b;
+    font-family: var(--font);
+    font-size: var(--font-size-sm);
     color: var(--alt-text-color);
     padding: var(--padding-label);
     bottom: 10px;
     right: 10px;
     border-radius: var(--border-radius-sm);
     z-index: 1;
-  }
-
-  article a {
-    text-decoration: none;
-    color: inherit;
-    font-family: var(--heading-font);
   }
 
   article .speakers span {
@@ -95,8 +97,8 @@
     display: none;
   }
 
-  .featured-webinar-info {
-    font-size: var(--font-size-sm);
+  .featured-webinar-info a {
+    font-size: var(--font-size-lg);
   }
 
   @media screen and (min-width: 600px) {

@@ -46,7 +46,6 @@
   }
 
   h2 {
-    font-size: var(--font-size-lg);
     margin-bottom: 0.5em;
     margin-top: 0.8em;
   }
@@ -55,7 +54,7 @@
     display: inline-flex;
     color: var(--alt-text-color);
     background-color: var(--primary-color);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
     text-decoration: none;
     font-weight: 700;
     padding: var(--padding-button);
