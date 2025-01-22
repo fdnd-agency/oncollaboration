@@ -97,7 +97,7 @@
   }
 
   @media screen and (min-width: 600px) {
-    article a {
+    .featured-webinar-info a {
       font-size: var(--font-size-xl);
     }
 
@@ -107,7 +107,7 @@
   }
 
   @media screen and (min-width: 882px) {
-    article a {
+    .featured-webinar-info a {
       font-size: var(--font-size-xl);
     }
 
@@ -149,7 +149,7 @@
     }
   }
   @media screen and (min-width: 1180px) {
-    article a {
+    .featured-webinar-info a {
       font-size: var(--font-size-2xl);
     }
 
