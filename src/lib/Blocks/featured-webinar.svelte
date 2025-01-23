@@ -122,6 +122,10 @@
       margin-right: 20px;
     }
 
+    article .container-image .duration {
+      font-size: var(--font-size-lg);
+    }
+
     p {
       padding: 8px 0;
     }
