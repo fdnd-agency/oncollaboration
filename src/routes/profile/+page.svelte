@@ -15,12 +15,14 @@
     <section>
     <div>
       {#if user.id && user.profile_picture}
-        <img src="https://fdnd-agency.directus.app/assets/{user.profile_picture}?format=avif" alt="{user.profile_picture.title}" width="100" height="100">
-          <div class="profile-info">
-            <p><i>{user.email}</i></p>
-            <h3>{user.fullname}</h3>
-            <span>{user.entitle}</span>
-          </div>
+        <picture>
+          <img src="https://fdnd-agency.directus.app/assets/{user.profile_picture}?format=avif" alt="{user.profile_picture.title}" width="100" height="100">
+        </picture>
+        <div class="profile-info">
+          <p><i>{user.email}</i></p>
+          <h3>{user.fullname}</h3>
+          <span>{user.entitle}</span>
+        </div>
       {:else}
         <img src="/images/profilepic.png" alt="error" width="100" height="100">
         <h4>Name Surname</h4>
@@ -59,7 +61,7 @@
 <section>
   <h3>Webinars</h3>
   {#if data.webinars.length != 0}
-      <ul>
+      <ul class="carrousel">
         {#each data.webinars as webinar}
           <li>
             <WebinarOverview {...webinar}/>
@@ -79,7 +81,7 @@
   {/if}
   
   {#if data.contourings.length != 0}
-    <ul>
+    <ul class="carrousel">
       {#each data.contourings as contouring}
       <li>
         <ContouringOverview {...contouring} {viewtransition}/>
@@ -117,9 +119,13 @@
     display: flex;
   }
 
-  main section:nth-child(1) section > div img{
+  main section:nth-child(1) section > div picture{
     margin-right: 0.5rem;
+  }
+
+  main section:nth-child(1) section > div picture img{
     border-radius: var(--border-radius-sm);
+    object-fit: cover;
   }
 
   main section:nth-child(1) section > div i{
@@ -159,6 +165,12 @@
     scroll-snap-align: start;
     border-radius: 10px;
     box-sizing: border-box;
+  }
+
+  @media only screen and (min-width: 500px) {
+    .carrousel > li {
+      flex: 0 0 auto;
+    }
   }
 
   main > section:last-child  {
