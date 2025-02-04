@@ -41,7 +41,7 @@
       <p>Be the first to comment.</p>
     {:else} 
     <ul>
-      {#each comments as comment}
+      {#each [...comments].reverse() as comment}
         {#if comment.parent_id === null}
         <li><Comment {comment}/></li>
         {/if} 

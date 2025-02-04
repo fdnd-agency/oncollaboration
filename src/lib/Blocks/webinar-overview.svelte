@@ -1,10 +1,15 @@
 <script>
+  import { page } from '$app/stores';
+  import { get } from 'svelte/store';
+  
   export let slug = "";
   export let thumbnail = "";
   export let duration = "";
   export let title = "";
   export let speakers = [];
   export let categories = [];
+
+  let currentPath = get(page).url.pathname;
 </script>
 
 <article>
@@ -20,9 +25,11 @@
       {/each} 
     </p>
     <div class="categories">
-      {#each categories as category}
-        <p class="category">{category.avl_categories_id.name}</p>
-      {/each}  
+      {#if !currentPath.includes('/profile')}
+        {#each categories as category}
+          <p class="category">{category.avl_categories_id.name}</p>
+        {/each}  
+      {/if}
     </div>
   </a>
 </article>
