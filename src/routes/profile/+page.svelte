@@ -113,27 +113,75 @@
   main section:nth-child(1) section{
     display: flex;
     justify-content: space-between;
+
+    @media (min-width: 600px) {
+      
+     display: block;
+  }
   }
 
   main section:nth-child(1) section > div{
     display: flex;
+    @media (min-width: 500px){
+      width: 100%;
+      justify-content: flex-end;
+    }
   }
 
   main section:nth-child(1) section > div picture{
     margin-right: 0.5rem;
+    width: 50%;  
+    height: auto;
   }
 
   main section:nth-child(1) section > div picture img{
     border-radius: var(--border-radius-sm);
     object-fit: cover;
+
+    @media (min-width: 600px) {
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto 1 / 1;
+      object-fit: contain;
+  }
+  @media (min-width: 600px) {
+      
+      height: auto;
+      object-fit: cover;
+  }
+}
+
+  main section:nth-child(1) section .profile-info{
+
+    @media (min-width: 600px){
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+    }
   }
 
   main section:nth-child(1) section > div i{
     font-size: var(--font-size-sm);
+    
+    @media (min-width: 600px) {  
+      font-size: var(--font-size-xl);
+    }
+  }
+
+  main section:nth-child(1) section > div h3{
+    font-size: var(--font-size-lg);
+    @media (min-width: 600px) {
+      font-size: var(--font-size-4xl);
+    }
   }
 
   main section:nth-child(1) section > div span{
     font-size: var(--font-size-md);
+    @media (min-width: 600px) {
+      font-size: var(--font-size-3xl);
+    }
   }
 
   main section:nth-child(1) button{
@@ -142,6 +190,7 @@
     border: none;
     align-self: flex-end;
     padding: var(--padding-button);
+    cursor: pointer;
   }
 
   main section:nth-child(1) section > div button span{
@@ -149,7 +198,7 @@
     font-size: var(--font-size-sm);
   }
 
-  ul{
+  .carrousel{
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -160,15 +209,12 @@
     gap: 10px;
   }
 
-  ul li{
+  .carrousel li{
     flex: 0 0 calc(100% - 20%);
     scroll-snap-align: start;
     border-radius: 10px;
     box-sizing: border-box;
-  }
-
-  @media only screen and (min-width: 500px) {
-    .carrousel > li {
+    @media only screen and (min-width: 500px) {
       flex: 0 0 auto;
     }
   }
