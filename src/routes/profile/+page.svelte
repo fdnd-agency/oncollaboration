@@ -38,24 +38,32 @@
 
 <section>
   <h3>Notifications</h3>
-  {#if data.webinars.length > 0}
-  <ul>
-    <li>
-      <p>no notifications</p>
-    </li>
-  </ul>
-{/if}
+  {#if data.webinars.length != 0}
+      <ul class="carrousel">
+        {#each data.webinars as webinar}
+          <li>
+            <WebinarOverview {...webinar}/>
+          </li>
+        {/each}
+      </ul>
+    {:else}
+      <p>No webinars found for {data.category}.</p>
+    {/if}
 </section>
 
 <section>
   <h3>History</h3>
-  {#if data.webinars.length > 0}
-  <ul>
-    <li>
-      <p>no history found</p>
-    </li>
-  </ul>
-{/if}
+  {#if data.webinars.length != 0}
+      <ul class="carrousel">
+        {#each data.webinars as webinar}
+          <li>
+            <WebinarOverview {...webinar}/>
+          </li>
+        {/each}
+      </ul>
+    {:else}
+      <p>No webinars found for {data.category}.</p>
+    {/if}
 </section>
 
 <section>
@@ -96,6 +104,10 @@
 
 <style>
 
+  main > section{
+    margin: 4em 0;
+  }
+
   main section h1{
     font-size: var(--font-size-2xl);
     text-transform: uppercase;
@@ -107,7 +119,7 @@
 
   main section h1,
   main section > h3{
-    margin: 1em 0;;
+    margin: 0.8em 0 0.5em 0;
   }
 
   main section:nth-child(1) section{
@@ -144,14 +156,14 @@
       aspect-ratio: auto 1 / 1;
       object-fit: contain;
   }
+
   @media (min-width: 600px) {
-      
       height: auto;
       object-fit: cover;
   }
 }
 
-  main section:nth-child(1) section .profile-info{
+  main section:nth-child(1) section div .profile-info{
 
     @media (min-width: 600px){
         align-items: center;
@@ -162,7 +174,7 @@
     }
   }
 
-  main section:nth-child(1) section > div i{
+  main section:nth-child(1) section > div div i{
     font-size: var(--font-size-sm);
     
     @media (min-width: 600px) {  
@@ -170,21 +182,21 @@
     }
   }
 
-  main section:nth-child(1) section > div h3{
+  main section:nth-child(1) section > div div h3{
     font-size: var(--font-size-lg);
     @media (min-width: 600px) {
       font-size: var(--font-size-4xl);
     }
   }
 
-  main section:nth-child(1) section > div span{
+  main section:nth-child(1) section > div div span{
     font-size: var(--font-size-md);
     @media (min-width: 600px) {
       font-size: var(--font-size-3xl);
     }
   }
 
-  main section:nth-child(1) button{
+  main section:nth-child(1) section > div button{
     background-color: var(--primary-color);
     border-radius: var(--border-radius-sm);
     border: none;
