@@ -24,7 +24,7 @@
 
 - mobile is almost  finished and the tablet/desktop has now a basic layout
 
-## profile page [0.4.0] - 2025-02-04
+## profile page [0.4.0] - 2025-02-05
 
 ### Added
 - mediaqueries with properties for the bigger screen formats
@@ -36,3 +36,21 @@
 ### Fixed
 - No bugs are fixed yet. 
 - i saw a section in a section that did nothing so i'm gonna remove that next time
+
+--------------
+
+## [1.0.3] - 2025-02-06
+
+- styling and layout ready for review
+
+## profile page [0.6.0] - 2025-02-06
+
+### Added
+- mediaqueries with properties for the bigger screen formats and gave them the correct proporties
+
+### Changed
+- For the profile section i use the same layout as the speaker page
+
+### Fixed
+- No bugs are fixed yet. 
+- i saw a section in a section that did nothing so i'm gonna remove that next week when i'm gonna refactor as many things as possible
