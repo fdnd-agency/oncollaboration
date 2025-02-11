@@ -36,7 +36,6 @@
     padding: 0 1em .5em;
     z-index: 1000;
     box-shadow: 0px -4px 17px 0px rgba(0,0,0,0.3);
-    background-color: var(--background-color-alt);
 
       @media (min-width: 1080px) {
         background-color: var(--primary-color);

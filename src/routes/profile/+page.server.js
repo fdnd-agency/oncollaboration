@@ -1,12 +1,18 @@
-// +page.server.js
-import { json } from "@sveltejs/kit";
 import fetchJson from "$lib/JavaScript/fetch-json"
 
 export async function load({ fetch }) {
-  
-  const response = await fetchJson("https://fdnd-agency.directus.app/items/avl_users/2");  
-  
-  return {
-    user: response.data
-  };
+  try {
+    const response = await fetchJson("https://fdnd-agency.directus.app/items/avl_users/4");
+    
+    if (!response?.data) {
+      throw new Error('Invalid response format');
+    }
+    
+    return {
+      user: response.data
+    };
+  } catch (error) {
+    console.error('Failed to fetch user data:', error);
+    throw error;
+  }
 }

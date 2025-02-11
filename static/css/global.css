@@ -16,12 +16,6 @@
   font-display: swap;
 } 
 
-@font-face {
-  font-family: "Lato";
-  src: url(/fonts/Lato-Regular-subset.ttf) format('truetype');
-  font-display: swap;
-} 
-
 :root {
   --font: "Lato", sans-serif;
   --heading-font: "VagRundschrift", sans-serif;
@@ -47,7 +41,7 @@
   --primary-color: hsl(339, 100%, 21%);
   --background-color: hsl(338, 27%, 92%);
   --background-color-alt: hsl(0, 0%, 100%);
-  --background-category-color: hsl(339, 26%, 76%);;
+  --background-category-color: hsl(339, 26%, 76%);
   --hover-state-color: hsl(339, 26%, 80%);
   --accent-color-1: hsl(340, 100%, 15%);
 
@@ -104,6 +98,10 @@ h1, h2, h3, h4, h5, h6 {
 
 ::placeholder {
   color: var(--text-color);
+}
+
+button{
+  cursor: pointer;
 }
 
 .back-btn {

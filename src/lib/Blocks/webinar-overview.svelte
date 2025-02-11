@@ -9,7 +9,7 @@
   export let speakers = [];
   export let categories = [];
 
-  let currentPath = get(page).url.pathname;
+  $: currentPath = $page.url.pathname;
 </script>
 
 <article>
