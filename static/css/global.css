@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url(/fonts/Poppins-Bold-subset.ttf) format('truetype');
+  font-family: "VagRundschrift";
+  src: url(/fonts/VAGRundschriftD.ttf) format('truetype');
   font-display: swap;
 } 
 
@@ -18,7 +18,8 @@
 
 :root {
   --font: "Lato", sans-serif;
-  --heading-font: "Poppins", sans-serif;
+  --heading-font: "VagRundschrift", sans-serif;
+  /* --heading-font: "Poppins", sans-serif; */
 
   /* ---------- Font sizes ---------- */
   --font-size-xs: 0.5rem;
@@ -37,12 +38,12 @@
   --alt-text-color: #fff;
 
   /* ---------- Colors: General ---------- */
-  --primary-color: hsl(217, 44%, 23%);
-  --background-color: hsl(34, 41%, 93%);
+  --primary-color: hsl(339, 100%, 21%);
+  --background-color: hsl(338, 27%, 92%);
   --background-color-alt: hsl(0, 0%, 100%);
-  --background-category-color: hsl(170, 23%, 79%);
-  --hover-state-color: hsl(216, 37%, 38%);
-  --accent-color-1: hsl(161, 48%, 24%);
+  --background-category-color: hsl(339, 26%, 76%);
+  --hover-state-color: hsl(339, 26%, 80%);
+  --accent-color-1: hsl(340, 100%, 15%);
 
   /* ---------- Paddings ---------- */
   --padding-button: 8px 16px;
@@ -97,6 +98,10 @@ h1, h2, h3, h4, h5, h6 {
 
 ::placeholder {
   color: var(--text-color);
+}
+
+button{
+  cursor: pointer;
 }
 
 .back-btn {

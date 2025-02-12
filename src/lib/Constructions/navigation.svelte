@@ -36,7 +36,10 @@
     padding: 0 1em .5em;
     z-index: 1000;
     box-shadow: 0px -4px 17px 0px rgba(0,0,0,0.3);
-    background-color: var(--background-color-alt);
+
+      @media (min-width: 1080px) {
+        background-color: var(--primary-color);
+    }
   }
 
   ul {
@@ -53,6 +56,10 @@
     padding: .7em .5em 0; 
     text-decoration: none;
     transition: .2s;
+
+    @media (min-width: 1080px) {
+      color: var(--alt-text-color);
+    }
   }
 
   li a:hover {
@@ -63,6 +70,10 @@
     color: var(--primary-color);
     border-top: var(--border-nav);
     padding-top: calc(.7em - 2px);
+
+    @media (min-width: 1080px) {
+      color: var(--text-color);
+    }
   }
 
   .icon {
