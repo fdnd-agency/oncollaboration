@@ -16,26 +16,26 @@
 
 ### Fixed
 - No bugs are fixed yet. 
-- i saw a section in a section that did nothing so i'm gonna remove that next time
+- I identified an unnecessary nested section that will be removed during next week's refactoring effort.
 
 --------------
 
 ## [1.0.2] - 2025-02-05
 
-- mobile is almost  finished and the tablet/desktop has now a basic layout
+- Mobile is almost  finished and the tablet/desktop has now a basic layout
 
 ## profile page [0.4.0] - 2025-02-05
 
 ### Added
-- mediaqueries with properties for the bigger screen formats
+- Mediaqueries with properties for the bigger screen formats
 
 ### Changed
-- New colorpallete 
-- applied it to things where it was needed like the navbar
+- New color pallete 
+- Applied it to things where it was needed like the navbar
 
 ### Fixed
 - No bugs are fixed yet. 
-- i saw a section in a section that did nothing so i'm gonna remove that next time
+- I saw a section in a section that did nothing so i'm gonna remove that next time
 
 --------------
 
@@ -46,11 +46,11 @@
 ## profile page [0.6.0] - 2025-02-06
 
 ### Added
-- mediaqueries with properties for the bigger screen formats and gave them the correct proporties
+- Mediaqueries with properties for the bigger screen formats and gave them the correct proporties
 
 ### Changed
 - For the profile section i use the same layout as the speaker page
 
 ### Fixed
 - No bugs are fixed yet. 
-- i saw a section in a section that did nothing so i'm gonna remove that next week when i'm gonna refactor as many things as possible
+- I saw a section in a section that did nothing so i'm gonna remove that next week when i'm gonna refactor as many things as possible
