@@ -57,6 +57,11 @@
     opacity: 0;
     visibility: hidden;
     text-transform: capitalize;
+
+    @media (min-width: 600px){
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   img {
@@ -77,23 +82,16 @@
 
   h3 {
     font-size: var(--font-size-md);
+
+    @media (min-width: 600px) {
+      font-size: var(--font-size-xl);
+    }
   }
 
   p {
     font-size: var(--font-size-sm);
-  }
 
-  @media only screen and (min-width: 600px) {
-    span {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    h3 {
-      font-size: var(--font-size-xl);
-    }
-
-    p {
+    @media (min-width: 600px){
       font-size: var( --font-size-lg);
     }
   }

@@ -125,13 +125,17 @@
     }
   }
 
-  @media (hover: hover) {
-    .comments {
-      height: 300px;
+  .comments{
+
+    @media (min-width: 1080px) {
+      height: calc(524px - 165px);
       overflow-y: scroll;
     }
+  }
 
-    .comments h3 {
+  .comments h3{
+
+    @media (min-width: 1080px) {
       position: sticky;
       top: 0;
       width: 100%;
@@ -139,9 +143,9 @@
     }
   }
 
-  @media only screen and (min-width: 1080px) {
+  @media (hover: hover) {
     .comments {
-      height: calc(524px - 165px);
+      height: 300px;
       overflow-y: scroll;
     }
 

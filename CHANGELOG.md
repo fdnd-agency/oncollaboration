@@ -54,3 +54,14 @@
 ### Fixed
 - No bugs are fixed yet. 
 - I saw a section in a section that did nothing so i'm gonna remove that next week when i'm gonna refactor as many things as possible
+
+
+## [1.0.5] - 2025-02-14
+
+### feature
+
+First version of the profile page is done
+
+### next step
+
+Refactor code & Create a function that ads web binars to someone's profile
