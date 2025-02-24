@@ -3,7 +3,8 @@
   export let data;
 
   const user = data.user;
-
+  console.log(data.user);
+  
   let viewtransition = true;
 </script>
 
@@ -89,11 +90,11 @@
 
   <section>
     <h2>Webinars</h2>
-    {#if data.webinars.length != 0}
+    {#if user.favourites?.length > 0}
       <ul class="carrousel">
-        {#each data.webinars as webinar}
+        {#each user.favourites as favourites}
           <li>
-            <WebinarOverview {...webinar} />
+            <WebinarOverview {...favourites} />
           </li>
         {/each}
       </ul>
