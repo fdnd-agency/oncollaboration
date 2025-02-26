@@ -1,10 +1,10 @@
 <script>
-  import { WebinarOverview, ContouringOverview} from "$lib/index.js";
+  import { WebinarOverview, ContouringOverview } from "$lib/index.js";
   export let data;
 
   const user = data.user;
-  console.log(data.user);
-  
+  const favouriteWebinars = data.favourites; 
+
   let viewtransition = true;
 </script>
 
@@ -61,47 +61,48 @@
   <section>
     <h2>Notifications</h2>
     {#if data.webinars.length != 0}
-      <ul class="carrousel">
-        {#each data.webinars as webinar}
-          <li>
-            <WebinarOverview {...webinar} />
-          </li>
-        {/each}
-      </ul>
-    {:else}
-      <p>No webinars found for {data.category}.</p>
-    {/if}
+    <ul class="carrousel">
+      {#each data.webinars as webinar}
+        <li>
+          <WebinarOverview {...webinar} />
+        </li>
+      {/each}
+    </ul>
+  {:else}
+    <p>No webinars found for {data.category}.</p>
+  {/if}
   </section>
 
   <section>
     <h2>History</h2>
-    {#if data.webinars.length != 0}
+    <!-- {#if data.webinars.length != 0}
+    <ul class="carrousel">
+      {#each data.webinars as webinar}
+        <li>
+          <WebinarOverview {...webinar} />
+        </li>
+      {/each}
+    </ul>
+  {:else}
+    <p>No webinars found for {data.category}.</p>
+  {/if} -->
+  </section>
+
+  <section>
+    <h2>Favourite Webinars</h2>
+    {#if favouriteWebinars.length !== 0}
       <ul class="carrousel">
-        {#each data.webinars as webinar}
+        {#each favouriteWebinars as webinar}  
           <li>
             <WebinarOverview {...webinar} />
           </li>
         {/each}
       </ul>
     {:else}
-      <p>No webinars found for {data.category}.</p>
+      <p>No webinars found.</p>
     {/if}
   </section>
 
-  <section>
-    <h2>Webinars</h2>
-    {#if user.favourites?.length > 0}
-      <ul class="carrousel">
-        {#each user.favourites as favourites}
-          <li>
-            <WebinarOverview {...favourites} />
-          </li>
-        {/each}
-      </ul>
-    {:else}
-      <p>No webinars found for {data.category}.</p>
-    {/if}
-  </section>
 
   <section>
     {#if data.category != "all"}
