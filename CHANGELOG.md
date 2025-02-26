@@ -65,3 +65,24 @@ First version of the profile page is done
 ### next step
 
 Refactor code & Create a function that ads web binars to someone's profile
+
+## [1.1.0] - 2025-02-26
+
+- Working Favorite feature
+
+## profile page [0.8.0] - 2025-02-06
+
+### Added
+- so far The user can now see their favorite webinars on ther profile page
+
+### Changed
+- fetching the data in `+page.server.js` from profile
+
+### Fixed
+- Th fetch is now correct. also it has the exact same styling as a normal webinar
+- SOme code is refactored
+
+### next step
+
+More code refactoring and building the empty state. Also expirimenting with an iconlibary for each page
+
