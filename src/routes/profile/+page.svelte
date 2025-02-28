@@ -1,8 +1,9 @@
 <script>
-  import { WebinarOverview, ContouringOverview} from "$lib/index.js";
+  import { WebinarOverview, ContouringOverview, EmptyState } from "$lib/index.js";
   export let data;
 
   const user = data.user;
+  const favouriteWebinars = data.favourites; 
 
   let viewtransition = true;
 </script>
@@ -59,48 +60,61 @@
 
   <section>
     <h2>Notifications</h2>
-    {#if data.webinars.length != 0}
-      <ul class="carrousel">
-        {#each data.webinars as webinar}
-          <li>
-            <WebinarOverview {...webinar} />
-          </li>
-        {/each}
-      </ul>
-    {:else}
-      <p>No webinars found for {data.category}.</p>
-    {/if}
+    {#if data.webinars.length === 0}
+    <ul class="carrousel">
+      {#each data.webinars as webinar}
+        <li>
+          <WebinarOverview {...webinar} />
+        </li>
+      {/each}
+    </ul>
+  {:else}
+    <ul class="carrousel">
+      <li>
+        <EmptyState name="notification" />
+      </li>
+    </ul>
+  {/if}
   </section>
 
   <section>
     <h2>History</h2>
-    {#if data.webinars.length != 0}
-      <ul class="carrousel">
-        {#each data.webinars as webinar}
-          <li>
-            <WebinarOverview {...webinar} />
-          </li>
-        {/each}
-      </ul>
-    {:else}
-      <p>No webinars found for {data.category}.</p>
-    {/if}
+    {#if data.webinars.length === 0}
+    <ul class="carrousel">
+      {#each data.webinars as webinar}
+        <li>
+          <WebinarOverview {...webinar} />
+        </li>
+      {/each}
+    </ul>
+  {:else}
+    <ul class="carrousel">
+      <li>
+        <EmptyState name="history" />
+      </li>
+    </ul>
+  {/if}
   </section>
 
   <section>
-    <h2>Webinars</h2>
-    {#if data.webinars.length != 0}
+    <h2>Favourite Webinars</h2>
+    {#if favouriteWebinars.length !== 0}
       <ul class="carrousel">
-        {#each data.webinars as webinar}
+        {#each favouriteWebinars as webinar}  
           <li>
             <WebinarOverview {...webinar} />
           </li>
         {/each}
       </ul>
     {:else}
-      <p>No webinars found for {data.category}.</p>
+    <ul class="carrousel">
+      <li>
+        <EmptyState name="favourite" />
+      </li>
+    </ul>
     {/if}
   </section>
+
 
   <section>
     {#if data.category != "all"}
@@ -118,7 +132,11 @@
         {/each}
       </ul>
     {:else}
-      <p>No contourings found for {data.category}.</p>
+    <ul class="carrousel">
+      <li>
+        <EmptyState name="contouring" />
+      </li>
+    </ul>
     {/if}
   </section>
 </main>
@@ -291,4 +309,5 @@
     background-color: var(--background-category-color);
     padding: 1em 0.5em;
   }
+
 </style>
