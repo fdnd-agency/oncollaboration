@@ -73,15 +73,15 @@ Refactor code & Create a function that ads web binars to someone's profile
 ## profile page [0.8.0] - 2025-02-06
 
 ### Added
-- so far The user can now see their favorite webinars on ther profile page
+- so far The user can now see their favorite webinars on their profile page
 
 ### Changed
 - fetching the data in `+page.server.js` from profile
 
 ### Fixed
 
-- Th fetch is now correct. also it has the exact same styling as a normal webinar
-- SOme code is refactored
+- The fetch is now correct. Also it has the exact same styling as a normal webinar
+- Some code is refactored
 
 ### next step
 

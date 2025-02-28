@@ -15,6 +15,6 @@ import Liked from "./Bricks/liked.svelte";
 import LoadingState from "./Bricks/loading-state.svelte";
 import PreviewDoc from "./Bricks/preview-doc.svelte";
 import Resources from "./Blocks/resources.svelte";
-import EmptyState from "./Bricks/emptystates.svelte"
+import EmptyState from "./Bricks/empty-states.svelte"
 
 export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState}
