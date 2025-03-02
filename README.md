@@ -3,7 +3,7 @@ Oncollaboration is a platform where radiologists from Indonesia and The Netherla
 discuss recent developments in their medical field.
 
 **Release Candidate**  
-[Live site](oncollaboration.agency.fdnd.nl)
+[Live site](https://oncollaboration.agency.fdnd.nl)
 
 **Studentenwerk Sprint 5: Fix The Flow** 
 
