@@ -23,7 +23,6 @@ discuss recent developments in their medical field.
 * https://fdnd-agency.directus.app/items/avl_users
 * https://fdnd-agency.directus.app/items/avl_webinars
 
-> Team: [Eva Haller](https://github.com/itsValyria), [Ryan Korver](https://github.com/Ryank2004), [Damian Romeijn](https://github.com/DamianR2004) & [Zoë Penner](https://github.com/zoepje)
 ## Table of contents
   * [Description](#description)
   * [Features](#features)
@@ -32,6 +31,8 @@ discuss recent developments in their medical field.
   * [Changelog](#changelog)
   * [Sources](#sources)
   * [License](#license)
+
+> Team: [Eva Haller](https://github.com/itsValyria), [Ryan Korver](https://github.com/Ryank2004), [Damian Romeijn](https://github.com/DamianR2004) & [Zoë Penner](https://github.com/zoepje)
 
 ## Description
 There currently are multiple things you can do on this platform, like:
