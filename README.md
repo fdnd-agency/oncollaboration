@@ -15,6 +15,14 @@ discuss recent developments in their medical field.
 | Stella	| [repository](https://github.com/misspastelwitch/fix-the-flow-interactive-website) | 	[live site](https://misspastelwitch.github.io/fix-the-flow-interactive-website/) 
 | Tessa	| [repository](https://github.com/Tindyy/fix-the-flow-interactive-website)	| [live site](https://tindyy.github.io/fix-the-flow-interactive-website/html/Webinardetail.html) 
 
+**API Endpoints**  
+* https://fdnd-agency.directus.app/items/avl_categories
+* https://fdnd-agency.directus.app/items/avl_comments
+* https://fdnd-agency.directus.app/items/avl_contourings
+* https://fdnd-agency.directus.app/items/avl_speakers
+* https://fdnd-agency.directus.app/items/avl_users
+* https://fdnd-agency.directus.app/items/avl_webinars
+
 > Team: [Eva Haller](https://github.com/itsValyria), [Ryan Korver](https://github.com/Ryank2004), [Damian Romeijn](https://github.com/DamianR2004) & [Zoë Penner](https://github.com/zoepje)
 ## Table of contents
   * [Description](#description)
