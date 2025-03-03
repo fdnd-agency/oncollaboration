@@ -2,6 +2,9 @@
 Oncollaboration is a platform where radiologists from Indonesia and The Netherlands can unite to share their knowledge, and 
 discuss recent developments in their medical field.
 
+**Team Sprint 8**  
+Kim, Amber, Julia, Anouk
+
 **Release Candidate**  
 [Live site](https://oncollaboration.agency.fdnd.nl)
 
