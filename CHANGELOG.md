@@ -92,7 +92,7 @@ Refactor code & Create a function that ads web binars to someone's profile
 
 - working on the speaker page
 
-## speaker page [0.8.0] - 2025-02-06
+## speaker page [0.8.0] - 2025-03-04
 
 ### Added
 - right now i added a working feature that you get a speaker on the speakerpage based of the nam in the parameter
@@ -103,3 +103,14 @@ Refactor code & Create a function that ads web binars to someone's profile
 
 - styling speaker page
 - and testing
+
+## speaker page [0.8.0] - 2025-03-04
+
+### Added 
+
+- Desktop version for speaker page
+
+### next step
+
+- better responsive 
+- tests

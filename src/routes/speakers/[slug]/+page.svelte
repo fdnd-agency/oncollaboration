@@ -130,14 +130,15 @@
     @media (min-width: 1080px) {
       display:grid;
 		grid-template-columns:  minmax(12em, 2fr)  4fr;
-		grid-template-rows:auto auto 1fr;
+		grid-template-rows:auto auto auto 1fr;
 		
 		grid-template-areas:
 			"picture name"
 			"picture about"
-			"contact contact";
+      "contact about"
+			"contact about";
 		
-		gap:0em 5em;
+		gap: 1em 5em;
     }
   }
 
@@ -233,7 +234,7 @@
 
   .speaker-contact{
     display: flex;
-    align-items: center;
+    align-items: start;
 
     @media (min-width: 1080px) {
     grid-area:contact;
