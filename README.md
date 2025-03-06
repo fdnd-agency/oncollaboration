@@ -2,29 +2,8 @@
 Oncollaboration is a platform where radiologists from Indonesia and The Netherlands can unite to share their knowledge, and 
 discuss recent developments in their medical field.
 
-**Team Sprint 8**  
-Kim, Amber, Julia, Anouk
-
 **Release Candidate**  
 [Live site](https://oncollaboration.agency.fdnd.nl)
-
-**Studentenwerk Sprint 5: Fix The Flow** 
-
-|  |  |  | 
-| :--------------- | :--------------- | :--------------- |
-| Branco	| [repository](https://github.com/Brancovanbeek/fix-the-flow-interactive-website) | 	[live site](https://brancovanbeek.github.io/fix-the-flow-interactive-website/)
-| Colin	| [repository](https://github.com/ColindeGroot/fix-the-flow-interactive-website) | 	[live site](https://colindegroot.github.io/fix-the-flow-interactive-website/webinars.html) 
-| Saif	| [repository](https://github.com/Saif8599/fix-the-flow-interactive-website) | 	[live site](https://saif8599.github.io/fix-the-flow-interactive-website/pages/all-webinars.html) 
-| Stella	| [repository](https://github.com/misspastelwitch/fix-the-flow-interactive-website) | 	[live site](https://misspastelwitch.github.io/fix-the-flow-interactive-website/) 
-| Tessa	| [repository](https://github.com/Tindyy/fix-the-flow-interactive-website)	| [live site](https://tindyy.github.io/fix-the-flow-interactive-website/html/Webinardetail.html) 
-
-**API Endpoints**  
-* https://fdnd-agency.directus.app/items/avl_categories
-* https://fdnd-agency.directus.app/items/avl_comments
-* https://fdnd-agency.directus.app/items/avl_contourings
-* https://fdnd-agency.directus.app/items/avl_speakers
-* https://fdnd-agency.directus.app/items/avl_users
-* https://fdnd-agency.directus.app/items/avl_webinars
 
 ## Table of contents
   * [Description](#description)
