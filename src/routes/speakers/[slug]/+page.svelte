@@ -1,6 +1,6 @@
 <script>
     import { WebinarOverview } from "$lib/index.js";
-    import { onMount, onDestroy } from 'svelte';
+    import { onMount } from 'svelte';
     export let data;
     let viewtransition = true;
 
@@ -11,27 +11,21 @@
     console.log(speakers)
 
 
- onMount(() => {
+    onMount(() => {
       const aboutSpeaker = document.querySelector(".about-speaker");
       const showmoreBtn = document.querySelector(".about-speaker button");
       const aboutText = document.querySelector(".about-speaker div");
 
-      aboutText.classList.add("js");
+      aboutText.classList.add("js")
 
       if (aboutSpeaker.offsetHeight < 225) {
             showmoreBtn.style.display = "none";
-      }
+        }
 
-      const clickHandler = () => {
-        aboutText.classList.toggle("hiddentext");
-      };
-
-      showmoreBtn.addEventListener("click", clickHandler);
-
-      onDestroy(() => {
-        showmoreBtn.removeEventListener("click", clickHandler);
-      });
-  });
+      showmoreBtn.addEventListener("click", () =>{
+        aboutText.classList.toggle("hiddentext")
+      })
+    });
 
     function nav_back() {
     window.history.back();
