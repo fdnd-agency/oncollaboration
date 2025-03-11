@@ -85,4 +85,32 @@ Refactor code & Create a function that ads web binars to someone's profile
 
 ### next step
 
--More code refactoring and building the empty state. Also expirimenting with an iconlibary for each page
+-More code refactoring and building the empty state. Also experimenting with an iconlibary for each page
+
+
+## [1.1.5] - 2025-03-04
+
+- working on the speaker page
+
+## speaker page [0.8.0] - 2025-03-04
+
+### Added
+- right now i added a working feature that you get a speaker on the speakerpage based of the name in the parameter
+
+- also a feature that shows all the webinars they appear in
+
+### next step
+
+- styling speaker page
+- and testing
+
+## speaker page [0.8.0] - 2025-03-09
+
+### Added 
+
+- Desktop version for speaker page
+
+### next step
+
+- better responsive 
+- tests

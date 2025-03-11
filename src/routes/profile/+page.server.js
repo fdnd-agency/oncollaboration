@@ -1,6 +1,7 @@
 import fetchJson from "$lib/JavaScript/fetch-json";
+import { env } from '$env/dynamic/public';
 
-const baseURL = "https://fdnd-agency.directus.app/items/";
+const baseURL = env.PUBLIC_API_BASE_URL || "https://fdnd-agency.directus.app/items/"
 
 export async function load({ fetch }) {
   try {
