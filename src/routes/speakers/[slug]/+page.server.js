@@ -15,11 +15,11 @@ export async function load({ params }) {
     );
 
     if (!speakerResponse?.data || speakerResponse.data.length === 0) {
-      throw new Error("Speaker not found");
+      throw new Error("Speaker details not found");
     }
 
     if (!speakerwebinarResponse?.data || speakerwebinarResponse.data.length === 0) {
-      throw new Error("Speaker not found");
+      throw new Error("No featured webinars found");
     }
 
     return { 
