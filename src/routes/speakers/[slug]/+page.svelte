@@ -8,6 +8,7 @@
     const webinars = data.webinars;
 
     console.log(webinars)
+    console.log(speakers)
 
 
     onMount(() => {
@@ -283,6 +284,7 @@
   .speaker-contact > span{
     font-weight: bold;
     margin-right: 0.5rem;
+    align-self: center;
 
     @media (min-width: 1080px){
       display: none;
