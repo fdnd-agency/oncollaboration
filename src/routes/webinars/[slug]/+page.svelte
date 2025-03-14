@@ -27,6 +27,19 @@
   function nav_back() {
     window.history.back();
   }
+
+// tijdelijke functie
+import { onMount } from 'svelte';
+  onMount(() => {
+    const testbutton = document.querySelector('.testbutton');
+    const video = document.querySelector('video');
+    
+    function chapters() {
+      video.currentTime = 199; // Set the video time to 199 seconds
+    }
+
+    testbutton.addEventListener('click', chapters);
+  });
 </script>
 
 <div class="bread-crumbs">
@@ -39,6 +52,7 @@
     <video controls width="250" poster="https://fdnd-agency.directus.app/assets/{data.webinar.thumbnail}?format=avif">
       <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video}">
     </video>
+    <button class="testbutton">hallo </button>
     
     <h1>{data.webinar.title}</h1>
   
