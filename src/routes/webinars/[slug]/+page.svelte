@@ -3,6 +3,13 @@
   import { fade } from 'svelte/transition';
   import formatDate from '$lib/JavaScript/format-date.js';
   export let data;
+  
+  
+  const chapters = data.webinar.chapters;
+  console.log(chapters);
+
+  const parsedChapters = JSON.parse(chapters);
+  console.log(parsedChapters);
 
   // Retrieves other data from diffrent tables through let and a joins structure
   let newestWebinars = data.webinars.slice(0,4).map(webinar => ({
@@ -29,16 +36,17 @@
   }
 
 // tijdelijke functie
-import { onMount } from 'svelte';
+  import { onMount } from 'svelte';
   onMount(() => {
-    const testbutton = document.querySelector('.testbutton');
+    const chapterButtons = document.querySelectorAll('.goto');
     const video = document.querySelector('video');
     
-    function chapters() {
-      video.currentTime = 199; // Set the video time to 199 seconds
-    }
-
-    testbutton.addEventListener('click', chapters);
+    chapterButtons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        const chapterTime = parseInt(event.target.dataset.time, 10);
+        video.currentTime = chapterTime; 
+      });
+    });
   });
 </script>
 
@@ -52,7 +60,6 @@ import { onMount } from 'svelte';
     <video controls width="250" poster="https://fdnd-agency.directus.app/assets/{data.webinar.thumbnail}?format=avif">
       <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video}">
     </video>
-    <button class="testbutton">hallo </button>
     
     <h1>{data.webinar.title}</h1>
   
@@ -80,6 +87,21 @@ import { onMount } from 'svelte';
       {/each} 
     </div>
   </div>
+
+  <section class="chapters">
+    <h2>Chapters</h2>
+    <ul>
+      {#each parsedChapters as chapter}
+        <li>
+          <button class="goto" data-time={chapter.time_seconds}>
+            <span>{chapter.title}</span>
+            <picture></picture>
+            <span>{chapter.title_number}</span>
+          </button>
+        </li>
+      {/each}
+    </ul>
+  </section>
 
   <button type="button" class="transcript-btn" on:click={() => {showTranscript = !showTranscript;}}>
     {showTranscript ? "Close Transcript" : "Read Transcript"}  
@@ -216,6 +238,36 @@ import { onMount } from 'svelte';
     background-color: var(--background-category-color);
     border-radius: var(--border-radius-sm);
     text-transform: capitalize;
+  }
+
+  .chapters ul {
+    display: flex;
+  }
+
+  .chapters ul li{
+    display: flex;
+    max-width: var(--card-max-width);
+    flex-direction: column;
+    margin-right: 20px;
+  }
+
+  .chapters ul li .goto{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chapters ul li .goto picture{
+    width: 100px;
+    height: 100px;
+    background-color: var(--background-category-color);
+    border-radius: var(--border-radius-sm);
+  }
+
+  .chapters ul li .goto *{
+    pointer-events: none;
   }
 
   button {
