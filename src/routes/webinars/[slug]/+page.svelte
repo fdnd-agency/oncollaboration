@@ -2,6 +2,7 @@
   import { QandA, Resources } from "$lib/index.js";
   import { fade } from 'svelte/transition';
   import formatDate from '$lib/JavaScript/format-date.js';
+  import { page } from '$app/stores';
   export let data;
   
   
@@ -48,6 +49,9 @@
       });
     });
   });
+
+  // Test voor video tijd uit query parameter
+  const videoStart = $page.url.searchParams.get('video-start');
 </script>
 
 <div class="bread-crumbs">
@@ -58,7 +62,7 @@
   <div class="video-header">
     <!-- svelte-ignore a11y-media-has-caption -->
     <video controls width="250" poster="https://fdnd-agency.directus.app/assets/{data.webinar.thumbnail}?format=avif">
-      <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video}">
+      <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video}#t={videoStart}">
     </video>
     
     <h1>{data.webinar.title}</h1>
@@ -93,11 +97,11 @@
     <ul>
       {#each parsedChapters as chapter}
         <li>
-          <button class="goto" data-time={chapter.time_seconds}>
-            <span>{chapter.title}</span>
-            <picture></picture>
+          <a href="?video-start={chapter.time_seconds}" class="goto" data-time={chapter.time_seconds} data-sveltekit-noscroll>
             <span>{chapter.title_number}</span>
-          </button>
+            <canvas></canvas>
+            <span>{chapter.title}</span>
+          </a>
         </li>
       {/each}
     </ul>
@@ -256,14 +260,25 @@
     width: 100%;
     height: auto;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+    background-color: transparent;
   }
 
-  .chapters ul li .goto picture{
-    width: 100px;
-    height: 100px;
+  .chapters ul li .goto canvas{
+    width: 248px;
+    height: 139px;
     background-color: var(--background-category-color);
     border-radius: var(--border-radius-sm);
+  }
+
+  .chapters ul li .goto span:first-child{
+    font-size: var(--font-size-xl);
+    color: var(--primary-color);
+  }
+
+  .chapters ul li .goto span:last-child{
+    font-size: var(--font-size-lg);
+    color: var(--text-color);
   }
 
   .chapters ul li .goto *{
