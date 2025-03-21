@@ -25,9 +25,9 @@
   </div>
 
   <div class="featured-webinar-info">
-    <a href="/webinars/{slug}" tabindex="0">
+    <p>
       {title}
-    </a>
+    </p>
     <p class="speakers">
       {#each speakers as speaker}
         <span>{speaker.avl_speakers_id.fullname}</span>
@@ -119,8 +119,9 @@
     }
   }
 
-  .featured-webinar-info a {
+  .featured-webinar-info p {
     font-size: var(--font-size-lg);
+    font-family: var(--heading-font);
 
     @media (min-width: 600px) {
       font-size: var(--font-size-xl);
@@ -151,7 +152,7 @@
     }
   }
   @media (min-width: 1180px) {
-    .featured-webinar-info a {
+    .featured-webinar-info p {
       font-size: var(--font-size-2xl);
     }
 
