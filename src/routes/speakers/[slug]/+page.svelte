@@ -12,19 +12,9 @@
 
 
     onMount(() => {
-      const aboutSpeaker = document.querySelector(".about-speaker");
-      const showmoreBtn = document.querySelector(".about-speaker button");
       const aboutText = document.querySelector(".about-speaker div");
 
       aboutText.classList.add("js")
-
-      if (aboutSpeaker.offsetHeight < 225) {
-            showmoreBtn.style.display = "none";
-        }
-
-      showmoreBtn.addEventListener("click", () =>{
-        aboutText.classList.toggle("hiddentext")
-      })
     });
 
     function nav_back() {
@@ -445,6 +435,10 @@
       align-items: center;
       justify-content: center;
       display: none;
+    }
+
+    @container (max-height: 225px) {
+    display: none;
     }
   }
 
