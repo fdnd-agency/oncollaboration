@@ -12,6 +12,11 @@
 
 
     onMount(() => {
+      const featuredWebinars = document.querySelector(".featured-webinars");
+      if (featuredWebinars) {
+        featuredWebinars.classList.add("js-enabled");
+      }
+
       const aboutSpeaker = document.querySelector(".about-speaker");
       const showmoreBtn = document.querySelector(".about-speaker button");
       const aboutText = document.querySelector(".about-speaker div");
@@ -31,7 +36,22 @@
     window.history.back();
   }
 
+  let isOpen = false; 
 
+  function toggleFeaturedWebinars() {
+    const featuredWebinars = document.querySelector(".featured-webinars");
+    const svgElement = document.querySelector(".featured-webinars button svg");
+
+    if (isOpen) {
+      featuredWebinars.style.transform = "translateX(540px)";
+      svgElement.style.fill = "var(--accent-color-1)";
+    } else {
+      featuredWebinars.style.transform = "translateX(0px)";
+      svgElement.style.fill = "var(--background-color-alt)";
+    }
+
+    isOpen = !isOpen; 
+  } 
     
 </script>
 
@@ -96,7 +116,7 @@
     </section>
   </section>
 
-  <section>
+  <section class="featured-webinars">
     <h2>Webinars spoken at</h2>
     {#if webinars.length !== 0}
     <ul class="carrousel">
@@ -106,6 +126,13 @@
         </li>  
       {/each}  
     </ul>
+    <button on:click={toggleFeaturedWebinars}>
+      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="hsl(340, 100%, 15%)" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="7" width="18" height="14" rx="1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M13 7L17 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 7L7 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
     {/if}
   </section>
 {/if}
@@ -476,10 +503,72 @@
     }
   }
 
-  section:has(ul.carrousel) {
-    @media (min-width: 1080px){
-      display: none;
+  .featured-webinars {
+    @media (min-width: 1080px) {
+      display: block;
+    }
+  } 
+
+  .featured-webinars button {
+    display: none;
+  }
+
+  .featured-webinars:global(.js-enabled) {
+    @media (min-width: 1080px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 64px;
+      right: 0;
+      background-color: var(--accent-color-1);
+      color: var(--alt-text-color);
+      width: 540px;
+      margin: unset;
+      height: 100%;
+      z-index: 0;
+      bottom: 0;
+      transform: translateX(540px);
+      transition: 0.5s ease-in-out;
     }
   }
+
+  .featured-webinars:global(.js-enabled) h2 {
+    @media (min-width: 1080px) {
+      font-size: var(--font-size-3xl);
+    }
+  }
+
+  .featured-webinars:global(.js-enabled) :global(article a),
+  .featured-webinars:global(.js-enabled) :global(article .speakers span) {
+    @media (min-width: 1080px) {
+      color: var(--alt-text-color);
+    }
+  }
+
+  .featured-webinars:global(.js-enabled) button {
+    display: none;
+    @media (min-width: 1080px) {
+      display: block;
+      position: absolute;
+      width: 124px;
+      background-color: var(--accent-color-1);
+      border: none;
+      left: -75px;
+      height: 124px;
+      border-radius: 50%;
+      top: 35%;
+      z-index: -1;
+    }
+  }
+
+  .featured-webinars:global(.js-enabled) button svg {
+    transform: translateX(-35px);
+  }
+
+  /* :global(.content:has(.speaker-wrapper)){
+    overflow-y: auto;
+    margin-top: 64px;
+  } */
 
 </style>
