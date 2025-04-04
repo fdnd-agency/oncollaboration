@@ -31,6 +31,7 @@
         aboutText.classList.toggle("hiddentext")
       })
     });
+    
 
     function nav_back() {
     window.history.back();
@@ -39,25 +40,43 @@
   let isOpen = false; 
 
   function toggleFeaturedWebinars() {
-    const featuredWebinars = document.querySelector(".featured-webinars");
-    const svgElement = document.querySelector(".featured-webinars button svg");
+  const featuredWebinars = document.querySelector(".featured-webinars");
+  const svgElement = document.querySelector(".featured-webinars button svg");
 
-    if (isOpen) {
-      featuredWebinars.style.transform = "translateX(540px)";
-      svgElement.style.fill = "var(--accent-color-1)";
-    } else {
-      featuredWebinars.style.transform = "translateX(0px)";
-      svgElement.style.fill = "var(--background-color-alt)";
-    }
+  if (isOpen) {
+    featuredWebinars.style.transform = "translateX(540px)";
+    svgElement.style.fill = "var(--accent-color-1)";
+    featuredWebinars.classList.remove("open"); // Remove the open class
+  } else {
+    featuredWebinars.style.transform = "translateX(0px)";
+    svgElement.style.fill = "var(--background-color-alt)";
+    featuredWebinars.classList.add("open"); // Add the open class
+  }
 
-    isOpen = !isOpen; 
-  } 
+  // Add the rotating class to trigger the animation
+  svgElement.classList.add("rotating");
+
+  // Remove the rotating class after the animation ends
+  setTimeout(() => {
+    svgElement.classList.remove("rotating");
+  }, 600); // Match the animation duration (0.6s)
+
+  isOpen = !isOpen;
+}
+
+onMount(() => {
+  const carrouselItems = document.querySelectorAll(".carrousel li");
+  carrouselItems.forEach((li, index) => {
+    li.style.animationDelay = `${0.5 + index * 0.2}s`; // Start with 0.5s for the first <li>, then add 0.2s for each subsequent <li>
+  });
+});
     
 </script>
 
 <main>
   <button on:click={nav_back} aria-label="back">
     <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <title>tv</title>
       <path d="M15 7L10 12L15 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </button>
@@ -118,6 +137,13 @@
 
   <section class="featured-webinars">
     <h2>Webinars spoken at</h2>
+    <button on:click={toggleFeaturedWebinars} aria-label="toggle webinars {speakers.fullname} has spoken at">
+      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="hsl(340, 100%, 15%)" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="7" width="18" height="14" rx="1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M13 7L17 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 7L7 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
     {#if webinars.length !== 0}
     <ul class="carrousel">
       {#each webinars as webinar}
@@ -126,13 +152,6 @@
         </li>  
       {/each}  
     </ul>
-    <button on:click={toggleFeaturedWebinars}>
-      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="hsl(340, 100%, 15%)" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="7" width="18" height="14" rx="1" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <path d="M13 7L17 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M11 7L7 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
     {/if}
   </section>
 {/if}
@@ -338,10 +357,16 @@
     }
   }
 
+  .speaker-contact button:nth-child(3){
+    @media (min-width: 1080px){
+      display: none;
+    }
+  }
+
   .speaker-contact button:last-child{
     
     @media (min-width: 1080px){
-      display: none;
+      display: block;
     }
   }
 
@@ -490,6 +515,13 @@
     scroll-behavior: smooth;
     margin: 0 auto;
     gap: 10px;
+
+    @media (min-width: 1080px) {
+      flex-direction: column;
+      appearance: none;
+      scrollbar-width: 12px;
+      scrollbar-color: var(--primary-color) var(--background-category-color);
+    }
   }
 
   .carrousel li {
@@ -539,6 +571,12 @@
     }
   }
 
+  .featured-webinars:global(.js-enabled) :global(article) {
+  @media (min-width: 1080px) {
+    margin: 0;
+  }
+}
+
   .featured-webinars:global(.js-enabled) :global(article a),
   .featured-webinars:global(.js-enabled) :global(article .speakers span) {
     @media (min-width: 1080px) {
@@ -556,19 +594,69 @@
       border: none;
       left: -75px;
       height: 124px;
-      border-radius: 50%;
+      border-radius: var(--border-radius-sm);
       top: 35%;
       z-index: -1;
+      animation-name: notice;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: forwards;
     }
   }
 
-  .featured-webinars:global(.js-enabled) button svg {
-    transform: translateX(-35px);
+  @keyframes notice {
+  0% {
+    transform: scale(1);
+    opacity: 1;
   }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+  .featured-webinars:global(.js-enabled) button svg {
+    transform: translateX(-25px);
+  }
+
+  @keyframes rotateX {
+  0% {
+    transform: translateX(-25px) rotateY(0deg);
+  }
+  50% {
+    transform: translateX(-25px) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(-25px) rotateY(360deg);
+  }
+}
+
+.featured-webinars:global(.js-enabled) button svg:global(.rotating) {
+  animation: rotateX 0.8s ease; 
+}
 
   /* :global(.content:has(.speaker-wrapper)){
     overflow-y: auto;
     margin-top: 64px;
   } */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.featured-webinars.open ul.carrousel li {
+  opacity: 0; /* Ensure opacity is set to 1 */
+  animation: fadeIn 0.5s ease forwards; /* Trigger the fade-in animation */
+}
 
 </style>
