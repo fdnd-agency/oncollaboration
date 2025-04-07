@@ -1,75 +1,61 @@
 <script>
-    import { WebinarOverview } from "$lib/index.js";
-    import { onMount } from 'svelte';
-    export let data;
-    let viewtransition = true;
+  import { WebinarOverview } from "$lib/index.js";
+  import { onMount } from 'svelte';
+  export let data;
+  let viewtransition = true;
 
-    const speakers = data.speaker;
-    const webinars = data.webinars;
+  const speakers = data.speaker;
+  const webinars = data.webinars;
 
-    console.log(webinars)
-    console.log(speakers)
+  console.log(webinars)
+  console.log(speakers)
 
+  let featuredWebinars;
+  let aboutText;
+  let showmoreBtn;
+  let aboutSpeaker;
+  let svgElement
 
-    onMount(() => {
-      const featuredWebinars = document.querySelector(".featured-webinars");
-      if (featuredWebinars) {
-        featuredWebinars.classList.add("js-enabled");
-      }
+  let isAboutOpen = false;
 
-      const aboutSpeaker = document.querySelector(".about-speaker");
-      const showmoreBtn = document.querySelector(".about-speaker button");
-      const aboutText = document.querySelector(".about-speaker div");
+  function toggleAboutSpeaker() {
 
-      aboutText.classList.add("js")
+    if (isAboutOpen) {
+      aboutText.classList.add("hiddentext"); 
+    } else {
+      aboutText.classList.remove("hiddentext"); 
+    }
 
-      if (aboutSpeaker.offsetHeight < 225) {
-            showmoreBtn.style.display = "none";
-        }
-
-      showmoreBtn.addEventListener("click", () =>{
-        aboutText.classList.toggle("hiddentext")
-      })
-    });
-    
-
-    function nav_back() {
-    window.history.back();
+    isAboutOpen = !isAboutOpen; 
   }
 
+  onMount(() => {
+    if (aboutSpeaker.offsetHeight < 225) {
+      showmoreBtn.style.display = "none";
+    }
+  });
+  
   let isOpen = false; 
 
   function toggleFeaturedWebinars() {
-  const featuredWebinars = document.querySelector(".featured-webinars");
-  const svgElement = document.querySelector(".featured-webinars button svg");
+    if (isOpen) {
+      featuredWebinars.style.transform = "translateX(540px)";
+      svgElement.style.fill = "var(--accent-color-1)";
+      featuredWebinars.classList.remove("open"); 
+    } else {
+      featuredWebinars.style.transform = "translateX(0px)";
+      svgElement.style.fill = "var(--background-color-alt)";
+      featuredWebinars.classList.add("open"); 
+    }
 
-  if (isOpen) {
-    featuredWebinars.style.transform = "translateX(540px)";
-    svgElement.style.fill = "var(--accent-color-1)";
-    featuredWebinars.classList.remove("open"); // Remove the open class
-  } else {
-    featuredWebinars.style.transform = "translateX(0px)";
-    svgElement.style.fill = "var(--background-color-alt)";
-    featuredWebinars.classList.add("open"); // Add the open class
+    svgElement.classList.add("rotating");
+    isOpen = !isOpen;
   }
 
-  // Add the rotating class to trigger the animation
-  svgElement.classList.add("rotating");
+  function nav_back() {
+    window.history.back();
+  }
 
-  // Remove the rotating class after the animation ends
-  setTimeout(() => {
-    svgElement.classList.remove("rotating");
-  }, 600); // Match the animation duration (0.6s)
-
-  isOpen = !isOpen;
-}
-
-onMount(() => {
-  const carrouselItems = document.querySelectorAll(".carrousel li");
-  carrouselItems.forEach((li, index) => {
-    li.style.animationDelay = `${0.5 + index * 0.2}s`; // Start with 0.5s for the first <li>, then add 0.2s for each subsequent <li>
-  });
-});
     
 </script>
 
@@ -126,19 +112,19 @@ onMount(() => {
   
       </div> 
 
-      <div class="about-speaker">
+      <div class="about-speaker" bind:this={aboutSpeaker}>
         <h2>About</h2>
-        <div class="hiddentext">{@html speakers.about }</div>
-        <button><span>show more</span></button>
+        <div bind:this={aboutText} class="hiddentext {aboutText ? 'js' : ''}">{@html speakers.about}</div>
+        <button bind:this={showmoreBtn} on:click={toggleAboutSpeaker}><span>Show more</span></button>
       </div>
 
     </section>
   </section>
 
-  <section class="featured-webinars">
+  <section bind:this={featuredWebinars} class="featured-webinars {featuredWebinars ? 'js-enabled' : ''}">
     <h2>Webinars spoken at</h2>
     <button on:click={toggleFeaturedWebinars} aria-label="toggle webinars {speakers.fullname} has spoken at">
-      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="hsl(340, 100%, 15%)" xmlns="http://www.w3.org/2000/svg">
+      <svg bind:this={svgElement} on:animationend={() => svgElement.classList.remove('rotating')} width="30px" height="30px" viewBox="0 0 24 24" fill="hsl(340, 100%, 15%)" xmlns="http://www.w3.org/2000/svg">
         <rect x="3" y="7" width="18" height="14" rx="1" stroke="white" stroke-width="2" stroke-linecap="round"/>
         <path d="M13 7L17 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M11 7L7 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -146,8 +132,8 @@ onMount(() => {
     </button>
     {#if webinars.length !== 0}
     <ul class="carrousel">
-      {#each webinars as webinar}
-        <li>
+      {#each webinars as webinar, index}
+      <li style="--stagger: {0.5 + index * 0.2}s">
           <WebinarOverview {...webinar}/>
         </li>  
       {/each}  
@@ -260,7 +246,7 @@ onMount(() => {
     height: 100%;
     max-width: 452px;
     max-height: 452px;
-    aspect-ratio: 1 / 1; /* Dwing altijd een vierkante verhouding af */
+    aspect-ratio: 1 / 1;
     max-width: 100px;
     display: block;
 
@@ -655,8 +641,9 @@ onMount(() => {
 }
 
 .featured-webinars.open ul.carrousel li {
-  opacity: 0; /* Ensure opacity is set to 1 */
-  animation: fadeIn 0.5s ease forwards; /* Trigger the fade-in animation */
+  opacity: 0; 
+  animation: fadeIn 0.5s ease forwards; 
+  animation-delay: var(--stagger);
 }
 
 </style>

@@ -30,7 +30,7 @@
         return currentChapter.title_number; // Return the title_number of the current chapter
       }
     }
-    return "doesnt belong to a chapter"; // No matching chapter
+    return null; // No matching chapter
   }
 
   function parseCommentContent(content) {
@@ -49,7 +49,7 @@
       return timeMatches.map((time) => {
         const seconds = timeToSeconds(time); // Convert each timestamp to seconds
         return getCurrentChapter(seconds); // Get the chapter for each timestamp
-      }).filter((chapter) => chapter !== "doesn't belong to a chapter"); // Filter out unmatched timestamps
+      }).filter((chapter) => chapter !== null); // Filter out unmatched timestamps
     }
     return [];
   })();
