@@ -12,7 +12,10 @@
         <a href="/">Cookiestatement</a>
       </li>
     </ul>
-    <img src="/images/AVL-Logo-white.svg" alt="Antoni van Leeuwenhoek">
+    <div class="footer-logos">
+      <img src="/images/AVL-Logo-white.svg" alt="Antoni van Leeuwenhoek">
+      <img src="/images/kemenkessardjito.png" alt="kemenkes ziekenhuis">
+    </div>
   </div>
 </footer>
 
@@ -52,6 +55,13 @@
 
     footer img {
       height: 3.2rem;
+    }
+
+    .footer-logos {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1rem; 
     }
 
     footer a {
