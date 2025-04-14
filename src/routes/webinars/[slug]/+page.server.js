@@ -55,7 +55,7 @@ export const actions = {
 		const data = await request.formData();
     const content = data.get('comment');
     const timestamp = new Date().toISOString();
-    const user_id = 1;
+    const user_id = 4;
 
     const webinarData = await fetchJson(`${baseURL}avl_webinars?fields=id&filter[slug][_eq]=${params.slug}`);
     const webinar_id = webinarData.data[0].id;
