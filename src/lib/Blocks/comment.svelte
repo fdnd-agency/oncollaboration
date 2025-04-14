@@ -4,12 +4,82 @@
   import {Like, Liked, LoaderSpin, LoaderDots} from '$lib/index.js';
 
   export let comment;
+  export let parsedChapters = [];
 
   let content = '';
   let slug = $page.url.pathname;
   let loadingLike = false;
   let loadingSend = false;
   let liked = false;
+
+  // Converts a time string (HH:MM:SS or MM:SS) into total seconds.
+  function timeToSeconds(time) {
+    const parts = time.split(':').map(Number).reverse();
+    let seconds = 0;
+    if (parts[0]) seconds += parts[0];
+    if (parts[1]) seconds += parts[1] * 60;
+    if (parts[2]) seconds += parts[2] * 3600;
+    return seconds;
+  }
+
+   // Determines the current chapter based on the given time in seconds.
+  function getCurrentChapter(seconds) {
+    for (let i = 0; i < parsedChapters.length; i++) {
+      const currentChapter = parsedChapters[i];
+      const nextChapter = parsedChapters[i + 1];
+
+      if (seconds >= currentChapter.time_seconds && (!nextChapter || seconds < nextChapter.time_seconds)) {
+        return currentChapter.title_number; 
+      }
+    }
+    return null; 
+  }
+
+// Function to handle clicks on timestamp hyperlinks in the comment content.
+// Ensures that clicking a timestamp immediately seeks the video to the specified time
+// without requiring a page refresh.
+function handleTimeLinkClick(event) {
+  const link = event.target.closest('a.time-link');
+  if (link) {
+    event.preventDefault();
+    const seconds = parseInt(link.dataset.time, 10);
+    const video = document.querySelector('video');
+
+    // Update the video playback position
+    if (video) {
+      video.currentTime = seconds;
+    }
+
+    // Update the URL parameters
+    const url = new URL(window.location);
+    url.searchParams.set('video-start', seconds);
+    window.history.pushState({}, '', url); // Update the URL without refreshing the page
+  }
+}
+
+   // Parses the comment content to find timestamps and converts them into clickable hyperlinks.
+  function parseCommentContent(content) {
+    const timeRegex = /\b\d{1,2}:\d{2}(?::\d{2})?\b/g;
+    return content.replace(timeRegex, (match) => {
+      const seconds = timeToSeconds(match);
+      return `<a href="?video-start=${seconds}" class="time-link" data-time="${seconds}">${match}</a>`;
+    });
+  }
+
+  // Reactive statement: Keeps the comment content up-to-date by parsing it for timestamps and converting them into hyperlinks whenever the content changes.
+  $: parsedContent = parseCommentContent(comment.content);
+
+  // Reactive statement: Tracks the chapters associated with the timestamps in the comment content and updates dynamically.
+  $: currentChapter = (() => {
+    const timeMatches = comment.content.match(/\b\d{1,2}:\d{2}(?::\d{2})?\b/g);
+    if (timeMatches) {
+      return timeMatches.map((time) => {
+        const seconds = timeToSeconds(time);
+        return getCurrentChapter(seconds);
+      }).filter((chapter) => chapter !== null);
+    }
+    return [];
+  })();
 
   const likeComment = () => {
     loadingLike = true;
@@ -35,20 +105,32 @@
     <section class="comment-head">
       {#if comment.user_id === null}
         <img src="/images/profilepic.png" alt="error" width="40" height="40">
-        <h4>Name Surname</h4>
+        <h4>
+          Name Surname
+          {#if currentChapter}
+            <span class="chapter-info">({currentChapter})</span>
+          {/if}
+        </h4>
       {:else}
         <img src="https://fdnd-agency.directus.app/assets/{comment.user_id.profile_picture.id}?format=avif" alt="{comment.user_id.profile_picture.title}" width="40" height="40">
-        <h4>{comment.user_id.fullname}</h4>
+        <h4>
+          {comment.user_id.fullname}
+          {#if currentChapter}
+            <span class="chapter-info">({currentChapter})</span>
+          {/if}
+        </h4>
       {/if}
-
+  
       {#if comment.time_posted === null}
         <time>hours ago</time>
-      {:else}  
+      {:else}
         <time>{comment.time_posted}</time>
       {/if}
     </section>
-
-    <p class="comment-content">{comment.content}</p>
+  
+    <p class="comment-content" on:click={handleTimeLinkClick}>
+      {@html parsedContent}
+    </p>
 
     <div class="comment-response">
       <form action="{slug}?/like" method="POST" class="form-like" use:enhance={likeComment}>
@@ -116,6 +198,12 @@
 {/if}
 
 <style>
+
+.chapter-info {
+    font-size: var(--font-size-sm);
+    color: var(--primary-color);
+    margin-left: 0.5rem;
+  }
   .comment-container {
     margin-block: 1rem;
     list-style: none;
@@ -166,6 +254,12 @@
   .comment-content {
     font-size: var(--font-size-lg);
     padding-block: var(--gap);
+  }
+
+  .comment-content :global(a) {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
   }
   
   .comment-response {

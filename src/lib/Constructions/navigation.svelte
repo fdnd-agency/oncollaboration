@@ -119,6 +119,7 @@
     }
 
     li a.active {
+      color: var(--active-color);
       padding-top: 1em;
       border-bottom: var(--border-nav);
       padding-bottom: calc(1em - 3px);

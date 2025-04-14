@@ -2,7 +2,11 @@
   import { QandA, Resources } from "$lib/index.js";
   import { fade } from 'svelte/transition';
   import formatDate from '$lib/JavaScript/format-date.js';
+  import { page } from '$app/stores';
   export let data;
+  
+  const chapters = data.webinar.chapters;
+  const parsedChapters = JSON.parse(chapters);
 
   // Retrieves other data from diffrent tables through let and a joins structure
   let newestWebinars = data.webinars.slice(0,4).map(webinar => ({
@@ -30,16 +34,27 @@
 
 // tijdelijke functie
 import { onMount } from 'svelte';
-  onMount(() => {
-    const testbutton = document.querySelector('.testbutton');
-    const video = document.querySelector('video');
-    
-    function chapters() {
-      video.currentTime = 199; // Set the video time to 199 seconds
-    }
 
-    testbutton.addEventListener('click', chapters);
-  });
+onMount(() => {
+  const video = document.querySelector('video');
+  const chapterButtons = document.querySelectorAll('.goto');
+  const commentLinks = document.querySelectorAll('.time-link');
+
+  function addClickEventToButtons(buttons) {
+    buttons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        const chapterTime = parseInt(event.target.dataset.time, 10);  
+        video.currentTime = chapterTime;
+      });
+    });
+  }
+
+  addClickEventToButtons(chapterButtons);
+  addClickEventToButtons(commentLinks);
+});
+
+  // Test voor video tijd uit query parameter
+  const videoStart = $page.url.searchParams.get('video-start');
 </script>
 
 <div class="bread-crumbs">
@@ -50,9 +65,8 @@ import { onMount } from 'svelte';
   <div class="video-header">
     <!-- svelte-ignore a11y-media-has-caption -->
     <video controls width="250" poster="https://fdnd-agency.directus.app/assets/{data.webinar.thumbnail}?format=avif">
-      <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video}">
+      <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video}#t={videoStart}">
     </video>
-    <button class="testbutton">hallo </button>
     
     <h1>{data.webinar.title}</h1>
   
@@ -80,6 +94,21 @@ import { onMount } from 'svelte';
       {/each} 
     </div>
   </div>
+
+  <section class="chapters">
+    <h2>Chapters</h2>
+    <ul>
+      {#each parsedChapters as chapter}
+        <li>
+          <a href="?video-start={chapter.time_seconds}" class="goto" data-time={chapter.time_seconds} title="{chapter.title_number}" data-sveltekit-noscroll>
+            <span>{chapter.title_number.slice(7)}</span>
+            <div></div>
+            <span>{chapter.title}</span>
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </section>
 
   <button type="button" class="transcript-btn" on:click={() => {showTranscript = !showTranscript;}}>
     {showTranscript ? "Close Transcript" : "Read Transcript"}  
@@ -141,7 +170,7 @@ import { onMount } from 'svelte';
 
   <div class='q-a'>
     <QandA 
-      comments = {data.comments} />
+      comments = {data.comments} parsedChapters={parsedChapters} />
   </div>
 
   <div class="watch-next">
@@ -216,6 +245,68 @@ import { onMount } from 'svelte';
     background-color: var(--background-category-color);
     border-radius: var(--border-radius-sm);
     text-transform: capitalize;
+  }
+
+  .chapters ul {
+    display: flex;
+    overflow: auto;
+  }
+
+  .chapters ul li{
+    display: flex;
+    min-width: 25%;
+    flex-direction: column;
+  }
+
+  .chapters ul li .goto{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-direction: column; 
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .chapters ul li .goto div{
+    border-top: dotted 3px;
+    height: 3px;
+    width: 99%;
+    position: relative;
+    margin: 5px 0 2px 0;
+  }
+
+  .chapters ul li .goto div::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    bottom: -5px;
+    left: 50%;
+    translate: -50% 0;
+  } 
+
+  .chapters ul li .goto:hover div::after{
+    scale: 1.7;
+    transition: .2s;
+  }
+
+  .chapters ul li .goto span:first-child{
+    font-size: var(--font-size-xl);
+    color: var(--primary-color);
+    position: relative;
+  }
+
+  .chapters ul li .goto span:last-child{
+    font-size: var(--font-size-lg);
+    color: var(--text-color);
+  }
+
+  .chapters ul li .goto *{
+    pointer-events: none;
   }
 
   button {

@@ -44,6 +44,7 @@
   --background-category-color: hsl(339, 26%, 76%);
   --hover-state-color: hsl(339, 26%, 80%);
   --accent-color-1: hsl(340, 100%, 15%);
+  --active-color: hsl(321, 58%, 55%);
 
   /* ---------- Paddings ---------- */
   --padding-button: 8px 16px;
@@ -57,7 +58,7 @@
   /* ---------- Misc ---------- */
   --gap: .5rem;
   --card-max-width: 384px;
-  --focus: solid 3px hsl(321, 58%, 55%);
+  --focus: solid 3px var(--active-color);
 }
 
 html {
