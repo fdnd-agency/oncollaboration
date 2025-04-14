@@ -39,16 +39,23 @@
 // Ensures that clicking a timestamp immediately seeks the video to the specified time
 // without requiring a page refresh.
 function handleTimeLinkClick(event) {
-    const link = event.target.closest('a.time-link');
-    if (link) {
-      event.preventDefault();
-      const seconds = parseInt(link.dataset.time, 10);
-      const video = document.querySelector('video');
-      if (video) {
-        video.currentTime = seconds;
-      }
+  const link = event.target.closest('a.time-link');
+  if (link) {
+    event.preventDefault();
+    const seconds = parseInt(link.dataset.time, 10);
+    const video = document.querySelector('video');
+
+    // Update the video playback position
+    if (video) {
+      video.currentTime = seconds;
     }
+
+    // Update the URL parameters
+    const url = new URL(window.location);
+    url.searchParams.set('video-start', seconds);
+    window.history.pushState({}, '', url); // Update the URL without refreshing the page
   }
+}
 
    // Parses the comment content to find timestamps and converts them into clickable hyperlinks.
   function parseCommentContent(content) {
