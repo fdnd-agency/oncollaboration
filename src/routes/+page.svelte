@@ -1,6 +1,7 @@
 <script>
   import { ContouringOverview, Search, WebinarOverview } from "$lib/index.js";
-  export let data;
+  /** @type {{data: any}} */
+  let { data } = $props();
   let newestWebinars = data.webinars.slice(0,4);
   let newestContourings = data.contourings.slice(0,4);
 </script>

@@ -12,7 +12,7 @@
   <p>{$page.status} - {$page.error.message}</p>
   <div>
     <a href="/" class="back-to-btn">Back to home</a>
-    <button type="button" on:click={nav_back} class="back-to-btn">Back to previous page</button>
+    <button type="button" onclick={nav_back} class="back-to-btn">Back to previous page</button>
   </div>
 </section>
 

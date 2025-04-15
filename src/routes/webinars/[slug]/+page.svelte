@@ -3,7 +3,6 @@
   import { fade } from 'svelte/transition';
   import formatDate from '$lib/JavaScript/format-date.js';
   import { page } from '$app/stores';
-  export let data;
   
   const chapters = data.webinar.chapters;
   const parsedChapters = JSON.parse(chapters);
@@ -17,8 +16,8 @@
     slug: webinar.slug
   }));
 
-  let showFullDescription = false;
-  let showTranscript = false;
+  let showFullDescription = $state(false);
+  let showTranscript = $state(false);
 
   // Assuming `data.webinar.description` contains the description text
   const description = data.webinar.description;
@@ -34,6 +33,8 @@
 
 // tijdelijke functie
 import { onMount } from 'svelte';
+  /** @type {{data: any}} */
+  let { data } = $props();
 
 onMount(() => {
   const video = document.querySelector('video');
@@ -58,12 +59,12 @@ onMount(() => {
 </script>
 
 <div class="bread-crumbs">
-  <button type="button" on:click={nav_back} class="back-btn">Back</button>
+  <button type="button" onclick={nav_back} class="back-btn">Back</button>
 </div>
 
 <main>
   <div class="video-header">
-    <!-- svelte-ignore a11y-media-has-caption -->
+    <!-- svelte-ignore a11y_media_has_caption -->
     <video controls width="250" poster="https://fdnd-agency.directus.app/assets/{data.webinar.thumbnail}?format=avif">
       <source src="https://fdnd-agency.directus.app/assets/{data.webinar.video}#t={videoStart}">
     </video>
@@ -110,7 +111,7 @@ onMount(() => {
     </ul>
   </section>
 
-  <button type="button" class="transcript-btn" on:click={() => {showTranscript = !showTranscript;}}>
+  <button type="button" class="transcript-btn" onclick={() => {showTranscript = !showTranscript;}}>
     {showTranscript ? "Close Transcript" : "Read Transcript"}  
   </button>
 
@@ -130,7 +131,7 @@ onMount(() => {
     {/if}
   </div>
 
-  <button on:click={() => {showFullDescription = !showFullDescription;}} class="expand-text-btn">
+  <button onclick={() => {showFullDescription = !showFullDescription;}} class="expand-text-btn">
     {showFullDescription ? "Read Less" : "Read More"}
   </button>
   

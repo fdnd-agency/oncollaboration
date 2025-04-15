@@ -1,10 +1,13 @@
 <script>
-  export let slug = "";
-  export let image_scan = "";
-  export let title = "";
-  export let user_id = "";
-  export let categories = [];  
-  export let viewtransition = false;
+  /** @type {{slug?: string, image_scan?: string, title?: string, user_id?: string, categories?: any, viewtransition?: boolean}} */
+  let {
+    slug = "",
+    image_scan = "",
+    title = "",
+    user_id = "",
+    categories = [],
+    viewtransition = false
+  } = $props();
 
 </script>
 

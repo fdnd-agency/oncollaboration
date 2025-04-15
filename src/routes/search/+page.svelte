@@ -1,6 +1,7 @@
 <script>
-  export let data;
   import { Search, SearchResults } from "$lib/index.js";
+  /** @type {{data: any}} */
+  let { data } = $props();
 </script>
 
 <main>

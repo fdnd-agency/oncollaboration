@@ -1,6 +1,7 @@
 <script>
   import {Search, Filter, ContouringOverview} from "$lib/index.js";
-  export let data;
+  /** @type {{data: any}} */
+  let { data } = $props();
   let viewtransition = true //What does this mean
 </script>
 

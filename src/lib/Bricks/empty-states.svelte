@@ -1,5 +1,6 @@
 <script>
-    export let name = "";
+  /** @type {{name?: string}} */
+  let { name = "" } = $props();
 </script>
 
 <div class="empty-state">

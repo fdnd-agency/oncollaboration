@@ -1,7 +1,7 @@
 <script>
   import { PreviewDoc } from "$lib/index.js";
-  export let heading
-  export let resources
+  /** @type {{heading: any, resources: any}} */
+  let { heading, resources } = $props();
 </script>
 
 <section>

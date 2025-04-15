@@ -1,22 +1,28 @@
 <script>
+  import { run } from 'svelte/legacy';
+
   import { Navigation, Footer, LoadingState } from "$lib/index.js";
   import { navigating } from '$app/stores';
   import { onNavigate } from "$app/navigation";
+  /** @type {{children?: import('svelte').Snippet}} */
+  let { children } = $props();
 
-  let showLoading = false;
-  let navigatingTimeout;
+  let showLoading = $state(false);
+  let navigatingTimeout = $state();
   
   // Watch the `navigating` store
-  $: if ($navigating) {
-    // Delay showing the loading state
-    clearTimeout(navigatingTimeout);
-    navigatingTimeout = setTimeout(() => {
-      showLoading = true;
-    }, 400); // Adjust delay for view-transition capture
-  } else {
-    clearTimeout(navigatingTimeout);
-    showLoading = false; // Hide loading when navigation completes
-  }
+  run(() => {
+    if ($navigating) {
+      // Delay showing the loading state
+      clearTimeout(navigatingTimeout);
+      navigatingTimeout = setTimeout(() => {
+        showLoading = true;
+      }, 400); // Adjust delay for view-transition capture
+    } else {
+      clearTimeout(navigatingTimeout);
+      showLoading = false; // Hide loading when navigation completes
+    }
+  });
   
   onNavigate((navigation) => {
     if (!document.startViewTransition) return;
@@ -38,7 +44,7 @@
 {:else} 
   <Navigation />
   <div class="content">
-    <slot />
+    {@render children?.()}
   </div>
 {/if}
 

@@ -1,13 +1,14 @@
 <script>
   import { QandA, Resources } from "$lib/index.js";
-  export let data;
+  /** @type {{data: any}} */
+  let { data } = $props();
 
   function nav_back() {
     window.history.back();
   }
 </script>
 
-<button type="button" on:click={nav_back} class="back-btn">Back</button>
+<button type="button" onclick={nav_back} class="back-btn">Back</button>
 
 <main>
   <section class="container">

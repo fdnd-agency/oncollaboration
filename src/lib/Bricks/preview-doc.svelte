@@ -1,5 +1,6 @@
 <script>
-  export let id; 
+  /** @type {{id: any}} */
+  let { id } = $props();
 </script>
 
 <button popovertarget="popover-preview">

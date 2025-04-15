@@ -1,6 +1,7 @@
 <script>
   import { WebinarOverview, ContouringOverview, EmptyState } from "$lib/index.js";
-  export let data;
+  /** @type {{data: any}} */
+  let { data } = $props();
 
   const user = data.user;
   const favouriteWebinars = data.favourites; 

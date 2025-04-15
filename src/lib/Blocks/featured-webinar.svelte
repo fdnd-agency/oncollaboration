@@ -1,12 +1,15 @@
 <script>
   import formatDate from "$lib/JavaScript/format-date";
-  export let thumbnail = "";
-  export let slug = "";
-  export let duration = "";
-  export let title = "";
-  export let speakers = [];
-  export let date = "";
-  export let categories = "";
+  /** @type {{thumbnail?: string, slug?: string, duration?: string, title?: string, speakers?: any, date?: string, categories?: string}} */
+  let {
+    thumbnail = "",
+    slug = "",
+    duration = "",
+    title = "",
+    speakers = [],
+    date = $bindable(""),
+    categories = ""
+  } = $props();
 
   date = formatDate(date);
 </script>

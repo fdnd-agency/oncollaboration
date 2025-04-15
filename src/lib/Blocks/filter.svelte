@@ -1,11 +1,11 @@
 <script>
-  export let activeCategory; // Get active category from the webinar/contouring page
   import { goto } from '$app/navigation';
-  export let currentPage; 
+  /** @type {{activeCategory: any, currentPage: any}} */
+  let { activeCategory, currentPage } = $props();
 </script>
 
 <form method="get" action="/{currentPage}" id="filter" name="filter">
-  <button type="button" on:click={() => goto(`/${currentPage}`)} class:selected={!activeCategory || activeCategory === 'all'}>
+  <button type="button" onclick={() => goto(`/${currentPage}`)} class:selected={!activeCategory || activeCategory === 'all'}>
     All
   </button>
 
