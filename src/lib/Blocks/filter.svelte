@@ -49,6 +49,13 @@
     -webkit-mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);
     mask: linear-gradient(90deg,#0000,#000 5% 95%,#0000);
     margin: 4em 0;
+
+    @media (min-width:600px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      -webkit-mask: 0;
+      mask: 0;
+    }
   }
 
   button {
@@ -63,6 +70,11 @@
     color: inherit;
     transition: .2s;
     font-weight: 700;
+
+    @media (min-width:600px) {
+      margin-inline: 5px 8px;
+      padding: 8px 16px;
+    }
   }
   
   button:hover {
@@ -78,19 +90,5 @@
   button:focus {
     outline: var(--focus);
     border-radius: var(--border-radius-sm);
-  }
-
-  @media only screen and (min-width:600px) {
-    form {
-      flex-wrap: wrap;
-      justify-content: center;
-      -webkit-mask: 0;
-      mask: 0;
-    }
-
-    button {
-      margin-inline: 5px 8px;
-      padding: 8px 16px;
-    }
   }
 </style>
