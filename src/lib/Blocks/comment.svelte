@@ -1,16 +1,17 @@
 <script>
+  // import Comment from './comment.svelte';
   import { page } from '$app/stores';
   import { enhance } from '$app/forms';
   import {Like, Liked, LoaderSpin, LoaderDots} from '$lib/index.js';
 
-  export let comment;
-  export let parsedChapters = [];
+  
+  let { comment, parsedChapters = [] } = $props();
 
-  let content = '';
+  let content = $state('');
   let slug = $page.url.pathname;
-  let loadingLike = false;
-  let loadingSend = false;
-  let liked = false;
+  let loadingLike = $state(false);
+  let loadingSend = $state(false);
+  let liked = $state(false);
 
   // Converts a time string (HH:MM:SS or MM:SS) into total seconds.
   function timeToSeconds(time) {
@@ -67,10 +68,10 @@ function handleTimeLinkClick(event) {
   }
 
   // Reactive statement: Keeps the comment content up-to-date by parsing it for timestamps and converting them into hyperlinks whenever the content changes.
-  $: parsedContent = parseCommentContent(comment.content);
+  let parsedContent = $derived(parseCommentContent(comment.content));
 
   // Reactive statement: Tracks the chapters associated with the timestamps in the comment content and updates dynamically.
-  $: currentChapter = (() => {
+  let currentChapter = $derived((() => {
     const timeMatches = comment.content.match(/\b\d{1,2}:\d{2}(?::\d{2})?\b/g);
     if (timeMatches) {
       return timeMatches.map((time) => {
@@ -79,7 +80,7 @@ function handleTimeLinkClick(event) {
       }).filter((chapter) => chapter !== null);
     }
     return [];
-  })();
+  })());
 
   const likeComment = () => {
     loadingLike = true;
@@ -128,7 +129,7 @@ function handleTimeLinkClick(event) {
       {/if}
     </section>
   
-    <p class="comment-content" on:click={handleTimeLinkClick}>
+    <p class="comment-content" onclick={handleTimeLinkClick}>
       {@html parsedContent}
     </p>
 
@@ -189,7 +190,7 @@ function handleTimeLinkClick(event) {
     <ul>
       {#each comment.replies as reply (reply.id) }
         <li>
-          <svelte:self 
+          <Comment 
           comment={reply}/>
         </li>
       {/each}

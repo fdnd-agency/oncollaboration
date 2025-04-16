@@ -1,6 +1,6 @@
 <script>
   import {Search, Filter, WebinarOverview, FeaturedWebinar} from "$lib/index.js";
-  export let data;
+  let { data } = $props();
 </script>
 
 <main>

@@ -2,15 +2,17 @@
   import { page } from '$app/stores';
   import { get } from 'svelte/store';
   
-  export let slug = "";
-  export let thumbnail = "";
-  export let duration = "";
-  export let title = "";
-  export let speakers = [];
-  export let categories = [];
+  let {
+    slug = "",
+    thumbnail = "",
+    duration = "",
+    title = "",
+    speakers = [],
+    categories = []
+  } = $props();
 
 
-  $: currentPath = $page.url.pathname;
+  let currentPath = $derived($page.url.pathname);
 </script>
 
 <article>

@@ -1,5 +1,5 @@
 <script>
-  export let id; 
+  let { id } = $props();
 </script>
 
 <button popovertarget="popover-preview">

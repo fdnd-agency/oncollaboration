@@ -1,6 +1,6 @@
 <script>
-  export let data;
   import { ContouringOverview, WebinarOverview } from "$lib/index.js";
+  let { data } = $props();
 </script>
 
 <main>

@@ -1,6 +1,8 @@
 <script>
+  import { preventDefault } from 'svelte/legacy';
+
   import { goto } from '$app/navigation';
-  let searchQuery = '';
+  let searchQuery = $state('');
 
   // Redirect to the /search page with the URL-encoded search query
   function handleSearch() {
@@ -9,7 +11,7 @@
 </script>
 
 
-<form on:submit|preventDefault={handleSearch}>
+<form onsubmit={preventDefault(handleSearch)}>
   <input 
     type="text" 
     placeholder="Search" 

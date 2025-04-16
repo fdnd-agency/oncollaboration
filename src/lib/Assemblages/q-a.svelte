@@ -3,13 +3,12 @@
   import { page } from '$app/stores';
   import { enhance } from '$app/forms';
 
-  let content = '';
+  let content = $state('');
   let slug = $page.url.pathname;
 
-  export let comments = [];
-  export let parsedChapters = [];
+  let { comments = [], parsedChapters = [] } = $props();
 
-  let loading = false;
+  let loading = $state(false);
   const addComment = () => {
     loading = true;
 
