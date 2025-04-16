@@ -1,6 +1,5 @@
 <script>
   import { QandA, Resources } from "$lib/index.js";
-  /** @type {{data: any}} */
   let { data } = $props();
 
   function nav_back() {

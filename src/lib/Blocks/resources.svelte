@@ -1,6 +1,5 @@
 <script>
   import { PreviewDoc } from "$lib/index.js";
-  /** @type {{heading: any, resources: any}} */
   let { heading, resources } = $props();
 </script>
 

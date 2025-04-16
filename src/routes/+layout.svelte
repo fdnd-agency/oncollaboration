@@ -4,7 +4,6 @@
   import { Navigation, Footer, LoadingState } from "$lib/index.js";
   import { navigating } from '$app/stores';
   import { onNavigate } from "$app/navigation";
-  /** @type {{children?: import('svelte').Snippet}} */
   let { children } = $props();
 
   let showLoading = $state(false);

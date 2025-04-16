@@ -1,5 +1,4 @@
 <script>
-  /** @type {{slug?: string, image_scan?: string, title?: string, user_id?: string, categories?: any, viewtransition?: boolean}} */
   let {
     slug = "",
     image_scan = "",

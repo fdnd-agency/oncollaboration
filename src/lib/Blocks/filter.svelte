@@ -1,6 +1,5 @@
 <script>
   import { goto } from '$app/navigation';
-  /** @type {{activeCategory: any, currentPage: any}} */
   let { activeCategory, currentPage } = $props();
 </script>
 

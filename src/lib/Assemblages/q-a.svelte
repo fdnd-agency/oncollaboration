@@ -6,7 +6,6 @@
   let content = $state('');
   let slug = $page.url.pathname;
 
-  /** @type {{comments?: any, parsedChapters?: any}} */
   let { comments = [], parsedChapters = [] } = $props();
 
   let loading = $state(false);

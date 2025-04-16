@@ -1,5 +1,4 @@
 <script>
-  /** @type {{name?: string}} */
   let { name = "" } = $props();
 </script>
 

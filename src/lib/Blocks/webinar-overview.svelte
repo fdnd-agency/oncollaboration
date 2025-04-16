@@ -2,7 +2,6 @@
   import { page } from '$app/stores';
   import { get } from 'svelte/store';
   
-  /** @type {{slug?: string, thumbnail?: string, duration?: string, title?: string, speakers?: any, categories?: any}} */
   let {
     slug = "",
     thumbnail = "",

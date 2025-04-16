@@ -1,6 +1,5 @@
 <script>
   import { Search, SearchResults } from "$lib/index.js";
-  /** @type {{data: any}} */
   let { data } = $props();
 </script>
 

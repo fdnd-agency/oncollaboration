@@ -1,6 +1,5 @@
 <script>
   import formatDate from "$lib/JavaScript/format-date";
-  /** @type {{thumbnail?: string, slug?: string, duration?: string, title?: string, speakers?: any, date?: string, categories?: string}} */
   let {
     thumbnail = "",
     slug = "",
