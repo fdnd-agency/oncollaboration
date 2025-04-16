@@ -1,11 +1,12 @@
 <script>
-  // import Comment from './comment.svelte';
   import { page } from '$app/stores';
   import { enhance } from '$app/forms';
   import {Like, Liked, LoaderSpin, LoaderDots} from '$lib/index.js';
 
-  
-  let { comment, parsedChapters = [] } = $props();
+  let { 
+    comment,
+    parsedChapters = []
+  } = $props();
 
   let content = $state('');
   let slug = $page.url.pathname;
@@ -199,7 +200,7 @@ function handleTimeLinkClick(event) {
 {/if}
 
 <style>
-
+  
 .chapter-info {
     font-size: var(--font-size-sm);
     color: var(--primary-color);

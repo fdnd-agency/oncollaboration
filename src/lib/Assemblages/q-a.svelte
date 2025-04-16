@@ -3,10 +3,13 @@
   import { page } from '$app/stores';
   import { enhance } from '$app/forms';
 
+  let { 
+    comments = [],
+    parsedChapters = []
+  } = $props();
+
   let content = $state('');
   let slug = $page.url.pathname;
-
-  let { comments = [], parsedChapters = [] } = $props();
 
   let loading = $state(false);
   const addComment = () => {

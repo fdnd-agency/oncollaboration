@@ -1,11 +1,10 @@
 <script>
   import { WebinarOverview, ContouringOverview, EmptyState } from "$lib/index.js";
+  
   let { data } = $props();
 
   const user = data.user;
   const favouriteWebinars = data.favourites; 
-
-  // console.log(favouriteWebinars)
 
   let viewtransition = true;
 </script>
