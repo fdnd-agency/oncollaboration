@@ -58,32 +58,27 @@
   
   .content {
     flex: 1;
-  }
 
-  .footer {
-    background-color: var(--background-color);
-  }
-
-  @media only screen and (min-width: 600px) {
-    .content {
+    @media (min-width: 600px) {
       margin-bottom: 77px;
     }
-  }
-
-  @media only screen and (min-width: 1080px) {
-    .content {
+    
+    @media (min-width: 1080px) {
       margin-top: 74px;
       padding-bottom: 0;
     }
 
-    .footer {
+    @media (min-width: 1920px) {
+      margin-top: 82px;
+    }
+  }
+
+  .footer {
+    background-color: var(--background-color);
+
+    @media (min-width: 1080px) {
       background-color: #f0f0f0;
     }
   }
 
-  @media only screen and (min-width: 1920px) {
-    .content {
-      margin-top: 82px;
-    }
-  }
 </style>

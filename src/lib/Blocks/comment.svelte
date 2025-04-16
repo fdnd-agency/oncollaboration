@@ -1,5 +1,5 @@
 <script>
-  // import Comment from './comment.svelte';
+  import Comment from './comment.svelte';
   import { page } from '$app/stores';
   import { enhance } from '$app/forms';
   import {Like, Liked, LoaderSpin, LoaderDots} from '$lib/index.js';

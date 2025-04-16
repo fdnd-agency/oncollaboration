@@ -34,10 +34,32 @@
 
   section h2 {
     font-size: var(--font-size-xl);
+
+    @media (min-width: 767px) {
+      font-size: var(--font-size-2xl);
+    }
+
+    @media (min-width: 1080px) {
+      font-size: var(--font-size-4xl);
+    }
   }
 
   section p {
     color: var(--primary-color);
+
+    @media (min-width: 767px) {
+      font-size: var(--font-size-xl);
+    }
+
+    @media (min-width: 1080px) {
+      font-size: var(--font-size-2xl);
+    }
+  }
+
+  section a{
+    @media (min-width: 767px) {
+      font-size: var(--font-size-lg);
+    }
   }
 
   section div {
@@ -60,33 +82,5 @@
   button.back-to-btn {
     border: transparent;
     background-color: var(--accent-color-1);
-  }
-
-  section .back-to-btn:hover {
-    background-color: var(--hover-state-color);
-  }
-
-  @media only screen and (min-width: 767px) {
-    section h2 {
-      font-size: var(--font-size-2xl);
-    }
-    
-    section p {
-      font-size: var(--font-size-xl);
-    }
-
-    section a {
-      font-size: var(--font-size-lg);
-    }
-  }
-
-  @media only screen and (min-width: 1080px) {
-    section h2 {
-      font-size: var(--font-size-4xl);
-    }
-    
-    section p {
-      font-size: var(--font-size-2xl);
-    }
   }
 </style>

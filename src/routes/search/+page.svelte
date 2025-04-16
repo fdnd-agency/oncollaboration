@@ -14,11 +14,10 @@
   main {
     margin: 1rem;
     margin-top: 2rem;
-  }
 
-  @media only screen and (min-width: 1599px) {
-    main {
+    @media (min-width: 1599px) {
       margin: 4rem;
     }
   }
+
 </style>
