@@ -3,6 +3,7 @@
   import { fade } from 'svelte/transition';
   import formatDate from '$lib/JavaScript/format-date.js';
   import { page } from '$app/stores';
+  
   let { data } = $props();
   
   const chapters = data.webinar.chapters;

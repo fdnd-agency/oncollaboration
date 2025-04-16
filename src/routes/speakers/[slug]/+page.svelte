@@ -1,14 +1,11 @@
 <script>
   import { WebinarOverview } from "$lib/index.js";
   import { onMount } from 'svelte';
-  let { data } = $props();
-  let viewtransition = true;
+  
+  let { data } = $props(); 
 
   const speakers = data.speaker;
   const webinars = data.webinars;
-
-  console.log(webinars)
-  console.log(speakers)
 
   let featuredWebinars = $state();
   let aboutText = $state();

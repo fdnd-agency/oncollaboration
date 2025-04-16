@@ -1,6 +1,10 @@
 <script>
   import { goto } from '$app/navigation';
-  let { activeCategory, currentPage } = $props();
+  
+  let { 
+    activeCategory,
+    currentPage
+  } = $props();
 </script>
 
 <form method="get" action="/{currentPage}" id="filter" name="filter">

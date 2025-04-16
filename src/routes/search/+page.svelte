@@ -1,5 +1,6 @@
 <script>
   import { Search, SearchResults } from "$lib/index.js";
+  
   let { data } = $props();
 </script>
 
