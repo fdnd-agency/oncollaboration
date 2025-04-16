@@ -1,5 +1,6 @@
 <script>
   import { WebinarOverview, ContouringOverview, EmptyState } from "$lib/index.js";
+  
   let { data } = $props();
 
   const user = data.user;

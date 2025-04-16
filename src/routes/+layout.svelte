@@ -1,9 +1,9 @@
 <script>
   import { run } from 'svelte/legacy';
-
   import { Navigation, Footer, LoadingState } from "$lib/index.js";
   import { navigating } from '$app/stores';
   import { onNavigate } from "$app/navigation";
+
   let { children } = $props();
 
   let showLoading = $state(false);

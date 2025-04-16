@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  
   let { 
     activeCategory,
     currentPage

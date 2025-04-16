@@ -201,7 +201,7 @@ function handleTimeLinkClick(event) {
 {/if}
 
 <style>
-
+  
 .chapter-info {
     font-size: var(--font-size-sm);
     color: var(--primary-color);

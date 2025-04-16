@@ -1,5 +1,6 @@
 <script>
   import formatDate from "$lib/JavaScript/format-date";
+  
   let {
     thumbnail = "",
     slug = "",

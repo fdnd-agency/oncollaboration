@@ -1,7 +1,7 @@
 <script>
   import { preventDefault } from 'svelte/legacy';
-
   import { goto } from '$app/navigation';
+  
   let searchQuery = $state('');
 
   // Redirect to the /search page with the URL-encoded search query

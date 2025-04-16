@@ -1,5 +1,6 @@
 <script>
   import { PreviewDoc } from "$lib/index.js";
+  
   let { 
     heading,
     resources

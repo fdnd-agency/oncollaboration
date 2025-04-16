@@ -1,7 +1,9 @@
 <script>
   import { WebinarOverview } from "$lib/index.js";
   import { onMount } from 'svelte';
+  
   let { data } = $props();
+
   let viewtransition = true;
 
   const speakers = data.speaker;
