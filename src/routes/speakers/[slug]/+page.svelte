@@ -9,9 +9,6 @@
   const speakers = data.speaker;
   const webinars = data.webinars;
 
-  console.log(webinars)
-  console.log(speakers)
-
   let featuredWebinars = $state();
   let aboutText = $state();
   let showmoreBtn = $state();

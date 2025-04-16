@@ -6,8 +6,6 @@
   const user = data.user;
   const favouriteWebinars = data.favourites; 
 
-  // console.log(favouriteWebinars)
-
   let viewtransition = true;
 </script>
 
