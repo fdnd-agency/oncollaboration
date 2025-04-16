@@ -4,8 +4,10 @@
   import { enhance } from '$app/forms';
   import {Like, Liked, LoaderSpin, LoaderDots} from '$lib/index.js';
 
-  
-  let { comment, parsedChapters = [] } = $props();
+  let { 
+    comment,
+    parsedChapters = []
+  } = $props();
 
   let content = $state('');
   let slug = $page.url.pathname;
