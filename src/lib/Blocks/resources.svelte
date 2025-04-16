@@ -114,6 +114,10 @@
     background-color: var(--primary-color);
     margin-right: .1rem;
     transition: .2s;
+
+    @media (min-width: 370px) {
+      margin-left: .3rem;
+    }
   }
 
   .resource-links a:hover {
@@ -122,11 +126,5 @@
   
   .resource-links a path {
     fill: var(--alt-text-color);
-  }
-
-  @media only screen and (min-width: 370px) {
-    .resource-links a {
-      margin-left: .3rem;
-    }
   }
 </style>
