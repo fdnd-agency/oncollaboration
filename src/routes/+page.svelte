@@ -50,6 +50,10 @@
   h2 {
     margin-bottom: 0.5em;
     margin-top: 0.8em;
+
+    @media (min-width: 600px) {
+      font-size: var(--font-size-3xl);
+    }
   }
 
   a {
@@ -64,6 +68,10 @@
     margin: 1em 0;
     text-transform: capitalize;
     transition: .2s;
+
+    @media (min-width: 600px) {
+      font-size: var(--font-size-lg);
+    }
   }
 
   a:hover {
@@ -79,6 +87,10 @@
     scroll-behavior: smooth;
     margin: 0 auto;
     gap: 10px;
+
+    @media (min-width: 1000px) {
+      margin: 0;
+    }
   }
 
   .card {
@@ -86,6 +98,10 @@
     scroll-snap-align: start;
     border-radius: 10px;
     box-sizing: border-box;
+
+    @media (min-width: 500px) {
+      flex: 0 0 auto;
+    }
   }
 
   .contouringcard {
@@ -93,35 +109,14 @@
     scroll-snap-align: start;
     border-radius: 10px;
     box-sizing: border-box;
+
+    @media (min-width: 500px) {
+      flex: 0 0 auto;
+    }
   }
 
   .carrousel::-webkit-scrollbar {
     display: none;
   }
   
-  @media only screen and (min-width: 500px) {
-    .card {
-      flex: 0 0 auto;
-    }
-
-    .contouringcard {
-      flex: 0 0 auto;
-    }
-  }
-
-  @media only screen and (min-width: 600px) {
-    h2 {
-      font-size: var(--font-size-3xl);
-    }
-
-    a {
-      font-size: var(--font-size-lg);
-    }
-  }
-
-  @media only screen and (min-width: 1000px) {
-    .carrousel {
-      margin: 0;
-    }
-  }
 </style>

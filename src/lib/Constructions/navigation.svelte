@@ -39,12 +39,22 @@
 
       @media (min-width: 1080px) {
         background-color: var(--primary-color);
+        bottom: auto;
+        top: 0;
+        box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.3);
+        padding: 0;
     }
   }
 
   ul {
     display: flex;
     justify-content: space-around;
+
+    @media (min-width: 1080px) {
+      justify-content: right;
+      width: 85vw;
+      margin: 0 auto;
+    }
   }
 
   li a {
@@ -57,8 +67,20 @@
     text-decoration: none;
     transition: .2s;
 
+    @media (min-width: 600px) {
+      font-size: var(--font-size-md);
+    }
+
     @media (min-width: 1080px) {
       color: var(--alt-text-color);
+      flex-direction: row-reverse;
+      padding: 1em 0.5em;
+      margin-right: 1.5em;
+      font-weight: 700;
+    }
+
+    @media (min-width: 1920px) {
+      font-size: var(--font-size-xl);
     }
   }
 
@@ -73,69 +95,33 @@
 
     @media (min-width: 1080px) {
       color: var(--text-color);
-    }
-  }
-
-  .icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  @media only screen and (min-width: 600px) {
-    li a {
-      font-size: var(--font-size-md);
-    }
-
-    .icon {
-      width: 28px;
-      height: 28px;
-    }
-  }
-
-  @media only screen and (min-width: 1080px) {
-    nav {
-      bottom: auto;
-      top: 0;
-      box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.3);
-      padding: 0;
-    }
-
-    ul {
-      justify-content: right;
-      width: 85vw;
-      margin: 0 auto;
-    }
-
-    li a {
-      flex-direction: row-reverse;
-      padding: 1em .5em;
-      margin-right: 1.5em;
-      font-weight: 700;
-    }
-
-    .profile {
-      margin-right: 0;
-      padding-right: 0;
-    }
-
-    li a.active {
       color: var(--active-color);
       padding-top: 1em;
       border-bottom: var(--border-nav);
       padding-bottom: calc(1em - 3px);
       border-top: 0;
     }
-
-    .icon {
-      width: 32px;
-      height: 32px;
-      margin-left: .4em;
-    }
   }
 
-  @media only screen and (min-width: 1920px) {
-    li a {
-      font-size: var(--font-size-xl);
+  .icon {
+    width: 24px;
+    height: 24px;
+
+    @media (min-width: 600px) {
+      width: 28px;
+      height: 28px;
+    }
+
+    @media (min-width: 1080px) {
+        width: 32px;
+        height: 32px;
+      }
+  }
+
+  .profile{
+    @media (min-width: 1080px) {
+      margin-right: 0;
+      padding-right: 0;
     }
   }
 </style>

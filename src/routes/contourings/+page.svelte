@@ -53,11 +53,10 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-  }
 
-  @media screen and (min-width: 1080px) {
-    ul {
+    @media (min-width: 1080px) {
       justify-content: left;
     }
   }
+
 </style>
