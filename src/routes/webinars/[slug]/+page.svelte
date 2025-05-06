@@ -44,7 +44,7 @@ onMount(() => {
   function addClickEventToButtons(buttons) {
     buttons.forEach(button => {
       button.addEventListener('click', (event) => {
-        const chapterTime = parseInt(event.target.dataset.time, 10);  
+        const chapterTime = parseInt(event.target.dataset.time);  
         video.currentTime = chapterTime;
       });
     });
