@@ -1,3 +1,73 @@
+<script>
+  import { onMount } from "svelte";
+
+  const handleLabelKeydown = (event) => {
+    if (event.key === "Enter") {
+      const label = event.target;
+      const radioId = label.getAttribute("for");
+      const radio = document.getElementById(radioId);
+      if (radio) {
+        radio.checked = true;
+        radio.dispatchEvent(new Event("change"));
+      }
+    }
+  };
+
+  let currentIndex = 0;
+  const radioButtons = [];
+  let intervalTime = 3000;
+  let interval;
+
+  const cycleLabels = () => {
+  
+    if (radioButtons[currentIndex]) {
+      radioButtons[currentIndex].checked = false;
+    }
+
+    currentIndex = (currentIndex + 1) % radioButtons.length;
+  
+    if (radioButtons[currentIndex]) {
+      radioButtons[currentIndex].checked = true;
+      radioButtons[currentIndex].dispatchEvent(new Event("change"));
+    }
+  };
+
+  const resetInterval = (newIntervalTime = intervalTime) => {
+    clearInterval(interval);
+    interval = setInterval(cycleLabels, newIntervalTime);
+  };
+
+  const handleRadioClick = (index) => {
+    clearInterval(interval);
+    currentIndex = index;
+    radioButtons[currentIndex].checked = true;
+    radioButtons[currentIndex].dispatchEvent(new Event("change"));
+    
+    resetInterval(5000);
+    setTimeout(() => resetInterval(3000), 5000);
+  };
+
+  onMount(() => {
+    document.documentElement.classList.add("js");
+  
+    radioButtons.push(...document.querySelectorAll('input[name="radio-btn"]'));
+    radioButtons.forEach((radio, index) => {
+      radio.addEventListener("click", () => handleRadioClick(index));
+    });
+
+  
+    interval = setInterval(cycleLabels, intervalTime);
+
+    return () => {
+    
+      clearInterval(interval);
+      radioButtons.forEach((radio) =>
+        radio.removeEventListener("click", () => handleRadioClick(index))
+      );
+    };
+  });
+</script>
+
 <section>
   <h2>Meet our doctors</h2>
   <div>
@@ -21,15 +91,15 @@
       <li class="eighth card"></li>
     </ul>
   </div>
-  <div class="navigation">
-    <label for="radio1" class="navigation-btn"></label>
-    <label for="radio2" class="navigation-btn"></label>
-    <label for="radio3" class="navigation-btn"></label>
-    <label for="radio4" class="navigation-btn"></label>
-    <label for="radio5" class="navigation-btn"></label>
-    <label for="radio6" class="navigation-btn"></label>
-    <label for="radio7" class="navigation-btn"></label>
-    <label for="radio8" class="navigation-btn"></label>
+  <div class="navigation" hidden>
+    <label for="radio1" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
+    <label for="radio2" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
+    <label for="radio3" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
+    <label for="radio4" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
+    <label for="radio5" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
+    <label for="radio6" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
+    <label for="radio7" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
+    <label for="radio8" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
   </div>
 </section>
 
@@ -85,7 +155,7 @@
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
-    transition: 2s;
+    transition: 1s;
     @media (min-width: 1080px){
      min-width: 248px;
     }
@@ -165,7 +235,7 @@
     transform: scale(1.5);
   }
 
-  .navigation {
+  :global(.js) .navigation {
     z-index: 1;
     height: fit-content;
   }
@@ -175,7 +245,7 @@
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
-    transition: 1s;
+    transition: background-color 1s;
   }
 
   .navigation-btn:not(:last-child) {
