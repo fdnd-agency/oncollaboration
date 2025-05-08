@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
+
   const handleLabelKeydown = (event) => {
     if (event.key === "Enter") {
       const label = event.target;
@@ -47,7 +48,14 @@
     setTimeout(() => resetInterval(3000), 5000);
   };
 
+  let autocheck;
+
   onMount(() => {
+
+    if (autocheck) {
+      autocheck.setAttribute("checked", true);
+    } 
+
     document.documentElement.classList.add("js");
   
     radioButtons.push(...document.querySelectorAll('input[name="radio-btn"]'));
@@ -55,7 +63,6 @@
       radio.addEventListener("click", () => handleRadioClick(index));
     });
 
-  
     interval = setInterval(cycleLabels, intervalTime);
 
     return () => {
@@ -72,7 +79,7 @@
   <h2>Meet our doctors</h2>
   <div>
     <ul class="doctors">
-      <input type="radio" name="radio-btn" id="radio1" checked/>
+      <input type="radio" name="radio-btn" id="radio1" bind:this={autocheck}/>
       <input type="radio" name="radio-btn" id="radio2" />
       <input type="radio" name="radio-btn" id="radio3" />
       <input type="radio" name="radio-btn" id="radio4" />
@@ -137,15 +144,25 @@
 
   .doctors {
     display: flex;
-    position: absolute;
+    position: relative;
     gap: 60px;
     list-style: none;
     padding: 0;
     margin: 0;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+
 
     @media (min-width: 1080px){
       gap: 20px;
     }
+  }
+
+  :global(.js) .doctors {
+    overflow: unset;
+    position: absolute;
+
+
   }
 
   .card {
@@ -156,6 +173,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
     transition: 1s;
+    scroll-snap-align: center;
     @media (min-width: 1080px){
      min-width: 248px;
     }
@@ -224,23 +242,20 @@
   }
 
   /* Highlight the selected card */
-  #radio1:checked ~ .first,
-  #radio2:checked ~ .second,
-  #radio3:checked ~ .third,
-  #radio4:checked ~ .fourth,
-  #radio5:checked ~ .fifth,
-  #radio6:checked ~ .sixth,
-  #radio7:checked ~ .seventh,
-  #radio8:checked ~ .eighth {
+  :global(.js) :is(#radio1:checked ~ .first, #radio2:checked ~ .second, #radio3:checked ~ .third, #radio4:checked ~ .fourth, #radio5:checked ~ .fifth, #radio6:checked ~ .sixth, #radio7:checked ~ .seventh, #radio8:checked ~ .eighth) {
     transform: scale(1.5);
+  }
+
+  .navigation{
+    height: fit-content;
   }
 
   :global(.js) .navigation {
     z-index: 1;
-    height: fit-content;
   }
 
-  .navigation-btn {
+
+  :global(.js) .navigation-btn {
     border: 2px solid #de6a23;
     padding: 5px;
     border-radius: 10px;
