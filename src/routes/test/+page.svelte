@@ -33,6 +33,16 @@
     }
   };
 
+function goToNext() {
+  let nextIndex = (currentIndex + 1) % radioButtons.length;
+  radioButtons[nextIndex].click();
+}
+
+function goToPrev() {
+  let prevIndex = (currentIndex - 1 + radioButtons.length) % radioButtons.length;
+  radioButtons[prevIndex].click();
+}
+
   const resetInterval = (newIntervalTime = intervalTime) => {
     clearInterval(interval);
     interval = setInterval(cycleLabels, newIntervalTime);
@@ -79,24 +89,26 @@
   <h2>Meet our doctors</h2>
   <div>
     <ul class="doctors">
-      <input type="radio" name="radio-btn" id="radio1" bind:this={autocheck}/>
-      <input type="radio" name="radio-btn" id="radio2" />
-      <input type="radio" name="radio-btn" id="radio3" />
-      <input type="radio" name="radio-btn" id="radio4" />
-      <input type="radio" name="radio-btn" id="radio5" />
-      <input type="radio" name="radio-btn" id="radio6" />
-      <input type="radio" name="radio-btn" id="radio7" />
-      <input type="radio" name="radio-btn" id="radio8" />
+  <input type="radio" name="radio-btn" id="radio1" bind:this={autocheck}/>
+  <input type="radio" name="radio-btn" id="radio2" />
+  <input type="radio" name="radio-btn" id="radio3" />
+  <input type="radio" name="radio-btn" id="radio4" />
+  <input type="radio" name="radio-btn" id="radio5" />
+  <input type="radio" name="radio-btn" id="radio6" />
+  <input type="radio" name="radio-btn" id="radio7" />
+  <input type="radio" name="radio-btn" id="radio8" />
+  <input type="radio" name="radio-btn" id="radio9" /> <!-- Added -->
 
-      <li class="first card"></li>
-      <li class="second card"></li>
-      <li class="third card"></li>
-      <li class="fourth card"></li>
-      <li class="fifth card"></li>
-      <li class="sixth card"></li>
-      <li class="seventh card"></li>
-      <li class="eighth card"></li>
-    </ul>
+  <li class="first card"></li>
+  <li class="second card"></li>
+  <li class="third card"></li>
+  <li class="fourth card"></li>
+  <li class="fifth card"></li>
+  <li class="sixth card"></li>
+  <li class="seventh card"></li>
+  <li class="eighth card"></li>
+  <li class="ninth card"></li> <!-- Added -->
+</ul>
   </div>
   <div class="navigation" hidden>
     <label for="radio1" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
@@ -107,6 +119,11 @@
     <label for="radio6" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
     <label for="radio7" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
     <label for="radio8" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
+    <label for="radio9" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
+    <div class="carousel-controls">
+      <button on:click={goToPrev}>Previous</button>
+      <button on:click={goToNext}>Next</button>
+    </div>
   </div>
 </section>
 
@@ -241,8 +258,16 @@
     }
   }
 
+  #radio9:checked ~ .first {
+    margin-left: calc(50% - (150px / 2) - (150px + 60px) * 8);
+
+    @media (min-width: 1080px){
+    margin-left: calc(50% - (248px / 2) - (248px + 20px) * 8);
+    }
+  }
+
   /* Highlight the selected card */
-  :global(.js) :is(#radio1:checked ~ .first, #radio2:checked ~ .second, #radio3:checked ~ .third, #radio4:checked ~ .fourth, #radio5:checked ~ .fifth, #radio6:checked ~ .sixth, #radio7:checked ~ .seventh, #radio8:checked ~ .eighth) {
+  :global(.js) :is(#radio1:checked ~ .first, #radio2:checked ~ .second, #radio3:checked ~ .third, #radio4:checked ~ .fourth, #radio5:checked ~ .fifth, #radio6:checked ~ .sixth, #radio7:checked ~ .seventh, #radio8:checked ~ .eighth, #radio9:checked ~ .ninth) {
     transform: scale(1.5);
   }
 
@@ -278,4 +303,26 @@
   input {
     display: none;
   }
+
+  .carousel-controls {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.carousel-controls button {
+  padding: 0.5em 1.5em;
+  font-size: 1.2em;
+  border-radius: 8px;
+  border: 2px solid #de6a23;
+  background: #fff;
+  color: #de6a23;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.carousel-controls button:hover {
+  background: #de6a23;
+  color: #fff;
+}
 </style>
