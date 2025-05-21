@@ -16,7 +16,7 @@
 
   let currentIndex = 0;
   const radioButtons = [];
-  let intervalTime = 3000;
+  // let intervalTime = 3000;
   let interval;
 
   const cycleLabels = () => {
@@ -54,8 +54,8 @@ function goToPrev() {
     radioButtons[currentIndex].checked = true;
     radioButtons[currentIndex].dispatchEvent(new Event("change"));
     
-    resetInterval(5000);
-    setTimeout(() => resetInterval(3000), 5000);
+    // resetInterval(5000);
+    // setTimeout(() => resetInterval(3000), 5000);
   };
 
   let autocheck;
@@ -111,7 +111,7 @@ function goToPrev() {
 </ul>
   </div>
   <div class="navigation" hidden>
-    <label for="radio1" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
+    <!-- <label for="radio1" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
     <label for="radio2" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
     <label for="radio3" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
     <label for="radio4" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
@@ -119,10 +119,18 @@ function goToPrev() {
     <label for="radio6" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
     <label for="radio7" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
     <label for="radio8" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
-    <label for="radio9" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
+    <label for="radio9" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label> -->
     <div class="carousel-controls">
-      <button on:click={goToPrev}>Previous</button>
-      <button on:click={goToNext}>Next</button>
+      <button on:click={goToPrev} aria-label="previous doctor"> 
+        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z" fill="#fff"/>
+        </svg> 
+      </button>
+      <button on:click={goToNext} aria-label="next doctor"> 
+        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6492 11.2501L12.7904 6.53852L13.8346 5.46167L20.5774 12.0001L13.8346 18.5385L12.7904 17.4617L17.6492 12.7501H3V11.2501H17.6492Z" fill="#fff"/>
+        </svg> 
+      </button>
     </div>
   </div>
 </section>
@@ -130,7 +138,6 @@ function goToPrev() {
 <style>
   section {
     width: 100%;
-    background-color: var(--accent-color-1);
 
     @media (min-width: 1080px){ 
     padding: 4em 12.5em;
@@ -184,7 +191,8 @@ function goToPrev() {
 
   .card {
     aspect-ratio: 2.45 / 3.3;
-    min-width: 150px;
+    aspect-ratio: 1 / 1;
+    min-width: 179px;
     background-color: var(--alt-text-color);
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -197,7 +205,7 @@ function goToPrev() {
   }
 
   #radio1:checked ~ .first {
-    margin-left: calc(50% - (150px / 2));
+    margin-left: calc(50% - (179px / 2));
 
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2));
@@ -205,7 +213,7 @@ function goToPrev() {
   }
 
   #radio2:checked ~ .first {
-    margin-left: calc(50% - (150px / 2) - (150px + 60px) * 1);
+    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 1);
 
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 1);
@@ -213,7 +221,7 @@ function goToPrev() {
   }
 
   #radio3:checked ~ .first {
-    margin-left: calc(50% - (150px / 2) - (150px + 60px) * 2);
+    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 2);
 
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 2);
@@ -221,21 +229,21 @@ function goToPrev() {
   }
 
   #radio4:checked ~ .first {
-    margin-left: calc(50% - (150px / 2) - (150px + 60px) * 3);
+    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 3);
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 3);
     }
   }
 
   #radio5:checked ~ .first {
-    margin-left: calc(50% - (150px / 2) - (150px + 60px) * 4);
+    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 4);
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 4);
     }
   }
 
   #radio6:checked ~ .first {
-    margin-left: calc(50% - (150px / 2) - (150px + 60px) * 5);
+    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 5);
 
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 5);
@@ -243,7 +251,7 @@ function goToPrev() {
   }
 
   #radio7:checked ~ .first {
-    margin-left: calc(50% - (150px / 2) - (150px + 60px) * 6);
+    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 6);
 
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 6);
@@ -251,7 +259,7 @@ function goToPrev() {
   }
 
   #radio8:checked ~ .first {
-    margin-left: calc(50% - (150px / 2) - (150px + 60px) * 7);
+    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 7);
 
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 7);
@@ -259,7 +267,7 @@ function goToPrev() {
   }
 
   #radio9:checked ~ .first {
-    margin-left: calc(50% - (150px / 2) - (150px + 60px) * 8);
+    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 8);
 
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 8);
@@ -312,17 +320,20 @@ function goToPrev() {
 }
 
 .carousel-controls button {
-  padding: 0.5em 1.5em;
-  font-size: 1.2em;
-  border-radius: 8px;
-  border: 2px solid #de6a23;
-  background: #fff;
-  color: #de6a23;
+  padding: 1em;
+  border-radius: 50%;
+  border: 2px solid #40BD93;
+  background: #40BD93;
+  color: #40BD93;
   cursor: pointer;
   transition: background 0.2s;
 }
+
 .carousel-controls button:hover {
-  background: #de6a23;
-  color: #fff;
+  background: #fff;
+}
+
+.carousel-controls button:hover svg path{
+  fill: #40BD93;
 }
 </style>
