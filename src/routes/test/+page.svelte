@@ -1,6 +1,10 @@
 <script>
   import { onMount } from "svelte";
 
+  let { data } = $props(); 
+
+  const speakers = data.speaker;
+
 
   const handleLabelKeydown = (event) => {
     if (event.key === "Enter") {
@@ -89,26 +93,17 @@ function goToPrev() {
   <h2>Meet our doctors</h2>
   <div>
     <ul class="doctors">
-  <input type="radio" name="radio-btn" id="radio1" bind:this={autocheck}/>
-  <input type="radio" name="radio-btn" id="radio2" />
-  <input type="radio" name="radio-btn" id="radio3" />
-  <input type="radio" name="radio-btn" id="radio4" />
-  <input type="radio" name="radio-btn" id="radio5" />
-  <input type="radio" name="radio-btn" id="radio6" />
-  <input type="radio" name="radio-btn" id="radio7" />
-  <input type="radio" name="radio-btn" id="radio8" />
-  <input type="radio" name="radio-btn" id="radio9" /> <!-- Added -->
-
-  <li class="first card"></li>
-  <li class="second card"></li>
-  <li class="third card"></li>
-  <li class="fourth card"></li>
-  <li class="fifth card"></li>
-  <li class="sixth card"></li>
-  <li class="seventh card"></li>
-  <li class="eighth card"></li>
-  <li class="ninth card"></li> <!-- Added -->
-</ul>
+    {#each speakers as speaker, i}
+      <input type="radio" name="radio-btn" id={"radio" + (i + 1)} checked={i === 0}/>
+  {/each}
+      {#each speakers as speaker, index}
+      <li class={"slide" + (index + 1) + " card"}>
+        <picture>
+       <!-- <img src="https://fdnd-agency.directus.app/assets/{speaker.profile_picture}?format=avif" alt="{speaker.fullname}'s profile picture"> -->
+       </picture>
+      </li>
+      {/each}
+    </ul>
   </div>
   <div class="navigation" hidden>
     <!-- <label for="radio1" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
@@ -121,12 +116,16 @@ function goToPrev() {
     <label for="radio8" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
     <label for="radio9" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label> -->
     <div class="carousel-controls">
-      <button on:click={goToPrev} aria-label="previous doctor"> 
+      <button onclick={goToPrev} aria-label="previous doctor"> 
         <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z" fill="#fff"/>
         </svg> 
       </button>
-      <button on:click={goToNext} aria-label="next doctor"> 
+       <div class="doctor-info">
+          <p><strong>Dr. Jud van Giesseghem</strong></p>
+          <p>Radiation Oncologist</p>
+      </div>
+      <button onclick={goToNext} aria-label="next doctor"> 
         <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6492 11.2501L12.7904 6.53852L13.8346 5.46167L20.5774 12.0001L13.8346 18.5385L12.7904 17.4617L17.6492 12.7501H3V11.2501H17.6492Z" fill="#fff"/>
         </svg> 
@@ -204,7 +203,15 @@ function goToPrev() {
     }
   }
 
-  #radio1:checked ~ .first {
+  .card img {
+    width: 100%;                 
+    height: 100%;                
+    object-fit: cover;           
+    object-position: center;     
+    display: block;              
+  }
+
+  #radio1:checked ~ .slide1 {
     margin-left: calc(50% - (179px / 2));
 
     @media (min-width: 1080px){
@@ -212,7 +219,7 @@ function goToPrev() {
     }
   }
 
-  #radio2:checked ~ .first {
+  #radio2:checked ~ .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 1);
 
     @media (min-width: 1080px){
@@ -220,7 +227,7 @@ function goToPrev() {
     }
   }
 
-  #radio3:checked ~ .first {
+  #radio3:checked ~ .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 2);
 
     @media (min-width: 1080px){
@@ -228,21 +235,21 @@ function goToPrev() {
     }
   }
 
-  #radio4:checked ~ .first {
+  #radio4:checked ~ .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 3);
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 3);
     }
   }
 
-  #radio5:checked ~ .first {
+  #radio5:checked ~ .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 4);
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 4);
     }
   }
 
-  #radio6:checked ~ .first {
+  #radio6:checked ~ .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 5);
 
     @media (min-width: 1080px){
@@ -250,7 +257,7 @@ function goToPrev() {
     }
   }
 
-  #radio7:checked ~ .first {
+  #radio7:checked ~ .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 6);
 
     @media (min-width: 1080px){
@@ -258,7 +265,7 @@ function goToPrev() {
     }
   }
 
-  #radio8:checked ~ .first {
+  #radio8:checked ~ .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 7);
 
     @media (min-width: 1080px){
@@ -266,18 +273,20 @@ function goToPrev() {
     }
   }
 
-  #radio9:checked ~ .first {
+  /* #radio9:checked ~ .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 8);
 
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 8);
     }
-  }
+  } */
 
   /* Highlight the selected card */
-  :global(.js) :is(#radio1:checked ~ .first, #radio2:checked ~ .second, #radio3:checked ~ .third, #radio4:checked ~ .fourth, #radio5:checked ~ .fifth, #radio6:checked ~ .sixth, #radio7:checked ~ .seventh, #radio8:checked ~ .eighth, #radio9:checked ~ .ninth) {
-    transform: scale(1.5);
-  }
+  :global(.js) :is(
+  #radio1:checked ~ .slide1, #radio2:checked ~ .slide2, #radio3:checked ~ .slide3, #radio4:checked ~ .slide4, #radio5:checked ~ .slide5, #radio6:checked ~ .slide6, #radio7:checked ~ .slide7, #radio8:checked ~ .slide8) 
+  {
+  transform: scale(1.5);
+}
 
   .navigation{
     height: fit-content;
