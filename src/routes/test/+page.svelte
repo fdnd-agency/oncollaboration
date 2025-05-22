@@ -99,7 +99,7 @@ function goToPrev() {
       {#each speakers as speaker, index}
       <li class={"slide" + (index + 1) + " card"}>
         <picture>
-       <!-- <img src="https://fdnd-agency.directus.app/assets/{speaker.profile_picture}?format=avif" alt="{speaker.fullname}'s profile picture"> -->
+       <img src="https://fdnd-agency.directus.app/assets/{speaker.profile_picture}?format=avif" alt="{speaker.fullname}'s profile picture">
        </picture>
       </li>
       {/each}
@@ -122,7 +122,7 @@ function goToPrev() {
         </svg> 
       </button>
        <div class="doctor-info">
-          <p><strong>Dr. Jud van Giesseghem</strong></p>
+          <p><strong>{speakers[currentIndex].fullname}</strong></p>
           <p>Radiation Oncologist</p>
       </div>
       <button onclick={goToNext} aria-label="next doctor"> 
@@ -192,14 +192,17 @@ function goToPrev() {
     aspect-ratio: 2.45 / 3.3;
     aspect-ratio: 1 / 1;
     min-width: 179px;
+    max-width: 179px;
     background-color: var(--alt-text-color);
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
     transition: 1s;
     scroll-snap-align: center;
+    overflow: hidden;
     @media (min-width: 1080px){
      min-width: 248px;
+     max-width: 248px;
     }
   }
 
@@ -208,7 +211,7 @@ function goToPrev() {
     height: 100%;                
     object-fit: cover;           
     object-position: center;     
-    display: block;              
+    display: block;
   }
 
   #radio1:checked ~ .slide1 {
