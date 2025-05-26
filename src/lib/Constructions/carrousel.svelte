@@ -1,12 +1,12 @@
 <script>
-  import { onMount } from "svelte";
+import { onMount } from "svelte";
 
-  let { data } = $props(); 
-
-  const speakers = data.speaker;
+let { speakers } = $props();
 
 
-  const handleLabelKeydown = (event) => {
+
+
+const handleLabelKeydown = (event) => {
     if (event.key === "Enter") {
       const label = event.target;
       const radioId = label.getAttribute("for");
@@ -18,7 +18,7 @@
     }
   };
 
-  let currentIndex = 0;
+  let currentIndex = $derived(0);
   const radioButtons = [];
   // let intervalTime = 3000;
   let interval;
@@ -99,7 +99,9 @@ function goToPrev() {
       {#each speakers as speaker, index}
       <li class={"slide" + (index + 1) + " card"}>
         <picture>
-       <img src="https://fdnd-agency.directus.app/assets/{speaker.profile_picture}?format=avif" alt="{speaker.fullname}'s profile picture">
+          <source srcset="https://fdnd-agency.directus.app/assets/{speaker.profile_picture}?format=avif" type="image/avif">
+          <source srcset="https://fdnd-agency.directus.app/assets/{speaker.profile_picture}?format=webp" type="image/webp">
+          <img src="https://fdnd-agency.directus.app/assets/{speaker.profile_picture}?format=avif" alt="{speaker.fullname}'s profile picture">
        </picture>
       </li>
       {/each}
@@ -123,7 +125,7 @@ function goToPrev() {
       </button>
        <div class="doctor-info">
           <p><strong>{speakers[currentIndex].fullname}</strong></p>
-          <p>Radiation Oncologist</p>
+          <p>{speakers[currentIndex].entitle}</p>
       </div>
       <button onclick={goToNext} aria-label="next doctor"> 
         <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,9 +134,15 @@ function goToPrev() {
       </button>
     </div>
   </div>
+  <a href="">Show all →</a>
 </section>
 
 <style>
+
+*{
+    font-family: jakarta, sans-serif;
+}
+
   section {
     width: 100%;
 
@@ -144,8 +152,9 @@ function goToPrev() {
 }
 
   h2 {
-    color: var(--alt-text-color);
-    font-size: var(--font-size-2xl);
+    color: #40BD93;
+    font-size: 1.5em;
+    padding: 0 0 2.5em 1.5em;
     margin-right: 0 40px;
     @media (min-width: 1080px){
       font-size: var(--font-size-5xl);
@@ -158,7 +167,7 @@ function goToPrev() {
     position: relative;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 270px;
     overflow: hidden;
     @media (min-width: 1080px){
       height: 640px;
@@ -195,7 +204,6 @@ function goToPrev() {
     max-width: 179px;
     background-color: var(--alt-text-color);
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
     transition: 1s;
     scroll-snap-align: center;
@@ -328,17 +336,46 @@ function goToPrev() {
   display: flex;
   gap: 1em;
   justify-content: center;
+  align-items: center;
   margin-top: 2em;
 }
 
+.doctor-info {
+    position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #40BD93;
+  border-radius: 12px;
+  width: 12.563em;
+  height: 6.563em;
+  text-align: center;
+}
+
+.doctor-info::before{
+    position: absolute;
+    content: '';
+     width: 0;
+      height: 0;
+      top: -20px;
+      border-left: 25px solid #40BD93;
+      border-right: 25px solid #40BD93;
+      border-bottom: 20px solid #fff;
+}
+
 .carousel-controls button {
-  padding: 1em;
   border-radius: 50%;
   border: 2px solid #40BD93;
   background: #40BD93;
   color: #40BD93;
   cursor: pointer;
   transition: background 0.2s;
+  width: 52px;
+  min-width: 52px;
+  height: 52px;
+  aspect-ratio: 1 / 1;
 }
 
 .carousel-controls button:hover {
@@ -347,5 +384,11 @@ function goToPrev() {
 
 .carousel-controls button:hover svg path{
   fill: #40BD93;
+}
+
+section > a{
+    float: right;
+    padding: 1.5em;
+    color: black;
 }
 </style>

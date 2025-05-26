@@ -20,10 +20,10 @@ export async function load({ params }) {
    
 
     return { 
-      speaker: speakerResponse.data 
+      speakers: speakerResponse.data 
     };
   } catch (error) {
     console.error("Failed to fetch speaker data:", error);
-    return { speaker: null, webinars: [] };
+    return { speakers: null, webinars: [] };
   }
 }
