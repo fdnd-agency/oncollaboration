@@ -1,9 +1,9 @@
 <script>
-  import { Carrousel } from "$lib/index.js";
+  import { Carrousel, FAQ } from "$lib/index.js";
 
   let { data } = $props();
   let speakers = data.speakers;
-  console.log(speakers);
+  let content = data.content;
 
 </script>
 
@@ -11,5 +11,7 @@
 
   
   <Carrousel {speakers}/>
+
+  <FAQ {content}/>
 
 </main> 
