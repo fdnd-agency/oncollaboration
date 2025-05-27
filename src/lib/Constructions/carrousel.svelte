@@ -92,10 +92,10 @@ function goToPrev() {
 <section>
   <h2>Meet our doctors</h2>
   <div>
-    <ul class="doctors">
     {#each speakers as speaker, i}
-      <input type="radio" name="radio-btn" id={"radio" + (i + 1)} checked={i === 0}/>
+      <input type="radio" name="radio-btn" id={"radio" + (i + 1)} hidden checked={i === 0}/>
   {/each}
+    <ul class="doctors">
       {#each speakers as speaker, index}
       <li class={"slide" + (index + 1) + " card"}>
         <picture>
@@ -103,6 +103,7 @@ function goToPrev() {
           <source srcset="https://fdnd-agency.directus.app/assets/{speaker.profile_picture}?format=webp" type="image/webp">
           <img src="https://fdnd-agency.directus.app/assets/{speaker.profile_picture}?format=avif" alt="{speaker.fullname}'s profile picture">
        </picture>
+       <p>{speaker.fullname}</p>
       </li>
       {/each}
     </ul>
@@ -208,11 +209,17 @@ function goToPrev() {
     transition: 1s;
     scroll-snap-align: center;
     overflow: hidden;
+    margin-bottom: 20px;
     @media (min-width: 1080px){
      min-width: 248px;
      max-width: 248px;
     }
   }
+
+  :global(.js) .card {
+    margin-bottom: unset;
+    }
+  
 
   .card img {
     width: 100%;                 
@@ -222,7 +229,17 @@ function goToPrev() {
     display: block;
   }
 
-  #radio1:checked ~ .slide1 {
+  :global(.js) .card p{
+    display: none;
+  }
+
+  .card p{
+    display: block;
+    position: absolute;
+    min-width: 30em;
+  }
+
+  :global(.js) #radio1:checked ~ .doctors .slide1 {
     margin-left: calc(50% - (179px / 2));
 
     @media (min-width: 1080px){
@@ -230,7 +247,7 @@ function goToPrev() {
     }
   }
 
-  #radio2:checked ~ .slide1 {
+  :global(.js) #radio2:checked ~ .doctors .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 1);
 
     @media (min-width: 1080px){
@@ -238,7 +255,7 @@ function goToPrev() {
     }
   }
 
-  #radio3:checked ~ .slide1 {
+  :global(.js) #radio3:checked ~ .doctors .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 2);
 
     @media (min-width: 1080px){
@@ -246,21 +263,21 @@ function goToPrev() {
     }
   }
 
-  #radio4:checked ~ .slide1 {
+  :global(.js) #radio4:checked ~ .doctors .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 3);
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 3);
     }
   }
 
-  #radio5:checked ~ .slide1 {
+  :global(.js) #radio5:checked ~ .doctors .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 4);
     @media (min-width: 1080px){
     margin-left: calc(50% - (248px / 2) - (248px + 20px) * 4);
     }
   }
 
-  #radio6:checked ~ .slide1 {
+  :global(.js) #radio6:checked ~ .doctors .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 5);
 
     @media (min-width: 1080px){
@@ -268,7 +285,7 @@ function goToPrev() {
     }
   }
 
-  #radio7:checked ~ .slide1 {
+  :global(.js) #radio7:checked ~ .doctors .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 6);
 
     @media (min-width: 1080px){
@@ -276,7 +293,7 @@ function goToPrev() {
     }
   }
 
-  #radio8:checked ~ .slide1 {
+  :global(.js) #radio8:checked ~ .doctors .slide1 {
     margin-left: calc(50% - (179px / 2) - (179px + 60px) * 7);
 
     @media (min-width: 1080px){
@@ -284,17 +301,8 @@ function goToPrev() {
     }
   }
 
-  /* #radio9:checked ~ .slide1 {
-    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 8);
-
-    @media (min-width: 1080px){
-    margin-left: calc(50% - (248px / 2) - (248px + 20px) * 8);
-    }
-  } */
-
-  /* Highlight the selected card */
   :global(.js) :is(
-  #radio1:checked ~ .slide1, #radio2:checked ~ .slide2, #radio3:checked ~ .slide3, #radio4:checked ~ .slide4, #radio5:checked ~ .slide5, #radio6:checked ~ .slide6, #radio7:checked ~ .slide7, #radio8:checked ~ .slide8) 
+  #radio1:checked ~ .doctors .slide1, #radio2:checked ~ .doctors .slide2, #radio3:checked ~ .doctors .slide3, #radio4:checked ~ .doctors .slide4, #radio5:checked ~ .doctors .slide5, #radio6:checked ~ .doctors .slide6, #radio7:checked ~ .doctors .slide7, #radio8:checked ~ .doctors .slide8) 
   {
   transform: scale(1.5);
 }
@@ -328,17 +336,17 @@ function goToPrev() {
     background: #de6a23;
   }
 
-  input {
+  .carousel-controls {
     display: none;
   }
 
-  .carousel-controls {
-  display: flex;
-  gap: 1em;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2em;
-}
+  :global(.js ).carousel-controls {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+ }
 
 .doctor-info {
     position: relative;
