@@ -2,6 +2,10 @@
   --primary-color: #238262;
   --text-color-dark: #1D1D1D;
   --text-color-light: #FFFFFF;
+  --background-color: #F6F6F6;
+  --line-height-mobile: 1.5;
+  --font: jakarta, sans-serif;
+  --font-size-mobile: 16px;
 }
 
 * {
@@ -10,4 +14,16 @@
   padding: 0;
 }
 
+body {
+  font-family: var(--font);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
 
+main {
+  width: 90vw;
+  margin: 0 auto;
+}
