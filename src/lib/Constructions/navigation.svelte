@@ -1,28 +1,49 @@
 <script>
   import { page } from "$app/state";
-  let menuOpen = false;
+  // let menuOpen = false;
 </script>
 
 <nav>
-  <div class="logo">
-    <a class="grouped-logo" href="/">
-      <img src="images/Kemenkes2.png" width="40" height="45" alt="Logo" />
-      <img
-        src="images/LogoOncollaboration.png"
-        width="40"
-        height="45"
-        alt="logo"
+  <a class="grouped-logo" href="/">
+    <img src="images/Kemenkes2.png" width="40" height="45" alt="Logo" />
+    <img
+      src="images/LogoOncollaboration.png"
+      width="40"
+      height="45"
+      alt="logo"
+    />
+  </a>
+  <input
+    type="checkbox"
+    id="menu-toggle"
+    class="menu-toggle"
+    aria-label="Open menu"
+  />
+  <label for="menu-toggle" class="hamburger">
+    <span class="menu-text open-text">Open</span>
+    <svg
+      class="menu-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 448 512"
+      ><path
+        stroke-width="2"
+        d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
       />
-    </a>
-  </div>
-  <ul class="menu {menuOpen ? 'show-menu' : ''}">
+    </svg>
+    <span class="menu-text close-text">Close</span>
+    <svg
+      class="close-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 384 512"
+      ><path
+        stroke-width="2"
+        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+      />
+    </svg>
+  </label>
+  <ul class="menu">
     <li>
-      <a
-        href="/"
-        class="menuItem"
-        class:active={page.url.pathname === "/"}
-        on:click={() => (menuOpen = false)}
-      >
+      <a href="/" class="menuItem" class:active={page.url.pathname === "/"}>
         <svg
           class="icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +64,6 @@
         href="/webinars"
         class="menu-item"
         class:active={page.url.pathname.startsWith("/webinars")}
-        on:click={() => (menuOpen = false)}
       >
         <svg
           class="icon"
@@ -72,7 +92,6 @@
         href="/doctors"
         class="menu-item"
         class:active={page.url.pathname.startsWith("/doctors")}
-        on:click={() => (menuOpen = false)}
       >
         <svg
           class="icon"
@@ -95,7 +114,6 @@
         href="/contourings"
         class="menu-item"
         class:active={page.url.pathname.startsWith("/contourings")}
-        on:click={() => (menuOpen = false)}
       >
         <svg
           class="icon"
@@ -122,7 +140,6 @@
         href="/profile"
         class="menu-item"
         class:active={page.url.pathname.startsWith("/profile")}
-        on:click={() => (menuOpen = false)}
       >
         <svg
           class="icon"
@@ -139,7 +156,7 @@
       </a>
     </li>
   </ul>
-  <button
+  <!-- <button
     aria-label={menuOpen ? "Close menu" : "Open menu"}
     class="hamburger"
     on:click={() => (menuOpen = !menuOpen)}
@@ -168,7 +185,7 @@
         d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
       />
     </svg>
-  </button>
+  </button> -->
 </nav>
 
 <style>
@@ -176,11 +193,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2em 1em;
+    padding: 3em 1em;
     position: relative;
+    background-color: var(--text-color-light);
   }
 
   .grouped-logo {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    background: transparent;
     padding-left: 0.625em;
   }
 
@@ -196,13 +221,14 @@
     z-index: 100;
     padding: 0.75em;
     border: none;
-    background: var(--text-color-light);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5em;
-    border-radius: 3.625em;
+    position: fixed;
+    top: 1em;
+    right: 1em;
 
     @media (min-width: 1080px) {
       display: none;
@@ -211,6 +237,36 @@
 
   .close-icon {
     display: none;
+  }
+  
+  input[type="checkbox"].menu-toggle {
+    display: none;
+  }
+
+  /* Hide close by default and show when opened */
+  .close-icon,
+  .close-text {
+    display: none;
+  }
+
+  /* When menu is open swap visibility */
+  .menu-toggle:checked + .hamburger .menu-icon,
+  .menu-toggle:checked + .hamburger .open-text {
+    display: none;
+  }
+
+  .menu-toggle:checked + .hamburger .close-icon,
+  .menu-toggle:checked + .hamburger .close-text {
+    display: inline-block;
+  }
+
+  .menu {
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .menu-toggle:checked ~ .menu {
+    transform: translateY(0);
   }
 
   .close-icon,
@@ -272,7 +328,7 @@
 
   .icon {
     fill: transparent;
-    stroke: var(--text-color-dark);
+    stroke: black;
   }
 
   li a.active {
@@ -299,10 +355,5 @@
     margin-right: 1em;
     width: 1.875em;
     height: 1.875em;
-  }
-
-  .show-menu {
-    transform: translateY(0);
-    transition: ease-in-out 1s;
   }
 </style>
