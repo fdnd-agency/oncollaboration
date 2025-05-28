@@ -17,5 +17,6 @@ import LoadingState from "./Bricks/loading-state.svelte";
 import PreviewDoc from "./Bricks/preview-doc.svelte";
 import Resources from "./Blocks/resources.svelte";
 import EmptyState from "./Bricks/empty-states.svelte"
+import Article from "./Constructions/article.svelte";
 
-export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel ,FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState}
+export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel ,FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article}
