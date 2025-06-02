@@ -3,7 +3,29 @@ import { onMount } from "svelte";
 
 let { speakers } = $props();
 
+onMount(() => {
 
+    if (autocheck) {
+      autocheck.setAttribute("checked", true);
+    } 
+
+    document.documentElement.classList.add("js");
+  
+    radioButtons.push(...document.querySelectorAll('input[name="radio-btn"]'));
+    radioButtons.forEach((radio, index) => {
+      radio.addEventListener("click", () => handleRadioClick(index));
+    });
+
+    interval = setInterval(cycleLabels, intervalTime);
+
+    return () => {
+    
+      clearInterval(interval);
+      radioButtons.forEach((radio) =>
+        radio.removeEventListener("click", () => handleRadioClick(index))
+      );
+    };
+  });
 
 
 const handleLabelKeydown = (event) => {
@@ -64,29 +86,6 @@ function goToPrev() {
 
   let autocheck;
 
-  onMount(() => {
-
-    if (autocheck) {
-      autocheck.setAttribute("checked", true);
-    } 
-
-    document.documentElement.classList.add("js");
-  
-    radioButtons.push(...document.querySelectorAll('input[name="radio-btn"]'));
-    radioButtons.forEach((radio, index) => {
-      radio.addEventListener("click", () => handleRadioClick(index));
-    });
-
-    interval = setInterval(cycleLabels, intervalTime);
-
-    return () => {
-    
-      clearInterval(interval);
-      radioButtons.forEach((radio) =>
-        radio.removeEventListener("click", () => handleRadioClick(index))
-      );
-    };
-  });
 </script>
 
 <section>
@@ -138,10 +137,6 @@ function goToPrev() {
 </section>
 
 <style>
-
-*{
-    font-family: jakarta, sans-serif;
-}
 
   section {
     width: 100%;
@@ -347,7 +342,6 @@ function goToPrev() {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  border: 2px solid #40BD93;
   border-radius: 12px;
   width: 12.563em;
   height: 6.563em;
@@ -360,8 +354,8 @@ function goToPrev() {
      width: 0;
       height: 0;
       top: -20px;
-      border-left: 25px solid #40BD93;
-      border-right: 25px solid #40BD93;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
       border-bottom: 20px solid #fff;
 }
 
