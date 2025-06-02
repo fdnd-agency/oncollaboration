@@ -139,7 +139,8 @@ function goToPrev() {
 <style>
 
   section {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
 
     @media (min-width: 1080px){ 
     padding: 4em 12.5em;
@@ -381,8 +382,8 @@ function goToPrev() {
 }
 
 section > a{
-    float: right;
-    padding: 1.5em;
+    align-self: flex-end;
+    margin-top: 1em;
     color: black;
 }
 </style>
