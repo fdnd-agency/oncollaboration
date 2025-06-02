@@ -25,7 +25,9 @@
 
 <style>
   h2 {
-    color: #40bd93;
+    color: #000000;
+    padding-left: 0.5em;
+    padding-bottom: 1em;
   }
 
   details {
@@ -43,11 +45,7 @@
   summary {
     font-weight: bold;
     position: relative;
-    padding: 2em 3em 2em 1em;
-  }
-
-  details[open] summary {
-    padding: 2em 3em 0em 1em;
+    padding: 1em 3em 1em 1em;
   }
 
   summary::marker {
