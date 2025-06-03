@@ -1,10 +1,11 @@
 <script>
 
-  import { Article, Carrousel, FAQ } from "$lib/index.js";
+  import { Article, Carrousel, FAQ, Partners} from "$lib/index.js";
 
   let { data } = $props();
   let speakers = data.speakers;
   let content = data.content;
+  let logos = data.logos;
 
 </script>
 
@@ -14,5 +15,7 @@
   <Carrousel {speakers}/>
 
   <FAQ {content}/>
+
+  <Partners {logos}/>
 
 </main> 
