@@ -1,6 +1,6 @@
 <script>
-  import Article from "../lib/Constructions/article.svelte";
-  import { Carrousel } from "$lib/index.js";
+
+  import { Article, Carrousel, FAQ } from "$lib/index.js";
 
   let { data } = $props();
   let speakers = data.speakers;
@@ -12,5 +12,7 @@
 
   <Article {content}/>
   <Carrousel {speakers}/>
+
+  <FAQ {content}/>
 
 </main> 
