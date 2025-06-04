@@ -20,7 +20,8 @@ import PreviewDoc from "./Bricks/preview-doc.svelte";
 import Resources from "./Blocks/resources.svelte";
 import EmptyState from "./Bricks/empty-states.svelte"
 import Article from "./Constructions/article.svelte";
+import Arrow from "./Bricks/arrow.svelte";
+import CTA from "./Constructions/cta.svelte";
 
-
-export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel ,FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, FAQ, Partners, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article}
+export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article, FAQ, Partners, Arrow, CTA};
 
