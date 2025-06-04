@@ -45,3 +45,10 @@ main {
   width: 90vw;
   margin: 0 auto;
 }
+
+p {
+  line-height: var(--line-height-mobile);
+  font-size: var(--font-size-mobile);
+  color: var(--text-color-dark);
+}
+
