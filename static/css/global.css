@@ -6,8 +6,26 @@
   --line-height-mobile: 1.5;
   --font: jakarta, sans-serif;
   --font-size-mobile: 16px;
+
+  /* ---------- Call to action ---------- */
+  --cta-pale-green: #71D7B5;
+  --cta-light-green: #40BD93;
+  --cta-mid-green: #58CBA5;
+  --cta-dark-green: #238262;
+  --cta-pale-red: #E25082;
+  --cta-light-red: #DD2D69;
+  --cta-mid-red: #D41F5C;
+  --cta-dark-red: #93153F;
+  --cta-pale-blue: #40BBFE;
+  --cta-light-blue: #13AAFC;
+  --cta-mid-blue: #06A4FA;
+  --cta-dark-blue: #026BA4;
+  --cta-pale-gray: #B3B6B4;
+  --cta-light-gray: #979797;
+  --cta-mid-gray: #808080;
+  --cta-dark-gray: #6D6D6D;
 }
- 
+
 * {
   box-sizing: border-box;
   margin: 0;
