@@ -14,6 +14,10 @@ export async function load({ params }) {
     const contentResponse = await fetchJson(
       `${baseURL}avl_content?fields=key,heading,text,read_more_link,read_more_text`
     );
+
+    const logoResponse = await fetchJson(
+      `${baseURL}avl_logos?fields=sort,id,name,url,logo`
+    );
  
 
     if (!speakerResponse?.data || speakerResponse.data.length === 0) {
@@ -24,13 +28,17 @@ export async function load({ params }) {
       throw new Error("Content details not found");
     }
    
+    if (!logoResponse?.data || logoResponse.data.length === 0) {
+      throw new Error("Logo details not found");
+    }
 
     return { 
       speakers: speakerResponse.data, 
-      content: contentResponse.data
+      content: contentResponse.data,
+      logos: logoResponse.data
     };
   } catch (error) {
     console.error("Failed to fetch data:", error);
-    return { speakers: null, content: [] };
+    return { speakers: null, content: [], logos: [] };
   }
 }
