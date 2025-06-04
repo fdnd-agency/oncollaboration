@@ -10,6 +10,7 @@ import SearchResults from "./Constructions/search-results.svelte";
 import QandA from "./Assemblages/q-a.svelte";
 import Comment from "./Blocks/comment.svelte";
 import LoaderDots from "./Bricks/loader-dots.svelte";
+import FAQ from "./Blocks/FAQ.svelte";
 import LoaderSpin from "./Bricks/loader-spin.svelte";
 import Like from "./Bricks/like.svelte";
 import Liked from "./Bricks/liked.svelte";
@@ -20,6 +21,5 @@ import EmptyState from "./Bricks/empty-states.svelte"
 import Article from "./Constructions/article.svelte";
 import Arrow from "./Bricks/arrow.svelte";
 import CTA from "./Constructions/cta.svelte";
-import FAQ from "./Blocks/faq.svelte";
 
 export {ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel ,FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article, FAQ, Arrow, CTA};
