@@ -33,14 +33,31 @@
     height: auto;
   }
 
+  span {
+    font-size: var(--p-font-size-light-mobile);
+    font-weight: var(--p-font-weight-light-mobile);
+  }
+
   article h1 {
     color: var(--primary-color);
+    font-size: var(--h1-size-mobile);
+    font-weight: var(--h1-font-weight-mobile);
+  }
+
+  p,
+  span {
+    line-height: var(--line-height-mobile);
+  }
+
+  p  { 
+    font-size: var(--p-font-size-mobile);
+    font-weight: var(--p-font-weight-mobile);
   }
 
   .text-wrapper {
     position: absolute;
-    top: 0em;
-    left: 0.5em;
+    top: -0.2em;
+    left: -0.2em;
 
     @media (min-width: 375px) {
       top: 0.25em;
@@ -63,15 +80,11 @@
     align-items: flex-end;
   }
 
-  p,
-  span {
-    line-height: var(--line-height-mobile);
-  }
-
   a {
     color: var(--primary-color);
     float: right;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: var(--a-font-weight-mobile);
+    font-size: var(--a-font-size-mobile);
   }
 </style>

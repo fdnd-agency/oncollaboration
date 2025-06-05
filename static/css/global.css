@@ -3,9 +3,19 @@
   --text-color-dark: #1D1D1D;
   --text-color-light: #FFFFFF;
   --background-color: #F6F6F6;
-  --line-height-mobile: 1.5;
+  --line-height-mobile: 1.2;
   --font: jakarta, sans-serif;
-  --font-size-mobile: 16px;
+  --h1-size-mobile: 26px;
+  --h1-font-weight-mobile: bolder;
+  --h2-size-mobile: 24px;
+  --h2-font-weight-mobile: bolder;
+  --p-font-weight-mobile: normal;
+  --p-font-size-mobile: 16px;
+  --p-font-weight-light-mobile: lighter;
+  --p-font-size-light-mobile: 14px;
+  --a-font-size-mobile: 16px;
+  --a-font-weight-mobile: medium;
+
 
   /* ---------- Call to action ---------- */
   --cta-pale-green: #71D7B5;
