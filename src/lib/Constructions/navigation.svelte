@@ -6,13 +6,13 @@
 <nav>
   <div class="logo">
     <a class="grouped-logo" href="/">
-      <img src="images/Kemenkes2.png" width="40" height="45" alt="Logo" />
+      <img src="images/Kemenkes2.png" width="40" height="45" alt="Logo">
       <img
         src="images/LogoOncollaboration.png"
         width="40"
         height="45"
         alt="logo"
-      />
+      >
     </a>
   </div>
   <ul class="menu {menuOpen ? 'show-menu' : ''}">
@@ -26,8 +26,8 @@
         <svg
           class="icon"
           xmlns="http://www.w3.org/2000/svg"
-          min-width="30"
-          min-height="30"
+          width="30"
+          height="30"
           viewBox="0 0 29 32"
           fill="transparent"
         >
@@ -48,8 +48,8 @@
         <svg
           class="icon"
           xmlns="http://www.w3.org/2000/svg"
-          min-width="30"
-          min-height="30"
+          width="30"
+          height="30"
           viewBox="0 0 36 26"
         >
           <path
@@ -77,8 +77,8 @@
         <svg
           class="icon"
           xmlns="http://www.w3.org/2000/svg"
-          min-width="30"
-          min-height="30"
+          width="30"
+          height="30"
           viewBox="0 0 27 31"
         >
           <path
@@ -100,8 +100,8 @@
         <svg
           class="icon"
           xmlns="http://www.w3.org/2000/svg"
-          min-width="30"
-          min-height="30"
+          width="30"
+          height="30"
           viewBox="0 0 31 31"
         >
           <path
@@ -127,8 +127,8 @@
         <svg
           class="icon"
           xmlns="http://www.w3.org/2000/svg"
-          min-width="30"
-          min-height="30"
+          width="30"
+          height="30"
           viewBox="0 0 28 28"
         >
           <path
@@ -178,6 +178,7 @@
     align-items: center;
     padding: 2em 1em;
     position: relative;
+    background: var(--text-color-light);
   }
 
   .grouped-logo {
