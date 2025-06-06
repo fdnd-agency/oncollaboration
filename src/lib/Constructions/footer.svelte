@@ -12,8 +12,8 @@
     </li>
   </ul>
   <div class="footer-logos">
-    <img src="images/LogoOncollaboration.png" width="40" height="45" alt="logo" class="s-lCPQtr6yAWsI">
-    <img src="images/Kemenkes2.png" width="40" height="45" alt="Logo" class="s-lCPQtr6yAWsI">
+    <img src="images/LogoOncollaboration.png" width="40" height="45" alt="Logo Antoni van Leeuwenhoek Hospital" class="s-lCPQtr6yAWsI">
+    <img src="images/Kemenkes2.png" width="40" height="45" alt="Logo Kemenkes hospital" class="s-lCPQtr6yAWsI">
   </div>
 </footer>
 
