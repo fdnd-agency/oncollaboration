@@ -178,7 +178,7 @@
     align-items: center;
     padding: 2em 1em;
     position: relative;
-    background: var(--text-color-light);
+    background: var(--text-light);
   }
 
   .grouped-logo {
@@ -197,7 +197,7 @@
     z-index: 100;
     padding: 0.75em;
     border: none;
-    background: var(--text-color-light);
+    background: var(--text-light);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -231,8 +231,8 @@
     right: 0;
     bottom: 0;
     z-index: 99;
-    background: var(--text-color-light);
-    color: var(--text-color-dark);
+    background: var(--text-light);
+    color: var(--text-dark);
     list-style: none;
     padding: 5em 1.5em;
 
@@ -259,21 +259,21 @@
 
   li a {
     text-decoration: none;
-    color: var(--text-color-dark);
+    color: var(--text-dark);
     font-size: 1.5em;
     display: flex;
     align-items: center;
   }
 
   li a:hover {
-    color: var(--text-color-light);
+    color: var(--text-light);
     background-color: var(--primary-color);
     border-radius: 0.125em;
   }
 
   .icon {
     fill: transparent;
-    stroke: var(--text-color-dark);
+    stroke: var(--text-dark);
   }
 
   li a.active {
@@ -281,12 +281,12 @@
     font-weight: bold;
     padding: 0.188em;
     border-radius: 0.2em;
-    color: var(--text-color-light);
+    color: var(--text-light);
   }
 
   li a.active .icon {
     fill: transparent;
-    stroke: var(--text-color-light);
+    stroke: var(--text-light);
   }
 
   li a:focus {
