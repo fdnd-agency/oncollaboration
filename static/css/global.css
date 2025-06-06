@@ -1,7 +1,7 @@
 :root{
   --primary-color: hsl(159.79, 57.58%, 32.35%);
-  --text-color-dark: hsl(0, 0%, 11.37%);
-  --text-color-light: hsl(0, 0%, 100%);
+  --text-dark: hsl(0, 0%, 11.37%);
+  --text-light: hsl(0, 0%, 100%);
   --background-color: hsl(0, 0%, 96.47%);
   --line-height-mobile: 1.5;
   --font: jakarta, sans-serif;
