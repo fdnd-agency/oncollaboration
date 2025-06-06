@@ -19,13 +19,12 @@
 
 <style>
   footer {
-    height: 200px;
+    height: 12.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     padding-top: 0.6rem;
-    font-size: 11px;
     background-color: var(--primary-color);
 
     @media (min-width: 1080px) {
@@ -46,6 +45,7 @@
 
   footer li {
     list-style: none;
+    font-size: 11px;
   }
 
   footer a {
