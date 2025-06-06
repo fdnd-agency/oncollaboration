@@ -60,8 +60,6 @@
     position: absolute;
     left: 0.8em;
     bottom: 1.8em;
-    color: var(--text-color-light);
+    color: var(--text-light);
   }
-
-  
 </style>
