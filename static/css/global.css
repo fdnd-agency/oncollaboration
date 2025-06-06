@@ -5,7 +5,12 @@
   --background-color: #F6F6F6;
   --line-height-mobile: 1.5;
   --font: jakarta, sans-serif;
-  --font-size-mobile: 16px;
+
+  /* ---------- Font sizes ---------- */
+  --text-xs: 1em;
+  --text-md: 1.5em;
+  --text-lg: 1.625em;
+
 
   /* ---------- Call to action ---------- */
   --cta-pale-green: #71D7B5;

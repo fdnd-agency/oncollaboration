@@ -33,14 +33,31 @@
     height: auto;
   }
 
+  span {
+    font-size: var(--test-xs);
+    font-weight: medium;
+  }
+
   article h1 {
     color: var(--primary-color);
+    font-size: var(--text-lg);
+    font-weight: bolder;
+  }
+
+  p,
+  span {
+    line-height: var(--line-height-mobile);
+  }
+
+  p  { 
+    font-size: var(--test-xs);
+    font-weight: normal;
   }
 
   .text-wrapper {
     position: absolute;
-    top: 0em;
-    left: 0.5em;
+    top: -0.2em;
+    left: -0.2em;
 
     @media (min-width: 375px) {
       top: 0.25em;
@@ -63,15 +80,11 @@
     align-items: flex-end;
   }
 
-  p,
-  span {
-    line-height: var(--line-height-mobile);
-  }
-
   a {
     color: var(--primary-color);
     float: right;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: medium;
+    font-size: var(--test-xs);
   }
 </style>
