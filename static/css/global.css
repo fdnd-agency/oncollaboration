@@ -1,8 +1,8 @@
 :root{
-  --primary-color: #238262;
-  --text-color-dark: #1D1D1D;
-  --text-color-light: #FFFFFF;
-  --background-color: #F6F6F6;
+  --primary-color: hsl(159.79, 57.58%, 32.35%);
+  --text-color-dark: hsl(0, 0%, 11.37%);
+  --text-color-light: hsl(0, 0%, 100%);
+  --background-color: hsl(0, 0%, 96.47%);
   --line-height-mobile: 1.5;
   --font: jakarta, sans-serif;
 
@@ -13,22 +13,22 @@
 
 
   /* ---------- Call to action ---------- */
-  --cta-pale-green: #71D7B5;
-  --cta-light-green: #40BD93;
-  --cta-mid-green: #58CBA5;
-  --cta-dark-green: #238262;
-  --cta-pale-red: #E25082;
-  --cta-light-red: #DD2D69;
-  --cta-mid-red: #D41F5C;
-  --cta-dark-red: #93153F;
-  --cta-pale-blue: #40BBFE;
-  --cta-light-blue: #13AAFC;
-  --cta-mid-blue: #06A4FA;
-  --cta-dark-blue: #026BA4;
-  --cta-pale-gray: #B3B6B4;
-  --cta-light-gray: #979797;
-  --cta-mid-gray: #808080;
-  --cta-dark-gray: #6D6D6D;
+  --cta-pale-green: hsl(160, 56.04%, 64.31%);
+  --cta-light-green: hsl(159.84, 49.41%, 49.61%);
+  --cta-mid-green: hsl(160.17, 52.51%, 57.06%);
+  --cta-dark-green: hsl(159.79, 57.58%, 32.35%);
+  --cta-pale-red: hsl(339.45, 71.57%, 60%);
+  --cta-light-red: hsl(339.55, 72.13%, 52.16%);
+  --cta-mid-red: hsl(339.78, 74.49%, 47.65%);
+  --cta-dark-red: hsl(340, 75%, 32.94%);
+  --cta-pale-blue: hsl(201.16, 98.96%, 62.35%);
+  --cta-light-blue: hsl(201.12, 97.49%, 53.14%);
+  --cta-mid-blue: hsl(201.15, 96.06%, 50.2%);
+  --cta-dark-blue: hsl(201.11, 97.59%, 32.55%);
+  --cta-pale-gray: hsl(140, 2.01%, 70.78%);
+  --cta-light-gray: hsl(0, 0%, 59.22%);
+  --cta-mid-gray: hsl(0, 0%, 50.2%);
+  --cta-dark-gray: hsl(0, 0%, 42.75%);
 }
 
 * {
