@@ -5,7 +5,7 @@
 <article>
     <div class="wrapper">
         <div class="image-wrapper">
-          <img src="images/doctors-united.png" alt="The doctors united" width="30" height="30">
+          <img src="images/Subtract.png" alt="The doctors united" width="30" height="30">
         </div>  
         <div class="text-wrapper">
           <h2>Doctors united</h2>
