@@ -5,7 +5,7 @@
 <article>
     <div class="wrapper">
         <div class="image-wrapper">
-          <img src="images/Subtract.png" alt="The doctors united" width="30" height="30">
+          <img src="images/Subtract.png" alt="A group of doctors gathered togehter" width="30" height="30">
         </div>  
         <div class="text-wrapper">
           <h2>Doctors united</h2>
@@ -27,11 +27,11 @@
     background: white;
     padding: 10px;
 
-    @media (min-width: 375px){
+    @media (min-width: 375px) {
       height: 72vh;
     }
 
-    @media (min-width: 420px){
+    @media (min-width: 420px) {
       height: 66vh;
     }
   }
@@ -46,29 +46,29 @@
     font-size: 22px;
     font-weight: bolder;
     color: var(--primary-color);
-        padding-bottom: 1em;
+    padding-bottom: 1em;
 
-    @media (min-width: 375px){
+    @media (min-width: 375px) {
       font-size: 24px;
     }
   }
 
   .wrapper {
     display: grid;
-      grid-template-columns: 170px 120px;
-  grid-template-rows: auto;
-  gap: 0.5em;
-  grid-template-areas: 
+    grid-template-columns: 170px 120px;
+    grid-template-rows: auto;
+    gap: 0.5em;
+    grid-template-areas: 
     "image-wrapper image-wrapper"
     "text-wrapper text-wrapper"
     ;
 
-    @media (min-width: 375px) and (max-width: 419px){
+    @media (min-width: 375px) and (max-width: 419px) {
      grid-template-columns: 190px 150px;
      grid-template-rows: auto;
     }
 
-    @media (min-width: 420px){
+    @media (min-width: 420px) {
       grid-template-columns: 215px 180px;
       grid-template-rows: auto;
     }
