@@ -72,7 +72,7 @@
       grid-template-columns: 215px 180px;
       grid-template-rows: auto;
     }
-}
+  }
 
   .image-wrapper {
     grid-area: image-wrapper;
@@ -83,5 +83,4 @@
     margin-top: -3em; 
     padding-bottom: 1em;
   }
-
 </style>
