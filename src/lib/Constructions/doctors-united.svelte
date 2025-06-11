@@ -2,7 +2,7 @@
     let { content } = $props();
 </script>
 
-<article>
+<article id="doctors">
     <div class="wrapper">
         <div class="image-wrapper">
           <img src="images/Subtract.png" alt="A group of doctors gathered togehter" width="30" height="30">
