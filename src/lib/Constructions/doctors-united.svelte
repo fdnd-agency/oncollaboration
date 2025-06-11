@@ -30,7 +30,8 @@
   img {
     width: 100%;
     max-width: 600px;
-    height: 193px;
+    height: 100%;
+    object-fit: cover;
   }
 
   h2 {
