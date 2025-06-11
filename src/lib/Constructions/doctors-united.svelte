@@ -17,7 +17,6 @@
 <style>
     article {
     width: 100vw; 
-    height: 80vh;
     position: relative;
     left: 50%; 
     transform: translateX(-50%); 
@@ -26,14 +25,6 @@
     padding-right: calc(50vw - (90vw / 2) + 0.5em); 
     background: white;
     padding: 10px;
-
-    @media (min-width: 375px) {
-      height: 72vh;
-    }
-
-    @media (min-width: 420px) {
-      height: 66vh;
-    }
   }
 
   img {
