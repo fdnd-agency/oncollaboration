@@ -21,7 +21,7 @@
         {content[0].text}
       {/if}
     </p>
-    <a href="/">Learn more →</a>
+    <a href="#doctors">Learn more →</a>
   </div>
 </article>
 

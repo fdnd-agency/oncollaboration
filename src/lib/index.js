@@ -22,6 +22,7 @@ import EmptyState from "./Bricks/empty-states.svelte"
 import Article from "./Constructions/article.svelte";
 import Arrow from "./Bricks/arrow.svelte";
 import CTA from "./Constructions/cta.svelte";
+import DoctorsUnited from "./Constructions/doctors-united.svelte";
 
-export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article, FAQ, Partners, Arrow, CTA};
+export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article, FAQ, Partners, Arrow, CTA, DoctorsUnited};
 
