@@ -97,7 +97,7 @@ For a smooth collaboration and to ensure a high-quality, pleasurable, accessible
 
 •	Add a blank line between sections of code to improve readability.
 
-•	Use semantic HTML where possible. Useand only when no better option exists.
+•	Use semantic HTML where possible. Only us this when no better option exists.
 
 •	Add comments to complex code where necessary—or create an issue labeled documentation to keep the codebase clean.
 
