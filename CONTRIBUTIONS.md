@@ -3,7 +3,7 @@
 ## Version-before-redesign branch
 When working on this project we strongly advice you to open and run this branch. So you can see the previous design with all the functionalities made prior. This will give you a better understanding of how it was build and how to implement it for the redesign for Oncollaboration.
 
-https://github.com/fdnd-agency/oncollaboration/tree/version-before-redesign
+[first design](https://github.com/fdnd-agency/oncollaboration/tree/version-before-redesign)
 
 ## How to make new branches ?
 -	When making  a new branch Use kebab-case when naming a branch
@@ -17,7 +17,7 @@ Feature/generic-button-component or fix/responsive-card-layout
 
 ## Committing strategy
 
-Committing often is very useful. It’s useful to commit every time you write code that you want to keep. You can even use temporary commits with messages such as "wip" (work in progress)." - Version Control Tips door Spyros Argalias
+Committing often is very useful. It’s useful to commit every time you write code that you want to keep. You can even use temporary commits with messages such as "wip" (work in progress)." - [Version Control Tips door Spyros Argalias](http://programmingduck.com/articles/version-control-commit-early-push-once)
 
 ### Conventional Commits
 
