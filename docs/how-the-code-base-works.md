@@ -1,5 +1,5 @@
 # How the code base works
-This project is built with SvelteKit 4 and uses Directus as the CMS.
+This project is built with SvelteKit 5 and uses Directus as the CMS.
 
 ## Database
 You can see the database setup here.
