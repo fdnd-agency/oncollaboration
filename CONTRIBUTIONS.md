@@ -21,7 +21,7 @@ Committing often is very useful. It’s useful to commit every time you write co
 
 ### Conventional Commits
 
-At FDND Agency, because of Semantic Versioning, we use conventional commits. Conventional commit is a specification, a set of rules that have to be followed when writing commit messages.
+At FDND Agency, because of Semantic Versioning, we use [Conventional commits]( https://www.conventionalcommits.org/en/v1.0.0/). . Conventional commit is a specification, a set of rules that have to be followed when writing commit messages.
 
 **Allowed Commit types**
 
@@ -52,40 +52,70 @@ Add the corresponding #issue-number to your commit messages for easy reference.
 ## Gitmoji
 
 Optionally use the use gitmoji in commit messages commit strategy as a visual add-on for conventions commits 😍
-Examples
+
+**Examples**
+
 A few examples for Frontend changes from our very own agency
-o	refactor: Deduplicated marker popup creation to helper function 🧑‍💻
-o	style: Formatting toegepast in src bestanden #91
-o	feat: animals uit de database worden nu opgehaald en weergegeven in de dropdown #213
-o	fix: header font maat veranderd 🐛 #394
-Sources: Mastering commit messages
-Sources
-o	Automating Versioning and Releases Using Semantic Release
-o	use gitmoji in commit messages
+
+o	[refactor: Deduplicated marker popup creation to helper function](https://github.com/fdnd-agency/atlas4045/commit/f759aa484002c83896e3c86eae80503e50d3c731) 🧑‍💻
+
+o	[style: Formatting toegepast in src bestanden #91](https://github.com/fdnd-agency/toolgankelijk/commit/a0db5ce2e8288dcaa8ae5c266063c785e43970f4)
+
+o	[feat: animals uit de database worden nu opgehaald en weergegeven in de dropdown #213](https://github.com/fdnd-agency/tumimundo/commit/849984b90c3c731b8cc740bc3d3968fe182486b6)
+
+o	[fix: header font maat veranderd 🐛 #394](https://github.com/fdnd-agency/biebinbloei.nl/commit/6dd1bb24d362676141482ee49351a30ef7fd8002)
+
+Sources: [Mastering commit messages](https://dev.to/itxshakil/commit-like-a-pro-a-beginners-guide-to-conventional-commits-34c3#bonus-tips-mastering-commit-message-references)
+
+**Sources**
+
+o	[Automating Versioning and Releases Using Semantic Release](https://medium.com/agoda-engineering/automating-versioning-and-releases-using-semantic-release-6ed355ede742)
+
+o	[use gitmoji in commit messages](https://gitmoji.dev/)
+
 ## Pull-request
-We use a pull Request template which you automagically get when creating a PR in one of our repositories.
+
+We use a [pull Request template](https://github.com/fdnd-agency/.github/blob/main/pull_request_template.md) which you automagically get when creating a PR in one of our repositories.
+
 Please make sure you follow the following rules:
+
 •	Write small PR's
 •	Review your own PR first
 •	Provide context and guidance
+
 ## Code conventions
+
 For a smooth collaboration and to ensure a high-quality, pleasurable, accessible, and performant final product in Sprint 20.
+
 •	  	Use functional layering for organizing the component library: bricks, blocks, constructions, and assemblies.
+
 •	Develop mobile-first.
+
 •	Use kebab-case for HTML and CSS.
+
 •	Use camelCase in JavaScript.
+
 •	Add a blank line between sections of code to improve readability.
-•	Use semantic HTML where possible. Use
-and only when no better option exists.
+
+•	Use semantic HTML where possible. Useand only when no better option exists.
+
 •	Add comments to complex code where necessary—or create an issue labeled documentation to keep the codebase clean.
+
 •	When selecting multiple CSS classes with styling, write the class names on separate lines.
+
 •	Preferably use EM's for values not PX. (Forgotten convention, added 23-05) 
 Best practices
+
 •	Follow DRY principles / Build using component-based architecture.
+
 •	After creating a component, immediately test it for accessibility, performance, and responsiveness. Document the results in the pull request.
-•	Pull requests should be detailed like this one -> Example Pull Request. Include a description of what the code does or adds, test results, before-and-after screenshots, and how it should be reviewed.
+
+•	Pull requests should be detailed like this one -> [Example Pull Request](https://github.com/fdnd-agency/wogo/pull/24). Include a description of what the code does or adds, test results, before-and-after screenshots, and how it should be reviewed.
+
 •	Every pull request must have at least two reviewers who critically evaluates it and provides constructive feedback when needed.
+
 •	We use Poker Planning and/or a roadmap to assign weight/size to issues. This helps estimate how long tasks will take and allows us to define realistic start and end dates.
+
 •	Make micro commits.
 
 
