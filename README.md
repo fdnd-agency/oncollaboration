@@ -29,7 +29,8 @@ There currently are multiple things you can do on this platform, like:
 
 
 ### 📸 Home
-<img width="300" alt="Oncollaboration Home iPhone SE" src="">
+<img width="300" alt="Oncollaboration Home iPhone SE" src="https://github.com/user-attachments/assets/2f59174f-447a-4256-af82-27eb88547453">
+
 
 
 You can watch the website live here: 🌐 [oncollaboration.agency.fdnd.nl](https://oncollaboration.agency.fdnd.nl/) 
