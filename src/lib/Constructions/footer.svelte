@@ -34,7 +34,7 @@
   }
 
   footer p {
-    color: var(--text-color-light);
+    color: var(--text-light);
   }
 
   footer ul {
@@ -49,7 +49,7 @@
   }
 
   footer a {
-    color: var(--text-color-light);
+    color: var(--text-light);
   }
 
   footer a:hover {
