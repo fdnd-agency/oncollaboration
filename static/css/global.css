@@ -7,9 +7,13 @@
   --font: jakarta, sans-serif;
 
   /* ---------- Font sizes ---------- */
-  --text-xs: 1em;
-  --text-md: 1.5em;
-  --text-lg: 1.625em;
+  --text-xs3: 0.75em; /* 12px */
+  --text-xs2: 0.875em; /* 14px */
+  --text-xs: 1em; /* 16px */
+  --text-s: 1.0625em; /* 17px */
+  --text-sm: 1.25em; /* 20px */
+  --text-md: 1.5em; /* 24px */
+  --text-lg: 1.625em; /* 26px */
 
 
   /* ---------- Call to action ---------- */
@@ -29,6 +33,12 @@
   --cta-light-gray: hsl(0, 0%, 59.22%);
   --cta-mid-gray: hsl(0, 0%, 50.2%);
   --cta-dark-gray: hsl(0, 0%, 42.75%);
+
+/* --- spacing --- */
+--spacing-header-md: 0 0 1em 0.5em;
+
+--spacing-section-md: 0 0 3em 0;
+
 }
 
 * {
@@ -57,3 +67,11 @@ p {
   color: var(--text-color-dark);
 }
 
+h2 {
+  color: var(--primary-color);
+  margin: var(--spacing-header-md);
+}
+
+section, article {
+  margin: var(--spacing-section-md);
+}
