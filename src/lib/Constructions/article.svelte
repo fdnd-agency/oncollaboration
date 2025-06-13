@@ -29,7 +29,6 @@
   article {
     position: relative;
     margin-top: 2em;
-    font-size: 0.75rem;
     height: auto;
   }
 
@@ -40,8 +39,12 @@
 
   article h1 {
     color: var(--primary-color);
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
     font-weight: bolder;
+
+    @media (min-width: 375px) {
+      font-size: var(--text-lg);
+    }
   }
 
   p,
@@ -56,12 +59,14 @@
 
   .text-wrapper {
     position: absolute;
-    top: -0.2em;
-    left: -0.2em;
+    top: -0.4em;
 
     @media (min-width: 375px) {
-      top: 0.25em;
-      left: 0.5em;
+      top: 0em;
+    }
+
+    @media (min-width: 425px) {
+      top: 0.3em;
     }
   }
 
