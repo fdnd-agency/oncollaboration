@@ -38,10 +38,11 @@
     font-size: 22px;
     font-weight: bolder;
     color: var(--primary-color);
-    padding-bottom: 1em;
+    margin: 0.2em 0.2em;
 
     @media (min-width: 375px) {
       font-size: 24px;
+      margin: var(--spacing-header-md);
     }
   }
 
@@ -74,5 +75,13 @@
     grid-area: text-wrapper;
     margin-top: -3em; 
     padding-bottom: 1em;
+  }
+
+  p {
+    padding: 1.2em 0.3em;
+
+    @media (min-width: 375px) {
+      padding: 0 0.75em;
+    }
   }
 </style>
