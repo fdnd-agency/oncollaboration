@@ -24,14 +24,9 @@
 </section>
 
 <style>
-  h2 {
-    color: #000000;
-    padding-left: 0.5em;
-    padding-bottom: 1em;
-  }
 
   details {
-    background-color: #fff;
+    background-color: var(--background-color-alt);
     margin-bottom: 1em;
     border-radius: 10px;
     width: 100%;
@@ -54,20 +49,19 @@
 
   summary::after {
     content: "";
-    rotate: 90deg;
     position: absolute;
     top: 50%;
     right: 1em;
-    transform: translateX(-50%);
+    transform: translateY(-50%) rotate(90deg);
     border-top: 0.8em solid transparent;
     border-bottom: 0.8em solid transparent;
-    border-left: 0.8em solid #000000;
+    border-left: 0.8em solid var(--text-dark);
     border-radius: 4px;
     transition: 0.2s;
   }
 
   details[open] summary::after {
-    rotate: 270deg;
+    transform: translateY(-50%) rotate(270deg);
   }
 
   details[open] p{
