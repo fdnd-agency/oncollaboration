@@ -26,7 +26,7 @@
 <style>
 
   details {
-    background-color: var(--text-light);
+    background-color: var(--background-color-alt);
     margin-bottom: 1em;
     border-radius: 10px;
     width: 100%;
