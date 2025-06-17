@@ -1,18 +1,21 @@
 <script>
+  import Comment from './comment.svelte';
   import { page } from '$app/stores';
   import { enhance } from '$app/forms';
   import {Like, Liked, LoaderSpin, LoaderDots} from '$lib/index.js';
 
-  export let comment;
-  export let parsedChapters = [];
+  let { 
+    comment,
+    parsedChapters = []
+  } = $props();
 
-  let content = '';
+  let content = $state('');
   let slug = $page.url.pathname;
-  let loadingLike = false;
-  let loadingSend = false;
-  let liked = false;
+  let loadingLike = $state(false);
+  let loadingSend = $state(false);
+  let liked = $state(false);
 
-  // Converts a time string (HH:MM:SS or MM:SS) into total seconds.
+
   function timeToSeconds(time) {
     const parts = time.split(':').map(Number).reverse();
     let seconds = 0;
@@ -22,7 +25,7 @@
     return seconds;
   }
 
-   // Determines the current chapter based on the given time in seconds.
+  
   function getCurrentChapter(seconds) {
     for (let i = 0; i < parsedChapters.length; i++) {
       const currentChapter = parsedChapters[i];
@@ -35,9 +38,6 @@
     return null; 
   }
 
-// Function to handle clicks on timestamp hyperlinks in the comment content.
-// Ensures that clicking a timestamp immediately seeks the video to the specified time
-// without requiring a page refresh.
 function handleTimeLinkClick(event) {
   const link = event.target.closest('a.time-link');
   if (link) {
@@ -45,19 +45,19 @@ function handleTimeLinkClick(event) {
     const seconds = parseInt(link.dataset.time, 10);
     const video = document.querySelector('video');
 
-    // Update the video playback position
+  
     if (video) {
       video.currentTime = seconds;
     }
 
-    // Update the URL parameters
+  
     const url = new URL(window.location);
     url.searchParams.set('video-start', seconds);
-    window.history.pushState({}, '', url); // Update the URL without refreshing the page
+    window.history.pushState({}, '', url);
   }
 }
 
-   // Parses the comment content to find timestamps and converts them into clickable hyperlinks.
+  
   function parseCommentContent(content) {
     const timeRegex = /\b\d{1,2}:\d{2}(?::\d{2})?\b/g;
     return content.replace(timeRegex, (match) => {
@@ -66,11 +66,11 @@ function handleTimeLinkClick(event) {
     });
   }
 
-  // Reactive statement: Keeps the comment content up-to-date by parsing it for timestamps and converting them into hyperlinks whenever the content changes.
-  $: parsedContent = parseCommentContent(comment.content);
 
-  // Reactive statement: Tracks the chapters associated with the timestamps in the comment content and updates dynamically.
-  $: currentChapter = (() => {
+  let parsedContent = $derived(parseCommentContent(comment.content));
+
+
+  let currentChapter = $derived((() => {
     const timeMatches = comment.content.match(/\b\d{1,2}:\d{2}(?::\d{2})?\b/g);
     if (timeMatches) {
       return timeMatches.map((time) => {
@@ -79,7 +79,7 @@ function handleTimeLinkClick(event) {
       }).filter((chapter) => chapter !== null);
     }
     return [];
-  })();
+  })());
 
   const likeComment = () => {
     loadingLike = true;
@@ -128,7 +128,7 @@ function handleTimeLinkClick(event) {
       {/if}
     </section>
   
-    <p class="comment-content" on:click={handleTimeLinkClick}>
+    <p class="comment-content" onclick={handleTimeLinkClick}>
       {@html parsedContent}
     </p>
 
@@ -189,7 +189,7 @@ function handleTimeLinkClick(event) {
     <ul>
       {#each comment.replies as reply (reply.id) }
         <li>
-          <svelte:self 
+          <Comment 
           comment={reply}/>
         </li>
       {/each}
@@ -198,7 +198,7 @@ function handleTimeLinkClick(event) {
 {/if}
 
 <style>
-
+  
 .chapter-info {
     font-size: var(--font-size-sm);
     color: var(--primary-color);

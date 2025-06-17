@@ -1,12 +1,15 @@
 <script>
   import formatDate from "$lib/JavaScript/format-date";
-  export let thumbnail = "";
-  export let slug = "";
-  export let duration = "";
-  export let title = "";
-  export let speakers = [];
-  export let date = "";
-  export let categories = "";
+  
+  let {
+    thumbnail = "",
+    slug = "",
+    duration = "",
+    title = "",
+    speakers = [],
+    date = $bindable(""),
+    categories = ""
+  } = $props();
 
   date = formatDate(date);
 </script>
@@ -64,6 +67,11 @@
 
   article .container-image {
     position: relative;
+
+    @media (min-width: 882px) {
+      min-width: 50vw;
+      margin-right: 20px;
+    }
   }
 
   article .container-image img {
@@ -84,12 +92,24 @@
     right: 10px;
     border-radius: var(--border-radius-sm);
     z-index: 1;
+
+    @media (min-width: 882px) {
+      font-size: var(--font-size-lg);
+    }
   }
 
   article .speakers span {
     text-transform: uppercase;
     color: var(--primary-color);
     margin-block: 0.2rem;
+
+    @media (min-width: 882px) {
+      font-size: var(--font-size-md);
+    }
+
+    @media (min-width: 1180px) {
+      font-size: var(--font-size-lg);
+    }
   }
 
   .date {
@@ -98,6 +118,11 @@
     @media (min-width: 882px) {
       display: block;
       font-size: var(--font-size-md);
+    }
+
+    @media (min-width: 1180px) {
+      display: block;
+      font-size: var(--font-size-lg);
     }
   }
 
@@ -129,40 +154,11 @@
 
     @media (min-width: 882px) {
       font-size: var(--font-size-xl);
-    }
-  }
-
-  @media (min-width: 882px) {
-    
-   .container-image {
-      min-width: 50vw;
-      margin-right: 20px;
-    }
-
-    article .container-image .duration {
-      font-size: var(--font-size-lg);
-    }
-
-    p {
       padding: 8px 0;
     }
 
-    article .speakers span {
-      font-size: var(--font-size-md);
-    }
-  }
-  @media (min-width: 1180px) {
-    .featured-webinar-info p {
+    @media (min-width: 1180px) {
       font-size: var(--font-size-2xl);
-    }
-
-    article .speakers span {
-      font-size: var(--font-size-lg);
-    }
-    
-    .date {
-      display: block;
-      font-size: var(--font-size-lg);
     }
   }
 </style>

@@ -1,5 +1,5 @@
 <script>
-    export let name = "";
+  let { name = "" } = $props();
 </script>
 
 <div class="empty-state">

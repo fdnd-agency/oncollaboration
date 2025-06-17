@@ -14,42 +14,39 @@ discuss recent developments in their medical field.
   * [Sources](#sources)
   * [License](#license)
 
-> Team: [Eva Haller](https://github.com/itsValyria), [Ryan Korver](https://github.com/Ryank2004), [Damian Romeijn](https://github.com/DamianR2004) & [Zoë Penner](https://github.com/zoepje)
+> Semester 4 Team: [Lesley Reynolds](https://github.com/Jason2426), [Quincy Kapenga](https://github.com/kwinsie), [Jason Wong](https://github.com/Jason2426)
+and [Jesse Leeuwerink](https://github.com/J3SS3HVA)
+
+> Semester 3 Team: [Eva Haller](https://github.com/itsValyria), [Ryan Korver](https://github.com/Ryank2004), [Damian Romeijn](https://github.com/DamianR2004) & [Zoë Penner](https://github.com/zoepje)
 
 ## Description
 There currently are multiple things you can do on this platform, like:
 - Watch webinars
 - Watch contourings
-- Comment on webinars/contourings
+- Comment on webinars/contourings(also a timestamp functionality. example 1:10:11)
+- Read information about a speaker
+- Visit your own profile
+
 
 ### 📸 Home
-<img width="300" alt="Oncollaboration Home iPhone SE" src="https://github.com/user-attachments/assets/221680e4-31af-4aa9-b131-cb67b9d48fe8">
+<img width="300" alt="Oncollaboration Home iPhone SE" src="https://github.com/user-attachments/assets/2f59174f-447a-4256-af82-27eb88547453">
 
-<img width="800" alt="Oncollaboration Home MacBook Pro" src="https://github.com/user-attachments/assets/fe60bd74-4ed1-4649-8f19-e56f15c22ac8">
 
-### 📸 Webinars
-<img width="300" alt="Oncollaboration Webinars iPhone SE" src="https://github.com/user-attachments/assets/2292ac15-cadc-463a-a9fd-55dc91447acf">
-
-<img width="800" alt="Oncollaboration Webinars MacBook Pro" src="https://github.com/user-attachments/assets/d76abc2a-2ac8-4d16-a564-12a8effa2580">
-
-### 📸 Contourings
-<img width="300" alt="Oncollaboration Contourings iPhone SE" src="https://github.com/user-attachments/assets/ccfc249d-ec6a-45f6-a9d7-de6a63c40636">
-
-<img width="800" alt="Oncollaboration Contourings MacBook Pro" src="https://github.com/user-attachments/assets/a0332433-64ba-4721-aa4a-c88f99e0ec47">
-
-### 📸 Commentsection
-<img width="400" alt="Oncollaboration Commentsection" src="https://github.com/user-attachments/assets/c5fc5e4e-53e4-44c1-a6bc-6d6a7d975ad1" />
 
 You can watch the website live here: 🌐 [oncollaboration.agency.fdnd.nl](https://oncollaboration.agency.fdnd.nl/) 
 
 ## Features
-When building this website, we used SvelteKit 4. We utilized components and made the website dynamic with data from Directus. The database is built from 6 tables, and you can find the data model [here](https://github.com/Ryank2004/Oncollaboration-Sprint-14/issues/24#issuecomment-2375264843):
+When building this website, we used SvelteKit 5. We utilized components and made the website dynamic with data from Directus. The database is built from 6 Multiple tables.
 - [Webinars](https://fdnd-agency.directus.app/items/avl_webinars)
 - [Speakers](https://fdnd-agency.directus.app/items/avl_speakers)
 - [Contourings](https://fdnd-agency.directus.app/items/avl_contourings)
 - [Comments](https://fdnd-agency.directus.app/items/avl_comments)
 - [Categories](https://fdnd-agency.directus.app/items/avl_categories)
 - [Users](https://fdnd-agency.directus.app/items/avl_users)
+- [Messages](https://fdnd-agency.directus.app/items/avl_messages)
+- [Team](https://fdnd-agency.directus.app/items/avl_team)
+- [Logo](https://fdnd-agency.directus.app/items/avl_logos)
+- [Content](https://fdnd-agency.directus.app/items/avl_content)
 
 During the development, we worked with a mobile-first approach. We also applied Progressive Enhancement so that everyone can use this website.
 
@@ -57,6 +54,8 @@ During the development, we worked with a mobile-first approach. We also applied 
 To work on this project, you can clone this repository. Once you have done this, you need to install all the necessary files using the command `npm install`. After that, you can run it on your localhost with `npm run dev`.
 
 ## Usage
+Important: Make sure you check the [version-before-redesign](https://github.com/fdnd-agency/oncollaboration/tree/version-before-redesign) branch to see what kind of features we already have before we started building on the redesign.
+
 You can browse through the webinars and contourings, leave comments on them, and search for specific ones. Additionally, you can filter them by category. Webinars are available to watch, and you can download the resources used for both the webinars and contourings.
 
 ## Changelog
@@ -124,6 +123,26 @@ Sprint 18 was all about coming to a release candidate. We determined what needed
 - [New branding](https://github.com/fdnd-agency/avl/issues/86)
 - [Section "About the speaker"](https://github.com/fdnd-agency/avl/issues/88)
 - [Filteroption ALL fix](https://github.com/fdnd-agency/avl/issues/66)
+
+### Sprint 19
+
+In this sprint a new team started working on the project. What i did (Jesse Leeuwerink) is checking everything like the code base, contribute.md, handover.md etc. 
+
+This sprint I did the following things 
+- build a Profile page
+- a speaker page
+- made a chapter function in the webinar slug page
+- and made a not fully working time stamp function
+
+### Sprint 20
+
+This time we worked on the following things
+
+- finishing the timestamp function for the webinar slug page
+- migrating the project from svelteKit to 5
+- Starting to make redesign ideas
+- Designing a prototype version of the Home page
+- Building the redesign of the home page
 
 ## Sources
 - [SvelteKit tutorial](https://learn.svelte.dev/tutorial/introducing-sveltekit)

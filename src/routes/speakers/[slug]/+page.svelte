@@ -1,20 +1,17 @@
 <script>
   import { WebinarOverview } from "$lib/index.js";
   import { onMount } from 'svelte';
-  export let data;
-  let viewtransition = true;
+  
+  let { data } = $props(); 
 
   const speakers = data.speaker;
   const webinars = data.webinars;
 
-  console.log(webinars)
-  console.log(speakers)
-
-  let featuredWebinars;
-  let aboutText;
-  let showmoreBtn;
-  let aboutSpeaker;
-  let svgElement
+  let featuredWebinars = $state();
+  let aboutText = $state();
+  let showmoreBtn = $state();
+  let aboutSpeaker = $state();
+  let svgElement = $state()
 
   let isAboutOpen = false;
 
@@ -60,7 +57,7 @@
 </script>
 
 <main>
-  <button on:click={nav_back} aria-label="back">
+  <button onclick={nav_back} aria-label="back">
     <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <title>tv</title>
       <path d="M15 7L10 12L15 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -115,7 +112,7 @@
       <div class="about-speaker" bind:this={aboutSpeaker}>
         <h2>About</h2>
         <div bind:this={aboutText} class="hiddentext {aboutText ? 'js' : ''}">{@html speakers.about}</div>
-        <button bind:this={showmoreBtn} on:click={toggleAboutSpeaker}><span>Show more</span></button>
+        <button bind:this={showmoreBtn} onclick={toggleAboutSpeaker}><span>Show more</span></button>
       </div>
 
     </section>
@@ -123,8 +120,8 @@
 
   <section bind:this={featuredWebinars} class="featured-webinars {featuredWebinars ? 'js-enabled' : ''}">
     <h2>Webinars spoken at</h2>
-    <button on:click={toggleFeaturedWebinars} aria-label="toggle webinars {speakers.fullname} has spoken at">
-      <svg bind:this={svgElement} on:animationend={() => svgElement.classList.remove('rotating')} width="30px" height="30px" viewBox="0 0 24 24" fill="hsl(340, 100%, 15%)" xmlns="http://www.w3.org/2000/svg">
+    <button onclick={toggleFeaturedWebinars} aria-label="toggle webinars {speakers.fullname} has spoken at">
+      <svg bind:this={svgElement} onanimationend={() => svgElement.classList.remove('rotating')} width="30px" height="30px" viewBox="0 0 24 24" fill="hsl(340, 100%, 15%)" xmlns="http://www.w3.org/2000/svg">
         <rect x="3" y="7" width="18" height="14" rx="1" stroke="white" stroke-width="2" stroke-linecap="round"/>
         <path d="M13 7L17 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M11 7L7 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -379,7 +376,7 @@
     }
   }
 
-  .speaker-contact button svg :has title{
+  .speaker-contact button svg:has title{
     stroke: var(--alt-text-color);
   }
 
@@ -640,7 +637,7 @@
   }
 }
 
-.featured-webinars.open ul.carrousel li {
+.featured-webinars:global(.open) ul.carrousel li {
   opacity: 0; 
   animation: fadeIn 0.5s ease forwards; 
   animation-delay: var(--stagger);

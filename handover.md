@@ -1,49 +1,48 @@
-# Handover Document
+# Handover
 
-Dit document bevat de essentiële informatie om het project **Oncollaboration** voort te zetten. Oncollaboration is een communicatieplatform dat samenwerking tussen Nederlandse en Indonesische radiotherapeuten faciliteert. Het platform stelt gebruikers in staat contourings te delen, webinars te bekijken en met elkaar te communiceren via reacties in Q&A-secties.
+## What is the current status of this project ?
+For Oncollaboration, we worked with Quincy from CMD. We didn't have much time to complete the redesign, so we deliberately chose to create only the mobile version of the homepage. We implemented all the must-haves we had outlined for the homepages, with only a few minor bugs that we didn't get a chance to fixWat zijn de belangrijkste features die al werken?
+The new homepage is still linked to the old pages so when choosing one of the following call to actions, Doctors, Contourings and Webinars. It will take you to the old pages that where made. when redesigning the other pages, you can apply its functionalities to the newly redesigned pages.
 
----
+## What are the most important features that are currently working ?
 
-## Huidige status van het project
+**Old version functionalities** 
+-	there are videos of the webinars available for the user to watch.
+-	Video’s of the webinars have a timestamp feature
+-	You can leave comments on the webinars video’s
+-	You can filter when using the search feature
 
-Het project bevindt zich in een vergevorderd stadium met een goede basis. De volgende zaken zijn al gerealiseerd:
+**New version functionalities**
+-	Reusable call to actions (you can customize as desired)
+-	Carousell that shows all the doctors
 
-- Alle pagina's zijn ontwikkeld, met uitzondering van de profielpagina.
-- De projectstructuur is overzichtelijk en gebouwd volgens de LEGO-methode, waarmee componenten herbruikbaar en modulair zijn opgezet.
-- De Directus-database is volledig ingericht, gekoppeld aan de frontend, en laadt alle benodigde data correct in.
-- Alle ontwikkelde features functioneren zoals bedoeld.
+## What are the biggest concerns or challenges?
 
----
+**Login**
+-	Making a working login system for the user
+-	Comments are hard coded so the next step would be to connect the comments to the users that are currently logged in.
 
-## Belangrijkste features die al werken
+## What's recommended as the first step for the next team?
 
-1. **Zoek- en filterfunctionaliteit**:
-   - Werkt voor zowel webinars als contourings.
-2. **Interactieve Q&A-sectie**:
-   - Gebruikers kunnen reageren en discussiëren in de context van webinars en contourings.
+**1. When working on this project**
 
----
+When working on this project we strongly advice you to open and run this branch. So you can see the previous design with all the functionalities made prior. This will give you a better understanding of how it was build and how to implement it for the redesign for Oncollaboration.
 
-## Aandachtspunten en uitdagingen
+[first design](https://github.com/fdnd-agency/oncollaboration/tree/version-before-redesign)
 
-1. **Authenticatie en profielbeheer**:
-   - Er ontbreekt nog een inlogsysteem, inclusief validatie van gebruikersgegevens.
-   - Het is essentieel om reacties en andere gebruikersacties te koppelen aan individuele accounts.
-2. **Profielpagina**:
-   - Deze ontbreekt momenteel en moet worden ontwikkeld.
-3. **Testen en optimalisatie**:
-   - Grondig testen van de implementatie om bugs en optimalisaties te identificeren.
+**2  Implement Login System: **
 
----
+•	Ensure a secure and user-friendly authentication system.
 
-## Aanbevolen eerste stappen voor het volgende team
+•	Add validation to guarantee the integrity of user data.
 
-1. **Inlogsysteem implementeren**:
-   - Zorg voor een veilig en gebruiksvriendelijk authenticatiesysteem.
-   - Voeg validatie toe om de integriteit van gebruikersgegevens te waarborgen.
-2. **Profielpagina ontwikkelen**:
-   - Ontwerp en implementeer een profielpagina waar gebruikers hun gegevens kunnen bekijken en bewerken.
-3. **Koppeling van reacties aan accounts**:
-   - Werk aan de logica om reacties en andere interacties te verbinden met gebruikersprofielen.
+**3. Develop Profile Page: **
 
----
+•	Design and implement a profile page where users can view and edit their data.
+
+**4. Link Comments to Accounts: **
+
+•	Work on the logic to connect comments and other interactions with user profiles.
+
+ 
+

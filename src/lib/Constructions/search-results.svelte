@@ -1,6 +1,6 @@
 <script>
-  export let data;
   import { ContouringOverview, WebinarOverview } from "$lib/index.js";
+  let { data } = $props();
 </script>
 
 <main>
@@ -45,23 +45,20 @@
     scroll-behavior: smooth;
     margin: 2em auto;
     gap: 10px;
+
+    @media (min-width: 1098px) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   .carrousel > div {
     flex: 0 0 calc(100% - 20%);
     scroll-snap-align: start;
-  }
 
-  @media only screen and (min-width: 500px) {
-    .carrousel > div {
+    @media (min-width: 500px) {
       flex: 0 0 auto;
     }
   }
 
-  @media only screen and (min-width: 1098px) {
-    .carrousel {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
 </style>

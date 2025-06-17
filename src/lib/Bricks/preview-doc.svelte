@@ -1,5 +1,5 @@
 <script>
-  export let id; 
+  let { id } = $props();
 </script>
 
 <button popovertarget="popover-preview">
@@ -57,10 +57,8 @@
     max-height: 420px;
     border: 2px solid var(--background-category-color);
     background-color: var(--background-category-color);
-  }
 
-  @media only screen and (min-width: 1080px){
-    iframe {
+    @media (min-width: 1080px) {
       top: 5rem;
     }
   }
