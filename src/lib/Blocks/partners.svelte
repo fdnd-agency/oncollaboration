@@ -28,11 +28,6 @@
 </section>
 
 <style>
-  h2 {
-    padding-left: 0.5em;
-    padding-bottom: 1em;
-  }
-
   .partner-container {
     width: 100%;
     height: var(--height);
@@ -40,7 +35,7 @@
     mask-image: linear-gradient(
       to right,
       transparent,
-      #000 10% 90%,
+      var(--text-dark) 10% 90%,
       transparent
     );
     margin: 1em 0;

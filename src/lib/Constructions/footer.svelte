@@ -20,6 +20,7 @@
 <style>
   footer {
     height: 12.5em;
+    color: var(--text-light);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,10 +32,6 @@
       position: sticky;
       bottom: 0;
     }
-  }
-
-  footer p {
-    color: var(--text-color-light);
   }
 
   footer ul {
@@ -49,7 +46,7 @@
   }
 
   footer a {
-    color: var(--text-color-light);
+    color: var(--text-light);
   }
 
   footer a:hover {

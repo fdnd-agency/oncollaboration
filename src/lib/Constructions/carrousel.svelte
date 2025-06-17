@@ -144,15 +144,14 @@ function goToPrev() {
     flex-direction: column;
 
     @media (min-width: 1080px){ 
-    padding: 4em 12.5em;
+      padding: 4em 12.5em;
+    }
   }
-}
 
   h2 {
-    color: #40BD93;
-    font-size: 1.5em;
-    padding: 0 0 2.5em 1.5em;
-    margin-right: 0 40px;
+    color: var(--primary-color);
+    font-size: var(--text-md);
+
     @media (min-width: 1080px){
       font-size: var(--font-size-5xl);
       
@@ -166,6 +165,7 @@ function goToPrev() {
     align-items: center;
     height: 270px;
     overflow: hidden;
+
     @media (min-width: 1080px){
       height: 640px;
     }
@@ -181,7 +181,6 @@ function goToPrev() {
     overflow: auto;
     scroll-snap-type: x mandatory;
 
-
     @media (min-width: 1080px){
       gap: 20px;
     }
@@ -190,8 +189,6 @@ function goToPrev() {
   :global(.js) .doctors {
     overflow: unset;
     position: absolute;
-
-
   }
 
   .card {
@@ -206,15 +203,16 @@ function goToPrev() {
     scroll-snap-align: center;
     overflow: hidden;
     margin-bottom: 20px;
+
     @media (min-width: 1080px){
-     min-width: 248px;
-     max-width: 248px;
+      min-width: 248px;
+      max-width: 248px;
     }
   }
 
   :global(.js) .card {
     margin-bottom: unset;
-    }
+  }
   
 
   .card img {
@@ -313,7 +311,7 @@ function goToPrev() {
 
 
   :global(.js) .navigation-btn {
-    border: 2px solid #de6a23;
+    border: 2px solid var(--primary-color);
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
@@ -329,7 +327,7 @@ function goToPrev() {
   }
 
   .navigation-btn:hover {
-    background: #de6a23;
+    background: var(--primary-color);
   }
 
   .carousel-controls {
@@ -345,12 +343,12 @@ function goToPrev() {
  }
 
 .doctor-info {
-    position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--text-light);
   border-radius: 12px;
   width: 12.563em;
   height: 6.563em;
@@ -360,19 +358,19 @@ function goToPrev() {
 .doctor-info::before{
     position: absolute;
     content: '';
-     width: 0;
-      height: 0;
-      top: -20px;
-      border-left: 25px solid transparent;
-      border-right: 25px solid transparent;
-      border-bottom: 20px solid #fff;
+    width: 0;
+    height: 0;
+    top: -20px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 20px solid var(--text-light);
 }
 
 .carousel-controls button {
   border-radius: 50%;
-  border: 2px solid #40BD93;
-  background: #40BD93;
-  color: #40BD93;
+  border: 2px solid var(--primary-color);
+  background: var(--primary-color);
+  color: var(--primary-color);
   cursor: pointer;
   transition: background 0.2s;
   width: 52px;
@@ -382,16 +380,16 @@ function goToPrev() {
 }
 
 .carousel-controls button:hover {
-  background: #fff;
+  background: var(--text-light);
 }
 
 .carousel-controls button:hover svg path{
-  fill: #40BD93;
+  fill: var(--primary-color);
 }
 
 section > a{
     align-self: flex-end;
     margin-top: 1em;
-    color: black;
+    color: var(--text-dark);
 }
 </style>
