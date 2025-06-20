@@ -47,7 +47,7 @@ Het project bevindt zich in een vergevorderd stadium met een goede basis. De vol
    - Werk aan de logica om reacties en andere interacties te verbinden met gebruikersprofielen.
 
 ---
-## Designrationale en Handover
+## Designrationale en StyleGuide
 [Oncollaboration DesignRationale StyleGuide.pdf](https://github.com/user-attachments/files/20840326/Oncollaboration.DesignRationale.StyleGuide.pdf)
 
 
