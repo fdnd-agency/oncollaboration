@@ -45,4 +45,7 @@ When working on this project we strongly advice you to open and run this branch.
 •	Work on the logic to connect comments and other interactions with user profiles.
 
  
+## Designrationale en StyleGuide
+[Oncollaboration DesignRationale StyleGuide.pdf](https://github.com/user-attachments/files/20840326/Oncollaboration.DesignRationale.StyleGuide.pdf)
+
 
