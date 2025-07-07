@@ -1,6 +1,7 @@
 <script>
-  export let data;
   import { Search, SearchResults } from "$lib/index.js";
+  
+  let { data } = $props();
 </script>
 
 <main>
@@ -14,11 +15,10 @@
   main {
     margin: 1rem;
     margin-top: 2rem;
-  }
 
-  @media only screen and (min-width: 1599px) {
-    main {
+    @media (min-width: 1599px) {
       margin: 4rem;
     }
   }
+
 </style>

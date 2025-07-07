@@ -1,6 +1,8 @@
 <script>
   import {Search, Filter, ContouringOverview} from "$lib/index.js";
-  export let data;
+
+  let { data } = $props();
+  
   let viewtransition = true //What does this mean
 </script>
 
@@ -51,11 +53,10 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-  }
 
-  @media screen and (min-width: 1080px) {
-    ul {
+    @media (min-width: 1080px) {
       justify-content: left;
     }
   }
+
 </style>

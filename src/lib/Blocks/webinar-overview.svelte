@@ -2,15 +2,17 @@
   import { page } from '$app/stores';
   import { get } from 'svelte/store';
   
-  export let slug = "";
-  export let thumbnail = "";
-  export let duration = "";
-  export let title = "";
-  export let speakers = [];
-  export let categories = [];
+  let {
+    slug = "",
+    thumbnail = "",
+    duration = "",
+    title = "",
+    speakers = [],
+    categories = []
+  } = $props();
 
 
-  $: currentPath = $page.url.pathname;
+  let currentPath = $derived($page.url.pathname);
 </script>
 
 <article>
@@ -41,6 +43,10 @@
     width: 100%;
     max-width: var(--card-max-width);
     height: 100%;
+
+    @media (min-width: 600px) {
+      margin-inline: 1rem;
+    }
   }
 
   article a {
@@ -53,6 +59,11 @@
 
   article p {
     font-size: var(--font-size-sm);
+
+    @media (min-width: 600px) {
+      margin-top: 10px;
+      font-size: var(--font-size-lg);
+    }
   }
 
   article .container-image {
@@ -85,6 +96,12 @@
     font-size: var(--font-size-md);
     overflow: hidden;
     text-overflow: ellipsis;
+
+    @media (min-width: 600px) {
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      font-size: var(--font-size-xl);
+    }
   }
 
   article .speakers {
@@ -121,30 +138,13 @@
     transition: .2s;
     font-weight: 700;
     font-size: var(--font-size-sm);
+
+    @media (min-width: 600px) {
+      display: block;
+    }
   }
 
   article:first-of-type {
     margin-left: 0;
-  }
-  
-  @media only screen and (min-width: 600px) {
-    article {
-      margin-inline: 1rem;
-    }
-
-    article p {
-      margin-top: 10px;
-      font-size: var(--font-size-lg);
-    }
-
-    article h3 {
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      font-size: var(--font-size-xl);
-    }
-
-    article .categories .category {
-      display: block;
-    }
   }
 </style>
