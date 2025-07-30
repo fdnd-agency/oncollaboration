@@ -7,7 +7,7 @@
 
 <div class='q-a'>
     <QandA 
-      comments = {QANDA} parsedChapters={parsedChapters} />
+      comments={QANDA} parsedChapters={parsedChapters} />
   </div>
 
 <style>
