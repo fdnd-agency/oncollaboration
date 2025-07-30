@@ -34,5 +34,9 @@ import WebinarResources from "./Bricks/webinar-resources.svelte";
 import WatchNext from "./Constructions/webinar-watchnext.svelte";
 import NavBack from "./Bricks/navback.svelte";
 import WebinarQandA from "./Bricks/webinar-q&a.svelte";
-export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article, FAQ, Partners, Arrow, CTA, DoctorsUnited , FullWebinarSection , WebinarHeader , WebinarVideoHeader , WebinarChapters , WebinarTranscript , WebinarDescription, WebinarSpeakers, WebinarResources , WatchNext, NavBack , WebinarQandA };
+
+import ContouringHeader from "./Bricks/contouring-header.svelte";
+import ContouringSearchResult from "./Bricks/contouring-search-result.svelte";
+import ContouringContent from "./Bricks/contouring-content.svelte";
+export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article, FAQ, Partners, Arrow, CTA, DoctorsUnited , FullWebinarSection , WebinarHeader , WebinarVideoHeader , WebinarChapters , WebinarTranscript , WebinarDescription, WebinarSpeakers, WebinarResources , WatchNext, NavBack , WebinarQandA, ContouringHeader, ContouringSearchResult, ContouringContent };
 
