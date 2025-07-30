@@ -1,6 +1,7 @@
 <script>
 let { transcript } = $props();
 import { fade } from 'svelte/transition';
+
 let showTranscript = $state(false);
 </script>
 
