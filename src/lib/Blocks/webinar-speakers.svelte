@@ -1,5 +1,5 @@
 <script>
-  export let speakers = [];
+  let { speakers } = $props();
 </script>
 
 <article class="speakers">

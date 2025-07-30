@@ -1,5 +1,5 @@
 <script>
-  export let chapters = [];
+  let { chapters } = $props();
 </script>
 
 <section class="chapters">

@@ -1,6 +1,5 @@
 <script>
-  export let webinars = [];
-  export let formatDate;
+  let { webinars , formatDate } = $props();
 
   // Get the 4 newest webinars and map their data
   let newestWebinars = webinars.slice(0, 4).map(webinar => ({
