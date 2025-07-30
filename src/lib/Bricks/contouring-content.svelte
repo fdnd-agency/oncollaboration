@@ -1,23 +1,23 @@
 <script>
-    import { ContouringOverview } from "$lib/index.js";
-    let viewtransition = true //What does this mean
-    let { Contourings } = $props();
+  import { ContouringOverview } from "$lib/index.js";
+  let viewtransition = true; //What does this mean
+  let { Contourings } = $props();
 </script>
 
 {#if Contourings.length != 0}
-    <ul>
-      {#each Contourings as contouring}
+  <ul>
+    {#each Contourings as contouring}
       <li>
-        <ContouringOverview {...contouring} {viewtransition}/>
+        <ContouringOverview {...contouring} {viewtransition} />
       </li>
-      {/each}
-    </ul>
-  {:else}
-    <p>No contourings found for {data.category}.</p>
-  {/if}
+    {/each}
+  </ul>
+{:else}
+  <p>No contourings found for {data.category}.</p>
+{/if}
 
-  <style>
-    ul {
+<style>
+  ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -27,4 +27,4 @@
       justify-content: left;
     }
   }
-  </style>
+</style>
