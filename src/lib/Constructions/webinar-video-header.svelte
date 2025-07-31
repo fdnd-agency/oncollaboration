@@ -55,7 +55,7 @@ onMount(() => {
 </div>
 
 <style>
-    .video-header {
+.video-header {
   width: 90vw;
   display: flex;
   flex-direction: column;

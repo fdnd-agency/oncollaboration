@@ -9,7 +9,7 @@
 </div>
 
 <style>
-.bread-crumbs {
+  .bread-crumbs {
     width: 85vw;
     margin: 0 auto;
   }

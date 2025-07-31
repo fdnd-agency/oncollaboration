@@ -36,7 +36,7 @@
 <style>
 .watch-next {
   height: auto;
-  max-width: 500px;
+  max-width: 31.25em;
   width: 90vw;
   margin: 1rem auto;
   position: relative;
@@ -69,7 +69,7 @@
 .watch-next img {
   grid-area: a;
   height: auto;
-  width: 200px;
+  width: 12.5em;
   border-radius: 10px;
 }
 
@@ -127,7 +127,7 @@
   }
 
   .watch-next img {
-    width: 384px;
+    width: 24em;
     height: auto;
   }
 }

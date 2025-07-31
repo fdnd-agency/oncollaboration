@@ -6,14 +6,15 @@
 </script>
 
 <div class='q-a'>
-    <QandA 
-      comments={QANDA} parsedChapters={parsedChapters} />
-  </div>
+  <QandA 
+    comments={QANDA} parsedChapters={parsedChapters} />
+</div>
 
 <style>
-    .q-a {
+
+.q-a {
   width: 90vw;
-  max-width: 500px;
+  max-width: 31.25em;
   margin: 1rem auto;
 }
 

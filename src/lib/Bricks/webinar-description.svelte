@@ -14,8 +14,8 @@
   {:else}
     {@html truncateText(description)}
   {/if}
-    <button onclick={() => {showFullDescription = !showFullDescription;}} class="expand-text-btn">
-    {showFullDescription ? "Read Less" : "Read More"}
+  <button onclick={() => {showFullDescription = !showFullDescription;}} class="expand-text-btn">
+      {showFullDescription ? "Read Less" : "Read More"}
   </button>
 </div>
 
