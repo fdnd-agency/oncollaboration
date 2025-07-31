@@ -4,8 +4,8 @@
   let menuOpen = false;
 </script>
 
-<nav>
-  <header class="grouped-toggle-icons">
+<header>
+  <nav class="grouped-toggle-icons">
     <a class="grouped-logo" href="/">
       <img src="images/Kemenkes2.png" width="40" height="45" alt="Logo">
       <img src="images/LogoOncollaboration.png" width="40" height="45"alt="logo">
@@ -24,7 +24,7 @@
         />
       </svg>
     </button>
-  </header>
+  </nav>
 
   <div class="hamburger-list" class:show-hamburger={menuOpen}>
       <nav class="grouped-close-icons">
@@ -177,10 +177,10 @@
         </ul>
       </div>
   </div>
-</nav>
+</header>
 
 <style>
-  nav {
+  header {
     padding: 2.5em 0.938em 1em 0.938em;
     background-color: #fff;
 
