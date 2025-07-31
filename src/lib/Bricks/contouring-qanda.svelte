@@ -4,9 +4,9 @@
 </script>
 
 <div class='q-a'>
-    <QandA 
-      comments={QANDA} />
-  </div>
+  <QandA 
+    comments={QANDA} />
+</div>
 
 <style>
   .q-a {
