@@ -23,7 +23,7 @@
     flex-wrap: wrap;
     gap: 20px;
 
-    @media (min-width: 1080px) {
+    @media (min-width: 67.5em) {
       justify-content: left;
     }
   }
