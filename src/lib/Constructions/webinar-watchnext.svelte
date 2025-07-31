@@ -84,7 +84,7 @@
   text-overflow: ellipsis;
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 67.5em) {
   .watch-next {
     grid-row: 2/10;
     grid-column: 2;

@@ -17,7 +17,7 @@ let showTranscript = $state(false);
 {/if}
 
 <style>
-    .transcript-btn {
+.transcript-btn {
   width: 100%;
   margin-block: 1rem;
   background-color: var(--primary-color);
@@ -37,7 +37,7 @@ let showTranscript = $state(false);
 }
 
 .transcript {
-  max-height: 200px;
+  max-height: 12.5em;
   overflow-y: scroll;
   scrollbar-width: 12px;
   scrollbar-color: var(--primary-color) var(--background-category-color);

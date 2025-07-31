@@ -63,7 +63,7 @@ onMount(() => {
   gap: 1rem;
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 67.5em) {
   .video-header {
     width: 100%;
   }
@@ -75,7 +75,7 @@ onMount(() => {
   line-height: 1.2;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 56.25em) {
   .video-header h1 {
     font-size: var(--font-size-2xl);
     line-height: 1;
