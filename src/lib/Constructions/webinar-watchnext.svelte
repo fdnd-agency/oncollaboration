@@ -36,7 +36,7 @@
 <style>
 .watch-next {
   height: auto;
-  max-width: 500px;
+  max-width: 31.25em;
   width: 90vw;
   margin: 1rem auto;
   position: relative;
@@ -69,7 +69,7 @@
 .watch-next img {
   grid-area: a;
   height: auto;
-  width: 200px;
+  width: 12.5em;
   border-radius: 10px;
 }
 
@@ -84,7 +84,7 @@
   text-overflow: ellipsis;
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 67.5em) {
   .watch-next {
     grid-row: 2/10;
     grid-column: 2;
@@ -127,7 +127,7 @@
   }
 
   .watch-next img {
-    width: 384px;
+    width: 24em;
     height: auto;
   }
 }

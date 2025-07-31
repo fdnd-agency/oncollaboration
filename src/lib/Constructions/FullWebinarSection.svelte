@@ -56,7 +56,7 @@
     max-width: var(--card-max-width);
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 37.5em) {
     ul {
       gap: 50px;
     }

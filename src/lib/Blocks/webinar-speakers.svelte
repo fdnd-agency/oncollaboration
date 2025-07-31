@@ -39,7 +39,7 @@
 <style>
 .speakers {
   padding-block: 2rem;
-  max-width: 900px;
+  max-width: 56.25em;
   display: grid;
   gap: 1rem;
 }
@@ -80,7 +80,7 @@
   display: none;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 56.25em) {
   .speaker-info {
     gap: 1rem;
   }
