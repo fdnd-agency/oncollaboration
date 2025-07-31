@@ -10,7 +10,7 @@
       <img src="images/Kemenkes2.png" width="40" height="45" alt="Logo">
       <img src="images/LogoOncollaboration.png" width="40" height="45"alt="logo">
     </a>
-    <button aria-label="toggle menu" class="toggle" on:click={() => (menuOpen = !menuOpen)}>
+    <button aria-label="toggle menu" class="toggle" onclick={() => (menuOpen = !menuOpen)}>
       <svg
         class="menu-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@
           <img src="images/Kemenkes2.png" width="30" height="35" alt="Logo">
           <img src="images/LogoOncollaboration.png" width="30" height="35"alt="logo">
         </a>
-        <button aria-label="close menu" class="close-button" on:click={() => (menuOpen = !menuOpen)}>
+        <button aria-label="close menu" class="close-button" onclick={() => (menuOpen = !menuOpen)}>
           <svg
             class="close-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@
               href="/"
               class="menuItem"
               class:active={page.url.pathname === "/"}
-              on:click={() => (menuOpen = false)}
+              onclick={() => (menuOpen = false)}
             >
               <svg
                 class="icon"
@@ -78,7 +78,7 @@
                 href="/webinars"
                 class="menu-item"
                 class:active={page.url.pathname.startsWith("/webinars")}
-                on:click={() => (menuOpen = false)}
+                onclick={() => (menuOpen = false)}
               >
                 <svg
                   class="icon"
@@ -108,7 +108,7 @@
                 href="/doctors"
                 class="menu-item"
                 class:active={page.url.pathname.startsWith("/doctors")}
-                on:click={() => (menuOpen = false)}
+                onclick={() => (menuOpen = false)}
               >
                 <svg
                   class="icon"
@@ -131,7 +131,7 @@
                 href="/contourings"
                 class="menu-item"
                 class:active={page.url.pathname.startsWith("/contourings")}
-                on:click={() => (menuOpen = false)}
+                onclick={() => (menuOpen = false)}
               >
               <svg
                 class="icon"
@@ -158,7 +158,7 @@
                 href="/profile"
                 class="menu-item"
                 class:active={page.url.pathname.startsWith("/profile")}
-                on:click={() => (menuOpen = false)}
+                onclick={() => (menuOpen = false)}
               >
               <svg
                   class="icon"
@@ -347,10 +347,14 @@
   li a.active {
     background-color: var(--primary-color);
     font-weight: bold;
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 0.2em;
     color: var(--text-light);
     width: auto;
+
+    @media (min-width: 64em) { 
+      padding: 1em;
+    }
   }
 
   li a.active .icon {
@@ -359,13 +363,12 @@
   }
 
   li a:focus {
-    outline: 0.125px solid var(--primary-color);
+    outline: 0.125px dashed var(--primary-color);
     border-radius: 0.125em;
     outline-offset: 0.2em;
   }
 
   li a .icon {
-    margin-right: 1em;
     width: 1.875em;
     height: 1.875em;
   }
