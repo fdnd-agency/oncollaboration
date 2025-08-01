@@ -60,8 +60,7 @@
         font-size: var(--font-size-xl);
     }
 
-    section h1,
-    section > h2 {
+    section h1 {
         margin: 0.8em 0 0.5em 0;
     }
 
