@@ -43,5 +43,6 @@ import ContouringResources from "./Bricks/contouring-resources.svelte";
 import ContouringQanda from "./Bricks/contouring-qanda.svelte";
 
 import ProfileInfo from "./Constructions/profile-info.svelte";
-export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article, FAQ, Partners, Arrow, CTA, DoctorsUnited , FullWebinarSection , WebinarHeader , WebinarVideoHeader , WebinarChapters , WebinarTranscript , WebinarDescription, WebinarSpeakers, WebinarResources , WatchNext, NavBack , WebinarQandA, ContouringHeader, ContouringSearchResult, ContouringContent, ContouringHero, ContouringResources, ContouringQanda, ProfileInfo };
+import ProfileNotification from "./Blocks/profile-notifications.svelte"; 
+export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article, FAQ, Partners, Arrow, CTA, DoctorsUnited , FullWebinarSection , WebinarHeader , WebinarVideoHeader , WebinarChapters , WebinarTranscript , WebinarDescription, WebinarSpeakers, WebinarResources , WatchNext, NavBack , WebinarQandA, ContouringHeader, ContouringSearchResult, ContouringContent, ContouringHero, ContouringResources, ContouringQanda, ProfileInfo, ProfileNotification };
 
