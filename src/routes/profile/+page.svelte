@@ -1,7 +1,5 @@
 <script>
-  import { WebinarOverview, ContouringOverview, EmptyState, ProfileInfo, ProfileNotification, ProfileHistory } from "$lib/index.js";
-
-  
+  import { ContouringOverview, EmptyState, ProfileInfo, ProfileNotification, ProfileHistory, ProfileFavourites } from "$lib/index.js";  
   let { data } = $props();
 
   const user = data.user;
@@ -15,26 +13,7 @@
   <ProfileInfo {user} />
   <ProfileNotification {data} />
   <ProfileHistory {data} />
-
-  <section>
-    <h2>Favourite Webinars</h2>
-    {#if favouriteWebinars.length !== 0}
-      <ul class="carrousel">
-        {#each favouriteWebinars as webinar}  
-          <li>
-            <WebinarOverview {...webinar} />
-          </li>
-        {/each}
-      </ul>
-    {:else}
-    <ul class="carrousel">
-      <li>
-        <EmptyState name="favourite" />
-      </li>
-    </ul>
-    {/if}
-  </section>
-
+  <ProfileFavourites {favouriteWebinars} />
 
   <section>
     {#if data.category != "all"}
