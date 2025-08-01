@@ -3,26 +3,26 @@
     let { data } = $props();
 </script>
 
-<section>
-    <h2>Notifications</h2>
+  <section>
+    <h2>History</h2>
     {#if data.webinars.length === 0}
     <ul class="carrousel">
-        {#each data.webinars as webinar}
+      {#each data.webinars as webinar}
         <li>
-            <WebinarOverview {...webinar} />
+          <WebinarOverview {...webinar} />
         </li>
-        {/each}
+      {/each}
     </ul>
-    {:else}
+  {:else}
     <ul class="carrousel">
-        <li>
-        <EmptyState name="notification" />
-        </li>
+      <li>
+        <EmptyState name="history" />
+      </li>
     </ul>
-    {/if}
-</section>
+  {/if}
+  </section>
 
-<style>
+  <style>
     section {
     margin: 4em 0;
     }

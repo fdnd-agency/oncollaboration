@@ -1,5 +1,5 @@
 <script>
-  import { WebinarOverview, ContouringOverview, EmptyState, ProfileInfo, ProfileNotification } from "$lib/index.js";
+  import { WebinarOverview, ContouringOverview, EmptyState, ProfileInfo, ProfileNotification, ProfileHistory } from "$lib/index.js";
 
   
   let { data } = $props();
@@ -13,27 +13,8 @@
 <main>
 
   <ProfileInfo {user} />
-
   <ProfileNotification {data} />
-
-  <section>
-    <h2>History</h2>
-    {#if data.webinars.length === 0}
-    <ul class="carrousel">
-      {#each data.webinars as webinar}
-        <li>
-          <WebinarOverview {...webinar} />
-        </li>
-      {/each}
-    </ul>
-  {:else}
-    <ul class="carrousel">
-      <li>
-        <EmptyState name="history" />
-      </li>
-    </ul>
-  {/if}
-  </section>
+  <ProfileHistory {data} />
 
   <section>
     <h2>Favourite Webinars</h2>
