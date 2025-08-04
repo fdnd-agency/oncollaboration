@@ -48,6 +48,8 @@ import ProfileHistory from "./Blocks/profile-history.svelte";
 import ProfileFavourites from "./Blocks/profile-favourites.svelte";
 import ProfileContourings from "./Blocks/profile-contourings.svelte";
 
+import SpeakerBackButton from "./Blocks/speaker-back-button.svelte";
 import SpeakerInfo from "./Assemblages/speaker-info.svelte";
-export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article, FAQ, Partners, Arrow, CTA, DoctorsUnited , FullWebinarSection , WebinarHeader , WebinarVideoHeader , WebinarChapters , WebinarTranscript , WebinarDescription, WebinarSpeakers, WebinarResources , WatchNext, NavBack , WebinarQandA, ContouringHeader, ContouringSearchResult, ContouringContent, ContouringHero, ContouringResources, ContouringQanda, ProfileInfo, ProfileNotification, ProfileHistory, ProfileFavourites, ProfileContourings, SpeakerInfo };
+import SpeakerFeaturedWebinars from "./Constructions/speaker-featuredwebinars.svelte";
+export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article, FAQ, Partners, Arrow, CTA, DoctorsUnited , FullWebinarSection , WebinarHeader , WebinarVideoHeader , WebinarChapters , WebinarTranscript , WebinarDescription, WebinarSpeakers, WebinarResources , WatchNext, NavBack , WebinarQandA, ContouringHeader, ContouringSearchResult, ContouringContent, ContouringHero, ContouringResources, ContouringQanda, ProfileInfo, ProfileNotification, ProfileHistory, ProfileFavourites, ProfileContourings, SpeakerInfo, SpeakerFeaturedWebinars, SpeakerBackButton };
 
