@@ -9,11 +9,11 @@
         {#if user.id}
           {#if user.profile_picture}
             <picture>
-              <img src="https://fdnd-agency.directus.app/assets/{user.profile_picture}?format=avif" alt="{user.fullname}'s profile picture" width="100" height="100"/>
+              <img src="https://fdnd-agency.directus.app/assets/{user.profile_picture}?format=avif" alt="{user.fullname}'s profile picture" width="100" height="100">
             </picture>
           {:else}
             <picture>
-              <img src="/images/profilepic.png" alt="Error " width="100" height="100"/>
+              <img src="/images/profilepic.png" alt="Error " width="100" height="100">
             </picture>
           {/if}
   
@@ -33,7 +33,7 @@
           </div>
         {:else}
         <picture>
-          <img src="/images/profilepic.png" alt="Error " width="100" height="100"/>
+          <img src="/images/profilepic.png" alt="Error " width="100" height="100">
         </picture>
           <h2>Name Surname</h2>
         {/if}
@@ -52,154 +52,154 @@
 
 <style>
     section h1 {
-        font-size: var(--font-size-2xl);
-        text-transform: uppercase;
+      font-size: var(--font-size-2xl);
+      text-transform: uppercase;
     }
 
     section h2 {
-        font-size: var(--font-size-xl);
+      font-size: var(--font-size-xl);
     }
 
     section h1 {
-        margin: 0.8em 0 0.5em 0;
+      margin: 0.8em 0 0.5em 0;
     }
 
     section > section {
-        display: flex;
-        justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
     }
 
     @media (min-width: 37.5em ) {
     section > section {
-        display: block;
+      display: block;
     }
     }
 
     section > section > div {
-        display: flex;
+      display: flex;
     }
 
     @media (min-width: 31.25em) {
         section > section > div {
-            justify-content: flex-end;
+          justify-content: flex-end;
         }
     }
 
     @media (min-width: 37.5em ) {
         section > section > div {
-            justify-content: flex-start;
-            margin-bottom: 11px;
+          justify-content: flex-start;
+          margin-bottom: 11px;
         }
     }
 
     section > section > div picture {
-        margin-right: 0.5rem;
+      margin-right: 0.5em;
     }
 
-    @media (min-width: 1080px) {
+    @media (min-width: 67.5em) {
         section > section > div picture {
-            margin-right: 10rem;
+          margin-right: 10em;
         }
     }
 
     section > section > div picture img {
-        border-radius: var(--border-radius-sm);
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        aspect-ratio: 1 / 1;
-        max-width: 6.25em;
-        display: block;
+      border-radius: var(--border-radius-sm);
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+      max-width: 6.25em;
+      display: block;
     }
 
     @media (min-width: 37.5em ) {
       section > section > div picture img {
-      max-width: 28.25em;
-      max-height: 28.25em;
+        max-width: 28.25em;
+        max-height: 28.25em;
      }
     }
 
     section > section > div .profile-info {
     /* Responsive alignment for profile info */
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
     }
 
     section > section > div div p {
-    font-size: var(--font-size-sm);
+      font-size: var(--font-size-sm);
     }
 
     @media (min-width: 37.5em ) {
-    section > section > div div p {
+      section > section > div div p {
         font-size: var(--font-size-xl);
-    }
+      }
     }
 
     section > section > div div h2 {
-    font-size: var(--font-size-lg);
+      font-size: var(--font-size-lg);
     }
 
     @media (min-width: 37.5em ) {
-    section > section > div div h2 {
+      section > section > div div h2 {
         font-size: var(--font-size-4xl);
-    }
+      }
     }
 
     section > section > div div span {
-    font-size: var(--font-size-md);
+      font-size: var(--font-size-md);
     }
 
     @media (min-width: 37.5em ) {
-    section > section > div div span {
+      section > section > div div span {
         font-size: var(--font-size-3xl);
-    }
+      }
     }
 
     section > section > div div p:not(:has(i)){
-    display: none;
+      display: none;
     }
 
     @media (min-width: 67.5em) {
-    section > section > div div p:not(:has(i)){
+      section > section > div div p:not(:has(i)){
         display: block;
         margin-top: 1rem;
-    }
+      }
     }
 
     section > section > div + div button {
-        background-color: var(--primary-color);
-        border-radius: var(--border-radius-sm);
-        border: none;
-        align-self: flex-end;
-        padding: var(--padding-button);
-        display: flex;
-        flex-direction: column;
+      background-color: var(--primary-color);
+      border-radius: var(--border-radius-sm);
+      border: none;
+      align-self: flex-end;
+      padding: var(--padding-button);
+      display: flex;
+      flex-direction: column;
     }
 
     @media (min-width: 37.5em) {
     section > section > div + div button {
-        min-width: 78px;
-        min-height: 64px;
-        align-items: center;
-        justify-content: center;
+      min-width: 78px;
+      min-height: 64px;
+      align-items: center;
+      justify-content: center;
     }
     }
 
     section > section > div + div button svg {
-        fill: var(--alt-text-color);
-        display: none;
+      fill: var(--alt-text-color);
+      display: none;
     }
 
     @media (min-width: 37.5em) {
-        section > section > div + div button svg {
-            display: block;
-        }
+      section > section > div + div button svg {
+        display: block;
+      }
     }
 
     section > section > div + div button span {
-        color: var(--alt-text-color);
-        font-size: var(--font-size-sm);
+      color: var(--alt-text-color);
+      font-size: var(--font-size-sm);
     }
   </style>
