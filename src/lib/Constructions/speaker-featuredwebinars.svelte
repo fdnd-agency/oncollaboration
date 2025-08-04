@@ -48,14 +48,14 @@
     .featured-webinars {
   /* Default: hidden on desktop, visible on mobile */
 }
-@media (min-width: 1080px) {
+@media (min-width: 67.5em) {
   .featured-webinars {
     display: block;
   }
 }
 
 .featured-webinars:global(.js-enabled) {
-  @media (min-width: 1080px) {
+  @media (min-width: 67.5em) { 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,7 +64,7 @@
     right: 0;
     background-color: var(--accent-color-1);
     color: var(--alt-text-color);
-    width: 540px;
+    width: 33.75em;
     margin: unset;
     height: 100%;
     z-index: 0;
@@ -75,34 +75,34 @@
 }
 
 .featured-webinars:global(.js-enabled) h2 {
-  @media (min-width: 1080px) {
+  @media (min-width: 67.5em) { 
     font-size: var(--font-size-3xl);
   }
 }
 
 .featured-webinars:global(.js-enabled) :global(article) {
-  @media (min-width: 1080px) {
+  @media (min-width: 67.5em) { 
     margin: 0;
   }
 }
 
 .featured-webinars:global(.js-enabled) :global(article a),
 .featured-webinars:global(.js-enabled) :global(article .speakers span) {
-  @media (min-width: 1080px) {
+  @media (min-width: 67.5em) { 
     color: var(--alt-text-color);
   }
 }
 
 .featured-webinars:global(.js-enabled) button {
   display: none;
-  @media (min-width: 1080px) {
+  @media (min-width: 67.5em) { 
     display: block;
     position: absolute;
     width: 124px;
     background-color: var(--accent-color-1);
     border: none;
     left: -75px;
-    height: 124px;
+    height: 7.75em;
     border-radius: var(--border-radius-sm);
     top: 35%;
     z-index: -1;
@@ -175,7 +175,7 @@
   margin: 0 auto;
   gap: 10px;
 }
-@media (min-width: 1080px) {
+@media (min-width: 67.5em) {
   .carrousel {
     flex-direction: column;
     appearance: none;
@@ -190,7 +190,7 @@
   border-radius: 10px;
   box-sizing: border-box;
 }
-@media (min-width: 500px) {
+@media (min-width: 31.25em) {
   .carrousel li {
     flex: 0 0 auto;
   }

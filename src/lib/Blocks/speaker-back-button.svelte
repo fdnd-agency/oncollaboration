@@ -15,7 +15,7 @@
   button {
     display: none;
 
-    @media (min-width: 1080px) {
+    @media (min-width: 67.5em) {
       display: block;
       width: 40px;
       height: 40px;
