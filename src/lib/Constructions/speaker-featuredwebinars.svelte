@@ -45,9 +45,6 @@
 </section>
 
 <style>
-    .featured-webinars {
-  /* Default: hidden on desktop, visible on mobile */
-}
 @media (min-width: 67.5em) {
   .featured-webinars {
     display: block;
@@ -98,7 +95,7 @@
   @media (min-width: 67.5em) { 
     display: block;
     position: absolute;
-    width: 124px;
+    width: 7.75em;
     background-color: var(--accent-color-1);
     border: none;
     left: -75px;
