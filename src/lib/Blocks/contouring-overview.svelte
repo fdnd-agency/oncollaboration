@@ -60,7 +60,7 @@
     visibility: hidden;
     text-transform: capitalize;
 
-    @media (min-width: 600px){
+    @media (min-width: 37.5em){
       opacity: 1;
       visibility: visible;
     }
@@ -85,7 +85,7 @@
   h3 {
     font-size: var(--font-size-md);
 
-    @media (min-width: 600px) {
+    @media (min-width: 37.5em) {
       font-size: var(--font-size-xl);
     }
   }
@@ -93,7 +93,7 @@
   p {
     font-size: var(--font-size-sm);
 
-    @media (min-width: 600px){
+    @media (min-width: 37.5em){
       font-size: var( --font-size-lg);
     }
   }

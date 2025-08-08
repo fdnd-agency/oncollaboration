@@ -1,5 +1,5 @@
 <script>
-    function nav_back() {
+  function nav_back() {
     window.history.back();
   }
 </script>

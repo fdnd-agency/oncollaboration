@@ -34,5 +34,24 @@ import WebinarResources from "./Bricks/webinar-resources.svelte";
 import WatchNext from "./Constructions/webinar-watchnext.svelte";
 import NavBack from "./Bricks/navback.svelte";
 import WebinarQandA from "./Bricks/webinar-q&a.svelte";
-export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, HomeHero, FAQ, Partners, Arrow, CTA, DoctorsUnited , FullWebinarSection , WebinarHeader , WebinarVideoHeader , WebinarChapters , WebinarTranscript , WebinarDescription, WebinarSpeakers, WebinarResources , WatchNext, NavBack , WebinarQandA };
+
+
+import ContouringHeader from "./Bricks/contouring-header.svelte";
+import ContouringSearchResult from "./Bricks/contouring-search-result.svelte";
+import ContouringContent from "./Bricks/contouring-content.svelte";
+import ContouringHero from "./Bricks/contouring-hero.svelte";
+import ContouringResources from "./Bricks/contouring-resources.svelte";
+import ContouringQanda from "./Bricks/contouring-qanda.svelte";
+
+import ProfileInfo from "./Constructions/profile-info.svelte";
+import ProfileNotification from "./Blocks/profile-notifications.svelte"; 
+import ProfileHistory from "./Blocks/profile-history.svelte";
+import ProfileFavourites from "./Blocks/profile-favourites.svelte";
+import ProfileContourings from "./Blocks/profile-contourings.svelte";
+
+import SpeakerBackButton from "./Blocks/speaker-back-button.svelte";
+import SpeakerInfo from "./Assemblages/speaker-info.svelte";
+import SpeakerFeaturedWebinars from "./Constructions/speaker-featuredwebinars.svelte";
+export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, HomeHero, FAQ, Partners, Arrow, CTA, DoctorsUnited , FullWebinarSection , WebinarHeader , WebinarVideoHeader , WebinarChapters , WebinarTranscript , WebinarDescription, WebinarSpeakers, WebinarResources , WatchNext, NavBack , WebinarQandA, ContouringHeader, ContouringSearchResult, ContouringContent, ContouringHero, ContouringResources, ContouringQanda, ProfileInfo, ProfileNotification, ProfileHistory, ProfileFavourites, ProfileContourings, SpeakerInfo, SpeakerFeaturedWebinars, SpeakerBackButton };
+
 
