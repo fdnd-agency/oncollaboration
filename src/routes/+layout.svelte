@@ -64,7 +64,7 @@
     }
     
     @media (min-width: 1080px) {
-      margin-top: 74px;
+      /* margin-top: 74px; */
       padding-bottom: 0;
     }
 

@@ -19,7 +19,7 @@ import LoadingState from "./Bricks/loading-state.svelte";
 import PreviewDoc from "./Bricks/preview-doc.svelte";
 import Resources from "./Blocks/resources.svelte";
 import EmptyState from "./Bricks/empty-states.svelte"
-import Article from "./Constructions/article.svelte";
+import HomeHero from "./Constructions/home-hero.svelte";
 import Arrow from "./Bricks/arrow.svelte";
 import CTA from "./Constructions/cta.svelte";
 import DoctorsUnited from "./Constructions/doctors-united.svelte";
@@ -34,5 +34,5 @@ import WebinarResources from "./Bricks/webinar-resources.svelte";
 import WatchNext from "./Constructions/webinar-watchnext.svelte";
 import NavBack from "./Bricks/navback.svelte";
 import WebinarQandA from "./Bricks/webinar-q&a.svelte";
-export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, Article, FAQ, Partners, Arrow, CTA, DoctorsUnited , FullWebinarSection , WebinarHeader , WebinarVideoHeader , WebinarChapters , WebinarTranscript , WebinarDescription, WebinarSpeakers, WebinarResources , WatchNext, NavBack , WebinarQandA };
+export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, HomeHero, FAQ, Partners, Arrow, CTA, DoctorsUnited , FullWebinarSection , WebinarHeader , WebinarVideoHeader , WebinarChapters , WebinarTranscript , WebinarDescription, WebinarSpeakers, WebinarResources , WatchNext, NavBack , WebinarQandA };
 
