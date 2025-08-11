@@ -20,7 +20,7 @@ import PreviewDoc from "./Bricks/preview-doc.svelte";
 import Resources from "./Blocks/resources.svelte";
 import EmptyState from "./Bricks/empty-states.svelte"
 import HomeHero from "./Constructions/home-hero.svelte";
-import Arrow from "./Bricks/arrow.svelte";
+import Arrow from "./Bricks/home-arrow.svelte";
 import CTA from "./Constructions/cta.svelte";
 import DoctorsUnited from "./Constructions/doctors-united.svelte";
 import FullWebinarSection from "./Constructions/FullWebinarSection.svelte";
