@@ -1,10 +1,8 @@
 <script>
-  import { Arrow } from "$lib/index.js";
   import Button from "$lib/Bricks/Button.svelte";
 </script>
 
 <section>
-  <Arrow />
   <div class="cta-container">
     <Button className="button" tag="a" label="Webinars" href="/webinars">
       {#snippet svgIcon({ width, height })}
