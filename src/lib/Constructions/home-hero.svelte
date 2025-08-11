@@ -16,8 +16,8 @@
           {#if content}
             {content[0].text}
           {/if}
+          <a href="#doctors">Learn more →</a>
         </p>
-        <a href="#doctors">Learn more →</a>
       </div>
     </div>
   </article>
@@ -82,6 +82,8 @@
     font-size: var(--test-xs);
     font-weight: normal;
     max-width: 22.5em;
+    display: flex;
+    flex-direction: column;
   }
 
   .hero-paragraph {
@@ -221,6 +223,7 @@
 
     p {
       max-width: 31.875em;
+      font-size: 1.4em;
     }
 
     .hero-container .hero-image-desktop {
