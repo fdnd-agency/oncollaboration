@@ -27,4 +27,10 @@
         50%  { transform: translateY(-10px); }
         100% { transform: translateY(0); }
     }
+
+    @media (min-width: 64em){
+        .arrow-container {
+            display: none;
+        }
+    }
 </style>
