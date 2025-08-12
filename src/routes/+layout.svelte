@@ -46,11 +46,8 @@
     {@render children?.()}
   </main>
 {/if}
-
-<div class="footer">
   <Footer />
-</div>
-
+  
 <style>
   main {
     margin: auto;
@@ -73,14 +70,6 @@
 
     @media (min-width: 120em) {
       margin-top: 5.125em;
-    }
-  }
-
-  .footer {
-    background-color: var(--background-color);
-
-    @media (min-width: 67.5em) {
-      background-color: #f0f0f0;
     }
   }
 </style>
