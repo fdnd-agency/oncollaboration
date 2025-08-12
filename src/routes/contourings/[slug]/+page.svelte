@@ -6,14 +6,14 @@
 
 <NavBack />
 
-<main>
+<div>
   <ContouringHero Hero={data.contouring}/>
   <ContouringResources Resource={data.contouring}/>
   <ContouringQanda QANDA={data.comments} /> 
-</main>
+</div>
 
 <style>
-  main {
+  div {
     width: fit-content;
     margin: 0 auto;
     margin-bottom: 6rem;

@@ -9,7 +9,7 @@
 
 <NavBack />
 
-<main>
+<div>
   <WebinarVideoHeader webinar={data.webinar} />
   <WebinarChapters chapters={parsedChapters} />
   <WebinarTranscript transcript={data.webinar.transcript} />
@@ -18,12 +18,13 @@
   <WebinarResources resources={data.webinar.resources} />
   <WebinarQandA QANDA={data.comments} {parsedChapters}/>
   <WatchNext webinars={data.webinars} formatDate={formatDate} />
-</main>
+</div>
 
 <style>
-  main {
+  div {
     margin-block: 1rem;
     margin-bottom: 6rem;
+    width: 90vw;
   }
  
   ::-webkit-scrollbar {
@@ -42,7 +43,7 @@
   }
 
   @media (min-width: 1080px) {
-    main {
+    div {
       display: grid;
       grid-template-columns: 55% 40%;
       column-gap: 3rem;

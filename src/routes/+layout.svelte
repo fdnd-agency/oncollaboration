@@ -42,9 +42,9 @@
   </main>
 {:else} 
   <Navigation />
-  <div class="content">
+  <main class="content">
     {@render children?.()}
-  </div>
+  </main>
 {/if}
 
 <div class="footer">
@@ -54,8 +54,12 @@
 <style>
   main {
     margin: auto;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    position: relative;
   }
-  
+
   .content {
     flex: 1;
 

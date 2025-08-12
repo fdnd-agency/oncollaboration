@@ -4,7 +4,7 @@
   let { data } = $props();
 </script>
 
-<main>
+
   <WebinarHeader />
 
   <Search />
@@ -12,6 +12,6 @@
   <Filter activeCategory={data.category} currentPage="webinars" />
 
   <FullWebinarSection {data} />
-</main>
+
 
 
