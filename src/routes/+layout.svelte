@@ -51,7 +51,6 @@
 <style>
   main {
     margin: auto;
-    width: fit-content;
     margin: 0 auto;
     margin-bottom: 6rem;
     position: relative;
