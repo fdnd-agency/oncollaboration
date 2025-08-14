@@ -25,7 +25,7 @@
 
 <style>
   .hero-container {
-    margin-top: 1em;
+    margin-top: 2em;
     width: 100%;
     position: relative;
     container-type: inline-size;
@@ -34,6 +34,9 @@
     align-items: center;
   }
 
+  article {
+    padding: 0.2em;
+  }
 
   .hero-header {
     position: absolute;

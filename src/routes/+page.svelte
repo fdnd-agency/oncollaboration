@@ -1,5 +1,5 @@
 <script>
-  import { HomeHero, HomeArrow, Carrousel, FAQ, HomeCallToAction, Partners, DoctorsUnited } from "$lib/index.js";
+  import { HomeHero, HomeArrow, Carrousel, FAQ, HomeCallToAction, Partners, HomeDoctorsUnited } from "$lib/index.js";
 
 
   let { data } = $props();
@@ -13,7 +13,7 @@
   <HomeHero {content}/>
   <HomeArrow />
   <HomeCallToAction />
-  <DoctorsUnited {content}/>
+  <HomeDoctorsUnited {content}/>
   <Carrousel {speakers}/>
   <FAQ {content}/>
   <Partners {logos}/>

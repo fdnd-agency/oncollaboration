@@ -18,7 +18,7 @@
 
 <style>
     section {
-      height: 25em;
+      height: 100%;
     }
 
   .cta-container {
