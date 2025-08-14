@@ -1,5 +1,5 @@
 <script>
-  import Button from "$lib/Bricks/Button.svelte";
+  import { Button } from "$lib/index.js";
 </script>
 
 <section>
