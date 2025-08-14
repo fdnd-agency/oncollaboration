@@ -51,8 +51,7 @@
 <style>
   main {
     margin: auto;
-    margin: 0 auto;
-    margin-bottom: 6rem;
+    margin: 0 auto 6rem auto;
     position: relative;
   }
 
