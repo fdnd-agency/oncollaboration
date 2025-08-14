@@ -9,7 +9,7 @@
 
 </script>
 
-<main>
+
   <HomeHero {content}/>
   <HomeArrow />
   <CTA />
@@ -18,5 +18,5 @@
   <FAQ {content}/>
   <Partners {logos}/>
 
-</main> 
+
 

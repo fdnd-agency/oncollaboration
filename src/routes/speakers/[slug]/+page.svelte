@@ -7,8 +7,6 @@
   const webinars = data.webinars; 
 </script>
 
-<main>
-
   <SpeakerBackButton />
   {#if speakers}
 
@@ -16,12 +14,3 @@
     <SpeakerFeaturedWebinars {speakers} {webinars} />
     
   {/if}
-
-</main>
-<style>
-
-  main {
-    position: relative;
-  }
-
-</style>

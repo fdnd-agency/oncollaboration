@@ -9,8 +9,6 @@
   let viewtransition = true;
 </script>
 
-<main>
-
   <ProfileInfo {user} />
   <ProfileNotification {data} />
   <ProfileHistory {data} />
@@ -18,7 +16,7 @@
   <ProfileContourings {data} {viewtransition} />
 
   
-</main>
+
 
 
   
