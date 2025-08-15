@@ -39,7 +39,7 @@ import HomeCallToAction from "./Pages/Home/Constructions/home-call-to-action.sve
 import DoctorsUnited from "./Pages/Home/Constructions/doctors-united.svelte";
 import Partners from "./Pages/Home/Blocks/partners.svelte";
 
-export { HomeHero, HomeArrow, Carrousel, FAQ, HomeCallToAction, DoctorsUnited, Partners, CTA };
+export { HomeHero, HomeArrow, Carrousel, FAQ, HomeCallToAction, DoctorsUnited, Partners };
 
 // Pages -> Webinars
 import FullWebinarSection from "./Pages/Webinars/Constructions/FullWebinarSection.svelte";
