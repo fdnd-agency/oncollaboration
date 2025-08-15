@@ -1,9 +1,9 @@
 <script>
   import { page } from "$app/state";
-
+ 
   let menuOpen = false;
 </script>
-
+ 
 <header>
   <nav class="grouped-toggle-icons">
     <a class="grouped-logo" href="/">
@@ -19,13 +19,13 @@
         height="30"
         >
         <path
-          d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 
+          d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0
           32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
         />
       </svg>
     </button>
   </nav>
-
+ 
   <div class="hamburger-list" class:show-hamburger={menuOpen}>
       <nav class="grouped-close-icons">
         <a class="grouped-logo" href="/">
@@ -41,7 +41,7 @@
             height="40"
             >
             <path
-              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 
+              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5
               32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
             />
           </svg>
@@ -65,8 +65,8 @@
                 fill="transparent"
               >
               <path
-                d="M4 30H9.65091C10.2032 30 10.6509 29.5523 10.6509 29V19.9918C10.6509 19.4396 11.0986 18.9918 11.6509 18.9918H17.1966C17.7489 18.9918 18.1966 19.4396 18.1966 
-                19.9918V29C18.1966 29.5523 18.6444 30 19.1966 30H25C26.1046 30 27 29.1046 27 28V11.6908C27 11.0699 26.7117 10.4843 26.2196 10.1057L15.6165 1.94709C14.8923 1.38984 13.8825 
+                d="M4 30H9.65091C10.2032 30 10.6509 29.5523 10.6509 29V19.9918C10.6509 19.4396 11.0986 18.9918 11.6509 18.9918H17.1966C17.7489 18.9918 18.1966 19.4396 18.1966
+                19.9918V29C18.1966 29.5523 18.6444 30 19.1966 30H25C26.1046 30 27 29.1046 27 28V11.6908C27 11.0699 26.7117 10.4843 26.2196 10.1057L15.6165 1.94709C14.8923 1.38984 13.8825
                 1.39431 13.1633 1.95796L2.76636 10.1056C2.28259 10.4847 2 11.0652 2 11.6798V28C2 29.1046 2.89543 30 4 30Z"
                 stroke-width="2.5"
               />
@@ -88,7 +88,7 @@
                   viewBox="0 0 36 26"
                 >
                   <path
-                    d="M23.4964 14.1604C24.6893 13.3653 24.6893 11.6138 23.4964 10.8268L17.6079 6.94163C16.2785 6.0645 14.5026 7.02373 14.5026 8.61893V16.4291C14.5026 
+                    d="M23.4964 14.1604C24.6893 13.3653 24.6893 11.6138 23.4964 10.8268L17.6079 6.94163C16.2785 6.0645 14.5026 7.02373 14.5026 8.61893V16.4291C14.5026
                     18.0243 16.2785 18.9715 17.6079 18.0854L23.4964 14.1604Z"
                   />
                   <rect
@@ -178,16 +178,16 @@
       </div>
   </div>
 </header>
-
+ 
 <style>
   header {
     padding: 2.5em 0.938em 1em 0.938em;
-    background-color: #fff;
-
+    background-color: var(--text-light);
+ 
     @media (min-width: 48em){
       padding: 2.5em 1.938em 1em 1.938em;
     }
-
+ 
     @media (min-width: 64em) {
       padding: 0em 0.938em 0em 0.938em;
       display: flex;
@@ -197,34 +197,34 @@
       border-radius: 0 0 1em 1em;
     }
   }
-
+ 
   .grouped-toggle-icons {
     display: flex;
     justify-content: space-between;
   }
-
+ 
   .grouped-logo {
     display: flex;
     gap: 1em;
   }
-
+ 
   button {
     height: 2.8em;
     width: 2.5em;
     border: none;
     background: none;
     cursor: pointer;
-
+ 
     @media (min-width: 64em){
       display: none;
     }
   }
-
-  .toggle, 
+ 
+  .toggle,
   .close-icon {
     fill: var(--cta-dark-green);
   }
-
+ 
   .hamburger-list {
     position: fixed;
     top: 0;
@@ -236,11 +236,11 @@
     transition: .5s ease-in-out;
     z-index: 10;
     padding: 2em;
-
+ 
     @media (min-width: 48em){
       width: 21.75em;
     }
-
+ 
     @media (min-width: 64em) {
       position: static;
       transform: none;
@@ -251,7 +251,7 @@
       background-color: transparent;
     }
   }
-
+ 
   .links-container {
     padding: 3em;
     display: flex ;
@@ -259,13 +259,13 @@
     gap: 1em;
     align-items: center;
     width: 100%;
-
+ 
     @media (min-width: 64em) {
       padding: 0;
       width: auto;
     }
   }
-
+ 
   .links-container ul {
     @media (min-width: 64em) {
       display: flex;
@@ -274,7 +274,7 @@
       margin: 0;
     }
   }
-
+ 
   .links-container li {
     @media (min-width: 64em) {
       padding: 0;
@@ -282,35 +282,35 @@
       width: auto;
     }
   }
-
+ 
   .grouped-close-icons {
     display: flex;
     justify-content: space-between;
-
+ 
     @media (min-width: 64em) {
       display: none;
     }
   }
-  
+ 
   li {
     list-style-type: none;
     padding: 0 0 1.5em 0;
     width: 15em;
     height: 4.25em;
-
+ 
     @media (min-width: 23.438em){
       width: 17.813em;
     }
-
-    @media (min-width: 26.563em){ 
+ 
+    @media (min-width: 26.563em){
       width: 21.25em;
     }
-
+ 
     @media (min-width: 48em){
       width: 16.25em;
     }
   }
-
+ 
   li a {
     background-color: var(--background-color);
     font-weight: bold;
@@ -318,12 +318,12 @@
     border-radius: 0.2em;
     width: auto;
     height: 3em;
-
+ 
     @media (min-width: 64em){
       background-color: transparent;
     }
   }
-
+ 
   a {
     display: flex;
     gap: 2em;
@@ -332,18 +332,18 @@
     font-size: var(--font-size-lg);
     font-weight: 600;
     color: var(--text-dark);
-
+ 
     @media (min-width: 64em){
-      gap: 0.5em;
+      gap: 1.5em;
+      height: auto;
     }
   }
-
+ 
   .icon {
     fill: transparent;
     stroke: var(--text-dark);
   }
-
-
+ 
   li a.active {
     background-color: var(--primary-color);
     font-weight: bold;
@@ -351,33 +351,35 @@
     border-radius: 0.2em;
     color: var(--text-light);
     width: auto;
-
-    @media (min-width: 64em) { 
+ 
+    @media (min-width: 64em) {
       padding: 1em;
     }
   }
-
+ 
   li a.active .icon {
     fill: transparent;
     stroke: var(--text-light);
   }
-
+ 
   li a:focus {
     outline: 0.125px dashed var(--primary-color);
     border-radius: 0.125em;
     outline-offset: 0.2em;
   }
-
+ 
   li a .icon {
-    width: 1.875em;
-    height: 1.875em;
+    width: 1.2em;
+    height: 1.2em;
   }
-
+ 
   .show-hamburger {
     transform: translateX(0);
-
+ 
     @media (min-width: 64em){
       transform: none;
     }
   }
 </style>
+ 
+ 
