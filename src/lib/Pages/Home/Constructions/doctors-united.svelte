@@ -2,86 +2,141 @@
     let { content } = $props();
 </script>
 
-<article id="doctors">
-    <div class="wrapper">
-        <div class="image-wrapper">
-          <img src="images/Subtract.png" alt="A group of doctors gathered togehter" width="30" height="30">
-        </div>  
-        <div class="text-wrapper">
-          <h2>Doctors united</h2>
-          <p>{content[1].text}</p>
-        </div>
+<div class="doctors-container">
+  <article id="doctors-united">
+    <div class="image-wrapper">
+      <img src="images/Subtract.png" alt="A group of doctors gathered togehter" width="30" height="30">
+      <img class="doctors-large-screen" src="images/doctors-tablet-desktop.png" alt="A group of doctors gathered togehter" width="30" height="30">
+    </div>  
+    <div class="text-wrapper">
+      <h2>Doctors united</h2>
+      <p>{content[1].text}</p>
     </div>
-</article>
+  </article>
+</div>
 
 <style>
-    article {
-    width: 100vw; 
-    position: relative;
-    left: 50%; 
-    transform: translateX(-50%); 
-    box-sizing: border-box; 
-    padding-left: calc(50vw - (90vw / 2) + 0.5em); 
-    padding-right: calc(50vw - (90vw / 2) + 0.5em); 
-    background: white;
-    padding: 10px;
+  .doctors-container {
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 
-  img {
+  #doctors-united {
     width: 100%;
-    max-width: 600px;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  h2 {
-    font-size: 22px;
-    font-weight: bolder;
-    color: var(--primary-color);
-    margin: 0.2em 0.2em;
-
-    @media (min-width: 375px) {
-      font-size: 24px;
-      margin: var(--spacing-header-md);
-    }
-  }
-
-  .wrapper {
-    display: grid;
-    grid-template-columns: 170px 120px;
-    grid-template-rows: auto;
-    gap: 0.5em;
-    grid-template-areas: 
-    "image-wrapper image-wrapper"
-    "text-wrapper text-wrapper"
-    ;
-
-    @media (min-width: 375px) and (max-width: 419px) {
-     grid-template-columns: 190px 150px;
-     grid-template-rows: auto;
-    }
-
-    @media (min-width: 420px) {
-      grid-template-columns: 215px 180px;
-      grid-template-rows: auto;
-    }
-  }
-
-  .image-wrapper {
-    grid-area: image-wrapper;
+    background-color: white;
+    padding: 1em;
   }
 
   .text-wrapper {
-    grid-area: text-wrapper;
-    margin-top: -3em; 
-    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin-top: -3em;
+    padding: 0.5em;
+    grid-area: text-doctors;
+    height: auto;
+  }
+
+  .image-wrapper img:nth-child(1){
+    width: 100%;
+    height: 15em;
+  }
+
+  .image-wrapper img:nth-child(2) {
+    display: none;
+  }
+
+  .doctors-large-screen {
+    grid-area: image-doctors;
+  }
+
+  h2 {
+    font-size: var(--text-sm);
+    font-weight: bolder;
+    color: var(--primary-color);
+    margin: unset;
+    padding-bottom: 0.5em;
   }
 
   p {
-    padding: 1.2em 0.3em;
+    line-height: var(--line-height-mobile);
+  }
 
-    @media (min-width: 375px) {
-      padding: 0 0.75em;
+  @container (min-width: 23.438em) {
+    .doctors-container h2 {
+      font-size: var(--text-md);
+    }
+  }
+
+  @container (min-width: 48em){
+    .doctors-container #doctors-united {
+      display: grid;
+      background-color: transparent;
+      grid-template-columns: repeat(2, minmax(18.75em, 1fr));
+      grid-template-rows: 1fr;
+      justify-content: center;
+      grid-template-rows: 25em;
+      gap: 1em;
+      padding: 2.5em;
+      align-items: stretch;
+      grid-template-areas: 
+      "text-doctors image-doctors";
+    }
+
+    h2 {
+      padding-bottom: unset;
+      font-size: 1.75em;
+    }
+
+    .text-wrapper {
+      margin-top: unset;
+      background-color: white;
+      height: 100%;
+      overflow: auto;
+      gap: 0.7em;
+      border-radius: 0.7em;
+      padding: 1.5em 1.5em;
+    }
+
+    .image-wrapper {
+      height: 100%;
+      height: 100%;
+      display: flex;            
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-wrapper img:nth-child(1) {
+      display: none;
+    }
+
+    .image-wrapper img:nth-child(2) {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    p {
+      font-size: 1.125rem;
+    }
+  }
+
+  @container (min-width: 64em) {
+    .doctors-container #doctors-united {
+      padding: 4em;
+    }
+    .doctors-container h2  {
+      font-size: 1.875rem;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.25rem;
     }
   }
 </style>
