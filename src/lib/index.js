@@ -21,7 +21,7 @@ import Resources from "./Blocks/resources.svelte";
 import EmptyState from "./Bricks/empty-states.svelte"
 import HomeHero from "./Constructions/home-hero.svelte";
 import HomeArrow from "./Bricks/home-arrow.svelte";
-import CTA from "./Constructions/cta.svelte";
+import HomeCallToAction from "./Constructions/home-call-to-action.svelte";
 import DoctorsUnited from "./Constructions/doctors-united.svelte";
 import FullWebinarSection from "./Constructions/FullWebinarSection.svelte";
 import WebinarHeader from "./Bricks/webinar-header.svelte";
@@ -34,6 +34,10 @@ import WebinarResources from "./Bricks/webinar-resources.svelte";
 import WatchNext from "./Constructions/webinar-watchnext.svelte";
 import NavBack from "./Bricks/navback.svelte";
 import WebinarQandA from "./Bricks/webinar-q&a.svelte";
+import HomeWebinarsButton from "$lib/Bricks/home-webinars-button.svelte";
+import HomeContouringsButton from "$lib/Bricks/home-contourings-button.svelte";
+import HomeDoctorsButton from "$lib/Bricks/home-doctors-button.svelte";
+import HomeEmptyButton from "$lib/Bricks/home-empty-button.svelte";
 
 
 import ContouringHeader from "./Bricks/contouring-header.svelte";
@@ -52,6 +56,6 @@ import ProfileContourings from "./Blocks/profile-contourings.svelte";
 import SpeakerBackButton from "./Blocks/speaker-back-button.svelte";
 import SpeakerInfo from "./Assemblages/speaker-info.svelte";
 import SpeakerFeaturedWebinars from "./Constructions/speaker-featuredwebinars.svelte";
-export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, HomeHero, FAQ, Partners, HomeArrow, CTA, DoctorsUnited , FullWebinarSection , WebinarHeader , WebinarVideoHeader , WebinarChapters , WebinarTranscript , WebinarDescription, WebinarSpeakers, WebinarResources , WatchNext, NavBack , WebinarQandA, ContouringHeader, ContouringSearchResult, ContouringContent, ContouringHero, ContouringResources, ContouringQanda, ProfileInfo, ProfileNotification, ProfileHistory, ProfileFavourites, ProfileContourings, SpeakerInfo, SpeakerFeaturedWebinars, SpeakerBackButton };
+export { ContouringOverview, Search, Filter, WebinarOverview, Navigation, Carrousel, FeaturedWebinar, Footer, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, LoadingState, PreviewDoc, Resources, EmptyState, HomeHero, FAQ, Partners, HomeArrow, HomeCallToAction, DoctorsUnited , FullWebinarSection , WebinarHeader , WebinarVideoHeader , WebinarChapters , WebinarTranscript , WebinarDescription, WebinarSpeakers, WebinarResources , WatchNext, NavBack , WebinarQandA, ContouringHeader, ContouringSearchResult, ContouringContent, ContouringHero, ContouringResources, ContouringQanda, ProfileInfo, ProfileNotification, ProfileHistory, ProfileFavourites, ProfileContourings, SpeakerInfo, SpeakerFeaturedWebinars, SpeakerBackButton, HomeWebinarsButton, HomeContouringsButton, HomeDoctorsButton, HomeEmptyButton };
 
 
