@@ -1,10 +1,5 @@
 <script>
-  // import Button from "$lib/Bricks/Button.svelte";
-  import HomeWebinarsButton from "$lib/Bricks/home-webinars-button.svelte";
-  import HomeContouringsButton from "$lib/Bricks/home-contourings-button.svelte";
-  import HomeDoctorsButton from "$lib/Bricks/home-doctors-button.svelte";
-  import HomeEmptyButton from "$lib/Bricks/home-empty-button.svelte";
-  // import {Button, HomeWebinarsButton} from "$lib/index.js";
+  import {HomeWebinarsButton, HomeContouringsButton, HomeDoctorsButton, HomeEmptyButton} from "$lib/index.js";
 </script>
 
 <section>

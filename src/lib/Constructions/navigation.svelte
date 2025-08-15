@@ -182,7 +182,7 @@
 <style>
   header {
     padding: 2.5em 0.938em 1em 0.938em;
-    background-color: #fff;
+    background-color: var(--text-light);
 
     @media (min-width: 48em){
       padding: 2.5em 1.938em 1em 1.938em;
@@ -334,7 +334,8 @@
     color: var(--text-dark);
 
     @media (min-width: 64em){
-      gap: 0.5em;
+      gap: 1.5em;
+      height: auto;
     }
   }
 
@@ -342,7 +343,6 @@
     fill: transparent;
     stroke: var(--text-dark);
   }
-
 
   li a.active {
     background-color: var(--primary-color);
@@ -369,8 +369,8 @@
   }
 
   li a .icon {
-    width: 1.875em;
-    height: 1.875em;
+    width: 1.2em;
+    height: 1.2em;
   }
 
   .show-hamburger {
