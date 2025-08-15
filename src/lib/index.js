@@ -31,7 +31,7 @@ import HomeHero from "./Pages/Home/Constructions/home-hero.svelte";
 import HomeArrow from "./Pages/Home/Bricks/home-arrow.svelte";
 import Carrousel from "./Pages/Home/Constructions/carrousel.svelte";
 import FAQ from "./Pages/Home/Blocks/FAQ.svelte";
-import HomeCallToAction from "./Pages/Home/Constructions/cta.svelte";
+import HomeCallToAction from "./Pages/Home/Constructions/home-call-to-action.svelte";
 import DoctorsUnited from "./Pages/Home/Constructions/doctors-united.svelte";
 import Partners from "./Pages/Home/Blocks/partners.svelte";
 
