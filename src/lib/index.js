@@ -16,10 +16,10 @@ import Resources from "./Reusables/Blocks/resources.svelte";
 import EmptyState from "./Reusables/Bricks/empty-states.svelte";
 import NavBack from "./Reusables/Bricks/navback.svelte";
 import Button from "./Reusables/Bricks/Button.svelte";
-import HomeWebinarsButton from "/Reusables/Bricks/home-webinars-button.svelte";
-import HomeContouringsButton from "/Reusables/Bricks/home-contourings-button.svelte";
-import HomeDoctorsButton from "/Reusables/Bricks/home-doctors-button.svelte";
-import HomeEmptyButton from "/Reusables/Bricks/home-empty-button.svelte";
+import HomeWebinarsButton from "./Reusables/Bricks/home-webinars-button.svelte";
+import HomeContouringsButton from "./Reusables/Bricks/home-contourings-button.svelte";
+import HomeDoctorsButton from "./Reusables/Bricks/home-doctors-button.svelte";
+import HomeEmptyButton from "./Reusables/Bricks/home-empty-button.svelte";
 
 export { ContouringOverview, Search, Filter, WebinarOverview, FeaturedWebinar, SearchResults, QandA, Comment, LoaderDots, LoaderSpin, Like, Liked, PreviewDoc, Resources, EmptyState, NavBack, Button, HomeWebinarsButton, HomeContouringsButton, HomeDoctorsButton, HomeEmptyButton };
 
