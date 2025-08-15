@@ -31,12 +31,11 @@ import HomeHero from "./Pages/Home/Constructions/home-hero.svelte";
 import HomeArrow from "./Pages/Home/Bricks/home-arrow.svelte";
 import Carrousel from "./Pages/Home/Constructions/carrousel.svelte";
 import FAQ from "./Pages/Home/Blocks/FAQ.svelte";
-import HomeCTA from "./Pages/Home/Constructions/cta.svelte";
+import HomeCallToAction from "./Pages/Home/Constructions/cta.svelte";
 import DoctorsUnited from "./Pages/Home/Constructions/doctors-united.svelte";
 import Partners from "./Pages/Home/Blocks/partners.svelte";
-import CTA from "./Pages/Home/Constructions/home-hero.svelte";
 
-export { HomeHero, HomeArrow, Carrousel, FAQ, HomeCTA, DoctorsUnited, Partners, CTA };
+export { HomeHero, HomeArrow, Carrousel, FAQ, HomeCallToAction, DoctorsUnited, Partners, CTA };
 
 // Pages -> Webinars
 import FullWebinarSection from "./Pages/Webinars/Constructions/FullWebinarSection.svelte";
