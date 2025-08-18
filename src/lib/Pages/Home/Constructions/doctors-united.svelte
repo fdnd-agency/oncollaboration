@@ -48,6 +48,7 @@
 
   .image-wrapper img:nth-child(2) {
     display: none;
+    width: 22.313em;
   }
 
   .doctors-large-screen {
@@ -80,7 +81,7 @@
       grid-template-rows: 1fr;
       justify-content: center;
       grid-template-rows: 25em;
-      gap: 1em;
+      gap: 1.5em;
       padding: 2.5em;
       align-items: stretch;
       grid-template-areas: 
@@ -104,7 +105,6 @@
 
     .image-wrapper {
       height: 100%;
-      height: 100%;
       display: flex;            
       justify-content: center;
       align-items: center;
@@ -118,7 +118,7 @@
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      border-radius: 0.7em;
     }
 
     p {
@@ -131,12 +131,18 @@
       padding: 4em;
     }
     .doctors-container h2  {
-      font-size: 1.875rem;
+      font-size: 2.5rem;
     }
 
     p {
       line-height: 1.6;
       font-size: 1.25rem;
+    }
+  }
+
+  @container (min-width: 89em) {
+    .doctors-container #doctors-united {
+      grid-template-columns: 47.75em 38.75em;
     }
   }
 </style>
