@@ -49,6 +49,7 @@
   .image-wrapper img:nth-child(2) {
     display: none;
     width: 22.313em;
+    object-fit: cover;
   }
 
   .doctors-large-screen {
@@ -127,8 +128,13 @@
   }
 
   @container (min-width: 64em) {
+    .doctors-container {
+      width: 90vw;
+    }
+
     .doctors-container #doctors-united {
-      padding: 4em;
+      padding: 0 7em;
+      margin: 5em 0 5em 0;
     }
     .doctors-container h2  {
       font-size: 2.5rem;
@@ -142,7 +148,8 @@
 
   @container (min-width: 89em) {
     .doctors-container #doctors-united {
-      grid-template-columns: 47.75em 38.75em;
+      grid-template-columns: 0.7fr 1fr;
+      grid-template-rows: 550px;
     }
   }
 </style>
