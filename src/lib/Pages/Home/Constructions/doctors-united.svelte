@@ -149,7 +149,7 @@
   @container (min-width: 89em) {
     .doctors-container #doctors-united {
       grid-template-columns: 0.7fr 1fr;
-      grid-template-rows: 550px;
+      grid-template-rows: 34.375em;
     }
   }
 </style>
