@@ -27,11 +27,6 @@
     justify-content: space-evenly;
     padding-top: 0.6rem;
     background-color: var(--primary-color);
-
-    @media (min-width: 1080px) {
-      position: sticky;
-      bottom: 0;
-    }
   }
 
   footer ul {
