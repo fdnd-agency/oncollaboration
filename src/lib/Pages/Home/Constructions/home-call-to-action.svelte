@@ -41,6 +41,7 @@
       @media (min-width: 64em) {
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
       }
     }
 </style>
