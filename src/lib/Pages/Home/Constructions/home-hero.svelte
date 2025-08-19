@@ -38,7 +38,7 @@
     }
 
     @media (min-width: 64em) {
-        margin-top: 5em;
+        margin-top: 2.5em;
     }
   }
 
@@ -265,21 +265,5 @@
     .hero-container .hero-paragraph{
       height: 29.5em;
     }
-
-    /* Block code 64em voor de nieuwe change */
-      /* @container (width > 64em) {
-    .hero-container .hero-image-text{
-      grid-template-columns: 0.7fr 1fr;
-      grid-template-rows: 9.7em 16em;
-    }  
-
-    .hero-container .hero-image-desktop {
-      display: block;
-      height: 30em;
-    }
-
-    .hero-container .hero-paragraph{
-      height: 22em;
-    } */
     }
 </style>
