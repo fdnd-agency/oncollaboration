@@ -84,6 +84,9 @@
     grid-area: paragraph;
   }
 
+  span {
+    padding-left: 0.1em;
+  }
   p,
   span {
     line-height: var(--line-height-mobile);
@@ -164,11 +167,15 @@
     }
 
     .hero-header h1{
-      font-size: 3.125em;
+      font-size: 3.125rem;
+    }
+
+    .hero-paragraph a {
+      font-weight: bold;
     }
 
     span {
-      font-size: 1.875em;
+      font-size: 1.875rem;
     }
 
     .hero-container .hero-image-text{
@@ -211,7 +218,7 @@
   /* For laptop size */
   @container (width > 47em) {
     .hero-header h1{
-      font-size: 3.438em;
+      font-size: 3.438rem;
     }
 
     .hero-container .hero-image-text{
@@ -236,6 +243,15 @@
     .hero-header {
       margin: 0 0 5.5em 1em
     }
+
+    .hero-header h1{
+      font-size: 4rem;
+    }
+
+    span {
+      font-size: 2.5rem;
+    }
+
     .hero-container .hero-image-text{
       grid-template-columns: 0.7fr 1fr;
       grid-template-rows: 9.7em 16em;
