@@ -144,12 +144,10 @@
   .scroll-container {
     width: 100%;
     max-width: 45em;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    /* scroll-snap-type: x mandatory; */
     padding-bottom: 1em;
     display: flex;
     justify-content: start;
-    scroll-behavior: smooth;
     white-space: nowrap;
   }
 
@@ -161,6 +159,8 @@
     list-style: none;
     width: max-content;
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
     padding-left: calc(50% - 6.375em);
     padding-right: calc(50% - 6.375em);
   }
@@ -254,35 +254,38 @@
   }
 
   @supports (animation-timeline: view()) {
-    @property --doctor-highlight {
+    /* @property --doctor-highlight {
       syntax: "<number>";
       initial-value: 0;
       inherits: false;
-    }
+    } */
 
     /* .scroll-container {
       animation-timeline: view();
     } */
 
     img {
-      --doctor-highlight: 1;
+      /* --doctor-highlight: 1; */
       animation-timeline: view();
       animation: highlight linear both;
       animation-range: entry 0% cover 50%;
-      scale: var(--doctor-highlight);
+      transform: scale(1);
     }
 
     @keyframes highlight {
       0% {
-        --doctor-highlight: 1;
+        /* --doctor-highlight: 1; */
+        transform: scale(1);
       }
 
       50% {
-        --doctor-highlight: 2;
+        /* --doctor-highlight: 2; */
+        transform: scale(2);
       }
 
       100% {
-        --doctor-highlight: 1;
+        /* --doctor-highlight: 1; */
+        transform: scale(1);
       }
     }
   }
