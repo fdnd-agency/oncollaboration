@@ -25,19 +25,25 @@
 
 <style>
   .hero-container {
-    margin-top: 1em;
+    margin-top: 2em;
     width: 100%;
     position: relative;
     container-type: inline-size;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (min-width: 48em) and (max-width: 64em) {
+        margin-top: 4em;
+    }
+
+    @media (min-width: 64em) {
+        margin-top: 2.5em;
+    }
   }
 
-
-  .hero-header {
-    position: absolute;
-    top: -0.3em;
+  article {
+    width: 100%;
   }
 
   span {
@@ -57,22 +63,30 @@
 
   .hero-header {
     grid-area: header;
+    margin-bottom: -2.5em;
   }
 
   .hero-image {
     grid-area: image;
+    max-height: 23.875em;
+    max-width: 100%;
+    height: 100%;
   }
 
   .hero-image-desktop {
     display: none;
     grid-area: image-desktop;
-    height: 22.625em;
+    height: auto;
+    width: 100%;
   }
 
   .hero-paragraph {
     grid-area: paragraph;
   }
 
+  span {
+    padding-left: 0.1em;
+  }
   p,
   span {
     line-height: var(--line-height-mobile);
@@ -81,7 +95,6 @@
   p  { 
     font-size: var(--test-xs);
     font-weight: normal;
-    max-width: 22.5em;
     display: flex;
     flex-direction: column;
   }
@@ -115,36 +128,60 @@
     align-self: flex-end;
   }
   
-  @container (min-width: 20em) {
+  @container (width > 20em) {
     .hero-header {
-      top: 0;
+      margin-bottom: -3em;
+    }
+  
+    .hero-header h1 {
+      font-size: var(--text-lg);
     }
   }
 
-  @container (min-width: 23.438em) {
+  @container (width > 23.438em) {
     .hero-header {
-      top: 0.3em;
+      margin-bottom: -3.5em;
+    }
+  }
+
+  @container (width > 24.019em) {
+    .hero-header {
+      margin-bottom: -4.5em;
+    }
+
+    .hero-header h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @container (width > 29.981em) {
+    .hero-header {
+      margin-bottom: -4.5em;
     }
   }
   
   /* Container size when reaching tablet size */
-  @container (min-width: 43.199em) {
+  @container (width > 43.199em) {
     .hero-header {
-      top: 1em;
+      margin: 0 0 -2.5em 1em;
     }
 
     .hero-header h1{
-      font-size: 3.125em;
+      font-size: 3.125rem;
+    }
+
+    .hero-paragraph a {
+      font-weight: bold;
     }
 
     span {
-      font-size: 1.875em;
+      font-size: 1.875rem;
     }
 
     .hero-container .hero-image-text{
       display: grid;
       align-items: end;
-      grid-template-columns: 21em 21em;
+      grid-template-columns: 0.7fr 1fr;
       grid-template-rows: 8em 16em;
       gap: 0.7em;
       grid-template-areas:
@@ -158,6 +195,7 @@
 
     .hero-container .hero-image-desktop {
       display: block;
+      height: 27em;
     }
 
     .hero-container .hero-paragraph{
@@ -166,7 +204,7 @@
       width: 21em;
       margin: unset;
       padding: 0.5em;
-      height: 17em;
+      height: 20em;
       border-radius: 0.7em;
       padding: 1.5em 1.5em;
       overflow: auto;
@@ -178,57 +216,59 @@
   }
 
   /* For laptop size */
-  @container (min-width: 47em) {
-    .hero-header {
-      top: 0.5em;
-    }
-
+  @container (width > 47em) {
     .hero-header h1{
-      font-size: 3.438em;
+      font-size: 3.438rem;
     }
 
     .hero-container .hero-image-text{
-      grid-template-columns: 24.5em 24.5em;
-      grid-template-rows: 5.5em 18em;
+      grid-template-columns: 0.7fr 1fr;
+      grid-template-rows: 7.7em 16em;
     }    
 
     .hero-container .hero-paragraph{
-      width:  24.5em;
-      height: 16.5em;
-    }
-
-    .hero-container .hero-image {
-      width: 24.5em;
-    }    
-  }
-
-  @container (min-width: 65.25em) {
-    .hero-header {
-      top: 2em;
-    }
-
-    .hero-header h1{
-      font-size: 5em;
-    }
-
-    .hero-container .hero-image-text{
-      grid-template-columns: 32.5em 32.5em;
-      grid-template-rows: 13.5em 20em;
-    } 
-
-    .hero-container .hero-paragraph{
-      width: 32.5em;
-      height: 23.5em;
+      width: 100%;
     }
 
     p {
-      max-width: 31.875em;
-      font-size: 1.4em;
+      font-size: 1.125rem;
     }
 
-    .hero-container .hero-image-desktop {
-      width: 32.5em;
-      height: 31.875em;
-    }    
+    span {
+      font-weight: 200;
+    }
   }
+
+  @container (width > 64em) {
+    .hero-header {
+      margin: 0 0 5.5em 1em
+    }
+
+    .hero-header h1{
+      font-size: 4rem;
+    }
+
+    span {
+      font-size: 2.5rem;
+    }
+
+    .hero-container .hero-image-text{
+      grid-template-columns: 0.7fr 1fr;
+      grid-template-rows: 9.7em 16em;
+    }  
+
+    .hero-container .hero-image-desktop {
+      display: block;
+      height: 40em;
+    }
+
+    .hero-container .hero-paragraph{
+      height: 29.5em;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+
+    }
 </style>
