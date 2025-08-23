@@ -96,6 +96,8 @@
                   src={"https://fdnd-agency.directus.app/assets/" + speaker.profile_picture}
                   alt={speaker.fullname + " profile picture"}
                   loading="lazy"
+                  width="157"
+                  height="157"
                 />
               </picture>
               {#if !jsEnabled}
