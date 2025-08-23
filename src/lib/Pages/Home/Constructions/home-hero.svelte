@@ -265,5 +265,10 @@
     .hero-container .hero-paragraph{
       height: 29.5em;
     }
+
+    p {
+      font-size: 1.4rem;
+    }
+
     }
 </style>
