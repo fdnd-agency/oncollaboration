@@ -116,8 +116,8 @@
       }
 
       @media (min-width: 90em) {
-        width: 15.5em;
-        height: 12.5em;    
+        width: 17.5em;
+        height: 15.5em;    
       }
     }
 </style>
