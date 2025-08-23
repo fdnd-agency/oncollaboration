@@ -1,395 +1,337 @@
 <script>
-import { onMount } from "svelte";
+  import { onMount, createEventDispatcher } from 'svelte';
 
-let { speakers } = $props();
+  let { speakers = [], selectedSpeaker } = $props();
+  const dispatch = createEventDispatcher();
 
-onMount(() => {
+  let jsEnabled = $state(false);
+  let scrollContainer;
+  let speakerList;
+  let currentIndex = $derived(0);
 
-    if (autocheck) {
-      autocheck.setAttribute("checked", true);
-    } 
+  let isProgrammaticScroll = false;
 
-    document.documentElement.classList.add("js");
-  
-    radioButtons.push(...document.querySelectorAll('input[name="radio-btn"]'));
-    radioButtons.forEach((radio, index) => {
-      radio.addEventListener("click", () => handleRadioClick(index));
-    });
-
-    interval = setInterval(cycleLabels, intervalTime);
-
-    return () => {
-    
-      clearInterval(interval);
-      radioButtons.forEach((radio) =>
-        radio.removeEventListener("click", () => handleRadioClick(index))
-      );
-    };
+  onMount(() => {
+    jsEnabled = true;
+    updateSelectedOnScroll();
   });
 
+  function clamp(n, min, max) {
+    return Math.min(Math.max(n, min), max);
+  }
 
-const handleLabelKeydown = (event) => {
-    if (event.key === "Enter") {
-      const label = event.target;
-      const radioId = label.getAttribute("for");
-      const radio = document.getElementById(radioId);
-      if (radio) {
-        radio.checked = true;
-        radio.dispatchEvent(new Event("change"));
+  function scrollCarousel(direction) {
+    if (!scrollContainer || !speakerList) return;
+
+    const items = Array.from(speakerList.querySelectorAll('li'));
+    if (!items.length) return;
+
+    currentIndex = clamp(currentIndex + direction, 0, items.length - 1);
+
+    const target = items[currentIndex];
+    const targetOffset = target.offsetLeft + target.offsetWidth / 2;
+    const containerCenter = scrollContainer.clientWidth / 2;
+
+    isProgrammaticScroll = true;
+
+    scrollContainer.scrollTo({
+      left: targetOffset - containerCenter,
+      behavior: 'smooth'
+    });
+
+    setTimeout(() => {
+      isProgrammaticScroll = false;
+    }, 400);
+
+    dispatch('select', speakers[currentIndex]?.fullname);
+  }
+
+  function updateSelectedOnScroll() {
+    if (isProgrammaticScroll) return; 
+    if (!scrollContainer || !speakerList) return;
+
+    const items = Array.from(speakerList.querySelectorAll('li'));
+    if (!items.length) return;
+
+    const containerCenter = scrollContainer.scrollLeft + scrollContainer.clientWidth / 2;
+
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    items.forEach((el, index) => {
+      const itemCenter = el.offsetLeft + el.clientWidth / 2;
+      const distance = Math.abs(containerCenter - itemCenter);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
       }
-    }
-  };
+    });
 
-  let currentIndex = $derived(0);
-  const radioButtons = [];
-  // let intervalTime = 3000;
-  let interval;
+    currentIndex = closestIndex;
+    dispatch('select', speakers[currentIndex]?.fullname);
+  }
 
-  const cycleLabels = () => {
-  
-    if (radioButtons[currentIndex]) {
-      radioButtons[currentIndex].checked = false;
-    }
+  function goToPrev() {
+    scrollCarousel(-1);
+  }
 
-    currentIndex = (currentIndex + 1) % radioButtons.length;
-  
-    if (radioButtons[currentIndex]) {
-      radioButtons[currentIndex].checked = true;
-      radioButtons[currentIndex].dispatchEvent(new Event("change"));
-    }
-  };
-
-function goToNext() {
-  let nextIndex = (currentIndex + 1) % radioButtons.length;
-  radioButtons[nextIndex].click();
-}
-
-function goToPrev() {
-  let prevIndex = (currentIndex - 1 + radioButtons.length) % radioButtons.length;
-  radioButtons[prevIndex].click();
-}
-
-  const resetInterval = (newIntervalTime = intervalTime) => {
-    clearInterval(interval);
-    interval = setInterval(cycleLabels, newIntervalTime);
-  };
-
-  const handleRadioClick = (index) => {
-    clearInterval(interval);
-    currentIndex = index;
-    radioButtons[currentIndex].checked = true;
-    radioButtons[currentIndex].dispatchEvent(new Event("change"));
-    
-    // resetInterval(5000);
-    // setTimeout(() => resetInterval(3000), 5000);
-  };
-
-  let autocheck;
-
+  function goToNext() {
+    scrollCarousel(1);
+  }
 </script>
 
 <section>
   <h2>Meet our doctors</h2>
-  <div>
-    {#each speakers as speaker, i}
-      <input type="radio" name="radio-btn" id={"radio" + (i + 1)} hidden checked={i === 0}/>
-  {/each}
-    <ul class="doctors">
-      {#each speakers as speaker, index}
-      <li class={"slide" + (index + 1) + " card"}>
-        <picture>
-          <source srcset="https://fdnd-agency.directus.app/assets/{speaker.profile_picture}?format=avif" type="image/avif">
-          <source srcset="https://fdnd-agency.directus.app/assets/{speaker.profile_picture}?format=webp" type="image/webp">
-          <img src="https://fdnd-agency.directus.app/assets/{speaker.profile_picture}?format=avif" alt="{speaker.fullname}'s profile picture">
-       </picture>
-       <p>{speaker.fullname}</p>
-      </li>
+
+  <div class="scroll-container" bind:this={scrollContainer} onscroll={updateSelectedOnScroll}>
+    <ul bind:this={speakerList}>
+      {#each speakers as speaker}
+        <li>
+          {#if speaker.profile_picture}
+            <div class="card">
+              <picture>
+                <source srcset={"https://fdnd-agency.directus.app/assets/" + speaker.profile_picture + "?format=avif"} type="image/avif" />
+                <source srcset={"https://fdnd-agency.directus.app/assets/" + speaker.profile_picture + "?format=webp"} type="image/webp" />
+                <img
+                  src={"https://fdnd-agency.directus.app/assets/" + speaker.profile_picture}
+                  alt={speaker.fullname + " profile picture"}
+                  loading="lazy"
+                  width="157"
+                  height="157"
+                />
+              </picture>
+              {#if !jsEnabled}
+                <p>{speaker.fullname}</p>
+              {/if}
+            </div>
+          {/if}
+
+          <input
+            type="radio"
+            name="speaker"
+            value={speaker.fullname}
+            checked={speaker.fullname === selectedSpeaker}
+            required
+            class:hidden={jsEnabled}
+            onchange={() => dispatch('select', speaker.fullname)}
+          />
+        </li>
       {/each}
     </ul>
   </div>
-  <div class="navigation" hidden>
-    <!-- <label for="radio1" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
-    <label for="radio2" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
-    <label for="radio3" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
-    <label for="radio4" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
-    <label for="radio5" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
-    <label for="radio6" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
-    <label for="radio7" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
-    <label for="radio8" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label>
-    <label for="radio9" class="navigation-btn" tabindex="0" on:keydown={handleLabelKeydown}></label> -->
-    <div class="carousel-controls">
-      <button onclick={goToPrev} aria-label="previous doctor"> 
-        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z" fill="#fff"/>
-        </svg> 
-      </button>
-       <div class="doctor-info">
-          <p><strong>{speakers[currentIndex].fullname}</strong></p>
-          <p>{speakers[currentIndex].entitle}</p>
-      </div>
-      <button onclick={goToNext} aria-label="next doctor"> 
-        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6492 11.2501L12.7904 6.53852L13.8346 5.46167L20.5774 12.0001L13.8346 18.5385L12.7904 17.4617L17.6492 12.7501H3V11.2501H17.6492Z" fill="#fff"/>
-        </svg> 
-      </button>
-    </div>
-  </div>
-  <a href="">Show all →</a>
 </section>
 
-<style>
+{#if jsEnabled}
+  <nav class="carousel-nav">
+    <button onclick={goToPrev} aria-label="previous doctor">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z" fill="#fff"/>
+      </svg>
+    </button>
 
+    <label for={speakers.fullname} aria-labelledby={`speaker-name-${speakers.fullname}`}>
+      <p><strong>{speakers[currentIndex]?.fullname}</strong></p>
+      <p>{speakers[currentIndex]?.entitle}</p>
+    </label>
+
+    <button onclick={goToNext} aria-label="next doctor">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6492 11.2501L12.7904 6.53852L13.8346 5.46167L20.5774 12.0001L13.8346 18.5385L12.7904 17.4617L17.6492 12.7501H3V11.2501H17.6492Z" fill="#fff"/>
+      </svg>
+    </button>
+  </nav>
+{/if}
+
+
+<style>
   section {
     display: flex;
     flex-direction: column;
-
-    @media (min-width: 1080px){ 
-      padding: 4em 12.5em;
-    }
+    align-items: center;
   }
 
   h2 {
     color: var(--primary-color);
     font-size: var(--text-md);
 
-    @media (min-width: 1080px){
-      font-size: var(--font-size-5xl);
+    @media (min-width: 67.5em){
+      font-size: var(--text-lg);
       
     }
   }
 
-  section > div {
+  .scroll-container {
+    width: 100%;
+    height: auto;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      var(--text-dark) 10% 90%,
+      transparent
+    );
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    height: 0.5em;
+  }
+
+  .scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0 3.125em; 
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+    border-radius: 0.25em;
+  }
+
+  
+
+  ul {
     display: flex;
+    padding: 1em;
+    margin: auto;
+    list-style: none;
+    width: max-content;
+    padding-left: calc(50% - 6.375em);
+    padding-right: calc(50% - 6.375em);
+  }
+
+  li {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 0.3em;
+    border-radius: 0.625em;
+    scroll-snap-align: center;
+
+    @media (min-width: 48em) {
+      padding: 1.5em;
+    }
+  }
+
+  label {
     position: relative;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 270px;
-    overflow: hidden;
-
-    @media (min-width: 1080px){
-      height: 640px;
-    }
+    background-color: var(--text-light);
+    border-radius: 0.75em;
+    width: 100%;
+    height: 8.563em;
+    text-align: center;
+    padding: 0.5em;
+    max-width: 12.563em;
   }
 
-  .doctors {
-    display: flex;
-    position: relative;
-    gap: 60px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    overflow: auto;
-    scroll-snap-type: x mandatory;
-
-    @media (min-width: 1080px){
-      gap: 20px;
-    }
-  }
-
-  :global(.js) .doctors {
-    overflow: unset;
+  label::before {
     position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    top: -1.25em;
+    border-left: 1.563em solid transparent;
+    border-right: 1.563em solid transparent;
+    border-bottom: 1.25em solid var(--text-light);
+  }
+
+  input[type="radio"].hidden {
+    visibility: hidden;
+  }
+
+  nav {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav > button {
+    border: none;
+    border-radius: 50%;
+    padding: 0.2em;
+    height: 4em;
+    width: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: var(--background-light);
+    border: 0.125em solid var(--primary-color);
+  }
+
+  button:hover path {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
   }
 
   .card {
     aspect-ratio: 2.45 / 3.3;
     aspect-ratio: 1 / 1;
-    min-width: 179px;
-    max-width: 179px;
-    background-color: var(--alt-text-color);
-    border-radius: 20px;
+    min-width: 11.188em;
+    max-width: 11.188em;
+    background-color: var(--background-ligh);
+    border-radius: 1.25em;
     transition: transform 0.3s ease;
     transition: 1s;
     scroll-snap-align: center;
-    overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
 
-    @media (min-width: 1080px){
-      min-width: 248px;
-      max-width: 248px;
+    @media (min-width: 67.5em){
+      min-width: 15.5em;
+      max-width: 15.5em;
     }
   }
 
-  :global(.js) .card {
-    margin-bottom: unset;
-  }
-  
-
-  .card img {
+  img {
     width: 100%;                 
     height: 100%;                
     object-fit: cover;           
     object-position: center;     
     display: block;
   }
+  
 
-  :global(.js) .card p{
+@supports (animation-timeline: view(x)){
+
+  img {
+    --card-content: 0.8;
+    animation: straighten linear both;
+    animation-timeline: view(x);
+    scale:(var(--card-content));
+  }
+
+
+  @keyframes straighten{
+    0% {
+      scale: 0.8;
+    }
+    50% {
+      scale: 1.2;
+    }
+    100% {
+      scale: 0.8; 
+    }
+  }
+}
+
+  .card p {
+    font-size: var(--text-xs3);
+    color: black;
+    position: static; 
+    min-width: auto;
+    padding-top: 3.2em;
+  }
+
+  :global(.js) .card p {
     display: none;
   }
-
-  .card p{
-    display: block;
-    position: absolute;
-    min-width: 30em;
-  }
-
-  :global(.js) #radio1:checked ~ .doctors .slide1 {
-    margin-left: calc(50% - (179px / 2));
-
-    @media (min-width: 1080px){
-    margin-left: calc(50% - (248px / 2));
-    }
-  }
-
-  :global(.js) #radio2:checked ~ .doctors .slide1 {
-    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 1);
-
-    @media (min-width: 1080px){
-    margin-left: calc(50% - (248px / 2) - (248px + 20px) * 1);
-    }
-  }
-
-  :global(.js) #radio3:checked ~ .doctors .slide1 {
-    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 2);
-
-    @media (min-width: 1080px){
-    margin-left: calc(50% - (248px / 2) - (248px + 20px) * 2);
-    }
-  }
-
-  :global(.js) #radio4:checked ~ .doctors .slide1 {
-    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 3);
-    @media (min-width: 1080px){
-    margin-left: calc(50% - (248px / 2) - (248px + 20px) * 3);
-    }
-  }
-
-  :global(.js) #radio5:checked ~ .doctors .slide1 {
-    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 4);
-    @media (min-width: 1080px){
-    margin-left: calc(50% - (248px / 2) - (248px + 20px) * 4);
-    }
-  }
-
-  :global(.js) #radio6:checked ~ .doctors .slide1 {
-    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 5);
-
-    @media (min-width: 1080px){
-    margin-left: calc(50% - (248px / 2) - (248px + 20px) * 5);
-    }
-  }
-
-  :global(.js) #radio7:checked ~ .doctors .slide1 {
-    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 6);
-
-    @media (min-width: 1080px){
-    margin-left: calc(50% - (248px / 2) - (248px + 20px) * 6);
-    }
-  }
-
-  :global(.js) #radio8:checked ~ .doctors .slide1 {
-    margin-left: calc(50% - (179px / 2) - (179px + 60px) * 7);
-
-    @media (min-width: 1080px){
-    margin-left: calc(50% - (248px / 2) - (248px + 20px) * 7);
-    }
-  }
-
-  :global(.js) :is(
-  #radio1:checked ~ .doctors .slide1, #radio2:checked ~ .doctors .slide2, #radio3:checked ~ .doctors .slide3, #radio4:checked ~ .doctors .slide4, #radio5:checked ~ .doctors .slide5, #radio6:checked ~ .doctors .slide6, #radio7:checked ~ .doctors .slide7, #radio8:checked ~ .doctors .slide8) 
-  {
-  transform: scale(1.5);
-}
-
-  .navigation{
-    height: fit-content;
-  }
-
-  :global(.js) .navigation {
-    z-index: 1;
-  }
-
-
-  :global(.js) .navigation-btn {
-    border: 2px solid var(--primary-color);
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 1s;
-  }
-
-  .navigation-btn:not(:last-child) {
-    margin-right: 15px;
-
-    @media (min-width: 1080px){
-    margin-right: 40px;
-    }
-  }
-
-  .navigation-btn:hover {
-    background: var(--primary-color);
-  }
-
-  .carousel-controls {
-    display: none;
-  }
-
-  :global(.js ).carousel-controls {
-    display: flex;
-    gap: 1em;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2em;
- }
-
-.doctor-info {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--text-light);
-  border-radius: 12px;
-  width: 12.563em;
-  height: 6.563em;
-  text-align: center;
-}
-
-.doctor-info::before{
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 0;
-    top: -20px;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 20px solid var(--text-light);
-}
-
-.carousel-controls button {
-  border-radius: 50%;
-  border: 2px solid var(--primary-color);
-  background: var(--primary-color);
-  color: var(--primary-color);
-  cursor: pointer;
-  transition: background 0.2s;
-  width: 52px;
-  min-width: 52px;
-  height: 52px;
-  aspect-ratio: 1 / 1;
-}
-
-.carousel-controls button:hover {
-  background: var(--text-light);
-}
-
-.carousel-controls button:hover svg path{
-  fill: var(--primary-color);
-}
-
-section > a{
-    align-self: flex-end;
-    margin-top: 1em;
-    color: var(--text-dark);
-}
 </style>
