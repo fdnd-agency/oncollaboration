@@ -9,7 +9,6 @@
   let speakerList;
   let currentIndex = $derived(0);
 
-  // prevent updateSelectedOnScroll during button-initiated scroll
   let isProgrammaticScroll = false;
 
   onMount(() => {
@@ -33,7 +32,6 @@
     const targetOffset = target.offsetLeft + target.offsetWidth / 2;
     const containerCenter = scrollContainer.clientWidth / 2;
 
-    // pause scroll listener to avoid index resetting
     isProgrammaticScroll = true;
 
     scrollContainer.scrollTo({
@@ -41,7 +39,6 @@
       behavior: 'smooth'
     });
 
-    // allow listener again after animation time
     setTimeout(() => {
       isProgrammaticScroll = false;
     }, 400);
@@ -50,7 +47,7 @@
   }
 
   function updateSelectedOnScroll() {
-    if (isProgrammaticScroll) return; // skip during programmatic scroll
+    if (isProgrammaticScroll) return; 
     if (!scrollContainer || !speakerList) return;
 
     const items = Array.from(speakerList.querySelectorAll('li'));
@@ -86,7 +83,6 @@
 <section>
   <h2>Meet our doctors</h2>
 
-  <!-- Bind and listen on the scrollable container -->
   <div class="scroll-container" bind:this={scrollContainer} onscroll={updateSelectedOnScroll}>
     <ul bind:this={speakerList}>
       {#each speakers as speaker}
@@ -131,7 +127,6 @@
       </svg>
     </button>
 
-    <!-- Simple info block instead of misusing <label for> -->
     <label for={speakers.fullname} aria-labelledby={`speaker-name-${speakers.fullname}`}>
       <p><strong>{speakers[currentIndex]?.fullname}</strong></p>
       <p>{speakers[currentIndex]?.entitle}</p>
@@ -157,7 +152,7 @@
     color: var(--primary-color);
     font-size: var(--text-md);
 
-    @media (min-width: 1080px){
+    @media (min-width: 67.5em){
       font-size: var(--text-lg);
       
     }
@@ -179,17 +174,17 @@
   }
 
   .scroll-container::-webkit-scrollbar {
-    height: 8px;
+    height: 0.5em;
   }
 
   .scroll-container::-webkit-scrollbar-track {
     background: transparent;
-    margin: 0 50px; 
+    margin: 0 3.125em; 
   }
 
   .scroll-container::-webkit-scrollbar-thumb {
     background: var(--scrollbar-color);
-    border-radius: 4px;
+    border-radius: 0.25em;
   }
 
   
@@ -208,7 +203,7 @@
     flex: 0 0 auto;
     text-align: center;
     padding: 0.3em;
-    border-radius: 10px;
+    border-radius: 0.625em;
     scroll-snap-align: center;
 
     @media (min-width: 48em) {
@@ -223,7 +218,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--text-light);
-    border-radius: 12px;
+    border-radius: 0.75em;
     width: 100%;
     height: 8.563em;
     text-align: center;
@@ -236,10 +231,10 @@
     content: '';
     width: 0;
     height: 0;
-    top: -20px;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 20px solid var(--text-light);
+    top: -1.25em;
+    border-left: 1.563em solid transparent;
+    border-right: 1.563em solid transparent;
+    border-bottom: 1.25em solid var(--text-light);
   }
 
   input[type="radio"].hidden {
@@ -268,7 +263,7 @@
 
   button:hover {
     background-color: var(--background-light);
-    border: 2px solid var(--primary-color);
+    border: 0.125em solid var(--primary-color);
   }
 
   button:hover path {
@@ -279,18 +274,18 @@
   .card {
     aspect-ratio: 2.45 / 3.3;
     aspect-ratio: 1 / 1;
-    min-width: 179px;
-    max-width: 179px;
+    min-width: 11.188em;
+    max-width: 11.188em;
     background-color: var(--background-ligh);
-    border-radius: 20px;
+    border-radius: 1.25em;
     transition: transform 0.3s ease;
     transition: 1s;
     scroll-snap-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
 
-    @media (min-width: 1080px){
-      min-width: 248px;
-      max-width: 248px;
+    @media (min-width: 67.5em){
+      min-width: 15.5em;
+      max-width: 15.5em;
     }
   }
 
@@ -315,15 +310,12 @@
 
   @keyframes straighten{
     0% {
-      /* --card-content: 0deg; */
       scale: 0.8;
     }
     50% {
-      /* --card-content: 10deg; */
       scale: 1.2;
     }
     100% {
-      /* --card-content: 0deg; */
       scale: 0.8; 
     }
   }
