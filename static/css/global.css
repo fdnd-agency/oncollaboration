@@ -6,6 +6,7 @@
   --background-color-alt: hsl(0, 0%, 100%);
   --line-height-mobile: 1.5;
   --font: jakarta, sans-serif;
+  --scrollbar-color: hsl(0, 0%, 53%);
 
   /* ---------- Font sizes ---------- */
   --text-xs3: 0.75em; /* 12px */

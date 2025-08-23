@@ -165,21 +165,36 @@
 
   .scroll-container {
     width: 100%;
-    /* max-width: 45em; */
     height: auto;
-    /* scroll-snap-type: x mandatory; */
-    /* padding-bottom: 1em; */
-    /* display: flex; */
-    /* justify-content: start; */
-    /* white-space: wrap; */
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      var(--text-dark) 10% 90%,
+      transparent
+    );
   }
 
+  .scroll-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0 50px; 
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+    border-radius: 4px;
+  }
+
+  
+
   ul {
-    /* overflow-x: auto; */
     display: flex;
     padding: 1em;
     margin: auto;
@@ -190,14 +205,15 @@
   }
 
   li {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
     flex: 0 0 auto;
     text-align: center;
     padding: 0.3em;
     border-radius: 10px;
     scroll-snap-align: center;
+
+    @media (min-width: 48em) {
+      padding: 1.5em;
+    }
   }
 
   label {
@@ -233,7 +249,6 @@
   nav {
     display: flex;
     gap: 1em;
-    /* padding: 1em; */
     justify-content: center;
     align-items: center;
   }
@@ -248,6 +263,17 @@
     align-items: center;
     justify-content: center;
     background-color: var(--primary-color);
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: var(--background-light);
+    border: 2px solid var(--primary-color);
+  }
+
+  button:hover path {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
   }
 
   .card {
@@ -275,6 +301,7 @@
     object-position: center;     
     display: block;
   }
+  
 
 @supports (animation-timeline: view(x)){
 
@@ -282,8 +309,8 @@
     --card-content: 0.8;
     animation: straighten linear both;
     animation-timeline: view(x);
-    transform: scale(var(--card-content));
-}
+    scale:(var(--card-content));
+  }
 
 
   @keyframes straighten{
@@ -293,7 +320,7 @@
     }
     50% {
       /* --card-content: 10deg; */
-      scale: 1.5;
+      scale: 1.2;
     }
     100% {
       /* --card-content: 0deg; */
@@ -307,6 +334,7 @@
     color: black;
     position: static; 
     min-width: auto;
+    padding-top: 3.2em;
   }
 
   :global(.js) .card p {
