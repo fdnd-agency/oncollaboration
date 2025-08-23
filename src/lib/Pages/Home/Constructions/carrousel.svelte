@@ -5,47 +5,65 @@
   const dispatch = createEventDispatcher();
 
   let jsEnabled = $state(false);
+  let scrollContainer;
   let speakerList;
-  let currentIndex = $state(0);
+  let currentIndex = $derived(0);
+
+  // prevent updateSelectedOnScroll during button-initiated scroll
+  let isProgrammaticScroll = false;
 
   onMount(() => {
     jsEnabled = true;
-    updateSelectedOnScroll(); // initialize selection
+    updateSelectedOnScroll();
   });
 
+  function clamp(n, min, max) {
+    return Math.min(Math.max(n, min), max);
+  }
+
   function scrollCarousel(direction) {
-    if (!speakerList) return;
+    if (!scrollContainer || !speakerList) return;
 
-    const item = speakerList.querySelector('li');
-    if (!item) return;
+    const items = Array.from(speakerList.querySelectorAll('li'));
+    if (!items.length) return;
 
-    const itemWidth = item.clientWidth + parseInt(getComputedStyle(item).marginRight || 0);
+    currentIndex = clamp(currentIndex + direction, 0, items.length - 1);
 
-    speakerList.scrollBy({
-      left: direction * itemWidth,
+    const target = items[currentIndex];
+    const targetOffset = target.offsetLeft + target.offsetWidth / 2;
+    const containerCenter = scrollContainer.clientWidth / 2;
+
+    // pause scroll listener to avoid index resetting
+    isProgrammaticScroll = true;
+
+    scrollContainer.scrollTo({
+      left: targetOffset - containerCenter,
       behavior: 'smooth'
     });
 
-    // Update index after scrolling animation
-    setTimeout(updateSelectedOnScroll, 300);
+    // allow listener again after animation time
+    setTimeout(() => {
+      isProgrammaticScroll = false;
+    }, 400);
+
+    dispatch('select', speakers[currentIndex]?.fullname);
   }
 
   function updateSelectedOnScroll() {
-    if (!speakerList) return;
+    if (isProgrammaticScroll) return; // skip during programmatic scroll
+    if (!scrollContainer || !speakerList) return;
 
-    const containerRect = speakerList.getBoundingClientRect();
-    const centerX = containerRect.left + containerRect.width / 2;
+    const items = Array.from(speakerList.querySelectorAll('li'));
+    if (!items.length) return;
+
+    const containerCenter = scrollContainer.scrollLeft + scrollContainer.clientWidth / 2;
 
     let closestIndex = 0;
     let closestDistance = Infinity;
 
-    const items = Array.from(speakerList.querySelectorAll('li'));
-
-    items.forEach((item, index) => {
-      const itemRect = item.getBoundingClientRect();
-      const itemCenter = itemRect.left + itemRect.width / 2;
-      const distance = Math.abs(centerX - itemCenter);
-
+    items.forEach((el, index) => {
+      const itemCenter = el.offsetLeft + el.clientWidth / 2;
+      const distance = Math.abs(containerCenter - itemCenter);
       if (distance < closestDistance) {
         closestDistance = distance;
         closestIndex = index;
@@ -53,7 +71,7 @@
     });
 
     currentIndex = closestIndex;
-    dispatch('select', speakers[currentIndex].fullname);
+    dispatch('select', speakers[currentIndex]?.fullname);
   }
 
   function goToPrev() {
@@ -67,11 +85,13 @@
 
 <section>
   <h2>Meet our doctors</h2>
-  <div class="scroll-container">
-    <ul bind:this={speakerList} onscroll={updateSelectedOnScroll}>
+
+  <!-- Bind and listen on the scrollable container -->
+  <div class="scroll-container" bind:this={scrollContainer} onscroll={updateSelectedOnScroll}>
+    <ul bind:this={speakerList}>
       {#each speakers as speaker}
         <li>
-            {#if speaker.profile_picture}
+          {#if speaker.profile_picture}
             <div class="card">
               <picture>
                 <source srcset={"https://fdnd-agency.directus.app/assets/" + speaker.profile_picture + "?format=avif"} type="image/avif" />
@@ -86,17 +106,17 @@
                 <p>{speaker.fullname}</p>
               {/if}
             </div>
-            {/if}
+          {/if}
 
-            <input
-              type="radio"
-              name="speaker"
-              value={speaker.fullname}
-              checked={speaker.fullname === selectedSpeaker}  
-              required
-              class:hidden={jsEnabled}
-              onchange={() => dispatch('select', speaker.fullname)}
-            />
+          <input
+            type="radio"
+            name="speaker"
+            value={speaker.fullname}
+            checked={speaker.fullname === selectedSpeaker}
+            required
+            class:hidden={jsEnabled}
+            onchange={() => dispatch('select', speaker.fullname)}
+          />
         </li>
       {/each}
     </ul>
@@ -106,23 +126,25 @@
 {#if jsEnabled}
   <nav class="carousel-nav">
     <button onclick={goToPrev} aria-label="previous doctor">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z" fill="#fff"/>
-        </svg> 
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z" fill="#fff"/>
+      </svg>
     </button>
 
-      <label for={speakers.fullname} aria-labelledby={`speaker-name-${speakers.fullname}`}>
-        <p><strong>{speakers[currentIndex]?.fullname}</strong></p>
-        <p>{speakers[currentIndex]?.entitle}</p>
-      </label>
+    <!-- Simple info block instead of misusing <label for> -->
+    <label for={speakers.fullname} aria-labelledby={`speaker-name-${speakers.fullname}`}>
+      <p><strong>{speakers[currentIndex]?.fullname}</strong></p>
+      <p>{speakers[currentIndex]?.entitle}</p>
+    </label>
 
     <button onclick={goToNext} aria-label="next doctor">
-        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6492 11.2501L12.7904 6.53852L13.8346 5.46167L20.5774 12.0001L13.8346 18.5385L12.7904 17.4617L17.6492 12.7501H3V11.2501H17.6492Z" fill="#fff"/>
-        </svg> 
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6492 11.2501L12.7904 6.53852L13.8346 5.46167L20.5774 12.0001L13.8346 18.5385L12.7904 17.4617L17.6492 12.7501H3V11.2501H17.6492Z" fill="#fff"/>
+      </svg>
     </button>
   </nav>
 {/if}
+
 
 <style>
   section {
@@ -143,32 +165,34 @@
 
   .scroll-container {
     width: 100%;
-    max-width: 45em;
+    /* max-width: 45em; */
+    height: auto;
     /* scroll-snap-type: x mandatory; */
-    padding-bottom: 1em;
-    display: flex;
-    justify-content: start;
-    white-space: nowrap;
+    /* padding-bottom: 1em; */
+    /* display: flex; */
+    /* justify-content: start; */
+    /* white-space: wrap; */
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
   }
 
   ul {
-    overflow-x: auto;
+    /* overflow-x: auto; */
     display: flex;
     padding: 1em;
     margin: auto;
     list-style: none;
     width: max-content;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
     padding-left: calc(50% - 6.375em);
     padding-right: calc(50% - 6.375em);
   }
 
   li {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
     flex: 0 0 auto;
     text-align: center;
     padding: 0.3em;
@@ -231,12 +255,11 @@
     aspect-ratio: 1 / 1;
     min-width: 179px;
     max-width: 179px;
-    background-color: var(--primary-color);
+    background-color: var(--background-ligh);
     border-radius: 20px;
     transition: transform 0.3s ease;
     transition: 1s;
     scroll-snap-align: center;
-    /* overflow: hidden; */
     margin-bottom: 20px;
 
     @media (min-width: 1080px){
@@ -253,42 +276,31 @@
     display: block;
   }
 
-  @supports (animation-timeline: view()) {
-    /* @property --doctor-highlight {
-      syntax: "<number>";
-      initial-value: 0;
-      inherits: false;
-    } */
+@supports (animation-timeline: view(x)){
 
-    /* .scroll-container {
-      animation-timeline: view();
-    } */
+  img {
+    --card-content: 0.8;
+    animation: straighten linear both;
+    animation-timeline: view(x);
+    transform: scale(var(--card-content));
+}
 
-    img {
-      /* --doctor-highlight: 1; */
-      animation-timeline: view();
-      animation: highlight linear both;
-      animation-range: entry 0% cover 50%;
-      transform: scale(1);
+
+  @keyframes straighten{
+    0% {
+      /* --card-content: 0deg; */
+      scale: 0.8;
     }
-
-    @keyframes highlight {
-      0% {
-        /* --doctor-highlight: 1; */
-        transform: scale(1);
-      }
-
-      50% {
-        /* --doctor-highlight: 2; */
-        transform: scale(2);
-      }
-
-      100% {
-        /* --doctor-highlight: 1; */
-        transform: scale(1);
-      }
+    50% {
+      /* --card-content: 10deg; */
+      scale: 1.5;
+    }
+    100% {
+      /* --card-content: 0deg; */
+      scale: 0.8; 
     }
   }
+}
 
   .card p {
     font-size: var(--text-xs3);
