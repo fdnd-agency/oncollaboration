@@ -129,7 +129,7 @@
       </svg>
     </button>
 
-    <nav 
+    <article 
       class="current-speaker" 
       aria-live="polite" 
       aria-atomic="true"
@@ -138,7 +138,7 @@
         {speakers[currentIndex]?.fullname}
       </h3>
       <p>{speakers[currentIndex]?.entitle}</p>
-    </nav>
+    </article>
 
     <button onclick={goToNext} aria-label="next doctor">
       <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -232,6 +232,7 @@
     text-align: center;
     padding: 1em;
     max-width: 12.563em;
+    margin: 0;
   }
 
   .current-speaker::before {
