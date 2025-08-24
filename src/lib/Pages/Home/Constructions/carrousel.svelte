@@ -129,11 +129,7 @@
       </svg>
     </button>
 
-    <article 
-      class="current-speaker" 
-      aria-live="polite" 
-      aria-atomic="true"
-    >
+    <article class="current-speaker" >
       <h3 id={`speaker-name-${currentIndex}`}>
         {speakers[currentIndex]?.fullname}
       </h3>
