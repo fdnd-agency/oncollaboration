@@ -125,18 +125,24 @@
   <nav class="carousel-nav">
     <button onclick={goToPrev} aria-label="previous doctor">
       <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z" fill="#fff"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z" fill="#fff" />
       </svg>
     </button>
 
-    <label for={speakers.fullname} aria-labelledby={`speaker-name-${speakers.fullname}`}>
-      <p><strong>{speakers[currentIndex]?.fullname}</strong></p>
+    <nav 
+      class="current-speaker" 
+      aria-live="polite" 
+      aria-atomic="true"
+    >
+      <h3 id={`speaker-name-${currentIndex}`}>
+        {speakers[currentIndex]?.fullname}
+      </h3>
       <p>{speakers[currentIndex]?.entitle}</p>
-    </label>
+    </nav>
 
     <button onclick={goToNext} aria-label="next doctor">
       <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6492 11.2501L12.7904 6.53852L13.8346 5.46167L20.5774 12.0001L13.8346 18.5385L12.7904 17.4617L17.6492 12.7501H3V11.2501H17.6492Z" fill="#fff"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6492 11.2501L12.7904 6.53852L13.8346 5.46167L20.5774 12.0001L13.8346 18.5385L12.7904 17.4617L17.6492 12.7501H3V11.2501H17.6492Z" fill="#fff" />
       </svg>
     </button>
   </nav>
@@ -213,7 +219,7 @@
     }
   }
 
-  label {
+  .current-speaker {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -222,13 +228,13 @@
     background-color: var(--text-light);
     border-radius: 0.75em;
     width: 100%;
-    height: 8.563em;
+    height: 10.563em;
     text-align: center;
-    padding: 0.5em;
+    padding: 1em;
     max-width: 12.563em;
   }
 
-  label::before {
+  .current-speaker::before {
     position: absolute;
     content: '';
     width: 0;
