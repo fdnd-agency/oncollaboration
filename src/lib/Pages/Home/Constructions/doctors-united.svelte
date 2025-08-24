@@ -142,7 +142,7 @@
 
     p {
       line-height: 1.6;
-      font-size: 1.25rem;
+      font-size: 1.4rem;
     }
   }
 
