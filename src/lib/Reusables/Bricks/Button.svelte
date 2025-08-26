@@ -58,8 +58,18 @@
 
   .button-label {
     position: absolute;
-    left: 0.8em;
-    bottom: 1.8em;
+    left: 1.5em;
+    bottom: 2em;
     color: var(--text-light);
+
+    @media (min-width: 64em) {
+      left: 1.5em;
+    }
+
+    @media (min-width: 90em) {
+      left: 1.5em;
+      bottom: 1.8em;
+      font-size: 1.5rem;
+    }
   }
 </style>

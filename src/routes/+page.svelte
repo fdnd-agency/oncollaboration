@@ -1,6 +1,5 @@
 <script>
-
-  import { Article, Carrousel, FAQ, CTA, Partners, DoctorsUnited } from "$lib/index.js";
+  import { HomeHero, HomeArrow, Carrousel, FAQ, HomeCallToAction, Partners, DoctorsUnited } from "$lib/index.js";
 
 
   let { data } = $props();
@@ -10,14 +9,14 @@
 
 </script>
 
-<main>
 
-  <Article {content}/>
-  <CTA />
+  <HomeHero {content}/>
+  <HomeArrow />
+  <HomeCallToAction />
   <DoctorsUnited {content}/>
   <Carrousel {speakers}/>
   <FAQ {content}/>
   <Partners {logos}/>
 
-</main> 
+
 

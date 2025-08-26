@@ -42,43 +42,32 @@
   </main>
 {:else} 
   <Navigation />
-  <div class="content">
+  <main class="content">
     {@render children?.()}
-  </div>
+  </main>
 {/if}
-
-<div class="footer">
   <Footer />
-</div>
-
+  
 <style>
   main {
     margin: auto;
+    margin: 0 auto 6rem auto;
+    position: relative;
   }
-  
+
   .content {
     flex: 1;
 
-    @media (min-width: 600px) {
-      margin-bottom: 77px;
+    @media (min-width: 37.5em) {
+      margin-bottom: 4.813em;
     }
     
-    @media (min-width: 1080px) {
-      margin-top: 74px;
+    @media (min-width: 67.5em) {
       padding-bottom: 0;
     }
 
-    @media (min-width: 1920px) {
-      margin-top: 82px;
+    @media (min-width: 120em) {
+      margin-top: 5.125em;
     }
   }
-
-  .footer {
-    background-color: var(--background-color);
-
-    @media (min-width: 1080px) {
-      background-color: #f0f0f0;
-    }
-  }
-
 </style>

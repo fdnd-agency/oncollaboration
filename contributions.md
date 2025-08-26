@@ -110,6 +110,11 @@ Best practices
 
 •	After creating a component, immediately test it for accessibility, performance, and responsiveness. Document the results in the pull request.
 
+
+•   Naming a componont is as follows: page components = `pagename-nameofcomponent.svelte`. For reusable components or components that doesnt belong to only one page, you just type the name of the component like this: namecomponent.svelte. Same goes for global   components like the header.svelte & footer.svelte
+
+•   Components are also located in different locations depending on whether they are reusable or page components. Check [issue #174](https://github.com/fdnd-agency/oncollaboration/issues/174#issuecomment-3159842220).
+
 •	Pull requests should be detailed like this one -> [Example Pull Request](https://github.com/fdnd-agency/wogo/pull/24). Include a description of what the code does or adds, test results, before-and-after screenshots, and how it should be reviewed.
 
 •	Every pull request must have at least two reviewers who critically evaluates it and provides constructive feedback when needed.

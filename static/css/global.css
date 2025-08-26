@@ -2,10 +2,11 @@
   --primary-color: hsl(159.79, 57.58%, 32.35%);
   --text-dark: hsl(0, 0%, 11.37%);
   --text-light: hsl(0, 0%, 100%);
-  --background-color: hsl(0, 0%, 96.47%);
+  --background-light: hsl(0 0% 96.5%);
   --background-color-alt: hsl(0, 0%, 100%);
   --line-height-mobile: 1.5;
   --font: jakarta, sans-serif;
+  --scrollbar-color: hsl(0, 0%, 53%);
 
   /* ---------- Font sizes ---------- */
   --text-xs3: 0.75em; /* 12px */
@@ -50,7 +51,7 @@
 
 body {
   font-family: var(--font);
-  background-color: var(--background-color);
+  background-color: var(--background-light);
   display: flex;
   flex-direction: column;
   min-height: 100vh;

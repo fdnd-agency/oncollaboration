@@ -27,8 +27,56 @@ All documents that work with dynamic code are in the `src` folder. All static do
 
 `src` is divided into `lib`, which contains reusable documents, `routes`, where each folder is a route name, and `app.html`, which contains the head for all files.
 
-In `lib`, we used the LEGO method to organize the components.
 We also have a separate folder for all JavaScript files. In `index.js` we import all components, so you only need one line of code to import multiple components.
+
+## Component Structure Overview
+
+The `lib/` directory is organized into three main component folders: `reusables`, `pages`, and `globals`.
+
+## 1. Reusables (`lib/reusables/`)
+Components that can appear more than once and on different pages:
+- **Bricks:** 
+- **Blocks:** 
+- **Constructions:** 
+- **Assemblages:** 
+
+## 2. Page Components (`lib/pages/`)
+Page-specific components, that only appear once:
+- **Webinars, Profile, Home:** Each contains `bricks`, `blocks`, `constructions`, and `assemblages` tailored to the page.
+
+## 3. Globals (`lib/globals/`)
+Shared components across the app:
+- **Navigation.svelte** – site-wide navigation  
+- **Footer.svelte** – site-wide footer
+
+
+## page.svelte files
+
+Make sure that the page files are clean and dry
+
+example:
+
+```svelte
+<script>
+  import { HomeHero, HomeArrow, Carrousel, FAQ, HomeCallToAction, Partners, DoctorsUnited } from "$lib/index.js";
+
+
+  let { data } = $props();
+  let speakers = data.speakers;
+  let content = data.content;
+  let logos = data.logos;
+
+</script>
+
+
+  <HomeHero {content}/>
+  <HomeArrow />
+  <HomeCallToAction />
+  <DoctorsUnited {content}/>
+  <Carrousel {speakers}/>
+  <FAQ {content}/>
+  <Partners {logos}/>
+```
 
 ## Important components
 
