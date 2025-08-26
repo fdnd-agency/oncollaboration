@@ -19,7 +19,7 @@ The new homepage is still linked to the old pages so when choosing one of the fo
 ## What are the biggest concerns or challenges?
 
 **Login**
--	Making a working login system for the user
+-	Make a working login system for the user
 -	Comments are hard coded so the next step would be to connect the comments to the users that are currently logged in.
 
 ## What's recommended as the first step for the next team?
@@ -30,19 +30,23 @@ When working on this project we strongly advice you to open and run this branch.
 
 [first design](https://github.com/fdnd-agency/oncollaboration/tree/version-before-redesign)
 
-**2  Implement Login System: **
+**2  Implement Login System:**
 
 •	Ensure a secure and user-friendly authentication system.
 
 •	Add validation to guarantee the integrity of user data.
 
-**3. Develop Profile Page: **
+**3. Develop a Profile Page:**
 
 •	Design and implement a profile page where users can view and edit their data.
 
-**4. Link Comments to Accounts: **
+**4. Link Comments to Accounts:**
 
 •	Work on the logic to connect comments and other interactions with user profiles.
+
+**5. redesign all the pages**
+
+Only the home pages has a redesign. Make sure that the other pages have a good redesign as well.
 
  
 ## Designrationale en StyleGuide
