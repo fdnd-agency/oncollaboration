@@ -1,5 +1,22 @@
 # Contributing.md
 
+## 2025/2026
+
+## Teamcanvas
+<img width="570" height="406" alt="teamcanvas 2025-2026" src="https://github.com/user-attachments/assets/0f3228b8-3cfd-4da9-a74f-484871e7341b" />
+
+## code conventies
+We houden de fdnd conventies aan: https://docs.fdnd.nl/conventies.html#code-conventies
+
+- We gebruiken de kebab-case voor de classes. 
+- Classes worden in het Engels geschreven. 
+- Comments worden in het Nederlands geschreven.
+- Animaties naam -> begint altijd met de animation daarna wat het doet en welke richting die gaat. Voorbeeld animation-fade-in
+- Als we meerdere keren de dezelfde animatie gebruiken ook dan dezelfde class geven. 
+
+
+
+## 2024/2025
 ## Version-before-redesign branch
 When working on this project we strongly advice you to open and run this branch. So you can see the previous design with all the functionalities made prior. This will give you a better understanding of how it was build and how to implement it for the redesign for Oncollaboration.
 
