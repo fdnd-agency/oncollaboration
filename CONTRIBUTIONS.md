@@ -14,6 +14,17 @@ We houden de fdnd conventies aan: https://docs.fdnd.nl/conventies.html#code-conv
 - Animaties naam -> begint altijd met de animation daarna wat het doet en welke richting die gaat. Voorbeeld animation-fade-in
 - Als we meerdere keren de dezelfde animatie gebruiken ook dan dezelfde class geven. 
 
+## Primaire, accenten en neutrale kleuren
+<img width="967" height="688" alt="image" src="https://github.com/user-attachments/assets/997ba8b1-66f5-415d-bdc9-6cbb080d496b" />
+
+## Installatie
+1. Open een code editor programma
+2. Maak een branch van de dev_bak zodat je niet het huidige project aantast
+3. Clone de code van de repository dev_bak branch en zorg dat je 'contribute for my own purposes' aanklikt.
+4. Ga naar de command line in het project en klik de toetsen " ` + CTRL " in.
+5. Type in "npm install" zodat je de nodige dependencies download.
+6. Type in "npm run dev" zodat het project kan gestart worden.
+7. Veel plezier met Sveltekit :)
 
 
 ## 2024/2025
