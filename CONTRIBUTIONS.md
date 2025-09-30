@@ -31,6 +31,10 @@ We houden de fdnd conventies aan: https://docs.fdnd.nl/conventies.html#code-conv
 - Comments worden in het Nederlands geschreven.
 - Animaties naam -> begint altijd met de animation daarna wat het doet en welke richting die gaat. Voorbeeld animation-fade-in
 - Als we meerdere keren de dezelfde animatie gebruiken ook dan dezelfde class geven.
+### Class names
+classnames worden volledig uitgeschreven, ook worden er tussen namen door gebruik gemaakt van een -. Voorbeeld: header-navigation 
+Ook als een object ergens inkomt of weggaat benoem je het als image-fade-in
+Als er een tekstkopje aanwezig is dan een duidelijke naamgeving van het betreffende onderdeel, voorbeeld: webinars-title.
 
 ## Primaire, accenten en neutrale kleuren
 <img width="967" height="688" alt="image" src="https://github.com/user-attachments/assets/997ba8b1-66f5-415d-bdc9-6cbb080d496b" />
