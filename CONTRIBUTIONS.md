@@ -5,10 +5,11 @@
 ## Teamcanvas
 <img width="570" height="406" alt="teamcanvas 2025-2026" src="https://github.com/user-attachments/assets/0f3228b8-3cfd-4da9-a74f-484871e7341b" />
 
-## code conventies
+## Code Conventies
 We houden de fdnd conventies aan: https://docs.fdnd.nl/conventies.html#code-conventies
 
-- We gebruiken de kebab-case voor de classes. 
+- We gebruiken de kebab-case voor de classes.
+- Classnames worden volledig uitgeschreven zonder afkortingen, en er wordt gebruik gemaakt van een - tussen namen. Voorbeeld: header-navigatie
 - Classes worden in het Engels geschreven. 
 - Comments worden in het Nederlands geschreven.
 - Animaties naam -> begint altijd met de animation daarna wat het doet en welke richting die gaat. Voorbeeld animation-fade-in
