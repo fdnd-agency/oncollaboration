@@ -2,6 +2,24 @@
 
 ## 2025/2026
 
+## Installatie
+1. Open een code editor programma
+2. Maak een branch van de dev_bak zodat je niet het huidige project aantast
+3. Clone de code van de repository dev_bak branch en zorg dat je 'contribute for my own purposes' aanklikt.
+4. Ga naar de command line in het project en klik de toetsen " ` + CTRL " in.
+5. Type in "npm install" zodat je de nodige dependencies download.
+6. Type in "npm run dev" zodat het project kan gestart worden.
+7. Veel plezier met Sveltekit :)
+
+## Commits
+Als je met een issue aan de slag bent geweest gebruik je partial commits om te laten zien waar je exact mee bezig was. Op de commit laat je ook in de commit message achter was je hebt veranderd, waar je wilt dat ernaar gekeken wordt en/of je een afbeelding/video maakt wat er te zien is.
+
+## Pull Requests
+Pull requests maak je kort en bondig. Je zegt wat er getest moet worden en je doet eerst zelf een tab test, a11y test, accessability test en een performance test. Daarna vraag je aan de reviewers dit ook te doen en nog zelf testen invoeren indien nodig. Daarna kan een docent dit mergen naar de main
+
+## Branch benaming
+Wanneer je een feature wilt aanmaken maak je een branch van de dev_bak en benoem je de branch waarmee je aan de slag gaat. Bijvoorbeeld "view-transition-feature" om verwarring en dubbel werk te voorkomen. Met branch benamingen houd je ook rekening met de kebab-case benaming. 
+
 ## Teamcanvas
 <img width="570" height="406" alt="teamcanvas 2025-2026" src="https://github.com/user-attachments/assets/0f3228b8-3cfd-4da9-a74f-484871e7341b" />
 
@@ -12,20 +30,10 @@ We houden de fdnd conventies aan: https://docs.fdnd.nl/conventies.html#code-conv
 - Classes worden in het Engels geschreven. 
 - Comments worden in het Nederlands geschreven.
 - Animaties naam -> begint altijd met de animation daarna wat het doet en welke richting die gaat. Voorbeeld animation-fade-in
-- Als we meerdere keren de dezelfde animatie gebruiken ook dan dezelfde class geven. 
+- Als we meerdere keren de dezelfde animatie gebruiken ook dan dezelfde class geven.
 
 ## Primaire, accenten en neutrale kleuren
 <img width="967" height="688" alt="image" src="https://github.com/user-attachments/assets/997ba8b1-66f5-415d-bdc9-6cbb080d496b" />
-
-## Installatie
-1. Open een code editor programma
-2. Maak een branch van de dev_bak zodat je niet het huidige project aantast
-3. Clone de code van de repository dev_bak branch en zorg dat je 'contribute for my own purposes' aanklikt.
-4. Ga naar de command line in het project en klik de toetsen " ` + CTRL " in.
-5. Type in "npm install" zodat je de nodige dependencies download.
-6. Type in "npm run dev" zodat het project kan gestart worden.
-7. Veel plezier met Sveltekit :)
-
 
 ## 2024/2025
 ## Version-before-redesign branch
