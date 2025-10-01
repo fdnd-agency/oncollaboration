@@ -2,6 +2,13 @@
 
 ## 2025/2026
 
+## SCRUM Rollen
+
+Scrum master: Sidney (wisselt elke sprint)
+Developer: Nadia, Kyan en Sidney
+Product Owner: Oncollab (AVL)
+
+
 ## Teamcanvas
 <img width="570" height="406" alt="teamcanvas 2025-2026" src="https://github.com/user-attachments/assets/0f3228b8-3cfd-4da9-a74f-484871e7341b" />
 
