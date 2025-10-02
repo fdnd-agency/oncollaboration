@@ -1,0 +1,54 @@
+:root {
+    --primary-color-blue-light-1: hsl(216 100 91); 
+     @supports (color: in oklch 80% 0.2 260) {
+        --primary-color-blue-light-1: oklch(80% 0.2 260);
+    }
+    --primary-color-blue-light-2: hsl(216 100 74); 
+    @supports (color: in oklch 0.7511 0.1286 258.27) {
+        --primary-color-blue-light-2: oklch(0.7511 0.1286 258.27);
+    }
+    --primary-color-blue-light-3: hsl(216 100 55);
+    --primary-color-true-blue: hsl(216 100 33);
+    --primary-color-blue-dark-1: hsl(216 100 9);
+    --primary-color-blue-dark-2: hsl(216 100 12);
+    --primary-color-blue-dark-3: hsl(216 100 20);
+
+    --primary-color-aqua-light-1: hsl(174 100 70);
+    --primary-color-aqua-light-2: hsl(174 100 60);
+    --primary-color-aqua-light-3: hsl(174 100 50);
+    --primary-color-true-aqua: hsl(174 75 50);
+    --primary-color-aqua-dark-1: hsl(174 25 20);
+    --primary-color-aqua-dark-2: hsl(174 50 30);
+    --primary-color-aqua-dark-3: hsl(174 75 40);
+
+    --primary-color-red-1: hsl(339 100 85);
+    --primary-color-red-2: hsl(339 100 71);
+    --primary-color-red-3: hsl(339 100 57);
+    --primary-color-red-4: hsl(339 100 46);
+    --primary-color-red-5: hsl(339 100 39);
+    --primary-color-red-6: hsl(339 100 30);
+    --primary-color-red-7: hsl(339 100 19);
+
+    --accent-color-yellow-1: hsl(61 100 74);
+    --accent-color-yellow-2: hsl(61 100 64);
+    --accent-color-yellow-3: hsl(61 100 54);
+    --accent-color-yellow-4: hsl(61 100 44);
+    --accent-color-yellow-5: hsl(61 100 34);
+    --accent-color-yellow-6: hsl(61 100 24);
+    --accent-color-yellow-7: hsl(61 100 14);
+
+    --neutral-color-1: hsl(0 0 0);
+    --neutral-color-2: hsl(0 0 20);   
+    --neutral-color-3: hsl(0 0 40);
+    --neutral-color-4: hsl(0 0 60);
+    --neutral-color-5: hsl(0 0 80);
+    --neutral-color-6: hsl(0 0 100);
+
+    --neutral-color-blue-gray-1: hsl(216 20 10);
+    --neutral-color-blue-gray-2: hsl(216 10 30);
+    --neutral-color-blue-gray-3: hsl(215 10 40);
+    --neutral-color-blue-gray-4: hsl(215 10 50);
+    --neutral-color-blue-gray-5: hsl(215 10 60);
+    --neutral-color-blue-gray-6: hsl(215 10 70);
+    --neutral-color-blue-gray-7: hsl(215 10 80);
+}
