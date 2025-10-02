@@ -6,4 +6,3 @@
 <h1>Blog</h1>
 
 <p>Dit is em</p>
-

@@ -1,4 +1,5 @@
 :root {
+    /* MARK: Blue */
     --primary-color-blue-light-1: hsl(216 100 91); 
      @supports (color: in oklch 80% 0.2 260) {
         --primary-color-blue-light-1: oklch(80% 0.2 260);
@@ -8,47 +9,169 @@
         --primary-color-blue-light-2: oklch(0.7511 0.1286 258.27);
     }
     --primary-color-blue-light-3: hsl(216 100 55);
+    @supports (color: in oklch 10 10 10) {
+        --primary-color-blue-light-3: oklch(0.5958 0.220874 259.6288);
+    }
     --primary-color-true-blue: hsl(216 100 33);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-true-blue: oklch(0.4183 0.173 260.26);
+    }
     --primary-color-blue-dark-1: hsl(216 100 9);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-blue-dark-1: in oklch(0.1872 0.0623 255.29);
+    }
     --primary-color-blue-dark-2: hsl(216 100 12);
+    @supports (color: in oklch 0.2187 0.0778 257.07){
+     --primary-color-blue-dark-2: in oklch(0.2187 0.0778 257.07);
+    }
     --primary-color-blue-dark-3: hsl(216 100 20);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-blue-dark: in oklch(0.2984 0.116355 259.1196);
+    }
 
+    /* MARK: Aqua */
     --primary-color-aqua-light-1: hsl(174 100 70);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-aqua-light-1: in oklch(0.9145 0.1311 185.99);
+    }
     --primary-color-aqua-light-2: hsl(174 100 60);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-aqua-light-2: in oklch(0.9025 0.152 184.27);
+    }
     --primary-color-aqua-light-3: hsl(174 100 50);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-aqua-light-3: in oklch(0.8974 0.160564 182.1909);
+    }
     --primary-color-true-aqua: hsl(174 75 50);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-true-aqua: in oklch(0.8142 0.1403 183.78);
+    }
     --primary-color-aqua-dark-1: hsl(174 25 20);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-aqua-dark-1: in oklch(0.349 0.0318 187.84);
+    }
     --primary-color-aqua-dark-2: hsl(174 50 30);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-aqua-dark-2: in oklch(0.5061 0.0747 185.78);
+    }
     --primary-color-aqua-dark-3: hsl(174 75 40);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-aqua-dark-3: in oklch(0.6894 0.11821633224716444 183.90044348486518);
+    }
 
-    --primary-color-red-1: hsl(339 100 85);
-    --primary-color-red-2: hsl(339 100 71);
-    --primary-color-red-3: hsl(339 100 57);
-    --primary-color-red-4: hsl(339 100 46);
-    --primary-color-red-5: hsl(339 100 39);
-    --primary-color-red-6: hsl(339 100 30);
-    --primary-color-red-7: hsl(339 100 19);
+    /* MARK: Red */
+    --primary-color-red-light-1: hsl(339 100 85);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-red-light-1: in oklch(0.8448 0.094677 356.6293);
+    }
+    --primary-color-red-light-2: hsl(339 100 71);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-red-light-2: in oklch(0.7241 0.1858 1.01);
+    }
+    --primary-color-red-light-3: hsl(339 100 57);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-red-light-3: in oklch(0.6506 0.245582 8.6656);
+    }
+    --primary-color-true-red: hsl(339 100 46);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-true-red: in oklch(0.5974 0.238759 14.0448);
+    }
+    --primary-color-red-dark-1: hsl(339 100 19);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-red-dark-1: in oklch(0.3145 0.1257 10.43);
+    }
+    --primary-color-red-dark-2: hsl(339 100 30);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-red-dark-2: in oklch(0.4352 0.1739 12.65);
+    }
+    --primary-color-red-dark-3: hsl(339 100 39);
+    @supports (color: in oklch 10 10 10){
+        --primary-color-red-3: in oklch(0.528 0.211 13.58);
+    }
 
-    --accent-color-yellow-1: hsl(61 100 74);
-    --accent-color-yellow-2: hsl(61 100 64);
-    --accent-color-yellow-3: hsl(61 100 54);
-    --accent-color-yellow-4: hsl(61 100 44);
-    --accent-color-yellow-5: hsl(61 100 34);
-    --accent-color-yellow-6: hsl(61 100 24);
-    --accent-color-yellow-7: hsl(61 100 14);
+    /* MARK: Yellow */
+    --accent-color-yellow-light-1: hsl(61 100 74);
+    @supports (color: in oklch 10 10 10){
+        --accent-color-yellow-light-1: in oklch(0.9726 0.1547 109.83);
+    }
+    --accent-color-yellow-light-2: hsl(61 100 64);
+    @supports (color: in oklch 10 10 10){
+        --accent-color-yellow-light-2: in oklch(0.9676 0.1918 110.47);
+    }
+    --accent-color-yellow-light-3: hsl(61 100 54);
+    @supports (color: in oklch 10 10 10){
+        --accent-color-yellow-light-3: in oklch(0.9651 0.2096 110.89);
+    }
+    --accent-color-true-yellow: hsl(61 100 44);
+    @supports (color: in oklch 10 10 10){
+        --accent-color-true-yellow: in oklch(0.8758 0.192483 110.9954);
+    }
+    --accent-color-yellow-dark-1: hsl(61 100 14);
+    @supports (color: in oklch 10 10 10){
+        --accent-color-yellow-dark-1: in oklch(0.3854 0.0846 110.86);
+    }
+    --accent-color-yellow-dark-2: hsl(61 100 24);
+    @supports (color: in oklch 10 10 10){
+        --accent-color-yellow-dark-2: in oklch(0.5604 0.1231 110.94);
+    }
+    --accent-color-yellow--dark-3: hsl(61 100 34);
+    @supports (color: in oklch 10 10 10){
+        --accent-color-yellow-dark-3: in oklch(0.7224 0.158758 110.9747);
+    }
 
-    --neutral-color-1: hsl(0 0 0);
-    --neutral-color-2: hsl(0 0 20);   
-    --neutral-color-3: hsl(0 0 40);
-    --neutral-color-4: hsl(0 0 60);
-    --neutral-color-5: hsl(0 0 80);
-    --neutral-color-6: hsl(0 0 100);
+    /* MARK: Neutral */
+    --neutral-color-darkest: hsl(0 0 0);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-darkest: in oklch(0 0 0);
+    }
+    --neutral-color-darker: hsl(0 0 20);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-darker: in oklch(0.3211 0 0);
+    }   
+    --neutral-color-dark: hsl(0 0 40);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-dark: in oklch (0.5103 0 0);
+    }
+    --neutral-color-light: hsl(0 0 60);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-light: in okch(0.683 0 0);
+    }
+    --neutral-color-lighter: hsl(0 0 80);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-lighter: in oklch(0.8452 0 0);
+    }
+    --neutral-color-lightest: hsl(0 0 100);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-lightest: in oklch(1 0 0);
+    }
 
-    --neutral-color-blue-gray-1: hsl(216 20 10);
-    --neutral-color-blue-gray-2: hsl(216 10 30);
-    --neutral-color-blue-gray-3: hsl(215 10 40);
-    --neutral-color-blue-gray-4: hsl(215 10 50);
-    --neutral-color-blue-gray-5: hsl(215 10 60);
-    --neutral-color-blue-gray-6: hsl(215 10 70);
-    --neutral-color-blue-gray-7: hsl(215 10 80);
+    /* MARK: Neutral Blue-Grey */
+    --neutral-color-blue-grey-1: hsl(216 20 10);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-blue-grey-1: in oklch(0.2097 0.0137 258.37);
+    }
+    --neutral-color-blue-grey-2: hsl(216 10 30);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-blue-gre2: in oklch(0.4106 0.0173 258.37);
+    }
+    --neutral-color-blue-grey-3: hsl(215 10 40);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-blue-grey-3: in oklch(0.5004 0.022 258.37);
+    }
+    --neutral-color-blue-grey-4: hsl(215 10 50);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-blue-grey-4: in oklch(0.5864 0.0264 258.37);
+    }
+    --neutral-color-blue-grey-5: hsl(215 10 60);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-blue-grey-5: in oklch(0.6736 0.0204 258.37);
+    }
+    --neutral-color-blue-grey-6: hsl(215 10 70);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-blue-grey-6: in oklch(0.7583 0.0148 258.35);
+    }
+    --neutral-color-blue-grey-7: hsl(215 10 80);
+    @supports (color: in oklch 10 10 10){
+        --neutral-color-blue-grey: in oklch(0.8407 0.0096 258.34);
+    }
 }
