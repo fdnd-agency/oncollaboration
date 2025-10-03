@@ -174,4 +174,42 @@
     @supports (color: in oklch 10 10 10){
         --neutral-color-blue-grey: in oklch(0.8407 0.0096 258.34);
     }
+
+    /* fonts */
+
+    /* there is no defined h1 */
+
+    h1, h2 {
+        font-family: "Ubuntu", "inter";
+        font-weight: bold;
+        font-size: 2.5em;
+    }
+
+    h3 {
+        font-family: "Ubuntu", "inter";
+        font-weight: bold;
+        font-size: 2em;
+    }
+
+    h4 {
+        font-family: "Ubuntu", "inter" ;
+        font-weight: bold;
+        font-size: 1.25em;
+    }
+
+    p {
+        font-family: "Ubuntu", "inter" ;
+        font-size: 1em;
+    }
+
+    a {
+        font-family: "Ubuntu", "inter" ;
+        font-weight: bold;
+        font-size: 1em;
+        text-decoration: none;
+    }
+
+
+
+
 }
