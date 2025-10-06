@@ -22,15 +22,36 @@
     }
 
     .homepage-about {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         padding-inline: 12px;
+
+        @media ( min-width: 900px ) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 150px 250px 50px;
+            column-gap: 32px;
+        }
+        
     }
 
-    .header-about, .info-about {
-        max-width: 480px;
+    .header-about {
+        max-width: 600px;    
+        
+        @media ( min-width: 900px ) {
+            max-width: 480px;
+        }
     }
 
     .info-about {
+        max-width: 600px;
         line-height: 1.8;
+
+        @media ( min-width: 900px ) {
+            grid-column: 1/2;
+            max-width: 480px;
+        }
     }
 
     .button-style {
@@ -39,19 +60,31 @@
         align-items: center;
         color: var(--primary-color-blue-dark-2);
         background-color: var(--primary-color-aqua-dark-3);
-        max-width: 330px;
+        width: clamp(260px, 100%, 600px);
         height: 2.5em;
         text-decoration: none;
         gap: 4px;
         border-radius: 7px;
         margin-top: 36px;
+
+        @media ( min-width: 900px ) {
+            grid-column: 1/2;
+            max-width: 330px;
+            margin-top: 0;
+        }
     }
 
     .img-about {
-        width: clamp(260px, 100%, 595px);
+        width: clamp(260px, 100%, 600px);
         margin-top: 40px;
         border: 3px solid var(--primary-color-blue-dark-2);
         border-radius: 25px;
+
+        @media ( min-width: 900px ) {
+            grid-column: 2/3;
+            grid-row: 2/3;
+            margin-top: 0;
+        }
         
     }
 
