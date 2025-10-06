@@ -6,12 +6,13 @@
 </script>
 
 <section class="homepage-about">
-    <h1>{infoabout.heading}</h1>
-    <p>{infoabout.text}</p>
-    <a class="button-style" href="/about">More about oncollaboration<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="white"/>
+    <h1 class="header-about">{infoabout.heading}</h1>
+    <p class="info-about">{infoabout.text}</p>
+    <a class="button-style" href="/about">More about oncollaboration<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
         </svg>
     </a>
+    <img class="img-about" src="/images/doctors.png" alt="doctors">
 </section>
 
 
@@ -21,7 +22,15 @@
     }
 
     .homepage-about {
-        padding-inline: 20px;
+        padding-inline: 12px;
+    }
+
+    .header-about, .info-about {
+        max-width: 480px;
+    }
+
+    .info-about {
+        line-height: 1.8;
     }
 
     .button-style {
@@ -30,11 +39,21 @@
         align-items: center;
         color: var(--primary-color-blue-dark-2);
         background-color: var(--primary-color-aqua-dark-3);
-        width: 100%;
+        max-width: 330px;
         height: 2.5em;
         text-decoration: none;
+        gap: 4px;
         border-radius: 7px;
+        margin-top: 36px;
     }
 
-</style>
+    .img-about {
+        width: clamp(260px, 100%, 595px);
+        margin-top: 40px;
+        border: 3px solid var(--primary-color-blue-dark-2);
+        border-radius: 25px;
+        
+    }
+
+</style>    
 
