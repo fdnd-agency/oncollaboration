@@ -35,9 +35,12 @@
             column-gap: 32px;
         }
 
+        @media ( min-width: 1000px ) {
+            grid-template-rows: 150px 250px 50px;
+        }
+
         @media ( min-width: 1200px ) {
             grid-template-columns: 480px 600px;
-            grid-template-rows: 150px 250px 50px;
             justify-content: center;
         }
     }
