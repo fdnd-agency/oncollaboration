@@ -15,7 +15,7 @@
      <picture class="img-about" >
         <source srcset="/images/doctors.avif" type="image/avif">
         <source srcset="/images/doctors.webp" type="image/webp">
-        <img src="/images/doctors.png" alt="group of doctors" loading="lazy">
+        <img class="img-about" src="/images/doctors.png" alt="group of doctors" loading="lazy">
      </picture>
 </section>
 
@@ -35,13 +35,16 @@
         @media ( min-width: 900px ) {
             display: grid;
             grid-template-columns: 0.8fr 1fr;
-            grid-template-rows: 240px 320px 50px;
+            grid-template-rows: 200px 300px 50px;
             column-gap: 32px;
+        }
+
+        @media ( min-width: 1000px ) {
+            grid-template-rows: 150px 250px 50px;
         }
 
         @media ( min-width: 1200px ) {
             grid-template-columns: 480px 600px;
-            grid-template-rows: 150px 250px 50px;
             justify-content: center;
         }
     }
