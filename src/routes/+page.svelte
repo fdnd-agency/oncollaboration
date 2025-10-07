@@ -12,7 +12,11 @@
         <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
         </svg>
     </a>
-    <img class="img-about" src="/images/doctors.png" alt="doctors">
+     <picture class="img-about" >
+        <source srcset="/images/doctors.avif" type="image/avif">
+        <source srcset="/images/doctors.webp" type="image/webp">
+        <img src="/images/doctors.png" alt="group of doctors" loading="lazy">
+     </picture>
 </section>
 
 
@@ -31,16 +35,13 @@
         @media ( min-width: 900px ) {
             display: grid;
             grid-template-columns: 0.8fr 1fr;
-            grid-template-rows: 200px 300px 50px;
+            grid-template-rows: 240px 320px 50px;
             column-gap: 32px;
-        }
-
-        @media ( min-width: 1000px ) {
-            grid-template-rows: 150px 250px 50px;
         }
 
         @media ( min-width: 1200px ) {
             grid-template-columns: 480px 600px;
+            grid-template-rows: 150px 250px 50px;
             justify-content: center;
         }
     }
