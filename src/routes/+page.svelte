@@ -50,20 +50,20 @@
     }
 
     .header-about {
-        max-width: 37.5em;    
+        max-width: 37.5rem;    
         
         @media ( min-width: 56.25em ) {
-            max-width: 30em;
+            max-width: 30rem;
         }
     }
 
     .info-about {
-        max-width: 37.5em;
+        max-width: 37.5rem;
         line-height: 1.8;
 
         @media ( min-width: 56.25em) {
             grid-column: 1/2;
-            max-width: 30em;
+            max-width: 30rem;
         }
     }
 
