@@ -28,7 +28,7 @@
 <style>
     section {
         background-color: var(--primary-color-blue-light-1);
-        padding: 2em 1em 4em 1em;
+        padding: 2em 1em 6em 1em;
         display: flex;
         flex-direction: column;
         gap: .5em;
