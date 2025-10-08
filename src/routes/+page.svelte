@@ -79,17 +79,18 @@
         gap: 4px;
         border-radius: 7px;
         margin-top: 36px;
+        margin-bottom: 40px;
 
         @media ( min-width: 900px ) {
             grid-column: 1/2;
             max-width: 330px;
             margin-top: 0;
+            margin-bottom: 0;
         }
     }
 
     .img-about {
         width: clamp(260px, 100%, 600px);
-        margin-top: 40px;
         border-radius: 25px;
 
         @media ( min-width: 900px ) {
