@@ -29,41 +29,41 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        padding-inline: 12px;
-        padding-top: 64px;
+        padding-inline: 1em;
+        padding-top: 4em;
 
-        @media ( min-width: 900px ) {
+        @media ( min-width: 56.25em ) {
             display: grid;
             grid-template-columns: 0.8fr 1fr;
-            grid-template-rows: 200px 300px 50px;
-            column-gap: 32px;
+            grid-template-rows: 12.5em 18.75em 3.125em;
+            column-gap: 2em;
         }
 
-        @media ( min-width: 1000px ) {
-            grid-template-rows: 150px 250px 50px;
+        @media ( min-width: 62.5em ) {
+            grid-template-rows: 9.375em 15.625em 3.125em;
         }
 
-        @media ( min-width: 1200px ) {
-            grid-template-columns: 480px 600px;
+        @media ( min-width: 75em ) {
+            grid-template-columns: 30em 37.5em;
             justify-content: center;
         }
     }
 
     .header-about {
-        max-width: 600px;    
+        max-width: 37.5em;    
         
-        @media ( min-width: 900px ) {
-            max-width: 480px;
+        @media ( min-width: 56.25em ) {
+            max-width: 30em;
         }
     }
 
     .info-about {
-        max-width: 600px;
+        max-width: 37.5em;
         line-height: 1.8;
 
-        @media ( min-width: 900px ) {
+        @media ( min-width: 56.25em) {
             grid-column: 1/2;
-            max-width: 480px;
+            max-width: 30em;
         }
     }
 
@@ -73,27 +73,27 @@
         align-items: center;
         color: var(--primary-color-blue-dark-2);
         background-color: var(--primary-color-aqua-dark-3);
-        width: clamp(260px, 100%, 600px);
+        width: clamp(16.25em, 100%, 37.5em);
         height: 2.5em;
         text-decoration: none;
-        gap: 4px;
-        border-radius: 7px;
-        margin-top: 36px;
-        margin-bottom: 40px;
+        gap: 0.25em;
+        border-radius: 0.5em;
+        margin-top: 2.25em;
+        margin-bottom: 2.5em;
 
-        @media ( min-width: 900px ) {
+        @media ( min-width: 56.25em ) {
             grid-column: 1/2;
-            max-width: 330px;
+            max-width: 20.625em;
             margin-top: 0;
             margin-bottom: 0;
         }
     }
 
     .img-about {
-        width: clamp(260px, 100%, 600px);
-        border-radius: 25px;
+        width: clamp(16.25em, 100%, 37.5em);
+        border-radius: 1.563em;
 
-        @media ( min-width: 900px ) {
+        @media ( min-width: 56.25em ) {
             grid-column: 2/3;
             grid-row: 2/3;
             margin-top: 0;
