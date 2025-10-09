@@ -17,6 +17,31 @@ discuss recent developments in their medical field.
 ## Description
 For an assignment we were asked to build a website where a doctor can watch a webinar about radiology. It is the goal that doctors from Indonesia can ask questions to Dutch Doctors and watch the webinars being held. 
 
+## Features
+
+### Design
+For our design we were asked to keep it in the style that it was made in by the first year students in 2024/2025. We expanded on that idea and we have done a thorough redesign for the pages we will make. Here we will show a couple of pages we have made thus far using new color techniques and keeping in mind the way it was made in the last school year. 
+<br>
+
+<img width="387" height="237" alt="styleguide" src="https://github.com/user-attachments/assets/155b510d-c4c4-4f41-8fe7-ef623a073762" />
+<br>
+We made our stylesheet to make sure which colours we'll use. The Colours we'll be usiung are divided in primary, accents and neutrals. We wanted to combine the colours of the AVL and the Kemenkes RS Sardjito so that it's a harmonious partnership between the both of them.
+<br>
+
+The homepage <br>
+<img width="378" height="887" alt="image" src="https://github.com/user-attachments/assets/24d4e3e8-42d9-4da8-9c1b-d05b5ccdff75" />
+<br>
+
+The Webinar overview page <br>
+<img width="457" height="771" alt="webinars" src="https://github.com/user-attachments/assets/bb1a4231-2c85-4ac5-93f7-6c31a36c049f" />
+<br>
+
+The webinar details page <br>
+<img width="615" height="817" alt="webinar detail" src="https://github.com/user-attachments/assets/5bb89479-c553-4128-bf89-772202ae2e4a" />
+<br>
+
+
+
 ## Installation
 1. Open a code editing software
 2. Make a branch from the Dev branch so you'll won't touch the main project
