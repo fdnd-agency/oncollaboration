@@ -3,6 +3,7 @@
     let { data } = $props();
 
     const infoabout = data.about;
+    const infowebinars = data.webinars;
 </script>
 
 <section class="homepage-about">
@@ -17,6 +18,10 @@
         <source srcset="/images/doctors.webp" type="image/webp">
         <img class="img-about" src="/images/doctors.png" alt="group of doctors" loading="lazy">
      </picture>
+</section>
+
+<section class="homepage-contourings-webinars">
+
 </section>
 
 
