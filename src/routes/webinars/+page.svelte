@@ -1,3 +1,10 @@
+<script>
+    let { data } = $props();
+    const webinars = data.webinars;
+    const categories = data.categories;
+    import search from "$lib/assets/search.svg";
+</script>
+
 <svelte:head>
     <title>Webinars</title>
     <meta name="description" content="Webinars" />
@@ -20,10 +27,43 @@
     <h1>Webinars</h1>
 
     <p>
-        Lorem ipsum odor amet, consectetuer adipiscing elit. Enim ipsum non
-        egestas; primis luctus cubilia. Donec utvenenatis. Lorem ipsum odor amet.
+        Our webinars provide physicians with the latest medical insights, clinical updates, and practical tips to enhance patient care. Join the live sessions.
     </p>
 </section>
+
+<form action="" method="get">
+    <fieldset>
+        <legend>Filters</legend>
+        <p>
+            View all speakers or use the filter to view your bookmarked speakers
+        </p>
+
+        <label class="label-search" for="">Type here a webinar you are looking for</label>
+
+        <input type="search" placeholder="Search..." />
+        <button><img src={search} alt="" /></button>
+
+        <select name="category" id="category">
+            <option value="all">All</option>
+            {#each categories as category}
+                <option value={category.name}>{category.name}</option>
+            {/each}
+        </select>
+
+        <select name="recent" id="new-old">
+            <option value="new-old">New to Old</option>
+            <option value="old-new">Old to New</option>
+        </select>
+
+        <select name="alfabetisch" id="alfabetisch">
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+        </select>
+
+        <button class="filteren">Filter webinars</button>
+        <button class="reset-filter">Reset filter</button>
+    </fieldset>
+</form>
 
 <style>
     section {
@@ -31,27 +71,35 @@
         padding: 2em 1em 6em 1em;
         display: flex;
         flex-direction: column;
-        gap: .5em;
+        gap: 0.5em;
     }
 
     ul {
         display: flex;
-        gap: .5em;
+        gap: 0.5em;
         list-style-type: none;
         padding: 1em;
     }
 
-    li a{
+    li a {
         color: var(--neutral-color-darker);
     }
 
     h1 {
-        margin: .5em;
+        margin: 0.5em;
     }
 
     p {
         margin: 1em;
         max-width: clamp(20em, 40vw, 62.5em);
         line-height: 1.4;
+    }
+
+    fieldset{
+        border: none;
+    }
+
+    legend{
+        
     }
 </style>
