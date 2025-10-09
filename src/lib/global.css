@@ -175,7 +175,7 @@
         --neutral-color-blue-grey: in oklch(0.8407 0.0096 258.34);
     }
 
-    /* fonts */
+    /* MARK: Fonts */
 
     /* there is no defined h1 */
 
@@ -186,6 +186,9 @@
     --font-size-large: 2em;
     --font-size-medium: 1.25em;
     --font-size-small: 1em;
+
+    --border-radius-small:8px;
+    --border-radius-medium:16px;
 
     h1, h2 {
         font-family: "Ubuntu", "inter";
