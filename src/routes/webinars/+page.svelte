@@ -26,19 +26,23 @@
 
     <h1>Webinars</h1>
 
-    <p>
-        Our webinars provide physicians with the latest medical insights, clinical updates, and practical tips to enhance patient care. Join the live sessions.
+    <p class="intro-webinars">
+        Our webinars provide physicians with the latest medical insights,
+        clinical updates, and practical tips to enhance patient care. Join the
+        live sessions.
     </p>
 </section>
 
 <form action="" method="get">
     <fieldset>
         <legend>Filters</legend>
-        <p>
+        <p class="intro-filters">
             View all speakers or use the filter to view your bookmarked speakers
         </p>
 
-        <label class="label-search" for="">Type here a webinar you are looking for</label>
+        <label class="label-search" for=""
+            >Type here a webinar you are looking for</label
+        >
 
         <input type="search" placeholder="Search..." />
         <button><img src={search} alt="" /></button>
@@ -89,17 +93,31 @@
         margin: 0.5em;
     }
 
-    p {
+    .intro-webinars {
         margin: 1em;
         max-width: clamp(20em, 40vw, 62.5em);
         line-height: 1.4;
     }
 
-    fieldset{
-        border: none;
+    form{
+        padding: 2em;
+    margin: -3em 1em 1em 1em;
+    background-color: var(--neutral-color-lightest);
+    border-radius: 15px;
     }
 
-    legend{
-        
+    fieldset {
+        border: none;
+        margin: 1em;
+        padding: 1em;
     }
+
+    legend {
+        font-family: var(--primary-font-family);
+        font-weight: var(--primary-font-weight);
+        line-height: var(--primary-line-height);
+        font-size: var(--font-size-medium);
+    }
+
+  
 </style>
