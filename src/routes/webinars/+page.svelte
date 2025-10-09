@@ -1,9 +1,12 @@
+<!--  MARK: JS-->
 <script>
     let { data } = $props();
     const webinars = data.webinars;
     const categories = data.categories;
     import search from "$lib/assets/search.svg";
 </script>
+
+<!--  MARK: svelte:head-->
 
 <svelte:head>
     <title>Webinars</title>
@@ -17,6 +20,8 @@
         }
     </style>
 </svelte:head>
+
+<!--  MARK: HTML-->
 
 <section>
     <ul>
@@ -40,39 +45,43 @@
             View all speakers or use the filter to view your bookmarked speakers
         </p>
 
-        <label class="label-search" for=""
-            >Type here a webinar you are looking for</label
-        >
+        <label class="label-search" for="">Type here a webinar you are looking for</label>
 
-        <input type="search" placeholder="Search..." />
-        <button><img src={search} alt="" /></button>
+        <div class="container-filters">
+            <div class="searchbar">
+                <input type="search" placeholder="Search..." />
+                <button class="img-search"><img src={search} alt="" /></button>
+            </div>
 
-        <select name="category" id="category">
-            <option value="all">All</option>
-            {#each categories as category}
-                <option value={category.name}>{category.name}</option>
-            {/each}
-        </select>
+            <select name="category" id="category">
+                <option value="all">All</option>
+                {#each categories as category}
+                    <option value={category.name}>{category.name}</option>
+                {/each}
+            </select>
 
-        <select name="recent" id="new-old">
-            <option value="new-old">New to Old</option>
-            <option value="old-new">Old to New</option>
-        </select>
+            <select name="recent" id="new-old">
+                <option value="new-old">New to Old</option>
+                <option value="old-new">Old to New</option>
+            </select>
 
-        <select name="alfabetisch" id="alfabetisch">
-            <option value="a-z">A-Z</option>
-            <option value="z-a">Z-A</option>
-        </select>
+            <select name="alfabetisch" id="alfabetisch">
+                <option value="a-z">A-Z</option>
+                <option value="z-a">Z-A</option>
+            </select>
 
-        <button class="filteren">Filter webinars</button>
-        <button class="reset-filter">Reset filter</button>
+            <button class="filteren">Filter webinars</button>
+            <button class="reset-filter">Reset filter</button>
+        </div>
     </fieldset>
 </form>
+
+<!--  MARK: CSS-->
 
 <style>
     section {
         background-color: var(--primary-color-blue-light-1);
-        padding: 2em 1em 6em 1em;
+        padding: 2em 1em 5em 1em;
         display: flex;
         flex-direction: column;
         gap: 0.5em;
@@ -99,11 +108,11 @@
         line-height: 1.4;
     }
 
-    form{
-        padding: 2em;
-    margin: -3em 1em 1em 1em;
-    background-color: var(--neutral-color-lightest);
-    border-radius: 15px;
+    form {
+        padding: 1em;
+        margin: -3em 1em 1em 1em;
+        background-color: var(--neutral-color-lightest);
+        border-radius: var(--border-radius-medium);
     }
 
     fieldset {
@@ -119,5 +128,51 @@
         font-size: var(--font-size-medium);
     }
 
-  
+    .container-filters {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        padding: 1.5em 0em 0em 0em;
+    }
+
+    .searchbar{
+        position: relative;
+        width: 100%;
+    }
+
+    label {
+        font-family: var(--primary-font-family);
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        clip: rect(0, 0, 0, 0);
+    }
+
+    input{
+        padding: .5em;
+        width: 100%;
+        border-radius: var(--border-radius-small);
+        background-position: 1em;
+        font-size: var(--font-size-small);
+        border: 1px solid var(--primary-color-blue-dark-2);
+    }
+
+.img-search{
+    position: absolute;
+        right: 0em;
+        width: clamp(3rem, 1.2222rem + 8.8889vw, 4rem);
+        height: 100%;
+        background-color: var(--primary-color-aqua-dark-3);
+        border-radius: 0px var(--border-radius-small) var(--border-radius-small) 0px;
+        border: 1px solid var(--primary-color-blue-dark-2);
+}
+
+    select {
+        padding: 0.5em;
+    }
+
+    .filteren,
+    .reset-filter {
+        padding: 0.5em;
+    }
 </style>
