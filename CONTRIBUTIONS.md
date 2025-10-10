@@ -39,6 +39,14 @@ Als er een tekstkopje aanwezig is dan een duidelijke naamgeving van het betreffe
 ## Primaire, accenten en neutrale kleuren
 <img width="967" height="688" alt="image" src="https://github.com/user-attachments/assets/997ba8b1-66f5-415d-bdc9-6cbb080d496b" />
 
+## Teamafspraken
+- Elke maandag, woensdag en vrijdag een standup houden waar we de drie vragen stellen aan elkaar
+- Elke dinsdag en donderdag bereikbaar kunnen zijn en een vaste tijd afspreken voor donderdagen. We zullen op donderdaag tussen 14:00 en 16:00 een meeting houden voor een half uur.
+- Als we feedback krijgen of een issue dan dat zo snel mogelijk verwerken. Zo zorg je ervoor dat je niet blijft vastzitten in een taak. Je tagt diegene die moet reviewen op Teams en op Github.
+- Belangrijke taken zoals 'Must haves' moeten een einddatum krijgen.
+- Duidelijk communiceren waar je moeite mee hebt.
+- Bij de pull requests plaats je screenshots van het werk dat gereviewed moet worden EN als je een review plaatst wat je hebt gevonden met als bewijslast een screenshot.
+
 ## 2024/2025
 ## Version-before-redesign branch
 When working on this project we strongly advice you to open and run this branch. So you can see the previous design with all the functionalities made prior. This will give you a better understanding of how it was build and how to implement it for the redesign for Oncollaboration.
