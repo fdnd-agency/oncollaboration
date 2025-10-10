@@ -41,7 +41,7 @@ Als er een tekstkopje aanwezig is dan een duidelijke naamgeving van het betreffe
 
 ## Teamafspraken
 - Elke maandag, woensdag en vrijdag een standup houden waar we de drie vragen stellen aan elkaar
-- Elke dinsdag en donderdag bereikbaar kunnen zijn en een vaste tijd afspreken voor donderdagen. We zullen op donderdaag tussen 14:00 en 16:00 een meeting houden voor een half uur.
+- Elke dinsdag en donderdag bereikbaar kunnen zijn en een vaste tijd afspreken voor donderdagen. We zullen op donderdag tussen 14:00 en 16:00 een meeting houden voor een half uur.
 - Als we feedback krijgen of een issue dan dat zo snel mogelijk verwerken. Zo zorg je ervoor dat je niet blijft vastzitten in een taak. Je tagt diegene die moet reviewen op Teams en op Github.
 - Belangrijke taken zoals 'Must haves' moeten een einddatum krijgen.
 - Duidelijk communiceren waar je moeite mee hebt.
