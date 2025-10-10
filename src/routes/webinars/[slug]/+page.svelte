@@ -5,11 +5,23 @@
     const webinar = data.webinar
 </script>
 
+<svelte:head>
+    <title>Webinar {webinar.title}</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</svelte:head>
+
 <!-- hier komt de nav bar -->
- <ul>
-    <li><a href="/">home</a></li>
-    <li><a href="/webinars">Webinars</a></li>
-    <li><a href="/webinars/{webinar.slug}">{webinar.title}</a></li>
+ <ul id="webinar-bread-crumb">
+    <li><a href="/">home &#8594</a></li>
+    <li><a href="/webinars">Webinars &#8594</a></li>
+    <li><a href="/webinars/{webinar.slug}">webinar</a></li>
  </ul>
 <section id="webinar-video">
     <video 
@@ -55,3 +67,41 @@
 </section>
 
 <!-- hier komt de footer -->
+
+<style>
+    ul{
+        list-style: none;
+        display: flex;
+    }
+    #webinar-bread-crumb{
+        background-color: var(--primary-color-blue-light-1);
+
+        a{
+            text-decoration: none;
+            color: var(--primary-color-blue-dark-2);
+        }
+    }
+
+    #webinar-video{
+        ul{
+            gap: 1em;
+        }
+
+        li{
+            background-color: var(--primary-color-true-aqua);
+            width: 5rem;
+            text-align: center;
+            color: var(--primary-color-blue-dark-2);
+        }
+
+        h1{
+            max-width: 40ch;
+            font-size: clamp(0.80rem, 1rem, 3rem);
+            line-height: 1.4;
+        }
+    }
+
+    h1, h2, h3, h4{
+        color: var(--primary-color-blue-dark-2);
+    }
+</style>
