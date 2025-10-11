@@ -45,11 +45,11 @@
             View all speakers or use the filter to view your bookmarked speakers
         </p>
 
-        <label class="label-search" for="">Type here a webinar you are looking for</label>
+        <label class="label-search" for="webinarSearch">Type here a webinar you are looking for</label>
 
         <div class="container-filters">
             <div class="searchbar">
-                <input type="search" placeholder="Search..." />
+                <input type="search" id="webinarSearch" placeholder="Search..." />
                 <button class="img-search"><img src={search} alt="" /></button>
             </div>
 
@@ -70,8 +70,8 @@
                 <option value="z-a">Z-A</option>
             </select>
 
-            <button class="filteren">Filter webinars</button>
-            <button class="reset-filter">Reset filter</button>
+            <button class="filteren" type="filteren">Filter webinars</button>
+            <button class="reset-filter" type="reset">Reset filter</button>
         </div>
     </fieldset>
 </form>
