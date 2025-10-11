@@ -134,6 +134,13 @@
         gap: 0.5em;
         padding: 1.5em 0em 0em 0em;
 
+        @media (min-width: 500px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr; 
+        }
+
+
         @media (min-width: 700px) {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -144,8 +151,11 @@
     .searchbar{
         position: relative;
         width: 100%;
-        grid-row: 1;
-        grid-column: 1 / 3;
+
+        @media (min-width: 700px) {
+            grid-row: 1;
+            grid-column: 1 / 3;
+        }
     }
 
     label {
@@ -159,6 +169,7 @@
     input{
         padding: .5em;
         width: 100%;
+        height: 100%;
         border-radius: var(--border-radius-small);
         background-position: 1em;
         font-size: var(--font-size-small);
@@ -189,23 +200,32 @@
     }
 
     #new-old{
-        grid-column: 2;
+
+        @media (min-width: 700px) {
+            grid-column: 2;
         grid-row: 2;
+        }
     }
 
     #alfabetisch{
-        grid-column: 3;
+        @media (min-width: 700px) {
+            grid-column: 3;
         grid-row: 2;
+        }
     }
 
     .filteren{
-        grid-column: 4;
+        @media (min-width: 700px) {
+            grid-column: 4;
         grid-row: 2;
+        }
     }
 
     .reset-filter{
-        grid-column: 5;
+        @media (min-width: 700px) {
+            grid-column: 5;
         grid-row: 2;
+        }
     }
 
     .filteren,
