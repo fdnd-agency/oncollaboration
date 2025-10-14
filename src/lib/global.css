@@ -1,16 +1,20 @@
 :root {
     /* MARK: Blue */
-    --primary-color-blue-light-1: hsl(216 100 91); 
+    --primary-color-blue-light-1: hsl(220, 53, 93);
+    @supports (color: in oklch 0.939 0.0174 264.48) {
+        --primary-color-blue-light-1: oklch(0.939 0.0174 264.48);
+    }
+    --primary-color-blue-light-2: hsl(216 100 91); 
      @supports (color: in oklch 80% 0.2 260) {
-        --primary-color-blue-light-1: oklch(80% 0.2 260);
+        --primary-color-blue-light-2: oklch(80% 0.2 260);
     }
-    --primary-color-blue-light-2: hsl(216 100 74); 
+    --primary-color-blue-light-3: hsl(216 100 74); 
     @supports (color: in oklch 0.7511 0.1286 258.27) {
-        --primary-color-blue-light-2: oklch(0.7511 0.1286 258.27);
+        --primary-color-blue-light-3: oklch(0.7511 0.1286 258.27);
     }
-    --primary-color-blue-light-3: hsl(216 100 55);
+    --primary-color-blue-light-4: hsl(216 100 55);
     @supports (color: in oklch 10 10 10) {
-        --primary-color-blue-light-3: oklch(0.5958 0.220874 259.6288);
+        --primary-color-blue-light-4: oklch(0.5958 0.220874 259.6288);
     }
     --primary-color-true-blue: hsl(216 100 33);
     @supports (color: in oklch 10 10 10){
