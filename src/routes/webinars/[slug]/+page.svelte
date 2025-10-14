@@ -19,9 +19,9 @@
 
 <!-- hier komt de nav bar -->
  <ul id="webinar-bread-crumb">
-    <li><a href="/">home &#8594</a></li>
-    <li><a href="/webinars">Webinars &#8594</a></li>
-    <li><a href="/webinars/{webinar.slug}">webinar</a></li>
+    <li><a href="/">home &rsaquo;</a></li>
+    <li><a href="/webinars">Webinars &rsaquo;</a></li>
+    <li><a href="/webinars/{webinar.slug}">webinar details</a></li>
  </ul>
 <section id="webinar-video">
     <video 
@@ -75,50 +75,51 @@
     #webinar-bread-crumb{
         height: 2em;
         background-color: var(--primary-color-blue-light-1);
+    }
 
-        a{
-            text-decoration: none;
-            color: var(--primary-color-blue-dark-2);
-        }
+    li a{
+        text-decoration: none;
+        color: var(--primary-color-blue-dark-2);
     }
 
     #webinar-video{
         display: grid;
         place-items: center;
         gap: 1em;
-        ul{
+    }
+
+     section ul{
             gap: 1em;
         }
 
-        li{
-            background-color: var(--primary-color-true-aqua);
-            width: max-content;
-            padding: 0.3rem;
-            text-align: center;
-            color: var(--primary-color-blue-dark-2);
+    section li{
+        background-color: var(--primary-color-true-aqua);
+        width: max-content;
+        padding: 1em;
+        text-align: center;
+        color: var(--primary-color-blue-dark-2);
 
-            border-radius: 2.5rem;
-        }
+        border-radius: 2.5rem;
+    }
 
-        h1{
-            font-size: clamp(0.80rem, 100%, 2.5rem);
-            line-height: 1.4;
-        }
+    h1{
+        font-size: clamp(0.80rem, 100%, 2.5rem);
+        line-height: 1.4;
+    }
 
-        article{
-            background-color: var(--primary-color-blue-light-1);
-            width: 90%;
-        }
+    article{
+        background-color: var(--primary-color-blue-light-1);
+        width: clamp(14rem, 63%, 30rem);
+    }
 
-        details{
-            background-color: var(--primary-color-blue-dark-1);
-            width: 90%;
-        }
+    details{
+        background-color: var(--primary-color-blue-dark-1);
+        width: clamp(14rem, 63%, 30rem);
+    }
 
-        summary{
+    summary{
             color: var(--neutral-color-lightest);
         }
-    }
 
     video{
         margin-top: 1em;
@@ -134,25 +135,26 @@
         place-items: center;
         gap: 1em;
         margin: 2em 0;
+    }
 
-            #speaker{
-                display: grid;
-                place-items: center;
-                gap: 1em;
+    #speaker{
+        display: grid;
+        place-items: center;
+        gap: 1em;
 
-                background-color: var(--primary-color-blue-dark-1);
+        background-color: var(--primary-color-blue-dark-1);
+        width: clamp(14rem, 63%, 30rem);
+    }
 
-                p{
-                    color: var(--neutral-color-lightest);
-                }
-            }
-
-            a{
-                text-decoration: none;
-                color: var(--primary-color-blue-dark-2);
-                background-color: var(--primary-color-true-aqua);
-                padding: 0.5em;
-                border-radius: 2.5rem;
-            }
+    #speaker p{
+            color: var(--neutral-color-lightest);
+        }
+    
+    section a{
+        text-decoration: none;
+        color: var(--primary-color-blue-dark-2);
+        background-color: var(--primary-color-true-aqua);
+        padding: 0.8em;
+        border-radius: 2.5rem;
     }
 </style>
