@@ -7,7 +7,7 @@
     const infocontourings = data.contourings;
 </script>
 
-<section class="homepage-about">
+<section class="homepage-about home-mobile-styling">
     <h1 class="header-about">{infoabout.heading}</h1>
     <p class="info-about">{infoabout.text}</p>
     <a class="button-style" href="/about">More about oncollaboration<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +21,7 @@
      </picture>
 </section>
 
-<section class="homepage-webinars">
+<section class="homepage-webinars home-mobile-styling">
     <h2>{infowebinars.heading}</h2>
     <p>{infowebinars.text}</p>
     <a class="button-style" href="/webinars">More about webinars<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,7 @@
     </a>
 </section>
 
-<section class="homepage-contourings">
+<section class="homepage-contourings home-mobile-styling">
     <h2>{infocontourings.heading}</h2>
     <p>{infocontourings.text}</p>
     <a class="button-style" href="/contourings">More about contourings<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,22 +45,26 @@
         background-color: var(--neutral-color-lightest);
     }
 
-    .homepage-about {
+    .home-mobile-styling {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        justify-content: center;
         flex-direction: column;
         padding-inline: 1em;
+    }
+
+    .homepage-about {
         padding-top: 4em;
 
         @media ( min-width: 56.25em ) {
             display: grid;
             grid-template-columns: 0.8fr 1fr;
-            grid-template-rows: 12.5em 18.75em 3.125em;
+            grid-template-rows: 14.5em 18.75em 3.125em;
             column-gap: 2em;
         }
 
         @media ( min-width: 62.5em ) {
-            grid-template-rows: 9.375em 15.625em 3.125em;
+            grid-template-rows: 10.375em 15.625em 3.125em;
         }
 
         @media ( min-width: 75em ) {
@@ -79,7 +83,6 @@
 
     .info-about {
         max-width: 37.5rem;
-        line-height: 1.8;
 
         @media ( min-width: 56.25em) {
             grid-column: 1/2;
@@ -115,10 +118,13 @@
 
         @media ( min-width: 56.25em ) {
             grid-column: 2/3;
-            grid-row: 2/3;
-            margin-top: 0;
+            grid-row: 1/3;
+            margin-top: 3.5em;
         }
-        
+    }
+
+    .homepage-webinars {
+        background-color: var(--primary-color-blue-light-1);
     }
 
 </style>    
