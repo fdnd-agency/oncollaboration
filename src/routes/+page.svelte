@@ -42,6 +42,13 @@
 
 
 <style>
+
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
     body {
         background-color: var(--neutral-color-lightest);
     }
@@ -78,8 +85,8 @@
     }
 
     .header-about {
-        max-width: 37.5rem;    
-        
+        max-width: 37.5rem;  
+
         @media ( min-width: 56.25em ) {
             max-width: 30rem;
         }
@@ -87,10 +94,12 @@
 
     .info-about {
         max-width: 37.5rem;
+        margin-top: 1em;
 
         @media ( min-width: 56.25em) {
             grid-column: 1/2;
             max-width: 30rem;
+            margin-top: 0;
         }
     }
 
