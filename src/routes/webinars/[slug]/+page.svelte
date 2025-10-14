@@ -32,14 +32,13 @@
         <track kind="captions">
     </video>
     <ul>
-        <li>{webinar.views}</li>
         <li>{webinar.date}</li>
-        <li>{webinar.categories}</li>
+        {#each webinar.categories as category}
+            <li>{category}</li>
+        {/each}
     </ul>
     <h1>{webinar.title}</h1>
-</section>
 
-<section>
     <article>
         <h2>Description</h2>
     </article>
@@ -74,6 +73,7 @@
         display: flex;
     }
     #webinar-bread-crumb{
+        height: 2em;
         background-color: var(--primary-color-blue-light-1);
 
         a{
@@ -83,15 +83,21 @@
     }
 
     #webinar-video{
+        display: grid;
+        place-items: center;
+        gap: 1em;
         ul{
             gap: 1em;
         }
 
         li{
             background-color: var(--primary-color-true-aqua);
-            width: 5rem;
+            width: max-content;
+            padding: 0.3rem;
             text-align: center;
             color: var(--primary-color-blue-dark-2);
+
+            border-radius: 2.5rem;
         }
 
         h1{
@@ -99,6 +105,24 @@
             font-size: clamp(0.80rem, 1rem, 3rem);
             line-height: 1.4;
         }
+
+        article{
+            background-color: var(--primary-color-blue-light-1);
+            width: 90%;
+        }
+
+        details{
+            background-color: var(--primary-color-blue-dark-1);
+            width: 90%;
+        }
+
+        summary{
+            color: var(--neutral-color-lightest);
+        }
+    }
+
+    video{
+        margin-top: 1em;
     }
 
     h1, h2, h3, h4{
