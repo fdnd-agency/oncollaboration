@@ -123,7 +123,7 @@
 
 <style>
     .container-intro {
-        background-color: var(--primary-color-blue-light-1);
+        background-color: var(--primary-color-blue-light-2);
         padding: 2em 1em 5em 1em;
         display: flex;
         flex-direction: column;
