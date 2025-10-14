@@ -101,8 +101,7 @@
         }
 
         h1{
-            max-width: 40ch;
-            font-size: clamp(0.80rem, 1rem, 3rem);
+            font-size: clamp(0.80rem, 100%, 2.5rem);
             line-height: 1.4;
         }
 
@@ -123,9 +122,37 @@
 
     video{
         margin-top: 1em;
+        width: clamp(18.75rem, 80%, 50rem);
     }
 
     h1, h2, h3, h4{
         color: var(--primary-color-blue-dark-2);
+    }
+
+    #webinar-qna{
+        display: grid;
+        place-items: center;
+        gap: 1em;
+        margin: 2em 0;
+
+            #speaker{
+                display: grid;
+                place-items: center;
+                gap: 1em;
+
+                background-color: var(--primary-color-blue-dark-1);
+
+                p{
+                    color: var(--neutral-color-lightest);
+                }
+            }
+
+            a{
+                text-decoration: none;
+                color: var(--primary-color-blue-dark-2);
+                background-color: var(--primary-color-true-aqua);
+                padding: 0.5em;
+                border-radius: 2.5rem;
+            }
     }
 </style>
