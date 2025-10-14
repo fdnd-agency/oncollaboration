@@ -3,9 +3,11 @@
     let { data } = $props();
 
     const infoabout = data.about;
+    const infowebinars = data.webinars;
+    const infocontourings = data.contourings;
 </script>
 
-<section class="homepage-about">
+<section class="homepage-about home-mobile-styling">
     <h1 class="header-about">{infoabout.heading}</h1>
     <p class="info-about">{infoabout.text}</p>
     <a class="button-style" href="/about">More about oncollaboration<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,28 +21,50 @@
      </picture>
 </section>
 
+<section class="homepage-webinars home-mobile-styling">
+    <h2>{infowebinars.heading}</h2>
+    <p>{infowebinars.text}</p>
+    <a class="button-style" href="/webinars">More about webinars<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
+        </svg>
+    </a>
+</section>
+
+<section class="homepage-contourings home-mobile-styling">
+    <h2>{infocontourings.heading}</h2>
+    <p>{infocontourings.text}</p>
+    <a class="button-style" href="/contourings">More about contourings<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
+        </svg>
+    </a>
+</section>
+
 
 <style>
     body {
         background-color: var(--neutral-color-lightest);
     }
 
-    .homepage-about {
+    .home-mobile-styling {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        justify-content: center;
         flex-direction: column;
         padding-inline: 1em;
+    }
+
+    .homepage-about {
         padding-top: 4em;
 
         @media ( min-width: 56.25em ) {
             display: grid;
             grid-template-columns: 0.8fr 1fr;
-            grid-template-rows: 12.5em 18.75em 3.125em;
+            grid-template-rows: 14.5em 18.75em 3.125em;
             column-gap: 2em;
         }
 
         @media ( min-width: 62.5em ) {
-            grid-template-rows: 9.375em 15.625em 3.125em;
+            grid-template-rows: 10.375em 15.625em 3.125em;
         }
 
         @media ( min-width: 75em ) {
@@ -59,7 +83,6 @@
 
     .info-about {
         max-width: 37.5rem;
-        line-height: 1.8;
 
         @media ( min-width: 56.25em) {
             grid-column: 1/2;
@@ -95,11 +118,13 @@
 
         @media ( min-width: 56.25em ) {
             grid-column: 2/3;
-            grid-row: 2/3;
-            margin-top: 0;
+            grid-row: 1/3;
+            margin-top: 3.5em;
         }
-        
+    }
+
+    .homepage-webinars {
+        background-color: var(--primary-color-blue-light-1);
     }
 
 </style>    
-
