@@ -4,6 +4,8 @@
     const webinars = data.webinars;
     const categories = data.categories;
     import search from "$lib/assets/search.svg";
+    import watchlist from "$lib/assets/watchlist.svg";
+    import arrow from "$lib/assets/arrow-right.svg";
 </script>
 
 <!--  MARK: svelte:head-->
@@ -23,7 +25,7 @@
 
 <!--  MARK: HTML-->
 
-<section>
+<section class="container-intro">
     <ul>
         <li><a href="/">Home &rsaquo;</a></li>
         <li><a href="/webinars">Webinars</a></li>
@@ -76,10 +78,51 @@
     </fieldset>
 </form>
 
+<section class="container-results">
+    <h2>Results</h2>
+    <p>1 result</p>
+</section>
+
+<div>
+{#each webinars as webinar}
+<article>
+    <picture>
+        <source 
+          srcset={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail}?format=avif`} 
+          type="image/avif" 
+        />
+        <source 
+          srcset={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail}?format=webp`} 
+          type="image/webp" 
+        />
+        <img 
+          src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail}`} 
+          alt={webinar.title} 
+          height="180"
+          width="300"
+          loading="lazy"
+        />
+      </picture>
+
+      <p class="duration">{webinar.duration}</p>
+      <p class="catergory">{webinar.categories}</p>
+
+      <button class="watchlist">Add to watchlist
+        <img src={watchlist} alt="" aria-hidden="true">
+      </button>
+
+      <h3>{webinar.title}</h3>
+      <p></p>
+
+      <a class="to-webinar-detail" href="{`/webinars/${webinar.slug}`}">View webinar <img src={arrow} alt="" aria-hidden="true"></a>
+</article>
+{/each}
+</div>
+
 <!--  MARK: CSS-->
 
 <style>
-    section {
+    .container-intro {
         background-color: var(--primary-color-blue-light-1);
         padding: 2em 1em 5em 1em;
         display: flex;
@@ -145,6 +188,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr; 
+            max-width: 65em;
     }
     }
 
