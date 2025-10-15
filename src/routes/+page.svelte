@@ -7,6 +7,19 @@
     const infocontourings = data.contourings;
 </script>
 
+<svelte:head> 
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+    </style>
+</svelte:head>
+
+
 <article class="homepage-about home-mobile-styling">
     <h1 class="header-about">{infoabout.heading}</h1>
     <p class="info-about">{infoabout.text}</p>
@@ -42,12 +55,6 @@
 
 
 <style>
-
-    * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
     .home-mobile-styling {
         display: flex;
