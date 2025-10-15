@@ -51,7 +51,7 @@
 
     .home-mobile-styling {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
         flex-direction: column;
         padding-inline: 1em;
@@ -139,11 +139,13 @@
     }
 
     .homepage-webinars-contourings {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
         @media ( min-width: 65em ) {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: row;
             background-color: var(--primary-color-blue-dark-2);
             padding-block: 5em;
             padding-inline: 2em;
@@ -153,11 +155,12 @@
     }
 
     .homepage-webinars, .homepage-contourings  {
+        max-width: 30.25em;
         padding-bottom: 2.5em;
         background-color: var(--primary-color-blue-light-1);
 
         @media ( min-width: 65em ) {
-            max-width: 30.25em;
+            align-items: flex-start;
             padding-inline: 3em;
             border-radius: 1em;
         }
