@@ -146,6 +146,7 @@
             justify-content: center;
             background-color: var(--primary-color-blue-dark-2);
             padding-block: 5em;
+            padding-inline: 2em;
             gap: 7em;
 
         }
