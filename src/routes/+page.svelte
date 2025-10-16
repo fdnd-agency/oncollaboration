@@ -164,7 +164,7 @@
         }
 
         @media ( min-width: 75em ) {
-            gap: 18.5em;
+            gap: 18.7em;
         }
     }
 
@@ -188,16 +188,8 @@
         }
     }
 
-    .header-webinars-contourings {
+    .header-webinars-contourings, .info-webinars-contourings, .link-webinars-contourings {
         margin-top: 2rem;
     }
-    
-    .info-webinars-contourings, .link-webinars-contourings {
-        margin-top: 2rem;
-    }
-
-
-        
-
 
 </style>    
