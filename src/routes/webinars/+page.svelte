@@ -51,7 +51,11 @@
 
         <div class="container-filters">
             <div class="searchbar">
-                <input type="search" id="webinarSearch" placeholder="Search..." />
+                <input
+                    type="search"
+                    id="webinarSearch"
+                    placeholder="Search..."
+                />
                 <button class="img-search"><img src={search} alt="" /></button>
             </div>
 
@@ -84,39 +88,44 @@
 </section>
 
 <div>
-{#each webinars as webinar}
-<article>
-    <picture>
-        <source 
-          srcset={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail}?format=avif`} 
-          type="image/avif" 
-        />
-        <source 
-          srcset={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail}?format=webp`} 
-          type="image/webp" 
-        />
-        <img 
-          src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail}`} 
-          alt={webinar.title} 
-          height="180"
-          width="300"
-          loading="lazy"
-        />
-      </picture>
+    {#each webinars as webinar}
+        <article>
+            <picture>
+                <source
+                    srcset={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}?format=avif`}
+                    type="image/avif"
+                />
+                <source
+                    srcset={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}?format=webp`}
+                    type="image/webp"
+                />
+                <img
+                    src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}`}
+                    alt={webinar.title}
+                    height="180"
+                    width="300"
+                    loading="lazy"
+                />
+            </picture>
 
-      <p class="duration">{webinar.duration}</p>
-      <p class="catergory">{webinar.categories}</p>
+            <p class="duration">{webinar.duration}</p>
+            <p class="catergory">
+                {webinar.categories[0].avl_categories_id.name}
+            </p>
 
-      <button class="watchlist">Add to watchlist
-        <img src={watchlist} alt="" aria-hidden="true">
-      </button>
+            <button class="watchlist">Add to watchlist
+                <img src={watchlist} alt="" aria-hidden="true" />
+            </button>
 
-      <h3>{webinar.title}</h3>
-      <p></p>
+            <h3>{webinar.title}</h3>
 
-      <a class="to-webinar-detail" href="{`/webinars/${webinar.slug}`}">View webinar <img src={arrow} alt="" aria-hidden="true"></a>
-</article>
-{/each}
+            <p>{webinar.speakers[0].avl_speakers_id.fullname}</p>
+
+            <a class="to-webinar-detail" href={`/webinars/${webinar.slug}`}
+                >View webinar <img src={arrow} alt="" aria-hidden="true" /></a
+            >
+        </article>
+    {/each}
 </div>
 
 <!--  MARK: CSS-->
@@ -180,19 +189,18 @@
         @media (min-width: 500px) {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr; 
+            grid-template-rows: 1fr 1fr 1fr;
         }
-
 
         @media (min-width: 700px) {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr; 
+            grid-template-rows: 1fr 1fr;
             max-width: 65em;
-    }
+        }
     }
 
-    .searchbar{
+    .searchbar {
         position: relative;
         width: 100%;
 
@@ -210,8 +218,8 @@
         clip: rect(0, 0, 0, 0);
     }
 
-    input{
-        padding: .5em;
+    input {
+        padding: 0.5em;
         width: 100%;
         height: 100%;
         border-radius: var(--border-radius-small);
@@ -220,15 +228,16 @@
         border: 1px solid var(--primary-color-blue-dark-2);
     }
 
-.img-search{
+    .img-search {
         position: absolute;
         right: 0em;
         width: clamp(3rem, 1.2222rem + 8.8889vw, 4rem);
         height: 100%;
         background-color: var(--primary-color-aqua-dark-3);
-        border-radius: 0px var(--border-radius-small) var(--border-radius-small) 0px;
+        border-radius: 0px var(--border-radius-small) var(--border-radius-small)
+            0px;
         border: 1px solid var(--primary-color-blue-dark-2);
-}
+    }
 
     select {
         padding: 0.5em;
@@ -238,37 +247,36 @@
         font-family: var(--primary-font-family);
     }
 
-    #category{
+    #category {
         grid-column: 1;
         grid-row: 2;
     }
 
-    #new-old{
-
+    #new-old {
         @media (min-width: 700px) {
             grid-column: 2;
-        grid-row: 2;
+            grid-row: 2;
         }
     }
 
-    #alfabetisch{
+    #alfabetisch {
         @media (min-width: 700px) {
             grid-column: 3;
-        grid-row: 2;
+            grid-row: 2;
         }
     }
 
-    .filteren{
+    .filteren {
         @media (min-width: 700px) {
             grid-column: 4;
-        grid-row: 2;
+            grid-row: 2;
         }
     }
 
-    .reset-filter{
+    .reset-filter {
         @media (min-width: 700px) {
             grid-column: 5;
-        grid-row: 2;
+            grid-row: 2;
         }
     }
 

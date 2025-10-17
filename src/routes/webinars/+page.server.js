@@ -2,9 +2,8 @@
 export async function load(url) {
     // trys to load the data and send it
     try {
-        const webinars = await fetch('https://fdnd-agency.directus.app/items/avl_webinars');   // Fetch webinars
+        const webinars = await fetch(`https://fdnd-agency.directus.app/items/avl_webinars?fields=slug,thumbnail.id,thumbnail.title,duration,title,speakers.avl_speakers_id.fullname,categories.avl_categories_id.name,date`);   // Fetch webinars
         const categories = await fetch('https://fdnd-agency.directus.app/items/avl_categories');  // Fetch categories
-        const speakers = await fetch('https://fdnd-agency.directus.app/items/avl_speakers/?fields=fullname,%20id'); // Fetch fullname en id van speakers
 
         if (!webinars.ok) {
             throw new Error(`HTTP error! status: ${webinars.status}`);
@@ -14,18 +13,12 @@ export async function load(url) {
             throw new Error(`HTTP error! status: ${categories.status}`);
         }
 
-        if (!speakers.ok) {
-            throw new Error(`HTTP error! status: ${speakers.status}`);
-        }
-
         const webinarsData = await webinars.json();
         const categoriesData = await categories.json();
-        const speakersData = await speakers.json();
 
         return {
             webinars: webinarsData.data,
             categories: categoriesData.data,
-            speakers: speakersData.data
         };
 
         // if there is error handles it and gives error message in return to the user
@@ -33,7 +26,6 @@ export async function load(url) {
         return {
             webinars: null,
             categories: null,
-            speakers: null,
             error: "Sorry, there was an error loading the data. Please try again."
         };
     }
