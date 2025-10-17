@@ -27,15 +27,13 @@
     <video 
         controls width="300px" 
         height="auto"
-        poster='https://fdnd-agency.directus.app/assets/{webinar.thumbnail}'>
+        poster='https://fdnd-agency.directus.app/assets/{webinar.thumbnail.id}'>
         <source src='https://fdnd-agency.directus.app/assets/{webinar.video}'>
         <track kind="captions">
     </video>
     <ul>
         <li>{webinar.date}</li>
-        {#each webinar.categories as category}
-            <li>{category}</li>
-        {/each}
+        <li>{webinar.categories[0].avl_categories_id.name}</li>
     </ul>
     <h1>{webinar.title}</h1>
 
