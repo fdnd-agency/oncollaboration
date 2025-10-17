@@ -194,7 +194,7 @@
     --border-radius-small:8px;
     --border-radius-medium:16px;
 
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6, p, a {
         font-family: "Ubuntu", "inter";
         font-weight: bold;
         line-height: 1.4;
@@ -209,17 +209,12 @@
     }
 
     p {
-        font-family: "Ubuntu", "inter" ;
         font-size: 1em;
-        line-height: 1.4;
     }
 
     a {
-        font-family: "Ubuntu", "inter" ;
-        font-weight: bold;
         font-size: 1em;
         text-decoration: none;
-        line-height: 1.4;
     }
 
 
