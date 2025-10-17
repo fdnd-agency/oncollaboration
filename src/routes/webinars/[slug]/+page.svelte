@@ -49,10 +49,10 @@
 <section id="webinar-qna">
     <article id="speaker">
         <picture>
-            <img src='https://fdnd-agency.directus.app/assets/{webinar.thumbnail}' alt="{webinar.speaker}" width="200px">
+            <img src='https://fdnd-agency.directus.app/assets/{webinar.thumbnail.id}' alt="{webinar.speaker}" width="200px">
         </picture>
         <a href="speaker">save speaker</a>
-        <p>Speaker name</p>
+        <p>{webinar.speakers[0].avl_speakers_id.fullname}</p>
     </article>
 
     <h3>Q&A</h3>
@@ -112,12 +112,17 @@
 
     details{
         background-color: var(--primary-color-blue-dark-1);
-        width: clamp(14rem, 63%, 30rem);
+        width: clamp(14rem, 100%, 90rem);
+        display: flex;
+        justify-content: center;
     }
 
     summary{
             color: var(--neutral-color-lightest);
-        }
+    }
+    summary::marker{
+            content: "";
+    }
 
     video{
         margin-top: 1em;
@@ -131,8 +136,9 @@
     #webinar-qna{
         display: grid;
         place-items: center;
+        padding-top: 1.5em;
         gap: 1em;
-        margin: 2em 0;
+        background-color: var(--primary-color-blue-light-2);
     }
 
     #speaker{
@@ -143,6 +149,10 @@
         background-color: var(--primary-color-blue-dark-1);
         width: clamp(14rem, 63%, 30rem);
     }
+
+    #speaker img{
+            width: clamp(14rem, 100%, 30rem);
+        }
 
     #speaker p{
             color: var(--neutral-color-lightest);
