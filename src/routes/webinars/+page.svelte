@@ -310,9 +310,10 @@
         margin: 1em;
         display: flex;
         flex-direction: column;
+        align-items: baseline;
         gap: 1em;
 
-        @media (min-width: 700px) {
+        @media (min-width: 600px) {
             display: grid;
             grid-template-rows: auto;
             grid-template-columns: 1fr 1fr;
@@ -327,6 +328,9 @@
         background-color: var(--primary-color-blue-light-2);
         border: 1px solid var(--primary-color-blue-dark-2);
         border-radius: var(--border-radius-medium);
+        display: flex;
+        flex-direction: column;
+        align-self: center;
     }
 
     .thumbnail{
@@ -358,6 +362,7 @@
         padding: .5em;
         border-radius: var(--border-radius-small);
         font-size: var(--font-size-small);
+        width: fit-content;
     }
 
     h3{
