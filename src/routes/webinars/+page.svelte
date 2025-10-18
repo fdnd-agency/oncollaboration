@@ -84,10 +84,11 @@
 
 <section class="container-results">
     <h2>Results</h2>
-    <p>1 result</p>
+    <p class="results">1 result</p>
+    <hr>
 </section>
 
-<div>
+<div class="container-cards">
     {#each webinars as webinar}
         <article>
             <picture>
@@ -99,7 +100,7 @@
                     srcset={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}?format=webp`}
                     type="image/webp"
                 />
-                <img
+                <img class="thumbnail"
                     src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}`}
                     alt={webinar.title}
                     height="180"
@@ -109,9 +110,7 @@
             </picture>
 
             <p class="duration">{webinar.duration}</p>
-            <p class="catergory">
-                {webinar.categories[0].avl_categories_id.name}
-            </p>
+            <p class="catergory">{webinar.categories[0].avl_categories_id.name}</p>
 
             <button class="watchlist">Add to watchlist
                 <img src={watchlist} alt="" aria-hidden="true" />
@@ -119,11 +118,9 @@
 
             <h3>{webinar.title}</h3>
 
-            <p>{webinar.speakers[0].avl_speakers_id.fullname}</p>
+            <p class="speakers-fullname">{webinar.speakers[0].avl_speakers_id.fullname}</p>
 
-            <a class="to-webinar-detail" href={`/webinars/${webinar.slug}`}
-                >View webinar <img src={arrow} alt="" aria-hidden="true" /></a
-            >
+            <a class="to-webinar-detail" href={`/webinars/${webinar.slug}`}>View webinar <img src={arrow} alt="" aria-hidden="true" /></a>
         </article>
     {/each}
 </div>
@@ -131,6 +128,8 @@
 <!--  MARK: CSS-->
 
 <style>
+
+    /*INTRO*/
     .container-intro {
         background-color: var(--primary-color-blue-light-2);
         padding: 2em 1em 5em 1em;
@@ -160,6 +159,7 @@
         line-height: 1.4;
     }
 
+    /*FILTERS*/
     form {
         padding: 1em;
         margin: -3em 1em 1em 1em;
@@ -290,4 +290,20 @@
         font-size: var(--font-size-small);
         font-family: var(--primary-font-family);
     }
+
+    /*RESULTS*/
+    .container-results{
+        margin: .5em;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    h2{
+        font-size: var(--font-size-large);
+    }
+
+    /*CARDS*/
+
 </style>
