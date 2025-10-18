@@ -385,6 +385,7 @@
         border-radius: var(--border-radius-small);
         margin: 1em;
         padding: .5em;
+        width: fit-content;
     }
 
 
