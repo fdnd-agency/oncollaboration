@@ -103,8 +103,8 @@
                 <img class="thumbnail"
                     src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}`}
                     alt={webinar.title}
-                    height="180"
-                    width="300"
+                    height="150"
+                    width="250"
                     loading="lazy"
                 />
             </picture>
@@ -305,5 +305,82 @@
     }
 
     /*CARDS*/
+
+    .container-cards{
+        margin: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        @media (min-width: 700px) {
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (min-width: 900px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    article{
+        background-color: var(--primary-color-blue-light-2);
+        border: 1px solid var(--primary-color-blue-dark-2);
+        border-radius: var(--border-radius-medium);
+    }
+
+    .thumbnail{
+        margin: .5em;
+        display: flex;
+        justify-self: center;
+        border-radius: var(--border-radius-medium);
+    }
+
+    .duration{
+        background-color: var(--neutral-color-darker);
+        color: var(--neutral-color-lightest);
+        padding: .5em;
+        border-radius: var(--border-radius-small);
+        width: fit-content;
+    }
+
+    .catergory{
+        background-color: var( --primary-color-blue-dark-2);
+        color: var(--neutral-color-lightest);
+        padding: .5em;
+        border-radius: var(--border-radius-small);
+        width: fit-content;
+    }
+
+    .watchlist{
+        background-color: var(--primary-color-aqua-dark-3);
+        border: 1px solid var(--primary-color-aqua-dark-3);
+        padding: .5em;
+        border-radius: var(--border-radius-small);
+        font-size: var(--font-size-small);
+    }
+
+    h3{
+        width: 230px;               
+        display: -webkit-box;         
+        -webkit-line-clamp: 2;         
+        -webkit-box-orient: vertical;   
+        overflow: hidden;              
+        text-overflow: ellipsis; 
+        margin: 1em;
+    }
+
+    .speakers-fullname{
+        margin: 1em;
+    }
+
+    .to-webinar-detail{
+        background-color: var(--primary-color-red-dark-2);
+        color: var(--neutral-color-lightest);
+        border-radius: var(--border-radius-small);
+        margin: 1em;
+        padding: .5em;
+    }
+
 
 </style>
