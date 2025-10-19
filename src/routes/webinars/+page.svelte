@@ -319,6 +319,9 @@
         max-width: 60em;
         display: flex;
         justify-items: center;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
 
         @media (min-width: 600px) {
             display: grid;
@@ -334,8 +337,9 @@
         @media (min-width: 1200px) {
             grid-template-columns: 1fr 1fr 1fr 1fr;
             justify-content: center;
+
         }
-    }
+    } 
 
     article {
         background-color: var(--primary-color-blue-light-2);
