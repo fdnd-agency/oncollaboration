@@ -109,7 +109,7 @@
                 </picture>
 
                 <p class="duration">{webinar.duration}</p>
-                <p class="catergory">
+                <p class="category">
                     {webinar.categories[0].avl_categories_id.name}
                 </p>
 
@@ -378,7 +378,7 @@
         right: 1.5em;
     }
 
-    .catergory {
+    .category {
         background-color: var(--primary-color-blue-dark-2);
         color: var(--neutral-color-lightest);
         font-size: var(--font-size-small);
