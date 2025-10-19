@@ -365,6 +365,7 @@
     .duration {
         background-color: var(--neutral-color-darker);
         color: var(--neutral-color-lightest);
+        font-size: var(--font-size-small);
         padding: 0.5em;
         border-radius: var(--border-radius-small);
         width: fit-content;
@@ -376,6 +377,7 @@
     .catergory {
         background-color: var(--primary-color-blue-dark-2);
         color: var(--neutral-color-lightest);
+        font-size: var(--font-size-small);
         padding: 0.5em;
         border-radius: var(--border-radius-small);
         width: fit-content;
@@ -402,17 +404,18 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        margin: 1em;
+        margin: 1.5em 1em .5em 1em;
     }
 
     .speakers-fullname {
-        margin: 1em;
+        margin: 1em 1.5em;
     }
 
     .to-webinar-detail {
         background-color: var(--primary-color-red-dark-2);
         color: var(--neutral-color-lightest);
         border-radius: var(--border-radius-small);
+        font-weight: var(--secondary-font-weight);
         margin: 1em;
         padding: 0.5em;
         width: fit-content;
