@@ -20,6 +20,10 @@
 </section>
 
 
+<section class="homepage-partnerships">
+    <h2 class="header-partnerships">{}</h2>
+</section>
+
 <style>
     body {
         background-color: var(--neutral-color-lightest);
