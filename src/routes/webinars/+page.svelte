@@ -13,14 +13,6 @@
 <svelte:head>
     <title>Webinars</title>
     <meta name="description" content="Webinars" />
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    </style>
 </svelte:head>
 
 <!--  MARK: HTML-->
