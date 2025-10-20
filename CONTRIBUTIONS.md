@@ -2,6 +2,14 @@
 
 ## 2025/2026
 
+## DoR en DoD
+
+### DoR:
+Een lijst met criteria die een taak moet hebben voordat je ermee kan beginnen.
+
+### DoD 
+Een lijst met criteria die een taak moet hebben voordat je ermee kan beginnen.
+
 ## Installatie
 1. Open een code editor programma
 2. Maak een branch van de dev_bak zodat je niet het huidige project aantast
