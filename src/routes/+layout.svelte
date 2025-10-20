@@ -19,14 +19,17 @@
 </svelte:head>
 
 <header>
-        <a href={`/`}><img src={logoAvlDesktop} alt="" height="50" width="150"/></a>
-        <a href={`/`}><img src={logoKemenkesDesktop} alt="" height="60" width="150"/></a>
+    <div>
+        <a class="logo-avl" href={`/`}><img src={logoAvlDesktop} alt="" height="50" width="150"/></a>
+        <a class="logo-kemenkes" href={`/`}><img src={logoKemenkesDesktop} alt="" height="60" width="150"/></a>
+    </div>
 
+        <nav>
         <ul>
-            <li><a href={`/webinars`}>Webinars</a></li>
-            <li><a href={`/contourings`}>Contourings</a></li>
-            <li><a href={`/speakers`}>Speakers</a></li>
-            <li><a href={`/profile`}>Profile</a></li>
+            <li><a class="webinars" href={`/webinars`}>Webinars</a></li>
+            <li><a class="contourings" href={`/contourings`}>Contourings</a></li>
+            <li><a class="speakers" href={`/speakers`}>Speakers</a></li>
+            <li><a class="profile" href={`/profile`}>Profile</a></li>
         </ul>
 
         <select id="language" name="language">
@@ -34,6 +37,7 @@
             <option value="English">English</option>
             <option value="Indonesian">Indonesian</option>
         </select>
+    </nav>
 </header>
 
 {@render children?.()}
@@ -47,12 +51,20 @@
         z-index: 100;
         display: flex;
         padding: .5em;
-        /* border-radius: 0px 0px var(--border-radius-medium) var(--border-radius-medium); */
+        justify-content: space-around;
+    }
+    
+    nav{
+        display: flex;
+        gap: 2em;
+        align-items: center;
+        align-self: center;
+        margin: 0em 1em 0em 0em;
     }
 
     ul{
         display: flex;
-        gap: 1em;
+        gap: 2em;
         list-style-type: none;
     }
 
