@@ -1,16 +1,8 @@
 
-// export async function load({ url }) {
-//     const speakers = await fetch('https://fdnd-agency.directus.app/items/avl_speakers')
-//     const speakersData = await speakers.json();
-
-//     return { speakers: speakersData.data };
-// }
-
-
 export async function load(url) {
     // trys to load the data and send it
     try {
-        const webinars = await fetch('https://fdnd-agency.directus.app/items/avl_webinars');   // Fetch webinars
+        const webinars = await fetch(`https://fdnd-agency.directus.app/items/avl_webinars?fields=slug,thumbnail.id,thumbnail.title,duration,title,speakers.avl_speakers_id.fullname,categories.avl_categories_id.name,date`);   // Fetch webinars
         const categories = await fetch('https://fdnd-agency.directus.app/items/avl_categories');  // Fetch categories
 
         if (!webinars.ok) {
@@ -26,7 +18,7 @@ export async function load(url) {
 
         return {
             webinars: webinarsData.data,
-            categories: categoriesData.data
+            categories: categoriesData.data,
         };
 
         // if there is error handles it and gives error message in return to the user

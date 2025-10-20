@@ -185,6 +185,7 @@
 
     --primary-font-family: "Ubuntu", "inter";
     --primary-font-weight: bold;
+    --secondary-font-weight:normal;
     --primary-line-height: 1.4;
     --font-size-extra-large: 2.5em;
     --font-size-large: 2em;
@@ -201,7 +202,10 @@
     }
 
     h3 {
-        font-size: 2em;
+        font-family: "Ubuntu", "inter";
+        font-weight: bold;
+        font-size: 1.5em;
+        line-height: 1.4;
     }
 
     h4 {
