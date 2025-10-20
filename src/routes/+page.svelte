@@ -28,9 +28,9 @@
         </svg>
     </a>
      <picture class="img-about" >
-        <source srcset="/images/doctors.avif" type="image/avif">
-        <source srcset="/images/doctors.webp" type="image/webp">
-        <img class="img-about" src="/images/doctors.png" alt="group of doctors" loading="lazy">
+        <source srcset="src/lib/assets/doctors.avif" type="image/avif">
+        <source srcset="src/lib/assets/doctors.webp" type="image/webp">
+        <img class="img-about" src="src/lib/assets/doctors.png" alt="group of doctors" loading="lazy">
      </picture>
 </article>
 
@@ -55,6 +55,14 @@
 
 
 <style>
+
+    h1, h2 {
+        font-size: var(--font-size-extra-large);
+    }
+
+    p {
+        font-weight: var(--secondary-font-weight);
+    }
 
     .home-mobile-styling {
         display: flex;
