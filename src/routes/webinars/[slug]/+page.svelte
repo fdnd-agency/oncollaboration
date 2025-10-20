@@ -52,7 +52,7 @@
     <a href="ask a question" class="link-question">Ask a question</a>
     
     <h4>Comments:</h4>
-    
+
     <article id="speaker">
         <picture>
             <img src='https://fdnd-agency.directus.app/assets/{webinar.thumbnail.id}' alt="{webinar.speaker}" width="200px">
@@ -160,6 +160,10 @@
                     corner-shape: squircle;
                 }
         }
+    }
+
+    h2{
+        text-align: center;
     }
 
     details{
