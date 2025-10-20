@@ -1,10 +1,34 @@
 <script>
+
+    import { onMount } from 'svelte';
+
     /** @type {{ data: import('./$types').PageData }} */
     let { data } = $props();
 
     const infoabout = data.about;
     const infowebinars = data.webinars;
     const infocontourings = data.contourings;
+    const infopartnerships = data.partnerships;
+    const infologos = data.logos;
+
+
+    onMount(() => {
+    const slide = document.querySelector('.logos-slide');
+    if (!slide) return;
+
+    const totalWidth = slide.scrollWidth / 2; // Half because logos are duplicated
+    let x = 0;
+    const speed = 0.5;
+
+    function step() {
+      x -= speed;
+      if (Math.abs(x) >= totalWidth) x = 0;
+      slide.style.transform = `translateX(${x}px)`;
+      requestAnimationFrame(step);
+    }
+
+    setTimeout(() => requestAnimationFrame(step), 500);
+  });
 </script>
 
 <svelte:head> 
@@ -14,6 +38,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            overflow-x: hidden;
         }
         
     </style>
@@ -53,6 +78,22 @@
     </article>
 </section>
 
+<article class="homepage-partnerships home-mobile-styling">
+    <h2 class="header-partnerships">{infopartnerships.heading}</h2>
+    <p class="info-partnerships">{infopartnerships.text}</p>
+</article>
+
+    <div class="logo-carrousel">
+        <div class="logos-slide">
+            {#each infologos as logo}
+               <img class="logos-partnerships" src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name}>
+            {/each}
+            {#each infologos as logo}
+                <img class="logos-partnerships" src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name}>
+            {/each}
+        </div>
+    </div>
+
 
 <style>
 
@@ -66,8 +107,8 @@
 
     .home-mobile-styling {
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         padding-inline: 1em;
     }
@@ -109,7 +150,7 @@
         margin-top: 1em;
         padding-right: 1rem;
 
-        @media ( min-width: 56.25em) {
+        @media ( min-width: 56.25em ) {
             grid-column: 1/2;
             max-width: 30rem;
             margin-top: 0;
@@ -196,12 +237,75 @@
         }
     }
 
-    .header-webinars-contourings, .info-webinars-contourings, .link-webinars-contourings {
+    .header-webinars-contourings, .info-webinars-contourings, .link-webinars-contourings, .header-partnerships {
         margin-top: 2rem;
     }
 
     .info-webinars-contourings {
         padding-right: 1rem;
+    }
+
+    .homepage-partnerships {
+
+        @media ( min-width: 56.25em ) {
+            padding-inline: 2rem;
+            align-items: start;
+        }
+
+        @media ( min-width: 75em ) {
+            justify-self: center;
+            width: 78.125rem;
+        }
+
+        @media ( min-width: 80em ) {
+            margin-left: 2rem;
+        }
+    }
+
+    .header-partnerships {
+
+        @media ( min-width: 75em ) {
+            width: 48rem;
+            text-align: start;        
+        }
+    }
+
+
+    .info-partnerships {
+        margin-top: 2rem;
+        max-width: 37.5rem;
+        padding-right: 1rem;
+
+        @media ( min-width: 56.25em ) {
+            max-width: 48rem;
+        }
+    }
+
+    .logo-carrousel {
+        background-color: var(--primary-color-blue-light-1);
+        overflow: hidden;
+        margin-top: 2rem;
+        padding-block: 2rem;
+    }
+
+    .logos-slide {
+        display: flex;
+        width: max-content; 
+        gap: 5rem;
+    }
+
+    .logos-partnerships {
+        height: 15vw;
+        object-fit: contain;
+        flex-shrink: 0; 
+
+        @media ( min-width: 37.5em ) {
+            height: 10vw;
+        }
+
+        @media ( min-width: 56.25em ) {
+            height: 5vw;
+        }
     }
 
 </style>    
