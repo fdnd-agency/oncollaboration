@@ -99,11 +99,13 @@
     .info-about {
         max-width: 37.5rem;
         margin-top: 1em;
+        padding-right: 1rem;
 
         @media ( min-width: 56.25em) {
             grid-column: 1/2;
             max-width: 30rem;
             margin-top: 0;
+            padding-right: 0rem;
         }
     }
 
@@ -191,7 +193,7 @@
     }
 
     .info-webinars-contourings {
-        padding-right: 2rem;
+        padding-right: 1rem;
     }
 
 </style>    
