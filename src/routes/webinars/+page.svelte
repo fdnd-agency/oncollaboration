@@ -139,6 +139,7 @@
         gap: 0.5em;
         list-style-type: none;
         padding: 1em;
+        font-weight: var(--primary-font-weight);
     }
 
     li a {

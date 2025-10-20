@@ -19,9 +19,9 @@
 </svelte:head>
 
 <header>
-    <div>
-        <a class="logo-avl" href={`/`}><img src={logoAvlDesktop} alt="" height="50" width="150"/></a>
-        <a class="logo-kemenkes" href={`/`}><img src={logoKemenkesDesktop} alt="" height="60" width="150"/></a>
+    <div class="logo-hospitals">
+        <a class="logo-avl" href={`/`}><img src={logoAvlDesktop} alt="logo AVL" height="50" width="150"/></a>
+        <a class="logo-kemenkes" href={`/`}><img src={logoKemenkesDesktop} alt="logo Kemenkes" height="60" width="150"/></a>
     </div>
 
         <nav>
@@ -52,6 +52,11 @@
         display: flex;
         padding: .5em;
         justify-content: space-around;
+    }
+
+    .logo-hospitals{
+        display: flex;
+        align-items: center;
     }
     
     nav{
