@@ -21,20 +21,21 @@
  <ul id="webinar-bread-crumb">
     <li><a href="/">home &rsaquo;</a></li>
     <li><a href="/webinars">Webinars &rsaquo;</a></li>
-    <li><a href="/webinars/{webinar.slug}">webinar details</a></li>
+    <li><a href="/webinars/{webinar.slug}"> webinar details</a></li>
  </ul>
+
 <section id="webinar-video">
     <video 
-        controls width="300px" 
+        controls 
         height="auto"
         poster='https://fdnd-agency.directus.app/assets/{webinar.thumbnail.id}'>
         <source src='https://fdnd-agency.directus.app/assets/{webinar.video}'>
         <track kind="captions">
     </video>
-    <ul>
+    <!-- <ul>
         <li>{webinar.date}</li>
         <li>{webinar.categories[0].avl_categories_id.name}</li>
-    </ul>
+    </ul> -->
     <h1>{webinar.title}</h1>
 
     <article>
@@ -84,11 +85,19 @@
         display: grid;
         place-items: center;
         gap: 1em;
-    }
 
-     section ul{
-            gap: 1em;
+        @media (width > 1024px){
+            grid-template-rows: 5rem 10rem 5rem 10rem;
+            grid-template-columns: 60px repeat(3, 15rem) 1fr 60px;
         }
+    }
+    /* section ul{
+        gap: 1em;
+
+        @media (width > 1024px){
+            grid-column: 3 / 3;
+        }
+    }
 
     section li{
         background-color: var(--primary-color-true-aqua);
@@ -98,23 +107,45 @@
         color: var(--primary-color-blue-dark-2);
 
         border-radius: 2.5rem;
+    } */
+
+    video {
+        @media (width > 1024px){
+            grid-row: 2 / 4;
+            grid-column: 3 / 3;
+        }
     }
 
     h1{
-        font-size: clamp(0.80rem, 100%, 2.5rem);
+        font-size: clamp(1.5rem, 90%, var(--font-size-extra-large));
         line-height: 1.4;
+
+        @media (width > 1024px){
+            grid-row: 1 / 1;
+            grid-column: 2 / 5;
+        }
     }
 
     article{
         background-color: var(--primary-color-blue-light-1);
         width: clamp(14rem, 63%, 30rem);
+
+        @media (width > 1024px){
+            grid-row: 2 / 2 ;
+            grid-column: 5 / 6;
+        }
     }
 
     details{
         background-color: var(--primary-color-blue-dark-1);
-        width: clamp(14rem, 100%, 90rem);
+        width: clamp(14rem, 100%, 150rem);
         display: flex;
         justify-content: center;
+
+        @media (width > 1024px){
+            grid-row: 5 / 6;
+            grid-column: 2 / 6;
+        }
     }
 
     summary{
@@ -152,11 +183,11 @@
 
     #speaker img{
             width: clamp(14rem, 100%, 30rem);
-        }
+    }
 
     #speaker p{
             color: var(--neutral-color-lightest);
-        }
+    }
     
     section a{
         text-decoration: none;
