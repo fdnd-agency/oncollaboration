@@ -3,6 +3,8 @@
     let { data } = $props();
 
     const infoabout = data.about;
+    const infopartnerships = data.partnerships
+    const infologos = data.logos
 </script>
 
 <section class="homepage-about">
@@ -21,12 +23,29 @@
 
 
 <section class="homepage-partnerships">
-    <h2 class="header-partnerships">{}</h2>
+    <h2 class="header-partnerships">{infopartnerships.heading}</h2>
+    <p class="info-partnerships">{infopartnerships.text}</p>
+
+    <div class="logo-carrousel">
+        {#each infologos as logo}
+            <img class="logos-partnerships" src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name}>
+        {/each}
+    </div>
 </section>
 
 <style>
     body {
         background-color: var(--neutral-color-lightest);
+    }
+
+    h1, h2 {
+        font-size: var(--font-size-extra-large);
+        line-height: var(--primary-line-height);
+    }
+
+    p {
+        font-weight: normal;
+        line-height: var(--primary-line-height);
     }
 
     .homepage-about {
@@ -102,7 +121,17 @@
             grid-row: 2/3;
             margin-top: 0;
         }
-        
+    }
+
+    .logo-carrousel {
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+    }
+
+    .logos-partnerships {
+        height: 70px;
+        object-fit: cover;
     }
 
 </style>    
