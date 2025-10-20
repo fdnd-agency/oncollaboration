@@ -77,6 +77,10 @@
     #webinar-bread-crumb{
         height: 2em;
         background-color: var(--primary-color-blue-light-1);
+        padding-left: 0.6rem;
+        @media (width >= 1023px){
+            padding-left: 4.7rem;
+        }
     }
 
     section a{
@@ -84,7 +88,7 @@
         color: var(--primary-color-blue-dark-2);
         background-color: var(--primary-color-true-aqua);
         padding: 0.8em;
-        border-radius: 2.5rem;
+        border-radius: var(--border-radius-medium);
     }
 
     li a{
@@ -120,7 +124,7 @@
         text-align: center;
         color: var(--primary-color-blue-dark-2);
 
-        border-radius: 2.5rem;
+        border-radius: var(--border-radius-medium);
     }
 
     video {
@@ -135,8 +139,9 @@
     }
 
     h1{
-        font-size: clamp(1.5rem, 90%, var(--font-size-extra-large));
+        font-size: clamp(1.5rem, 80%, var(--font-size-extra-large));
         line-height: 1.4;
+        padding-left: 0.6rem;
 
         @media (width >= 1023px){
             grid-row: 1 / 1;
@@ -155,7 +160,9 @@
             grid-row: 2 / 2 ;
             grid-column: 3 / 4;
 
-            border-radius: 2.5rem;
+            border: solid black;
+
+            border-radius: var(--border-radius-medium);
                 @supports (corner-shape: scoop){
                     corner-shape: squircle;
                 }
@@ -167,7 +174,7 @@
     }
 
     details{
-        background-color: var(--primary-color-blue-dark-1);
+        background-color: var(--primary-color-blue-dark-3);
         width: clamp(14rem, 100%, 150rem);
         display: flex;
         justify-content: center;
@@ -193,7 +200,6 @@
         display: grid;
         padding-top: 1.5em;
         gap: 1em;
-        background-color: var(--primary-color-blue-light-2);
 
         @media (width <= 1023px){
             place-items: center;
