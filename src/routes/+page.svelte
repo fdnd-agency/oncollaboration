@@ -248,17 +248,15 @@
     .homepage-partnerships {
 
         @media ( min-width: 56.25em ) {
-            padding-inline: 2rem;
             align-items: start;
+            padding-inline: 2rem;
         }
 
         @media ( min-width: 75em ) {
-            justify-self: center;
+            position: relative;
             width: 78.125rem;
-        }
-
-        @media ( min-width: 80em ) {
-            margin-left: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
         }
     }
 
