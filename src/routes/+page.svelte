@@ -5,6 +5,8 @@
     const infoabout = data.about;
     const infowebinars = data.webinars;
     const infocontourings = data.contourings;
+    const infospeakers = data.speakers;
+    const infodoctors = data.doctors;
 </script>
 
 <svelte:head> 
@@ -52,6 +54,10 @@
         </a>
     </article>
 </section>
+
+<article class="homepage-speakers home-mobile-styling">
+
+</article>
 
 
 <style>
