@@ -49,14 +49,18 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        display: flex;
         padding: .5em;
-        justify-content: space-around;
+        /* display: flex;
+        justify-content: space-around; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
     }
 
     .logo-hospitals{
         display: flex;
         align-items: center;
+        margin: 0em 0em 0em 2em;
     }
     
     nav{
@@ -65,6 +69,7 @@
         align-items: center;
         align-self: center;
         margin: 0em 1em 0em 0em;
+        justify-content: end;
     }
 
     ul{
