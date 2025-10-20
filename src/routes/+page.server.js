@@ -5,7 +5,7 @@ export async function load({ url }) {
         const homepageWebinars = await fetch('https://fdnd-agency.directus.app/items/avl_content/6');
         const homepageContourings = await fetch('https://fdnd-agency.directus.app/items/avl_content/7');
         const homepageSpeakers = await fetch('https://fdnd-agency.directus.app/items/avl_content/4');
-        const homepageDoctors = await fetch('https://fdnd-agency.directus.app/items/avl_speakers');
+        const homepageDoctors = await fetch('https://fdnd-agency.directus.app/items/avl_team');
 
         if (!homepageAbout.ok) {
             throw new Error(`HTTP error! status: ${homepageAbout.status}`);

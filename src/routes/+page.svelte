@@ -56,7 +56,14 @@
 </section>
 
 <article class="homepage-speakers home-mobile-styling">
+    <h2 class="header-speakers">{infospeakers.heading}</h2>
+    <p class="info-speakers">{infospeakers.text}</p>
 
+    <section class="homepage-all-doctors">
+        {#each infodoctors as doctor} 
+            <img class="logos-partnerships" src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`} alt={doctor.name}>
+        {/each}
+    </section>
 </article>
 
 
