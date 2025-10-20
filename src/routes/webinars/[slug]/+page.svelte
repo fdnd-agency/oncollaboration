@@ -32,13 +32,13 @@
         <source src='https://fdnd-agency.directus.app/assets/{webinar.video}'>
         <track kind="captions">
     </video>
-    <!-- <ul>
+    <ul>
         <li>{webinar.date}</li>
         <li>{webinar.categories[0].avl_categories_id.name}</li>
-    </ul> -->
+    </ul>
     <h1>{webinar.title}</h1>
 
-    <article>
+    <article class="description">
         <h2>Description</h2>
     </article>
 
@@ -57,14 +57,15 @@
     </article>
 
     <h3>Q&A</h3>
-    <a href="ask a question">Ask a question</a>
+    <a href="ask a question" class="link-question">Ask a question</a>
 
     <h4>Comments:</h4>
-    <hr>
     <!-- hier komen de comments -->
 </section>
 
 <!-- hier komt de footer -->
+
+<!--  MARK: CSS-->
 
 <style>
     ul{
@@ -76,6 +77,14 @@
         background-color: var(--primary-color-blue-light-1);
     }
 
+    section a{
+        text-decoration: none;
+        color: var(--primary-color-blue-dark-2);
+        background-color: var(--primary-color-true-aqua);
+        padding: 0.8em;
+        border-radius: 2.5rem;
+    }
+
     li a{
         text-decoration: none;
         color: var(--primary-color-blue-dark-2);
@@ -83,36 +92,43 @@
 
     #webinar-video{
         display: grid;
-        place-items: center;
         gap: 1em;
 
-        @media (width > 1024px){
-            grid-template-rows: 5rem 10rem 5rem 10rem;
-            grid-template-columns: 60px repeat(3, 15rem) 1fr 60px;
+        @media (width <= 1023px){
+             place-items: center;
+        }
+
+        @media (width >= 1023px){
+            grid-template-rows: 5rem 16rem 3rem;
+            grid-template-columns: 60px 2fr 1fr 60px;
         }
     }
-    /* section ul{
+    #webinar-video ul{
         gap: 1em;
 
-        @media (width > 1024px){
-            grid-column: 3 / 3;
+        @media (width >= 1023px){
+            grid-column: 2 / 3;
+            grid-row: 3 / 3;
         }
     }
 
-    section li{
+    #webinar-video li{
         background-color: var(--primary-color-true-aqua);
-        width: max-content;
         padding: 1em;
         text-align: center;
         color: var(--primary-color-blue-dark-2);
 
         border-radius: 2.5rem;
-    } */
+    }
 
     video {
-        @media (width > 1024px){
-            grid-row: 2 / 4;
-            grid-column: 3 / 3;
+        width: clamp(18.75rem, 80%, 50rem);
+
+        @media (width >= 1023px){
+            width: clamp(16rem, 100%, 55rem);
+            height: 16rem;
+            grid-row: 2 / 2;
+            grid-column: 2 / 2;
         }
     }
 
@@ -120,19 +136,27 @@
         font-size: clamp(1.5rem, 90%, var(--font-size-extra-large));
         line-height: 1.4;
 
-        @media (width > 1024px){
+        @media (width >= 1023px){
             grid-row: 1 / 1;
             grid-column: 2 / 5;
         }
     }
 
-    article{
-        background-color: var(--primary-color-blue-light-1);
+    .description{
         width: clamp(14rem, 63%, 30rem);
 
-        @media (width > 1024px){
+        @media (width >= 1023px){
+            padding: 1rem;
+            width: 100%;
+            background-color: var(--primary-color-blue-light-2);
+
             grid-row: 2 / 2 ;
-            grid-column: 5 / 6;
+            grid-column: 3 / 4;
+
+            border-radius: 2.5rem;
+                @supports (corner-shape: scoop){
+                    corner-shape: squircle;
+                }
         }
     }
 
@@ -142,9 +166,9 @@
         display: flex;
         justify-content: center;
 
-        @media (width > 1024px){
+        @media (width >= 1023px){
             grid-row: 5 / 6;
-            grid-column: 2 / 6;
+            grid-column: 2 / 4;
         }
     }
 
@@ -155,21 +179,30 @@
             content: "";
     }
 
-    video{
-        margin-top: 1em;
-        width: clamp(18.75rem, 80%, 50rem);
-    }
-
     h1, h2, h3, h4{
         color: var(--primary-color-blue-dark-2);
     }
 
     #webinar-qna{
         display: grid;
-        place-items: center;
         padding-top: 1.5em;
         gap: 1em;
         background-color: var(--primary-color-blue-light-2);
+
+        @media (width <= 1023px){
+            place-items: center;
+        }
+         @media (width >= 1023px){
+            grid-template-rows: repeat(4, 3rem) 15rem;
+            grid-template-columns: 60px 10rem 2fr 15rem 60px;
+         }
+    }
+
+    h3{
+        @media (width >= 1023px){
+            grid-row: 1 / 1;
+            grid-column: 2 / 5;
+        }
     }
 
     #speaker{
@@ -179,6 +212,14 @@
 
         background-color: var(--primary-color-blue-dark-1);
         width: clamp(14rem, 63%, 30rem);
+
+        @media (width >= 1023px){
+            grid-column: 4 / 4;
+            grid-row: 1 / 5;
+
+            width: 100%;
+            background-color: var(--primary-color-blue-dark-1);
+        }
     }
 
     #speaker img{
@@ -188,12 +229,25 @@
     #speaker p{
             color: var(--neutral-color-lightest);
     }
-    
-    section a{
-        text-decoration: none;
-        color: var(--primary-color-blue-dark-2);
-        background-color: var(--primary-color-true-aqua);
-        padding: 0.8em;
-        border-radius: 2.5rem;
+
+    h4{
+        @media (width >= 1023px){
+            grid-column: 2 / 5;
+            grid-row: 3 / 3;
+        }
+    }
+
+    .link-question{
+        text-align: center;
+        align-self: start;
+        @media (width >= 1023px){
+            grid-column: 2 / 3;
+            grid-row: 2 / 2;
+
+            text-align: center;
+            align-self: start;
+
+            padding: 0.3rem;
+        }
     }
 </style>
