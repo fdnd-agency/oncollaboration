@@ -392,6 +392,9 @@
         width: fit-content;
         position: absolute;
         top: 8.5em;
+        display: flex;
+        align-items: center;
+        gap: .5em;
     }
 
     h3 {
