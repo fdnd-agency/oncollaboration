@@ -132,13 +132,16 @@
         width: 100%;
         background: var(--primary-color-blue-dark-2);
         transition: right 0.3s ease;
-        padding: 4em 0em 0em 0em;
+        /* padding: 4em 0em 0em 0em; */
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+        padding: 1em;
 
-        @media (min-width: 500px) {
-            padding: 5em 0em 0em 0em;
+        @media (min-width: 600px) {
+            padding: 1em 0em 0em 0em;
+            flex-direction: unset;
         }
 
         @media (min-width: 900px) {
@@ -175,7 +178,10 @@
         width: fit-content;
         height: fit-content;
         padding: 0.5em;
-        margin: 0em 1em 0em 0em;
+
+        @media (min-width: 500px) {
+            margin: 0em 1em 0em 0em;
+        }
     }
 
     .menu-toggle {
