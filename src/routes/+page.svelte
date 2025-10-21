@@ -367,6 +367,11 @@
         }
     }
 
+    .header-speakers {
+        display: flex;
+        align-items: center;
+    }
+
     .info-speakers {
         padding-right: 1rem;
 
