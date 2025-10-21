@@ -22,7 +22,7 @@
 </svelte:head>
 
 <main class="overlay">
-    <article class="homepage-about home-mobile-styling">
+    <section class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
         <p class="info-about">{infoabout.text}</p>
         <a class="button-style link-homepage-about" href="/about">More about oncollaboration<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +34,7 @@
             <source srcset="src/lib/assets/doctors.webp" type="image/webp">
             <img class="img-about" src="src/lib/assets/doctors.png" alt="group of doctors" loading="lazy">
          </picture>
-    </article>
+    </section>
 
     <section class="homepage-webinars-contourings">
         <article class="homepage-webinars home-mobile-styling">
@@ -55,16 +55,20 @@
         </article>
     </section>
 
-    <article class="homepage-speakers home-mobile-styling">
+    <section class="homepage-speakers home-mobile-styling">
         <h2 class="header-speakers">{infospeakers.heading}</h2>
         <p class="info-speakers">{infospeakers.text}</p>
 
-        <section class="homepage-all-doctors">
+        <section class="homepage-doctors-outlay">
             {#each infodoctors as doctor} 
-                <img class="logos-partnerships" src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`} alt={doctor.name}>
+                <article class="homepage-all-doctors">
+                   <img class="photo-doctor" src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`} alt={doctor.name}>
+                   <h3 class="name-doctor">{doctor.name}</h3>
+                    <p class="function-doctor">{doctor.role}</p>
+                </article>
             {/each}
         </section>
-    </article>
+    </section>
 </main>
 
 <style>
@@ -209,7 +213,7 @@
         }
     }
 
-    .header-webinars-contourings, .info-webinars-contourings, .link-webinars-contourings {
+    .header-webinars-contourings, .info-webinars-contourings, .link-webinars-contourings, .header-speakers, .info-speakers {
         margin-top: 2rem;
     }
 
@@ -218,8 +222,80 @@
     }
 
     .homepage-speakers {
-        background: var(--primary-color-blue-light-1);
         max-width: 37.5em;
+
+        @media ( min-width: 37.5em ) {
+            border-radius: 1rem;
+        }
+
+        @media ( min-width: 56.25em ) {
+            display: grid;
+            grid-template-columns: 0.6fr 1fr;
+            grid-template-rows: 0.2fr 1fr;
+            max-width: 100%;
+            padding-inline: 2rem;
+        }
+
+        @media (min-width: 75em ) {
+            grid-template-columns: 30em 37.5em;
+            column-gap: 6em;
+        }
+    }
+
+    .homepage-doctors-outlay {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 600px;
+        gap: 1rem;
+        margin-top: 2rem;
+        padding-top: 2em;
+        padding-bottom: 4em;
+
+        @media ( min-width: 56.25em ) {
+            grid-column: 2/3;
+            grid-row: 1/3;
+            align-self: center;
+        }
+    }
+
+    .info-speakers {
+        padding-right: 1rem;
+
+        @media ( min-width: 56.25em ) {
+            grid-column: 1/2;
+        }
+    }
+
+    .homepage-all-doctors {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: var(--neutral-color-lightest);
+        border: 3px solid var(--primary-color-blue-dark-2);
+        border-radius: 0.6rem;
+        width: 200px;
+        height: 250px;
+        padding: 0.5rem;
+    }
+
+    .photo-doctor {
+        object-fit: cover;
+        height: 150px;
+        width: 150px;
+        border-radius: 100px;
+    }
+
+    .name-doctor {
+        font-size: var(--font-size-small);
+        background-color: var(--primary-color-blue-light-1);
+        text-align: center;
+        padding-inline: 0.5rem;
+        padding-block: 0.25rem;
+        border-radius: 0.6rem;
+        margin-top: -1.8rem;
+        margin-bottom: 0.5rem;
     }
 
 
