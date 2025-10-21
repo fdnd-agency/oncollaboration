@@ -10,6 +10,8 @@
     const infocontourings = data.contourings;
     const infopartnerships = data.partnerships;
     const infologos = data.logos;
+    const infodoctor = data.doctorinfo;
+    const infodoctors = data.doctors;
 
 
     onMount(() => {
@@ -46,43 +48,43 @@
 
 
 <main class="overlay">
-<article class="homepage-about home-mobile-styling">
-    <h1 class="header-about">{infoabout.heading}</h1>
-    <p class="info-about">{infoabout.text}</p>
-    <a class="button-style link-homepage-about" href="/about">More about oncollaboration<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
-        </svg>
-    </a>
-     <picture class="img-about" >
-        <source srcset="src/lib/assets/doctors.avif" type="image/avif">
-        <source srcset="src/lib/assets/doctors.webp" type="image/webp">
-        <img class="img-about" src="src/lib/assets/doctors.png" alt="group of doctors" loading="lazy">
-     </picture>
-</article>
-
-<section class="homepage-webinars-contourings">
-    <article class="homepage-webinars home-mobile-styling">
-        <h2 class="header-webinars-contourings">{infowebinars.heading}</h2>
-        <p class="info-webinars-contourings">{infowebinars.text}</p>
-        <a class="button-style link-webinars-contourings" href="/webinars">More about webinars<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
-           </svg>
-        </a>
-    </article>
-    <article class="homepage-contourings home-mobile-styling">
-        <h2 class="header-webinars-contourings">{infocontourings.heading}</h2>
-        <p class="info-webinars-contourings">{infocontourings.text}</p>
-        <a class="button-style link-webinars-contourings" href="/contourings">More about contourings<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <article class="homepage-about home-mobile-styling">
+        <h1 class="header-about">{infoabout.heading}</h1>
+        <p class="info-about">{infoabout.text}</p>
+        <a class="button-style link-homepage-about" href="/about">More about oncollaboration<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
             </svg>
         </a>
+         <picture class="img-about" >
+            <source srcset="src/lib/assets/doctors.avif" type="image/avif">
+            <source srcset="src/lib/assets/doctors.webp" type="image/webp">
+            <img class="img-about" src="src/lib/assets/doctors.png" alt="group of doctors" loading="lazy">
+         </picture>
     </article>
-</section>
 
-<article class="homepage-partnerships home-mobile-styling">
-    <h2 class="header-partnerships">{infopartnerships.heading}</h2>
-    <p class="info-partnerships">{infopartnerships.text}</p>
-</article>
+    <section class="homepage-webinars-contourings">
+        <article class="homepage-webinars home-mobile-styling">
+            <h2 class="header-webinars-contourings">{infowebinars.heading}</h2>
+            <p class="info-webinars-contourings">{infowebinars.text}</p>
+            <a class="button-style link-webinars-contourings" href="/webinars">More about webinars<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
+               </svg>
+            </a>
+        </article>
+        <article class="homepage-contourings home-mobile-styling">
+            <h2 class="header-webinars-contourings">{infocontourings.heading}</h2>
+            <p class="info-webinars-contourings">{infocontourings.text}</p>
+            <a class="button-style link-webinars-contourings" href="/contourings">More about contourings<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
+                </svg>
+            </a>
+        </article>
+    </section>
+
+    <article class="homepage-partnerships home-mobile-styling">
+        <h2 class="header-partnerships">{infopartnerships.heading}</h2>
+        <p class="info-partnerships">{infopartnerships.text}</p>
+    </article>
 
     <div class="logo-carrousel">
         <div class="logos-slide">
@@ -102,6 +104,24 @@
             {/each}
         </div>
     </div>
+
+    <section class="homepage-speakers home-mobile-styling">
+        <h2 class="header-speakers">{infodoctor.heading}</h2>
+        <p class="info-speakers">{infodoctor.text}</p>
+
+        <section class="homepage-doctors-outlay">
+            {#each infodoctors as doctor} 
+                <article class="homepage-all-doctors">
+                    <picture class="photo-doctor">
+                        <source srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=avif`} type="image/avif"/>
+                        <source srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=webp`} type="image/webp"/>
+                        <img class="photo-doctor" src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`} alt={doctor.name} loading="lazy"/>
+                      </picture>                   <h3 class="name-doctor">{doctor.name}</h3>
+                    <p class="function-doctor">{doctor.role}</p>
+                </article>
+            {/each}
+        </section>
+    </section>
 </main>
 
 <style>
@@ -206,8 +226,6 @@
 
     .homepage-webinars-contourings {
         display: flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
 
         @media ( min-width: 37.5em ) {
@@ -215,8 +233,10 @@
         }
 
         @media ( min-width: 56.25em ) {
+            justify-content: center;
             flex-direction: row;
             background-color: var(--primary-color-blue-dark-2);
+            width: 100%;
             padding-block: 5em;
             padding-inline: 2em;
             gap: 7em;
@@ -228,7 +248,6 @@
     }
 
     .homepage-webinars, .homepage-contourings  {
-        align-items: flex-start;
         max-width: 37.5rem;
         margin-bottom: 2.5rem;
         padding-bottom: 2.5rem;
@@ -307,6 +326,90 @@
         align-items: center;
         object-fit: contain;
         flex-shrink: 0; 
+    }
+
+    .homepage-speakers {
+        padding-top: 2rem;
+        max-width: 37.5em;
+
+        @media ( min-width: 37.5em ) {
+            border-radius: 1rem;
+        }
+
+        @media ( min-width: 56.25em ) {
+            display: grid;
+            grid-template-columns: 0.7fr 1fr;
+            grid-template-rows: 0.2fr 1fr;
+            max-width: 100%;
+            padding-inline: 2rem;
+        }
+
+        @media (min-width: 75em ) {
+            grid-template-columns: 30em 37.5em;
+            column-gap: 6em;
+        }
+    }
+
+    .homepage-doctors-outlay {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 600px;
+        gap: 1rem;
+        margin-top: 2rem;
+        padding-top: 2em;
+        padding-bottom: 4em;
+
+        @media ( min-width: 56.25em ) {
+            padding-top: 0;
+            grid-column: 2/3;
+            grid-row: 1/3;
+        }
+    }
+
+    .header-speakers {
+        display: flex;
+        align-items: center;
+    }
+
+    .info-speakers {
+        padding-right: 1rem;
+
+        @media ( min-width: 56.25em ) {
+            grid-column: 1/2;
+        }
+    }
+
+    .homepage-all-doctors {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: var(--neutral-color-lightest);
+        border: 3px solid var(--primary-color-blue-dark-2);
+        border-radius: 0.6rem;
+        width: 200px;
+        height: 250px;
+        padding: 0.5rem;
+    }
+
+    .photo-doctor {
+        object-fit: cover;
+        height: 150px;
+        width: 150px;
+        overflow: hidden;
+        border-radius: 100px;
+    }
+
+    .name-doctor {
+        font-size: var(--font-size-small);
+        background-color: var(--primary-color-blue-light-1);
+        text-align: center;
+        padding-inline: 0.5rem;
+        padding-block: 0.25rem;
+        border-radius: 0.6rem;
+        margin-top: -1.8rem;
+        margin-bottom: 0.5rem;
     }
 
 </style>    
