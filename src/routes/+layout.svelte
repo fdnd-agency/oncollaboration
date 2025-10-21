@@ -62,14 +62,10 @@
     >
 
     <nav id="menu">
-        <a href="#" class="close"
-            ><img src={close} alt="close menu" height="50" width="50" /></a
-        >
+        <a href="#" class="close"><img src={close} alt="close menu" height="50" width="50" /></a>
         <ul>
             <li><a class="webinars" href={`/webinars`}>Webinars</a></li>
-            <li>
-                <a class="contourings" href={`/contourings`}>Contourings</a>
-            </li>
+            <li><a class="contourings" href={`/contourings`}>Contourings</a></li>
             <li><a class="speakers" href={`/speakers`}>Speakers</a></li>
             <li><a class="profile" href={`/profile`}>Profile</a></li>
         </ul>
@@ -162,6 +158,10 @@
         @media (min-width: 900px) {
             gap: 2em;
         }
+    }
+
+    li{
+        font-weight: var(--secondary-font-weigh);
     }
 
     a {
