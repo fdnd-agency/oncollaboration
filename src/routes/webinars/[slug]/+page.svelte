@@ -123,6 +123,7 @@
         padding: 1em;
         text-align: center;
         color: var(--primary-color-blue-dark-2);
+        align-self: center;
 
         border-radius: var(--border-radius-medium);
     }
@@ -252,6 +253,7 @@
     .link-question{
         text-align: center;
         align-self: start;
+        border-radius: var(--border-radius-medium);
         @media (width >= 1023px){
             grid-column: 2 / 3;
             grid-row: 2 / 2;
@@ -259,7 +261,7 @@
             text-align: center;
             align-self: start;
 
-            padding: 0.3rem;
+            padding: 1em;
         }
     }
 </style>
