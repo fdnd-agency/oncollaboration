@@ -1,8 +1,8 @@
 :root {
     /* MARK: Blue */
-    --primary-color-blue-light-1: hsl(220, 53, 93);
-    @supports (color: in oklch 0.939 0.0174 264.48) {
-        --primary-color-blue-light-1: oklch(0.939 0.0174 264.48);
+    --primary-color-blue-light-1: hsl(221, 73%, 94%);
+    @supports (color: in oklch 94.2% 5.5% 265.762%) {
+        --primary-color-blue-light-1: oklch(94.2% 5.5% 265.762%);
     }
     --primary-color-blue-light-2: hsl(216 100 91); 
      @supports (color: in oklch 80% 0.2 260) {
@@ -215,7 +215,8 @@
         font-weight: bold;
     }
 
-    p {
+    p   {
+        font-family: "Ubuntu", "inter" ;
         font-size: 1em;
     }
 
@@ -223,6 +224,24 @@
         font-size: 1em;
         text-decoration: none;
     }
+
+    li {
+        font-family: "Ubuntu", "inter" ;
+        font-weight: bold;
+        font-size: 1em;
+        text-decoration: none;
+        line-height: 1.4;
+    }
+
+    summary {
+        font-family: "Ubuntu", "inter" ;
+        font-weight: bold;
+        font-size: 2em;
+        text-decoration: none;
+        line-height: 1.4;
+    }
+
+
 
 }
 
