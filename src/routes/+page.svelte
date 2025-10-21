@@ -87,10 +87,18 @@
     <div class="logo-carrousel">
         <div class="logos-slide">
             {#each infologos as logo}
-               <img class="logos-partnerships" src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name}>
+            <picture class="logos-partnerships">
+                <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=avif`} type="image/avif"/>
+                <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=webp`} type="image/webp"/>
+                <img src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name} loading="lazy"/>
+            </picture>
             {/each}
             {#each infologos as logo}
-                <img class="logos-partnerships" src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name}>
+            <picture class="logos-partnerships">
+                <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=avif`} type="image/avif"/>
+                <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=webp`} type="image/webp"/>
+                <img src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name} loading="lazy"/>
+            </picture>
             {/each}
         </div>
     </div>
@@ -295,6 +303,8 @@
     }
 
     .logos-partnerships {
+        display: flex;
+        align-items: center;
         object-fit: contain;
         flex-shrink: 0; 
     }
