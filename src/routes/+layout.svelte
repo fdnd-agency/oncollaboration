@@ -172,29 +172,34 @@
         }
     }
 
-
     nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            background: var(--primary-color-blue-dark-2);
-            transition: right 0.3s ease;
-            padding-top: 4em;
-            display: flex;
-            align-items: center;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        background: var(--primary-color-blue-dark-2);
+        transition: right 0.3s ease;
+        padding: 4em 0em 0em 0em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: 500px) {
+            padding: 5em 0em 0em 0em;
+        }
 
         @media (min-width: 900px) {
+            position: static;
             display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
             gap: 2em;
-            align-items: center;
-            align-self: center;
-            margin: 0em 1.5em 0em 0em;
-            justify-content: end;
+            padding: 0;
+            right: auto;
         }
     }
 
-    ul{
+    ul {
         list-style-type: none;
         display: flex;
         gap: 1em;
@@ -204,9 +209,9 @@
         }
     }
 
-    a{
-            color: var(--neutral-color-lightest);
-        }
+    a {
+        color: var(--neutral-color-lightest);
+    }
 
     select {
         background-color: var(--primary-color-aqua-dark-3);
@@ -217,12 +222,11 @@
         width: fit-content;
         height: fit-content;
         padding: 0.5em;
+        margin: 0em 1em 0em 0em;
     }
-
 
     .menu-toggle {
         display: none;
-
     }
 
     .close {
@@ -230,26 +234,45 @@
         position: absolute;
         top: 1em;
         right: 1.2em;
+
+        @media (min-width: 900px) {
+            display: none;
+        }
     }
 
+    .menu-toggle {
+        display: block;
 
-    /* @media (max-width: 900px) {
-        .menu-toggle {
-            display: block;
+        @media (min-width: 900px) {
+            display: none;
+        }
+    }
+
+    nav ul {
+        gap: 1em;
+        padding: 1em;
+        flex-direction: column;
+
+        @media (min-width: 500px) {
+            flex-direction: unset;
         }
 
-        nav ul {
-            flex-direction: column;
-            gap: 15px;
-            padding-left: 20px;
+        @media (min-width: 900px) {
+            flex-direction: row;
+            gap: 2em;
+            padding: 0;
         }
+    }
 
-        nav .close {
-            display: block;
-        }
+    nav .close {
+        display: block;
 
-        nav:target {
-            right: 0;
+        @media (min-width: 900px) {
+            display: none;
         }
-    } */
+    }
+
+    nav:target {
+        right: 0;
+    }
 </style>
