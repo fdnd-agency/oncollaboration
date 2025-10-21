@@ -132,7 +132,6 @@
         width: 100%;
         background: var(--primary-color-blue-dark-2);
         transition: right 0.3s ease;
-        /* padding: 4em 0em 0em 0em; */
         display: flex;
         align-items: center;
         justify-content: center;
