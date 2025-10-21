@@ -212,7 +212,8 @@
         font-size: 1.25em;
     }
 
-    p {
+    p   {
+        font-family: "Ubuntu", "inter" ;
         font-size: 1em;
     }
 
@@ -221,6 +222,21 @@
         text-decoration: none;
     }
 
+    li {
+        font-family: "Ubuntu", "inter" ;
+        font-weight: bold;
+        font-size: 1em;
+        text-decoration: none;
+        line-height: 1.4;
+    }
+
+    summary {
+        font-family: "Ubuntu", "inter" ;
+        font-weight: bold;
+        font-size: 2em;
+        text-decoration: none;
+        line-height: 1.4;
+    }
 
 
 
