@@ -293,17 +293,8 @@
     }
 
     .logos-partnerships {
-        height: 15vw;
         object-fit: contain;
         flex-shrink: 0; 
-
-        @media ( min-width: 37.5em ) {
-            height: 10vw;
-        }
-
-        @media ( min-width: 56.25em ) {
-            height: 5vw;
-        }
     }
 
 </style>    
