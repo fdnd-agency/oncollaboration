@@ -1,8 +1,8 @@
 :root {
     /* MARK: Blue */
-    --primary-color-blue-light-1: hsl(220, 53, 93);
-    @supports (color: in oklch 0.939 0.0174 264.48) {
-        --primary-color-blue-light-1: oklch(0.939 0.0174 264.48);
+    --primary-color-blue-light-1: hsl(221, 73%, 94%);
+    @supports (color: in oklch 94.2% 5.5% 265.762%) {
+        --primary-color-blue-light-1: oklch(94.2% 5.5% 265.762%);
     }
     --primary-color-blue-light-2: hsl(216 100 91); 
      @supports (color: in oklch 80% 0.2 260) {
@@ -118,7 +118,7 @@
     @supports (color: in oklch 10 10 10){
         --accent-color-yellow-dark-2: in oklch(0.5604 0.1231 110.94);
     }
-    --accent-color-yellow--dark-3: hsl(61 100 34);
+    --accent-color-yellow-dark-3: hsl(61 100 34);
     @supports (color: in oklch 10 10 10){
         --accent-color-yellow-dark-3: in oklch(0.7224 0.158758 110.9747);
     }
@@ -156,7 +156,7 @@
     }
     --neutral-color-blue-grey-2: hsl(216 10 30);
     @supports (color: in oklch 10 10 10){
-        --neutral-color-blue-gre2: in oklch(0.4106 0.0173 258.37);
+        --neutral-color-blue-grey-2: in oklch(0.4106 0.0173 258.37);
     }
     --neutral-color-blue-grey-3: hsl(215 10 40);
     @supports (color: in oklch 10 10 10){
@@ -185,6 +185,7 @@
 
     --primary-font-family: "Ubuntu", "inter";
     --primary-font-weight: bold;
+    --secondary-font-weight:normal;
     --primary-line-height: 1.4;
     --font-size-extra-large: 2.5em;
     --font-size-large: 2em;
@@ -194,39 +195,31 @@
     --border-radius-small:8px;
     --border-radius-medium:16px;
 
-    h1, h2 {
+    h1, h2, h3, h4, h5, h6, p, a {
         font-family: "Ubuntu", "inter";
         font-weight: bold;
-        font-size: 2.5em;
         line-height: 1.4;
     }
 
     h3 {
         font-family: "Ubuntu", "inter";
         font-weight: bold;
-        font-size: 2em;
+        font-size: 1.5em;
         line-height: 1.4;
     }
 
     h4 {
-        font-family: "Ubuntu", "inter" ;
-        font-weight: bold;
         font-size: 1.25em;
-        line-height: 1.4;
     }
 
     p   {
         font-family: "Ubuntu", "inter" ;
         font-size: 1em;
-        line-height: 1.4;
     }
 
     a {
-        font-family: "Ubuntu", "inter" ;
-        font-weight: bold;
         font-size: 1em;
         text-decoration: none;
-        line-height: 1.4;
     }
 
     li {
