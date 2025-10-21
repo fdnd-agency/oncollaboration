@@ -3,7 +3,7 @@
     import logoAvlDesktop from "$lib/assets/avl-logo-desktop.svg";
     import logoAvlMobile from "$lib/assets/avl-logo-mobile.svg";
     import logoKemenkesDesktop from "$lib/assets/kemenkes-logo-desktop.png";
-    import logoKemenkesMobile from "$lib/assets/kemenkes-logo-mobile.png";
+    import logoKemenkesMobile from "$lib/assets/Kemenkes-logo-mobile.png";
     import open from "$lib/assets/hamburger-menu.svg";
     import close from "$lib/assets/close-menu.svg";
     let { children } = $props();
