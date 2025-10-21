@@ -13,14 +13,6 @@
 <svelte:head>
     <title>Webinars</title>
     <meta name="description" content="Webinars" />
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    </style>
 </svelte:head>
 
 <!--  MARK: HTML-->
@@ -147,6 +139,7 @@
         gap: 0.5em;
         list-style-type: none;
         padding: 1em;
+        font-weight: var(--primary-font-weight);
     }
 
     li a {
@@ -399,6 +392,9 @@
         width: fit-content;
         position: absolute;
         top: 8.5em;
+        display: flex;
+        align-items: center;
+        gap: .5em;
     }
 
     h3 {
