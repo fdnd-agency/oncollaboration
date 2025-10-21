@@ -10,8 +10,8 @@
     const infocontourings = data.contourings;
     const infopartnerships = data.partnerships;
     const infologos = data.logos;
-    const infodoctors = data.doctorinfo;
-    const infodoctor = data.doctor;
+    const infodoctor = data.doctorinfo;
+    const infodoctors = data.doctors;
 
 
     onMount(() => {
@@ -106,8 +106,8 @@
     </div>
 
     <section class="homepage-speakers home-mobile-styling">
-        <h2 class="header-speakers">{infospeakers.heading}</h2>
-        <p class="info-speakers">{infospeakers.text}</p>
+        <h2 class="header-speakers">{infodoctor.heading}</h2>
+        <p class="info-speakers">{infodoctor.text}</p>
 
         <section class="homepage-doctors-outlay">
             {#each infodoctors as doctor} 
@@ -223,8 +223,6 @@
 
     .homepage-webinars-contourings {
         display: flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
 
         @media ( min-width: 37.5em ) {
@@ -232,8 +230,10 @@
         }
 
         @media ( min-width: 56.25em ) {
+            justify-content: center;
             flex-direction: row;
             background-color: var(--primary-color-blue-dark-2);
+            width: 100%;
             padding-block: 5em;
             padding-inline: 2em;
             gap: 7em;
@@ -245,7 +245,6 @@
     }
 
     .homepage-webinars, .homepage-contourings  {
-        align-items: flex-start;
         max-width: 37.5rem;
         margin-bottom: 2.5rem;
         padding-bottom: 2.5rem;
