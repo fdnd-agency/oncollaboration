@@ -251,6 +251,7 @@
     .homepage-partnerships {
 
         @media ( min-width: 56.25em ) {
+            width: 100%;
             align-items: start;
             padding-inline: 2rem;
         }
@@ -258,8 +259,6 @@
         @media ( min-width: 75em ) {
             position: relative;
             width: 78.125rem;
-            left: 50%;
-            transform: translateX(-50%);
         }
     }
 
