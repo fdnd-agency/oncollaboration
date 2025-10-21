@@ -6,6 +6,7 @@
     import search from "$lib/assets/search.svg";
     import watchlist from "$lib/assets/watchlist.svg";
     import arrow from "$lib/assets/arrow-right.svg";
+    import arrowSelect from "$lib/assets/arrow-down.svg";
 </script>
 
 <!--  MARK: svelte:head-->
@@ -47,7 +48,9 @@
             View all speakers or use the filter to view your bookmarked speakers
         </p>
 
-        <label class="label-search" for="webinarSearch">Type here a webinar you are looking for</label>
+        <label class="label-search" for="webinarSearch"
+            >Type here a webinar you are looking for</label
+        >
 
         <div class="container-filters">
             <div class="searchbar">
@@ -56,11 +59,13 @@
                     id="webinarSearch"
                     placeholder="Search..."
                 />
-                <button class="img-search" aria-label="Search"><img src={search} alt="search" /></button>
+                <button class="img-search" aria-label="Search"
+                    ><img src={search} alt="search" /></button
+                >
             </div>
 
             <label class="" for="category">Select a category:</label>
-            <select name="category" id="category">
+            <select name="category" id="category" style={`--arrow-url: url('${arrowSelect}')`}>
                 <option value="all">All</option>
                 {#each categories as category}
                     <option value={category.name}>{category.name}</option>
@@ -68,13 +73,13 @@
             </select>
 
             <label class="" for="new-old">Sort by:</label>
-            <select name="recent" id="new-old">
+            <select name="recent" id="new-old" style={`--arrow-url: url('${arrowSelect}')`}>
                 <option value="new-old">New to Old</option>
                 <option value="old-new">Old to New</option>
             </select>
 
             <label class="" for="alfabetisch">Sort alphabetically:</label>
-            <select name="alfabetisch" id="alfabetisch">
+            <select name="alfabetisch" id="alfabetisch" style={`--arrow-url: url('${arrowSelect}')`}>
                 <option value="a-z">A-Z</option>
                 <option value="z-a">Z-A</option>
             </select>
@@ -98,17 +103,20 @@
                 <picture>
                     <source
                         srcset={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}?format=avif`}
-                        type="image/avif"/>
+                        type="image/avif"
+                    />
                     <source
                         srcset={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}?format=webp`}
-                        type="image/webp"/>
+                        type="image/webp"
+                    />
                     <img
                         class="thumbnail"
                         src={`https://fdnd-agency.directus.app/assets/${webinar.thumbnail.id}`}
                         alt={webinar.title}
                         height="150"
                         width="250"
-                        loading="lazy"/>
+                        loading="lazy"
+                    />
                 </picture>
 
                 <p class="duration">{webinar.duration}</p>
@@ -116,7 +124,8 @@
                     {webinar.categories[0].avl_categories_id.name}
                 </p>
 
-                <button class="watchlist">Add to watchlist
+                <button class="watchlist"
+                    >Add to watchlist
                     <img src={watchlist} alt="" aria-hidden="true" />
                 </button>
             </div>
@@ -128,7 +137,8 @@
             </p>
 
             <a class="to-webinar-detail" href={`/webinars/${webinar.slug}`}
-                >View webinar <img src={arrow} alt="" aria-hidden="true" /></a>
+                >View webinar <img src={arrow} alt="" aria-hidden="true" /></a
+            >
         </article>
     {/each}
 </div>
@@ -252,6 +262,13 @@
         border: 1px solid var(--primary-color-blue-dark-2);
         font-size: var(--font-size-small);
         font-family: var(--primary-font-family);
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: var(--arrow-url);
+        background-repeat: no-repeat;
+        background-position: right 0.75em center;
+        background-size: 1em;
+        padding: 0em 2em 0em 1em;
     }
 
     #category {
@@ -320,8 +337,6 @@
         align-items: baseline;
         gap: 1em;
         max-width: 60em;
-        display: flex;
-        justify-items: center;
         width: fit-content;
         margin-left: auto;
         margin-right: auto;
@@ -340,9 +355,8 @@
         @media (min-width: 1200px) {
             grid-template-columns: 1fr 1fr 1fr 1fr;
             justify-content: center;
-
         }
-    } 
+    }
 
     article {
         background-color: var(--primary-color-blue-light-2);
@@ -366,7 +380,6 @@
         display: flex;
         justify-self: center;
         border-radius: var(--border-radius-medium);
-        display: block;
     }
 
     .duration {
@@ -411,7 +424,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        margin: 1.5em 1em .5em 1em;
+        margin: 1.5em 1em 0.5em 1em;
     }
 
     .speakers-fullname {
