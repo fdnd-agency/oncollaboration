@@ -56,9 +56,10 @@
                     id="webinarSearch"
                     placeholder="Search..."
                 />
-                <button class="img-search"><img src={search} alt="" /></button>
+                <button class="img-search" aria-label="Search"><img src={search} alt="search" /></button>
             </div>
 
+            <label class="" for="category">Select a category:</label>
             <select name="category" id="category">
                 <option value="all">All</option>
                 {#each categories as category}
@@ -66,17 +67,19 @@
                 {/each}
             </select>
 
+            <label class="" for="new-old">Sort by:</label>
             <select name="recent" id="new-old">
                 <option value="new-old">New to Old</option>
                 <option value="old-new">Old to New</option>
             </select>
 
+            <label class="" for="alfabetisch">Sort alphabetically:</label>
             <select name="alfabetisch" id="alfabetisch">
                 <option value="a-z">A-Z</option>
                 <option value="z-a">Z-A</option>
             </select>
 
-            <button class="filteren" type="filteren">Filter webinars</button>
+            <button class="filteren" type="button">Filter webinars</button>
             <button class="reset-filter" type="reset">Reset filter</button>
         </div>
     </fieldset>
