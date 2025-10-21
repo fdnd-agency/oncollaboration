@@ -45,6 +45,7 @@
 </svelte:head>
 
 
+<main class="overlay">
 <article class="homepage-about home-mobile-styling">
     <h1 class="header-about">{infoabout.heading}</h1>
     <p class="info-about">{infoabout.text}</p>
@@ -93,9 +94,15 @@
             {/each}
         </div>
     </div>
-
+</main>
 
 <style>
+
+    .overlay {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
 
     h1, h2 {
         font-size: var(--font-size-extra-large);
@@ -106,10 +113,6 @@
     }
 
     .home-mobile-styling {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
         padding-inline: 1em;
     }
 
