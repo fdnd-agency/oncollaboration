@@ -40,7 +40,7 @@
     </p>
 </section>
 
-<form action="" method="get">
+<form action={`/webinars`} method="get">
     <fieldset>
         <legend>Filters</legend>
         <p class="intro-filters">
