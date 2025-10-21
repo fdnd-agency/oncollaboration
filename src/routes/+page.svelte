@@ -10,6 +10,8 @@
     const infocontourings = data.contourings;
     const infopartnerships = data.partnerships;
     const infologos = data.logos;
+    const infodoctors = data.doctorinfo;
+    const infodoctor = data.doctor;
 
 
     onMount(() => {
@@ -46,43 +48,43 @@
 
 
 <main class="overlay">
-<article class="homepage-about home-mobile-styling">
-    <h1 class="header-about">{infoabout.heading}</h1>
-    <p class="info-about">{infoabout.text}</p>
-    <a class="button-style link-homepage-about" href="/about">More about oncollaboration<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
-        </svg>
-    </a>
-     <picture class="img-about" >
-        <source srcset="src/lib/assets/doctors.avif" type="image/avif">
-        <source srcset="src/lib/assets/doctors.webp" type="image/webp">
-        <img class="img-about" src="src/lib/assets/doctors.png" alt="group of doctors" loading="lazy">
-     </picture>
-</article>
-
-<section class="homepage-webinars-contourings">
-    <article class="homepage-webinars home-mobile-styling">
-        <h2 class="header-webinars-contourings">{infowebinars.heading}</h2>
-        <p class="info-webinars-contourings">{infowebinars.text}</p>
-        <a class="button-style link-webinars-contourings" href="/webinars">More about webinars<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
-           </svg>
-        </a>
-    </article>
-    <article class="homepage-contourings home-mobile-styling">
-        <h2 class="header-webinars-contourings">{infocontourings.heading}</h2>
-        <p class="info-webinars-contourings">{infocontourings.text}</p>
-        <a class="button-style link-webinars-contourings" href="/contourings">More about contourings<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <article class="homepage-about home-mobile-styling">
+        <h1 class="header-about">{infoabout.heading}</h1>
+        <p class="info-about">{infoabout.text}</p>
+        <a class="button-style link-homepage-about" href="/about">More about oncollaboration<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
             </svg>
         </a>
+         <picture class="img-about" >
+            <source srcset="src/lib/assets/doctors.avif" type="image/avif">
+            <source srcset="src/lib/assets/doctors.webp" type="image/webp">
+            <img class="img-about" src="src/lib/assets/doctors.png" alt="group of doctors" loading="lazy">
+         </picture>
     </article>
-</section>
 
-<article class="homepage-partnerships home-mobile-styling">
-    <h2 class="header-partnerships">{infopartnerships.heading}</h2>
-    <p class="info-partnerships">{infopartnerships.text}</p>
-</article>
+    <section class="homepage-webinars-contourings">
+        <article class="homepage-webinars home-mobile-styling">
+            <h2 class="header-webinars-contourings">{infowebinars.heading}</h2>
+            <p class="info-webinars-contourings">{infowebinars.text}</p>
+            <a class="button-style link-webinars-contourings" href="/webinars">More about webinars<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
+               </svg>
+            </a>
+        </article>
+        <article class="homepage-contourings home-mobile-styling">
+            <h2 class="header-webinars-contourings">{infocontourings.heading}</h2>
+            <p class="info-webinars-contourings">{infocontourings.text}</p>
+            <a class="button-style link-webinars-contourings" href="/contourings">More about contourings<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
+                </svg>
+            </a>
+        </article>
+    </section>
+
+    <article class="homepage-partnerships home-mobile-styling">
+        <h2 class="header-partnerships">{infopartnerships.heading}</h2>
+        <p class="info-partnerships">{infopartnerships.text}</p>
+    </article>
 
     <div class="logo-carrousel">
         <div class="logos-slide">
@@ -102,6 +104,21 @@
             {/each}
         </div>
     </div>
+
+    <section class="homepage-speakers home-mobile-styling">
+        <h2 class="header-speakers">{infospeakers.heading}</h2>
+        <p class="info-speakers">{infospeakers.text}</p>
+
+        <section class="homepage-doctors-outlay">
+            {#each infodoctors as doctor} 
+                <article class="homepage-all-doctors">
+                   <img class="photo-doctor" src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`} alt={doctor.name}>
+                   <h3 class="name-doctor">{doctor.name}</h3>
+                    <p class="function-doctor">{doctor.role}</p>
+                </article>
+            {/each}
+        </section>
+    </section>
 </main>
 
 <style>
