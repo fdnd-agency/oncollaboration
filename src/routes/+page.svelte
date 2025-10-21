@@ -325,4 +325,82 @@
         flex-shrink: 0; 
     }
 
+    .homepage-speakers {
+        padding-top: 2rem;
+        max-width: 37.5em;
+
+        @media ( min-width: 37.5em ) {
+            border-radius: 1rem;
+        }
+
+        @media ( min-width: 56.25em ) {
+            display: grid;
+            grid-template-columns: 0.7fr 1fr;
+            grid-template-rows: 0.2fr 1fr;
+            max-width: 100%;
+            padding-inline: 2rem;
+        }
+
+        @media (min-width: 75em ) {
+            grid-template-columns: 30em 37.5em;
+            column-gap: 6em;
+        }
+    }
+
+    .homepage-doctors-outlay {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 600px;
+        gap: 1rem;
+        margin-top: 2rem;
+        padding-top: 2em;
+        padding-bottom: 4em;
+
+        @media ( min-width: 56.25em ) {
+            padding-top: 0;
+            grid-column: 2/3;
+            grid-row: 1/3;
+        }
+    }
+
+    .info-speakers {
+        padding-right: 1rem;
+
+        @media ( min-width: 56.25em ) {
+            grid-column: 1/2;
+        }
+    }
+
+    .homepage-all-doctors {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: var(--neutral-color-lightest);
+        border: 3px solid var(--primary-color-blue-dark-2);
+        border-radius: 0.6rem;
+        width: 200px;
+        height: 250px;
+        padding: 0.5rem;
+    }
+
+    .photo-doctor {
+        object-fit: cover;
+        height: 150px;
+        width: 150px;
+        border-radius: 100px;
+    }
+
+    .name-doctor {
+        font-size: var(--font-size-small);
+        background-color: var(--primary-color-blue-light-1);
+        text-align: center;
+        padding-inline: 0.5rem;
+        padding-block: 0.25rem;
+        border-radius: 0.6rem;
+        margin-top: -1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
 </style>    
