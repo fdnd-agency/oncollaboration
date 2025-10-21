@@ -112,8 +112,11 @@
         <section class="homepage-doctors-outlay">
             {#each infodoctors as doctor} 
                 <article class="homepage-all-doctors">
-                   <img class="photo-doctor" src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`} alt={doctor.name}>
-                   <h3 class="name-doctor">{doctor.name}</h3>
+                    <picture class="photo-doctor">
+                        <source srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=avif`} type="image/avif"/>
+                        <source srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=webp`} type="image/webp"/>
+                        <img class="photo-doctor" src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`} alt={doctor.name} loading="lazy"/>
+                      </picture>                   <h3 class="name-doctor">{doctor.name}</h3>
                     <p class="function-doctor">{doctor.role}</p>
                 </article>
             {/each}
@@ -389,6 +392,7 @@
         object-fit: cover;
         height: 150px;
         width: 150px;
+        overflow: hidden;
         border-radius: 100px;
     }
 
