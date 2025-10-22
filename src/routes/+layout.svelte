@@ -80,6 +80,38 @@
 
 {@render children?.()}
 
+<footer>
+        <img src={logoAvlMobile} alt="logo AVL" height="50px" />
+
+        <img src={logoKemenkesMobile} alt="logo Kemenkes" height="50px" />
+
+        <article>
+            <strong>Navigation</strong>
+            <ul>
+                <li><a alt="" href={`/webinars`}>Webinars</a></li>
+                <li><a alt="" href={`/speakers`}>Speakers</a></li>
+                <li><a alt="" href={`/profile`}>Profile</a></li>
+                <li><a alt="" href={`/contourings`}>Contourings</a></li>
+            </ul>
+        </article>
+
+        <address>
+            <strong>Contact Information</strong>
+            <ul>
+                <li>Indonesia & The Netherlands</li>
+                <li>AVL:<a href="tel:0205129111">020 512 9111</a></li>
+                <li>Kemenkes:<a href="tel:1500567">1500-567</a></li>
+            </ul>
+        </address>
+
+        <select id="language" name="language">
+            <option value="language">Language</option>
+            <option value="English">English</option>
+            <option value="Indonesian">Indonesian</option>
+        </select>
+        <p>© 2025 AVL Indonesia. All rights reserved.</p>
+</footer>
+
 <style>
     header {
         background-color: var(--primary-color-blue-dark-2);
@@ -233,4 +265,38 @@
     nav:target {
         right: 0;
     }
+
+    footer {
+        background-color: var(--primary-color-blue-dark-2);
+        display: grid;
+        gap: 0.8rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr repeat(2, 10rem) repeat(2, 5em);
+    }
+
+    footer ul{
+        display: grid;
+    }
+
+    footer p, li, strong {
+        color: var(--neutral-color-lightest);
+    }
+
+    footer #language {
+        grid-row: 4 / 4;
+        justify-self: end;
+        margin: 0em 2em 0em 0em;
+    }
+    
+    footer p {
+        grid-column: 1 / -1;
+        grid-row: 5 / 6;
+        text-align: center;
+        padding-bottom: 1em;
+    }
+
+    address{
+        grid-row: 3 / 4;
+    }
+
 </style>
