@@ -195,7 +195,7 @@
     --border-radius-small:8px;
     --border-radius-medium:16px;
 
-    h1, h2, h3, h4, h5, h6, p, a {
+    h1, h2, h3, h4, h5, h6, p, a, strong, address {
         font-family: "Ubuntu", "inter";
         line-height: 1.4;
     }
@@ -239,6 +239,10 @@
         font-size: 2em;
         text-decoration: none;
         line-height: 1.4;
+    }
+
+    strong{
+        font-weight: bold;
     }
 
 

@@ -61,7 +61,7 @@
         ><img src={open} alt="open menu" height="50" width="50" /></a
     >
 
-    <nav id="menu">
+    <nav class="nav-header" id="menu">
         <a href="#" class="close"><img src={close} alt="close menu" height="50" width="50" /></a>
         <ul>
             <li><a class="webinars" href={`/webinars`}>Webinars</a></li>
@@ -79,6 +79,67 @@
 </header>
 
 {@render children?.()}
+
+<footer>
+        <div class="footer-logos">
+            <img
+                class="avl-desktop-logo"
+                src={logoAvlDesktop}
+                alt="logo AVL"
+                height="50"
+                width="150"
+            />
+            
+            <img
+                class="avl-mobile-logo"
+                src={logoAvlMobile}
+                alt="logo AVL"
+                height="50"
+                width="50"
+            />
+
+            <img
+                class="kemenkes-desktop-logo"
+                src={logoKemenkesDesktop}
+                alt="logo Kemenkes"
+                height="60"
+                width="150"
+            />
+            <img
+                class="kemenkes-mobile-logo"
+                src={logoKemenkesMobile}
+                alt="logo Kemenkes"
+                height="50"
+                width="50"
+            />
+        </div>
+        <nav>
+            <strong>Navigation</strong>
+            <ul>
+                <li><a href={`/webinars`}>Webinars</a></li>
+                <li><a href={`/speakers`}>Speakers</a></li>
+                <li><a href={`/profile`}>Profile</a></li>
+                <li><a href={`/contourings`}>Contourings</a></li>
+            </ul>
+        </nav>
+
+        <address>
+            <strong>Contact Information</strong>
+            <ul>
+                <li>Indonesia & The Netherlands</li>
+                <li>AVL: <a href="tel:0205129111">020 512 9111</a></li>
+                <li>Kemenkes: <a href="tel:1500567">1500-567</a></li>
+            </ul>
+        </address>
+
+        <select id="language" name="language">
+            <option value="language">Language</option>
+            <option value="English">English</option>
+            <option value="Indonesian">Indonesian</option>
+        </select>
+
+        <p>© 2025 Oncollaboration. All rights reserved.</p>
+</footer>
 
 <style>
     header {
@@ -121,7 +182,7 @@
         }
     }
 
-    nav {
+    .nav-header {
         position: fixed;
         top: 0;
         right: -100%;
@@ -206,7 +267,7 @@
         }
     }
 
-    nav ul {
+    .nav-header ul {
         gap: 1em;
         padding: 1em;
         flex-direction: column;
@@ -222,7 +283,7 @@
         }
     }
 
-    nav .close {
+    .nav-header .close {
         display: block;
 
         @media (min-width: 900px) {
@@ -230,7 +291,146 @@
         }
     }
 
-    nav:target {
+    .nav-header:target {
         right: 0;
+    }
+
+    footer {
+        background-color: var(--primary-color-blue-dark-2);
+        border: var(--primary-color-blue-dark-2);
+        border-radius: var(--border-radius-small);
+            @supports (corner-shape: bevel){
+                corner-shape: bevel;
+            }
+
+        display: grid;
+        gap: 0.8rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 15rem 12rem repeat(2, 5em);
+        padding: 1em;
+        padding-top: 4em;
+
+        @media (width >= 448px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr 15rem 2.3em 2.5em;
+        }
+
+        @media (width >= 767px) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 15rem 2.3rem 4rem;
+            gap: 1rem;
+        }
+    }
+
+    .footer-logos {
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 1.4rem;
+
+        @media (width >= 448px) {
+            grid-column: 1 / -1;
+            grid-row: 1 / 1;
+            align-content: flex-start;
+        }
+
+        @media (width >= 767px){
+            display: grid;
+            gap: 2rem;
+            grid-column: 1 / 1;
+        }
+    }
+
+    .footer-logos img {
+        @media (width >= 767px){
+            width: clamp(150px, 100%, 150px);
+        }
+    }
+
+    footer nav {
+        display: grid;
+        right: 0;
+        position: relative;
+        grid-column: 1 / 1;
+
+        @media (width >= 448px) {
+            justify-items: center;
+            grid-column: 1 / 2;
+            grid-row: 2 / 2;
+        }
+
+        @media (width >= 767px){
+            justify-items: center;
+            grid-column: 2 / 2;
+            grid-row: 1 / 2;
+        }
+    }
+
+    footer nav a:focus, address a:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--primary-color-true-aqua);
+    }
+
+    footer ul{
+        display: grid;
+    }
+
+    footer p, li, strong {
+        color: var(--neutral-color-lightest);
+    }
+
+    footer #language {
+        grid-row: 4 / 4;
+        padding: var(--border-radius-small);
+
+        @media (width >= 448px) {
+            grid-column: 2 / 2;
+            grid-row: 3 / 3;
+        }
+
+        @media (width >= 767px){
+            grid-column: 3 / 3;
+            grid-row: 2 / 2;
+        }
+    }
+    
+    footer p {
+        grid-column: 1 / -1;
+        grid-row: 5 / 6;
+        text-align: center;
+        padding-bottom: 1em;
+
+         @media (width >= 448px) {
+            grid-column: 1 / -1;
+            grid-row: 4 / 4;
+        }
+
+        @media (width >= 767px){
+            grid-column: 1 / -1;
+            grid-row: 3 / 3;
+        }
+    }
+
+    address{
+        grid-row: 3 / 4;
+        grid-column: 1 / -1;
+        display: grid;
+        padding-top: 1.4rem;
+
+        @media (width >= 448px) {
+            grid-column: 2 / 2;
+            grid-row: 2 / 2;
+            padding-top: 0rem;
+        }
+
+        @media (width >= 767px){
+            grid-column: 3 / 3;
+            grid-row: 1 / 2;
+            padding-top: 0rem;
+        }
+    }
+
+    address li, a, strong{
+        font-family: var(--primary-font-family);
+        font-style: var(--secondary-font-weight);
     }
 </style>
