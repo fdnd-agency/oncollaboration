@@ -81,10 +81,11 @@
 {@render children?.()}
 
 <footer>
-        <img src={logoAvlMobile} alt="logo AVL" height="50px" />
+        <div>
+            <img src={logoAvlMobile} alt="logo AVL" height="50px" />
 
-        <img src={logoKemenkesMobile} alt="logo Kemenkes" height="50px" />
-
+            <img src={logoKemenkesMobile} alt="logo Kemenkes" height="50px" />
+        </div>
         <nav>
             <strong>Navigation</strong>
             <ul>
@@ -271,28 +272,39 @@
         background-color: var(--primary-color-blue-dark-2);
         display: grid;
         gap: 0.8rem;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr 15rem 10rem repeat(2, 5em);
+        grid-template-columns: 1fr 5rem;
+        grid-template-rows: 1fr 15rem 12rem repeat(2, 5em);
+        padding: 1em;
 
-        @media (width >= 900px) {
+        @media (width >= 767px) {
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 15rem;
+            grid-template-rows: 15rem 4rem 4rem;
+            gap: 0.8rem;
         }
     }
 
     footer img {
-        justify-self: center;
+        @media (width >= 767px){
+            grid-column: 1 / 1;
+        }
+    }
 
-        @media (width >= 900px){
+    footer img:nth-of-type(2) {
+        @media (width >= 767px){
             grid-column: 1 / 1;
         }
     }
 
     footer nav {
         display: grid;
-        top: 0;
         right: 0;
         position: relative;
+        grid-column: 1 / 1;
+
+        @media (width >= 767px){
+            grid-column: 2 / 2;
+            grid-row: 1 / 2;
+        }
     }
 
     footer ul{
@@ -305,13 +317,11 @@
 
     footer #language {
         grid-row: 4 / 4;
-        justify-self: end;
-        margin: 0em 2em 0em 0em;
+        padding: var(--border-radius-small);
 
-        @media (width >= 900px){
+        @media (width >= 767px){
             grid-column: 3 / 3;
-            grid-row: 1 / 2;
-            justify-self: center;
+            grid-row: 2 / 2;
         }
     }
     
@@ -320,10 +330,24 @@
         grid-row: 5 / 6;
         text-align: center;
         padding-bottom: 1em;
+
+        @media (width >= 767px){
+            grid-column: 1 / -1;
+            grid-row: 3 / 3;
+        }
     }
 
     address{
         grid-row: 3 / 4;
+        grid-column: 1 / -1;
+        padding: 1em;
+
+        @media (width >= 767px){
+            display: grid;
+            grid-column: 3 / 3;
+            grid-row: 1 / 2;
+        }
+    }
 
     address li, a, strong{
         font-family: var(--primary-font-family);
