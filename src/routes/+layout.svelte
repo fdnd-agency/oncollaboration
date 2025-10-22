@@ -324,6 +324,10 @@
 
     address{
         grid-row: 3 / 4;
+
+    address li, a, strong{
+        font-family: var(--primary-font-family);
+        font-style: var(--secondary-font-weight);
     }
 
 </style>
