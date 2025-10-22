@@ -82,9 +82,36 @@
 
 <footer>
         <div class="footer-logos">
-            <img src={logoAvlDesktop} alt="logo AVL" height="50px" />
+            <img
+                class="avl-desktop-logo"
+                src={logoAvlDesktop}
+                alt="logo AVL"
+                height="50"
+                width="150"
+            />
+            
+            <img
+                class="avl-mobile-logo"
+                src={logoAvlMobile}
+                alt="logo AVL"
+                height="50"
+                width="50"
+            />
 
-            <img src={logoKemenkesDesktop} alt="logo Kemenkes" height="50px" />
+            <img
+                class="kemenkes-desktop-logo"
+                src={logoKemenkesDesktop}
+                alt="logo Kemenkes"
+                height="60"
+                width="150"
+            />
+            <img
+                class="kemenkes-mobile-logo"
+                src={logoKemenkesMobile}
+                alt="logo Kemenkes"
+                height="50"
+                width="50"
+            />
         </div>
         <nav>
             <strong>Navigation</strong>
@@ -282,10 +309,15 @@
         grid-template-rows: 1fr 15rem 12rem repeat(2, 5em);
         padding: 1em;
 
+        @media (width >= 448px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr 15rem 2.3em 2.5em;
+        }
+
         @media (width >= 767px) {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 15rem 2.3rem 4rem;
-            gap: 5rem;
+            gap: 3rem;
         }
     }
 
@@ -294,15 +326,23 @@
         justify-content: space-around;
         padding-bottom: 1.4rem;
 
+        @media (width >= 448px) {
+            grid-column: 1 / -1;
+            grid-row: 1 / 1;
+            align-content: flex-start;
+        }
+
         @media (width >= 767px){
+            display: grid;
+            gap: 2em;
             grid-column: 1 / 1;
         }
     }
 
-    .footer-logos img{
+    .footer-logos img {
         @media (width >= 767px){
-            width: clamp(14em, 100%, 18.125em);
-            height: fit-content;
+            width: clamp(2em, 100%, 18em);
+            height: auto;
         }
     }
 
@@ -311,6 +351,11 @@
         right: 0;
         position: relative;
         grid-column: 1 / 1;
+
+        @media (width >= 448px) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 2;
+        }
 
         @media (width >= 767px){
             justify-items: center;
@@ -336,6 +381,11 @@
         grid-row: 4 / 4;
         padding: var(--border-radius-small);
 
+        @media (width >= 448px) {
+            grid-column: 2 / 2;
+            grid-row: 3 / 3;
+        }
+
         @media (width >= 767px){
             grid-column: 3 / 3;
             grid-row: 2 / 2;
@@ -348,6 +398,11 @@
         text-align: center;
         padding-bottom: 1em;
 
+         @media (width >= 448px) {
+            grid-column: 1 / -1;
+            grid-row: 4 / 4;
+        }
+
         @media (width >= 767px){
             grid-column: 1 / -1;
             grid-row: 3 / 3;
@@ -359,6 +414,12 @@
         grid-column: 1 / -1;
         display: grid;
         padding-top: 1.4rem;
+
+        @media (width >= 448px) {
+            grid-column: 2 / 2;
+            grid-row: 2 / 2;
+            padding-top: 0rem;
+        }
 
         @media (width >= 767px){
             grid-column: 3 / 3;
