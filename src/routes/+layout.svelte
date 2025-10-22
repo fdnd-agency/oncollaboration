@@ -81,10 +81,10 @@
 {@render children?.()}
 
 <footer>
-        <div>
-            <img src={logoAvlMobile} alt="logo AVL" height="50px" />
+        <div class="footer-logos">
+            <img src={logoAvlDesktop} alt="logo AVL" height="50px" />
 
-            <img src={logoKemenkesMobile} alt="logo Kemenkes" height="50px" />
+            <img src={logoKemenkesDesktop} alt="logo Kemenkes" height="50px" />
         </div>
         <nav>
             <strong>Navigation</strong>
@@ -100,8 +100,8 @@
             <strong>Contact Information</strong>
             <ul>
                 <li>Indonesia & The Netherlands</li>
-                <li>AVL:<a href="tel:0205129111">020 512 9111</a></li>
-                <li>Kemenkes:<a href="tel:1500567">1500-567</a></li>
+                <li>AVL: <a href="tel:0205129111">020 512 9111</a></li>
+                <li>Kemenkes: <a href="tel:1500567">1500-567</a></li>
             </ul>
         </address>
 
@@ -111,7 +111,7 @@
             <option value="Indonesian">Indonesian</option>
         </select>
 
-        <p>© 2025 AVL Indonesia. All rights reserved.</p>
+        <p>© 2025 Oncollaboration. All rights reserved.</p>
 </footer>
 
 <style>
@@ -270,28 +270,39 @@
 
     footer {
         background-color: var(--primary-color-blue-dark-2);
+        border: var(--primary-color-blue-dark-2);
+        border-radius: var(--border-radius-small);
+            @supports (corner-shape: bevel){
+                corner-shape: bevel;
+            }
+
         display: grid;
         gap: 0.8rem;
-        grid-template-columns: 1fr 5rem;
+        grid-template-columns: 1fr;
         grid-template-rows: 1fr 15rem 12rem repeat(2, 5em);
         padding: 1em;
 
         @media (width >= 767px) {
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 15rem 4rem 4rem;
-            gap: 0.8rem;
+            grid-template-rows: 15rem 2.3rem 4rem;
+            gap: 5rem;
         }
     }
 
-    footer img {
+    .footer-logos {
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 1.4rem;
+
         @media (width >= 767px){
             grid-column: 1 / 1;
         }
     }
 
-    footer img:nth-of-type(2) {
+    .footer-logos img{
         @media (width >= 767px){
-            grid-column: 1 / 1;
+            width: clamp(14em, 100%, 18.125em);
+            height: fit-content;
         }
     }
 
@@ -302,9 +313,15 @@
         grid-column: 1 / 1;
 
         @media (width >= 767px){
+            justify-items: center;
             grid-column: 2 / 2;
             grid-row: 1 / 2;
         }
+    }
+
+    footer nav a:focus, address a:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--primary-color-true-aqua);
     }
 
     footer ul{
@@ -340,12 +357,13 @@
     address{
         grid-row: 3 / 4;
         grid-column: 1 / -1;
-        padding: 1em;
+        display: grid;
+        padding-top: 1.4rem;
 
         @media (width >= 767px){
-            display: grid;
             grid-column: 3 / 3;
             grid-row: 1 / 2;
+            padding-top: 0rem;
         }
     }
 
@@ -353,5 +371,4 @@
         font-family: var(--primary-font-family);
         font-style: var(--secondary-font-weight);
     }
-
 </style>
