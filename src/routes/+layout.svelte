@@ -89,10 +89,10 @@
         <nav>
             <strong>Navigation</strong>
             <ul>
-                <li><a alt="" href={`/webinars`}>Webinars</a></li>
-                <li><a alt="" href={`/speakers`}>Speakers</a></li>
-                <li><a alt="" href={`/profile`}>Profile</a></li>
-                <li><a alt="" href={`/contourings`}>Contourings</a></li>
+                <li><a href={`/webinars`}>Webinars</a></li>
+                <li><a href={`/speakers`}>Speakers</a></li>
+                <li><a href={`/profile`}>Profile</a></li>
+                <li><a href={`/contourings`}>Contourings</a></li>
             </ul>
         </nav>
 
