@@ -308,6 +308,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 15rem 12rem repeat(2, 5em);
         padding: 1em;
+        padding-top: 4em;
 
         @media (width >= 448px) {
             grid-template-columns: repeat(2, 1fr);
@@ -317,7 +318,7 @@
         @media (width >= 767px) {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 15rem 2.3rem 4rem;
-            gap: 3rem;
+            gap: 1rem;
         }
     }
 
@@ -333,16 +334,14 @@
         }
 
         @media (width >= 767px){
-            display: grid;
-            gap: 2em;
+            display: flex;
             grid-column: 1 / 1;
         }
     }
 
     .footer-logos img {
         @media (width >= 767px){
-            width: clamp(2em, 100%, 18em);
-            height: auto;
+            width: clamp(150px, 100%, 150px);
         }
     }
 
