@@ -61,7 +61,7 @@
         ><img src={open} alt="open menu" height="50" width="50" /></a
     >
 
-    <nav id="menu">
+    <nav class="nav-header" id="menu">
         <a href="#" class="close"><img src={close} alt="close menu" height="50" width="50" /></a>
         <ul>
             <li><a class="webinars" href={`/webinars`}>Webinars</a></li>
@@ -155,7 +155,7 @@
         }
     }
 
-    nav {
+    .nav-header {
         position: fixed;
         top: 0;
         right: -100%;
@@ -240,7 +240,7 @@
         }
     }
 
-    nav ul {
+    .nav-header ul {
         gap: 1em;
         padding: 1em;
         flex-direction: column;
@@ -256,7 +256,7 @@
         }
     }
 
-    nav .close {
+    .nav-header .close {
         display: block;
 
         @media (min-width: 900px) {
@@ -264,7 +264,7 @@
         }
     }
 
-    nav:target {
+    .nav-header:target {
         right: 0;
     }
 
