@@ -85,7 +85,7 @@
 
         <img src={logoKemenkesMobile} alt="logo Kemenkes" height="50px" />
 
-        <article>
+        <nav>
             <strong>Navigation</strong>
             <ul>
                 <li><a alt="" href={`/webinars`}>Webinars</a></li>
@@ -93,7 +93,7 @@
                 <li><a alt="" href={`/profile`}>Profile</a></li>
                 <li><a alt="" href={`/contourings`}>Contourings</a></li>
             </ul>
-        </article>
+        </nav>
 
         <address>
             <strong>Contact Information</strong>
@@ -109,6 +109,7 @@
             <option value="English">English</option>
             <option value="Indonesian">Indonesian</option>
         </select>
+
         <p>© 2025 AVL Indonesia. All rights reserved.</p>
 </footer>
 
@@ -271,7 +272,27 @@
         display: grid;
         gap: 0.8rem;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr repeat(2, 10rem) repeat(2, 5em);
+        grid-template-rows: 1fr 15rem 10rem repeat(2, 5em);
+
+        @media (width >= 900px) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 15rem;
+        }
+    }
+
+    footer img {
+        justify-self: center;
+
+        @media (width >= 900px){
+            grid-column: 1 / 1;
+        }
+    }
+
+    footer nav {
+        display: grid;
+        top: 0;
+        right: 0;
+        position: relative;
     }
 
     footer ul{
@@ -286,6 +307,12 @@
         grid-row: 4 / 4;
         justify-self: end;
         margin: 0em 2em 0em 0em;
+
+        @media (width >= 900px){
+            grid-column: 3 / 3;
+            grid-row: 1 / 2;
+            justify-self: center;
+        }
     }
     
     footer p {
