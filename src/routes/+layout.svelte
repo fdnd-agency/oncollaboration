@@ -334,7 +334,8 @@
         }
 
         @media (width >= 767px){
-            display: flex;
+            display: grid;
+            gap: 2rem;
             grid-column: 1 / 1;
         }
     }
