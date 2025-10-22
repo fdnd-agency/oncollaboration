@@ -353,6 +353,7 @@
         grid-column: 1 / 1;
 
         @media (width >= 448px) {
+            justify-items: center;
             grid-column: 1 / 2;
             grid-row: 2 / 2;
         }
