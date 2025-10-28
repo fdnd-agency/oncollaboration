@@ -115,8 +115,9 @@
                     <picture class="photo-doctor">
                         <source srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=avif`} type="image/avif"/>
                         <source srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=webp`} type="image/webp"/>
-                        <img class="photo-doctor" src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`} alt={doctor.name} loading="lazy"/>
-                      </picture>                   <h3 class="name-doctor">{doctor.name}</h3>
+                        <img class="photo-doctor" src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`} alt="{doctor.name}" loading="lazy"/>
+                      </picture>                   
+                      <h3 class="name-doctor">{doctor.name}</h3>
                     <p class="function-doctor">{doctor.role}</p>
                 </article>
             {/each}
