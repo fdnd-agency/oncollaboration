@@ -255,6 +255,7 @@
 
         @media ( min-width: 37.5em ) {
             border-radius: 1em;
+            margin-bottom: 0;
         }
 
         @media ( min-width: 56.25em ) {
@@ -367,10 +368,10 @@
         }
     }
 
-    .header-speakers {
-        display: flex;
-        align-items: center;
-    }
+        .header-speakers {
+            display: flex;
+            align-items: center;
+        }
 
     .info-speakers {
         padding-right: 1rem;

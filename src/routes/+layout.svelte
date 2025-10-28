@@ -298,9 +298,11 @@
     footer {
         background-color: var(--primary-color-blue-dark-2);
         border: var(--primary-color-blue-dark-2);
-        border-radius: var(--border-radius-small);
-            @supports (corner-shape: bevel){
-                corner-shape: bevel;
+        border-top-left-radius: var(--border-radius-small);
+        border-top-right-radius: var(--border-radius-small);
+            @supports (corner-top-shape-left: bevel){
+                corner-top-shape-left: bevel;
+                corner-top-shape-right: bevel;
             }
 
         display: grid;
