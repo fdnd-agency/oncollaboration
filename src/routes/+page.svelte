@@ -304,12 +304,16 @@
         max-width: 73.5rem;
         row-gap: 2rem;
         overflow: hidden;
+        padding-block: 1rem;
+
+        @media ( min-width: 56.25em ) {
+            padding-block: 2rem;
+        }
     }
 
     .homepage-carrousel-content {
         display: flex;
         width: max-content;
-        /* gap: 2rem; */
         animation: scroll 18s linear infinite;
     }
 
