@@ -15,15 +15,19 @@
 
 
     onMount(() => {
-        const tracks = document.querySelectorAll('.homepage-carrousel-content')
+    const carousels = document.querySelectorAll('.homepage-carrousel-content');
 
-        tracks.forEach(track => {
-            const logos = [...track.children]
+    carousels.forEach(carousel => {
+        const computedStyle = window.getComputedStyle(carousel);
+        const animationName = computedStyle.animationName;
 
-            for (const logo of logos){
-                track.appendChild(logo.cloneNode(true))
-            }
-        });
+        if (animationName && animationName !== 'none') {
+            const logos = [...carousel.children];
+
+        for (const logo of logos) {
+            carousel.appendChild(logo.cloneNode(true));
+        }}
+    });
     });
 </script>
 
@@ -313,8 +317,19 @@
 
     .homepage-carrousel-content {
         display: flex;
-        width: max-content;
-        animation: scroll 18s linear infinite;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+
+        @supports (animation: scroll 18s linear infinite) {
+            width: max-content;
+            animation: scroll 18s linear infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            animation: none;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }    
     }
 
     .homepage-carrousel-content:hover {
