@@ -15,19 +15,14 @@
 
 
     onMount(() => {
-    const carousels = document.querySelectorAll('.homepage-carrousel-content');
-
-    carousels.forEach(carousel => {
-        const computedStyle = window.getComputedStyle(carousel);
-        const animationName = computedStyle.animationName;
+        for (const carousel of document.querySelectorAll('.homepage-carrousel-content')) {
+            const { animationName } = window.getComputedStyle(carousel);
 
         if (animationName && animationName !== 'none') {
-            const logos = [...carousel.children];
 
-        for (const logo of logos) {
+        for (const logo of Array.from(carousel.children)) {
             carousel.appendChild(logo.cloneNode(true));
-        }}
-    });
+        }}}
     });
 </script>
 
