@@ -15,22 +15,15 @@
 
 
     onMount(() => {
-    const slide = document.querySelector('.logos-slide');
-    if (!slide) return;
+        for (const carousel of document.querySelectorAll('.homepage-carrousel-content')) {
+            const { animationName } = window.getComputedStyle(carousel);
 
-    const totalWidth = slide.scrollWidth / 2; // Half because logos are duplicated
-    let x = 0;
-    const speed = 0.5;
+        if (animationName && animationName !== 'none') {
 
-    function step() {
-      x -= speed;
-      if (Math.abs(x) >= totalWidth) x = 0;
-      slide.style.transform = `translateX(${x}px)`;
-      requestAnimationFrame(step);
-    }
-
-    setTimeout(() => requestAnimationFrame(step), 500);
-  });
+        for (const logo of Array.from(carousel.children)) {
+            carousel.appendChild(logo.cloneNode(true));
+        }}}
+    });
 </script>
 
 <svelte:head> 
@@ -86,24 +79,17 @@
         <p class="info-partnerships">{infopartnerships.text}</p>
     </article>
 
-    <div class="logo-carrousel">
-        <div class="logos-slide">
+    <section class="homepage-carrousel">
+        <div class="homepage-carrousel-content">
             {#each infologos as logo}
-            <picture class="logos-partnerships">
-                <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=avif`} type="image/avif"/>
-                <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=webp`} type="image/webp"/>
-                <img src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name} loading="lazy"/>
-            </picture>
-            {/each}
-            {#each infologos as logo}
-            <picture class="logos-partnerships">
-                <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=avif`} type="image/avif"/>
-                <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=webp`} type="image/webp"/>
-                <img src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name} loading="lazy"/>
-            </picture>
+                <picture class="logos-partnerships">
+                    <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=avif`} type="image/avif"/>
+                    <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=webp`} type="image/webp"/>
+                    <img src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name} loading="lazy"/>
+                </picture>
             {/each}
         </div>
-    </div>
+    </section>
 
     <section class="homepage-speakers home-mobile-styling">
         <h2 class="header-speakers">{infodoctor.heading}</h2>
@@ -310,17 +296,39 @@
         }
     }
 
-    .logo-carrousel {
-        background-color: var(--primary-color-blue-light-1);
+    .homepage-carrousel {
+        display: grid;
+        position: relative;
+        align-content: center;
+        max-width: 73.5rem;
+        row-gap: 2rem;
         overflow: hidden;
-        margin-top: 2rem;
-        padding-block: 2rem;
+        padding-block: 1rem;
+
+        @media ( min-width: 56.25em ) {
+            padding-block: 2rem;
+        }
     }
 
-    .logos-slide {
+    .homepage-carrousel-content {
         display: flex;
-        width: max-content; 
-        gap: 5rem;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+
+        @supports (animation: scroll 18s linear infinite) {
+            width: max-content;
+            animation: scroll 18s linear infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            animation: none;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }    
+    }
+
+    .homepage-carrousel-content:hover {
+        animation-play-state: paused;
     }
 
     .logos-partnerships {
@@ -328,6 +336,7 @@
         align-items: center;
         object-fit: contain;
         flex-shrink: 0; 
+        margin-left: 2rem;
     }
 
     .homepage-speakers {
@@ -412,6 +421,11 @@
         border-radius: 0.6rem;
         margin-top: -1.8rem;
         margin-bottom: 0.5rem;
+    }
+
+    @keyframes scroll {
+        0% {  transform: translateX(0); }
+        100% { transform: translateX(-50%); }
     }
 
 </style>    
