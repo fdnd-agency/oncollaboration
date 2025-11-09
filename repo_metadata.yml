@@ -1,0 +1,5 @@
+title: "Oncollaboration"
+status: "in progress"
+main_link: "https://oncollaboration.agency.fdnd.nl/"
+dev_link: "https://oncollaboration.dev.fdnd.nl/"
+tech_stack: ["SvelteKit", "Directus"]
