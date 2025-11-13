@@ -6,6 +6,7 @@
     import search from "$lib/assets/search.svg";
     import watchlist from "$lib/assets/watchlist.svg";
     import arrow from "$lib/assets/arrow-right.svg";
+    import { enhance } from "$app/forms";
 </script>
 
 <!--  MARK: svelte:head-->
@@ -32,7 +33,7 @@
     </p>
 </section>
 
-<form action="" method="get">
+<form action="" method="get" use:enhance>
     <fieldset>
         <legend>Filters</legend>
         <p class="intro-filters">
