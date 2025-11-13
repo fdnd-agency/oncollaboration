@@ -55,6 +55,11 @@ Als er een tekstkopje aanwezig is dan een duidelijke naamgeving van het betreffe
 - Duidelijk communiceren waar je moeite mee hebt.
 - Bij de pull requests plaats je screenshots van het werk dat gereviewed moet worden EN als je een review plaatst wat je hebt gevonden met als bewijslast een screenshot.
 
+### 31 oktober 2025 Extra
+- Elke ma, wo en vr het projectboard checken om 14:00
+- Na de sprint review gelijk een nieuwe afspraak maken met de opdrachtgever
+- In het team melden waar je mee bezig bent, niet alleen als je hulp nodig hebt. 
+
 ## 2024/2025
 ## Version-before-redesign branch
 When working on this project we strongly advice you to open and run this branch. So you can see the previous design with all the functionalities made prior. This will give you a better understanding of how it was build and how to implement it for the redesign for Oncollaboration.
