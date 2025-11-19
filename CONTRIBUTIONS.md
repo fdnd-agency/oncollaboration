@@ -32,6 +32,9 @@ Wanneer je een feature wilt aanmaken maak je een branch van de dev en benoem je 
 We maken gebruik van het Atomic Design principe voor onze library indeling. Deze indeling bestaat uit:
 Atoms, Molecules, Organisms en de Pages zelf. Zo zullen we onze library van components duidelijk maken voor ons.
 
+## Typescale 
+Volgens de [typescale](https://typescale.com/) website vidnen wij dat minor third het beste bij ons past qua vormgeving. Dit geeft ons het beste weer.
+
 ## Teamcanvas
 <img width="570" height="406" alt="teamcanvas 2025-2026" src="https://github.com/user-attachments/assets/0f3228b8-3cfd-4da9-a74f-484871e7341b" />
 
