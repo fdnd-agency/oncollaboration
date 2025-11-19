@@ -1,1 +1,0 @@
-<button class="reset-filter" type="reset">Reset filter</button>
