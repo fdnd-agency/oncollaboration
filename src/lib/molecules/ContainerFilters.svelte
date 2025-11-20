@@ -1,19 +1,15 @@
-<div class="container-filters">
-    <!-- <div class="searchbar">
-        <input
-            type="search"
-            id="webinarSearch"
-            placeholder="Search..."
-        />
-        <button class="img-search"><img src={search} alt="" /></button>
-    </div> -->
-</div>
-
 <script>
       import { Select, Button} from '$lib/index.js'
 </script>
 
 <div class="container-filters">
+
+    <SearchInput
+    id="webinarSearch"
+    label="Type here a webinar you are looking for"
+    placeholder="Search..."
+    class="searchbar"
+/>
 
     <Select name="category" id="category" style="border: 1px solid var(--primary-color-blue-dark-2);">
         <option value="all">All</option>
