@@ -282,7 +282,6 @@
     .reset-filter {
         padding: 0.5em;
         border-radius: var(--border-radius-small);
-        border: none;
         background-color: var(--primary-color-aqua-dark-3);
         border: 1px solid var(--primary-color-aqua-dark-3);
         font-size: var(--font-size-small);
