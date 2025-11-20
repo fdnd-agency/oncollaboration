@@ -1,9 +1,8 @@
 
 //Atoms
-export { default as ButtonFilteren } from './atoms/button.svelte' 
-export { default as SelectAlfabetisch } from './atoms/select-alfabetisch.svelte' 
-export { default as SelectRecent } from './atoms/select-recent.svelte' 
-export { default as SelectCategory } from './atoms/select-category.svelte' 
+export { default as Button } from './atoms/button.svelte' 
+export { default as Selects } from './atoms/selects.svelte' 
+
 
 
 //Molecules
