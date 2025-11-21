@@ -8,3 +8,5 @@ export { default as SearchInput } from './atoms/Searchinput.svelte'
 
 //Molecules
 export { default as SearchBar } from './molecules/searchbar.svelte'
+
+

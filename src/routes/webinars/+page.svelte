@@ -3,7 +3,7 @@
     let { data } = $props();
     const webinars = data.webinars;
     const categories = data.categories;
-    import search from "$lib/assets/search.svg";
+    // import search from "$lib/assets/search.svg";
     import watchlist from "$lib/assets/watchlist.svg";
     import arrow from "$lib/assets/arrow-right.svg";
     import { enhance } from "$app/forms";
