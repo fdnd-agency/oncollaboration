@@ -1,5 +1,5 @@
 <script>
-    const {
+    let {
         title,
         children,
         type = 'button',

@@ -1,5 +1,5 @@
 <script>
-    const {
+    let {
         children,
         name = '',
         ...restProps
