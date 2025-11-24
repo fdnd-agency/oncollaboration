@@ -24,6 +24,36 @@
 </nav>
 
 <style>
+        .nav-header {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        background: var(--primary-color-blue-dark-2);
+        transition: right 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1em;
+
+        @media (min-width: 600px) {
+            padding: 1em 0em 0em 0em;
+            flex-direction: unset;
+        }
+
+        @media (min-width: 900px) {
+            position: static;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 2em;
+            padding: 0;
+            right: auto;
+        }
+    }
+
+    
     ul {
         list-style-type: none;
         display: flex;
