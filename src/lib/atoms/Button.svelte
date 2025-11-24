@@ -1,24 +1,31 @@
 <script>
-    let {
-        title,
-        children,
-        type = 'button',
-        ...restProps
-    } = $props()
+    let { title, children, type = "button", ...restProps } = $props();
 </script>
 
-<button type="{type}" {...restProps}>
+<button {type} {...restProps}>
     {@render children?.()}
 </button>
 
-<!--
-<Button type="submit" class="foo" style="font-weigh: bold;">
-    <img src="" alt="" srcset="">
-</Button>
+<style>
+    button {
+        font-size: var(--font-size-small);
+        font-family: var(--primary-font-family);
+        padding: 0.5em;
+    }
 
-<Button type="reset" class="bar" style="font-variant: italic;">
-    Klik mij!
-</Button>
--->
+    .filteren,
+    .reset-filter {
+        border-radius: var(--border-radius-small);
+        background-color: var(--primary-color-aqua-dark-3);
+        border: 1px solid var(--primary-color-aqua-dark-3);
+    }
 
-
+    .search-button {
+        position: absolute;
+        right: 0em;
+        top: 0em;
+        height: 100%;
+        background-color: var(--primary-color-aqua-dark-3);
+    }
+    
+</style>

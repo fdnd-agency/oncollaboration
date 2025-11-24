@@ -7,7 +7,6 @@ export { default as SearchInput } from './atoms/SearchInput.svelte'
 
 
 //Molecules
-export { default as SearchBar } from './molecules/Searchbar.svelte'
 export { default as ContainerFilters } from './molecules/ContainerFilters.svelte'
 
 
