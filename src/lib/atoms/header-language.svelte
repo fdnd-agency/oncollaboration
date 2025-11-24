@@ -1,6 +1,5 @@
 <script>
     import "$lib/global.css";
-    
 </script>
 
 <svelte:head>
