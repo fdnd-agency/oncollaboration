@@ -20,12 +20,29 @@
         border: 1px solid var(--primary-color-aqua-dark-3);
     }
 
+    @container (min-width: 700px) {
+    .filteren {
+        grid-column: 3;
+        grid-row: 2;
+    }
+}
+
+@container (min-width: 700px) {
+    .reset-filter {
+        grid-column: 4;
+        grid-row: 2;
+    }
+}
+
     .search-button {
         position: absolute;
         right: 0em;
         top: 0em;
         height: 100%;
+        width: 3em;
         background-color: var(--primary-color-aqua-dark-3);
+        display: flex;
+        place-content: center;
     }
-    
+
 </style>
