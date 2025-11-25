@@ -4,6 +4,7 @@
     import doctorsavif from "$lib/assets/doctors.avif";
     import doctorswebp from "$lib/assets/doctors.webp";
     import doctorspng from "$lib/assets/doctors.png";
+    import Link from "$lib/atoms/homepage-button.svelte";
 
     /** @type {{ data: import('./$types').PageData }} */
     let { data } = $props();
@@ -44,6 +45,7 @@
 
 
 <main class="overlay">
+    <Link href="/webinars">welkom</Link>
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
         <p class="info-about">{infoabout.text}</p>
