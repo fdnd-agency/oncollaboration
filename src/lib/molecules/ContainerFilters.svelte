@@ -17,7 +17,7 @@
         />
         <Button type="filteren" class="search-button" style="border-radius: 0px var(--border-radius-small) var(--border-radius-small)
         0px; border: 1px solid var(--primary-color-blue-dark-2); ">
-        <img class="img-search" src={search} alt="" />
+        <img class="img-search" src={search} alt="search" />
         </Button>
     </div>
 
