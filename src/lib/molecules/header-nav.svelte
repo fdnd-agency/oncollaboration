@@ -60,9 +60,7 @@
     .nav-header {
         display: block;
 
-        @media (min-width: 900px) {
-            display: none;
-        }
+
     }
 
     .nav-header:target {
