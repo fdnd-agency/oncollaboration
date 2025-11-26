@@ -1,7 +1,7 @@
 <script>
     import "$lib/global.css";
-    import open from "$lib/assets/hamburger-menu.svg";
-    import close from "$lib/assets/close-menu.svg";
+    import Hamburger from "$lib/atoms/header-hamburger.svelte";
+
 </script>
 
 <svelte:head>
@@ -15,12 +15,9 @@
     </style>
 </svelte:head>
 
-<a href="#menu" class="menu-toggle">
-    <img src={open} alt="open menu" height="50" width="50" />
-</a>
+<Hamburger></Hamburger>
 
 <nav class="nav-header" id="menu">
-    <a href="#" class="close"><img src={close} alt="close menu" height="50" width="50" /></a>
         <ul>
             <li><a class="webinars" href={`/webinars`}>Webinars</a></li>
             <li><a class="contourings" href={`/contourings`}>Contourings</a></li>
@@ -95,29 +92,6 @@
 
         @media (min-width: 500px) {
             margin: 0em 1em 0em 0em;
-        }
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-
-    .close {
-        display: none;
-        position: absolute;
-        top: 1em;
-        right: 1.2em;
-
-        @media (min-width: 900px) {
-            display: none;
-        }
-    }
-
-    .menu-toggle {
-        display: block;
-
-        @media (min-width: 900px) {
-            display: none;
         }
     }
 
