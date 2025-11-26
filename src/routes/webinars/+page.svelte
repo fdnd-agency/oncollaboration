@@ -59,14 +59,11 @@
                 {/each}
             </select>
 
-            <select name="recent" id="new-old">
-                <option value="new-old">New to Old</option>
-                <option value="old-new">Old to New</option>
-            </select>
-
-            <select name="alfabetisch" id="alfabetisch">
-                <option value="a-z">A-Z</option>
-                <option value="z-a">Z-A</option>
+            <select name="sort" id="new-old">
+                <option value="-date">New to Old</option>
+                <option value="date">Old to New</option>
+                <option value="title">A-Z</option>
+                <option value="-title">Z-A</option>
             </select>
 
             <button class="filteren" type="filteren">Filter webinars</button>
