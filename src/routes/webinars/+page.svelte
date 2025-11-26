@@ -128,7 +128,7 @@
 <style>
     /*INTRO*/
     .container-intro {
-        background-color: var(--primary-color-blue-light-2);
+        background-color: var(--primary-color-blue-light-1);
         padding: 2em 1em 5em 1em;
         display: flex;
         flex-direction: column;
@@ -336,7 +336,7 @@
     } 
 
     article {
-        background-color: var(--primary-color-blue-light-2);
+        background-color: var(--primary-color-blue-light-1);
         border: 1px solid var(--primary-color-blue-dark-2);
         border-radius: var(--border-radius-medium);
         display: flex;
@@ -413,7 +413,7 @@
     }
 
     .to-webinar-detail {
-        background-color: var(--primary-color-red-dark-2);
+        background-color: var(--primary-color-aqua-dark-2);
         color: var(--neutral-color-lightest);
         border-radius: var(--border-radius-small);
         font-weight: var(--secondary-font-weight);
