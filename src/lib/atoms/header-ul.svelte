@@ -25,16 +25,16 @@
         list-style-type: none;
         display: flex;
         gap: 1em;
-    
+
         @media (min-width: 900px) {
             gap: 2em;
         }
     }
-    
-    li{
+
+    li {
         font-weight: var(--secondary-font-weigh);
     }
-    
+
     a {
         color: var(--neutral-color-lightest);
     }
