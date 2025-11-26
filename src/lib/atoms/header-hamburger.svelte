@@ -20,10 +20,6 @@
 
 <style>
     .menu-toggle {
-        display: none;
-    }
-
-    .menu-toggle {
         display: block;
 
         @media (min-width: 900px) {

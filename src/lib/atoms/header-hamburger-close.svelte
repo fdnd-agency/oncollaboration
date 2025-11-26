@@ -19,7 +19,7 @@
 
 <style>
     .close {
-        display: none;
+        display: block;
         position: absolute;
         top: 1em;
         right: 1.2em;

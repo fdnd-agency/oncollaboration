@@ -1,4 +1,11 @@
 <script>
-    /** @type {{ data: import('./$types').PageData }} */
-    let { data } = $props();
+    import "$lib/global.css";
+    import Logos from "$lib/atoms/header-logos.svelte";
+    import Nav from  "$lib/molecules/header-nav.svelte";
 </script>
+
+
+<header>
+    <Logos></Logos>
+        <Nav></Nav>
+</header>

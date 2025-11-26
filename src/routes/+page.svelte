@@ -5,7 +5,7 @@
     import doctorswebp from "$lib/assets/doctors.webp";
     import doctorspng from "$lib/assets/doctors.png";
     import Link from "$lib/atoms/homepage-button.svelte";
-    import Nav from "$lib/molecules/header-nav.svelte";
+    import Header from "$lib/organisms/header.svelte";
 
     /** @type {{ data: import('./$types').PageData }} */
     let { data } = $props();
@@ -46,7 +46,7 @@
 
 
 <main class="overlay">
-    <Nav></Nav>
+    <Header></Header>
     <Link href="/webinars">welkom</Link>
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>

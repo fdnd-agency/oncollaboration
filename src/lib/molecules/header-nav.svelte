@@ -1,6 +1,9 @@
 <script>
     import "$lib/global.css";
     import Hamburger from "$lib/atoms/header-hamburger.svelte";
+    import HamburgerClose from "$lib/atoms/header-hamburger-close.svelte";
+    import HeaderUl from "$lib/atoms/header-ul.svelte";
+    import Language from "$lib/atoms/header-language.svelte";
 
 </script>
 
@@ -15,22 +18,14 @@
     </style>
 </svelte:head>
 
-<Hamburger></Hamburger>
+    <Hamburger></Hamburger>
 
-<nav class="nav-header" id="menu">
-        <ul>
-            <li><a class="webinars" href={`/webinars`}>Webinars</a></li>
-            <li><a class="contourings" href={`/contourings`}>Contourings</a></li>
-            <li><a class="speakers" href={`/speakers`}>Speakers</a></li>
-            <li><a class="profile" href={`/profile`}>Profile</a></li>
-        </ul>
+    <nav class="nav-header" id="menu">
+        <HamburgerClose></HamburgerClose>
+        <HeaderUl></HeaderUl>
+        <Language></Language>
+    </nav>
 
-        <select id="language" name="language">
-            <option value="language">Language</option>
-            <option value="English">English</option>
-            <option value="Indonesian">Indonesian</option>
-        </select>
-</nav> 
 
 <style>
     .nav-header {
@@ -62,56 +57,7 @@
         }
     }
 
-    ul {
-        list-style-type: none;
-        display: flex;
-        gap: 1em;
-
-        @media (min-width: 900px) {
-            gap: 2em;
-        }
-    }
-
-    li{
-        font-weight: var(--secondary-font-weigh);
-    }
-
-    a {
-        color: var(--neutral-color-lightest);
-    }
-
-    select {
-        background-color: var(--primary-color-aqua-dark-3);
-        border: var(--primary-color-aqua-dark-3);
-        border-radius: var(--border-radius-small);
-        font-size: var(--font-size-small);
-        font-family: var(--primary-font-family);
-        width: fit-content;
-        height: fit-content;
-        padding: 0.5em;
-
-        @media (min-width: 500px) {
-            margin: 0em 1em 0em 0em;
-        }
-    }
-
-    .nav-header ul {
-        gap: 1em;
-        padding: 1em;
-        flex-direction: column;
-
-        @media (min-width: 500px) {
-            flex-direction: unset;
-        }
-
-        @media (min-width: 900px) {
-            flex-direction: row;
-            gap: 2em;
-            padding: 0;
-        }
-    }
-
-    .nav-header .close {
+    .nav-header {
         display: block;
 
         @media (min-width: 900px) {
@@ -122,4 +68,5 @@
     .nav-header:target {
         right: 0;
     }
+
 </style>
