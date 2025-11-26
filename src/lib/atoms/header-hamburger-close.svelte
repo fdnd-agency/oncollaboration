@@ -19,7 +19,7 @@
 
 <style>
     .close {
-        display: block;
+        display: none;
         position: absolute;
         top: 1em;
         right: 1.2em;
@@ -28,4 +28,13 @@
             display: none;
         }
     }
+
+    .close {
+        display: block;
+
+        @media (min-width: 900px) {
+            display: none;
+        }
+    }
+
 </style>

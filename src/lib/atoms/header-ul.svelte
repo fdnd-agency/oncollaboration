@@ -21,11 +21,9 @@
 </ul>
 
 <style>  
-
     ul {
-        list-style-type: none;
         display: flex;
-        gap: 1em;
+        list-style-type: none;
         gap: 1em;
         padding: 1em;
         flex-direction: column;
@@ -40,6 +38,7 @@
             padding: 0;
         }
     }
+
 
     li {
         font-weight: var(--secondary-font-weigh);

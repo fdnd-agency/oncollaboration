@@ -20,7 +20,7 @@
     </style>
 </svelte:head>
 
-<header>
+<!-- <header>
     <div class="logo-hospitals">
         <a class="logo-avl" href={`/`}>
             <img
@@ -76,7 +76,7 @@
             <option value="Indonesian">Indonesian</option>
         </select>
     </nav>
-</header>
+</header> -->
 
 {@render children?.()}
 
