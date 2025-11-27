@@ -46,7 +46,9 @@
 
 
 <main class="overlay">
+
     <Header></Header>
+    
     <!-- <Link href="/webinars">welkom</Link> -->
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
