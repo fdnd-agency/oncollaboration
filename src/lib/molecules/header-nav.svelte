@@ -42,7 +42,7 @@
         padding: 1em;
 
         @media (min-width: 600px) {
-            padding: 1em 0em 0em 0em;
+            padding: 1em 0em 1em 0em;
             flex-direction: unset;
         }
 
@@ -57,11 +57,6 @@
         }
     }
 
-    .nav-header {
-        display: block;
-
-
-    }
 
     .nav-header:target {
         right: 0;
