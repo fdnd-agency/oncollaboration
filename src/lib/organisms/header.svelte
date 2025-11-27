@@ -7,7 +7,7 @@
 
 <header>
     <Logos></Logos>
-        <Nav></Nav>
+    <Nav></Nav>
 </header>
 
 <style>

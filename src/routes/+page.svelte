@@ -6,6 +6,7 @@
     import doctorspng from "$lib/assets/doctors.png";
     import Link from "$lib/atoms/homepage-button.svelte";
     import Header from "$lib/organisms/header.svelte";
+    import Article from "$lib/organisms/article.svelte";
 
     /** @type {{ data: import('./$types').PageData }} */
     let { data } = $props();
@@ -40,6 +41,17 @@
             box-sizing: border-box;
             overflow-x: hidden;
         }
+
+        .about {
+        margin-top: 2.25em;
+        margin-bottom: 2.5em;
+        
+        @media ( min-width: 56.25em ) {
+            grid-column: 1/2;
+            align-self: self-end;
+            margin: 0;
+        }
+    }
         
     </style>
 </svelte:head>
@@ -49,14 +61,10 @@
 
     <Header></Header>
 
-    <Link href="/webinars">welkom</Link>
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
         <p class="info-about">{infoabout.text}</p>
-        <a class="button-style link-homepage-about" href="/about">More about oncollaboration<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
-            </svg>
-        </a>
+        <Link class="about" href="/more">more about oncollaboration</Link>
          <picture class="img-about" >
             <source srcset="{ doctorsavif }" type="image/avif">
             <source srcset="{ doctorswebp }" type="image/webp">
@@ -65,22 +73,18 @@
     </article>
 
     <section class="homepage-webinars-contourings">
-        <article class="homepage-webinars home-mobile-styling">
-            <h2 class="header-webinars-contourings">{infowebinars.heading}</h2>
-            <p class="info-webinars-contourings">{infowebinars.text}</p>
-            <a class="button-style link-webinars-contourings" href="/webinars">More about webinars<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
-               </svg>
-            </a>
-        </article>
-        <article class="homepage-contourings home-mobile-styling">
-            <h2 class="header-webinars-contourings">{infocontourings.heading}</h2>
-            <p class="info-webinars-contourings">{infocontourings.text}</p>
-            <a class="button-style link-webinars-contourings" href="/contourings">More about contourings<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
-                </svg>
-            </a>
-        </article>
+        <Article
+            title={infowebinars.heading}
+            description={infowebinars.text} 
+            linkText="more about webinars"
+            href="/webinars"
+        />
+        <Article
+            title={infocontourings.heading}
+            description={infocontourings.text}
+            linkText="more about contourings"
+            href="/contourings"
+        />
     </section>
 
     <article class="homepage-partnerships home-mobile-styling">
@@ -185,29 +189,6 @@
         }
     }
 
-    .link-homepage-about {
-        margin-top: 2.25em;
-        margin-bottom: 2.5em;
-        
-        @media ( min-width: 56.25em ) {
-            grid-column: 1/2;
-            align-self: self-end;
-            margin: 0;
-        }
-    }
-
-    .button-style {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: var(--primary-color-blue-dark-2);
-        background-color: var(--primary-color-aqua-dark-3);
-        width: clamp(16.25em, 100%, 20.625em);
-        height: 2.5em;
-        text-decoration: none;
-        gap: 0.25em;
-        border-radius: 0.5em;
-    }
 
     .img-about {
         width: clamp(16.25em, 100%, 37.5em);
@@ -241,35 +222,6 @@
         @media ( min-width: 75em ) {
             gap: 18.7em;
         }
-    }
-
-    .homepage-webinars, .homepage-contourings  {
-        max-width: 37.5rem;
-        margin-bottom: 2.5rem;
-        padding-bottom: 2.5rem;
-        background-color: var(--primary-color-blue-light-1);
-
-        @media ( min-width: 37.5em ) {
-            border-radius: 1em;
-            margin-bottom: 0;
-        }
-
-        @media ( min-width: 56.25em ) {
-            padding-inline: 1.5em;
-        }
-
-        @media ( min-width: 65em ) {
-            padding-inline: 3em;
-            max-width: 27em;
-        }
-    }
-
-    .header-webinars-contourings, .info-webinars-contourings, .link-webinars-contourings, .header-partnerships {
-        margin-top: 2rem;
-    }
-
-    .info-webinars-contourings {
-        padding-right: 1rem;
     }
 
     .homepage-partnerships {
