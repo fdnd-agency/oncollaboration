@@ -63,3 +63,7 @@ Als er een tekstkopje aanwezig is dan een duidelijke naamgeving van het betreffe
 - Elke ma, wo en vr het projectboard checken om 14:00
 - Na de sprint review gelijk een nieuwe afspraak maken met de opdrachtgever
 - In het team melden waar je mee bezig bent, niet alleen als je hulp nodig hebt. 
+
+### 28 november 2025 Extra
+- scrum master role serieus te nemen
+- goede benaming commits volgens de code conventies bijvoorbeeld fix: bug layout opgelost
