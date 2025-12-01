@@ -43,15 +43,15 @@
         }
 
         .about {
-        margin-top: 2.25em;
-        margin-bottom: 2.5em;
+            margin-top: 2.25em;
+            margin-bottom: 2.5em;
         
-        @media ( min-width: 56.25em ) {
-            grid-column: 1/2;
-            align-self: self-end;
-            margin: 0;
+            @media ( min-width: 56.25em ) {
+                grid-column: 1/2;
+                align-self: self-end;
+                margin: 0;
+            }
         }
-    }
         
     </style>
 </svelte:head>
