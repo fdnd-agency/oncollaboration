@@ -1,12 +1,14 @@
 <script>
 
-    import { onMount } from 'svelte';
+    // import { onMount } from 'svelte';
     import doctorsavif from "$lib/assets/doctors.avif";
     import doctorswebp from "$lib/assets/doctors.webp";
     import doctorspng from "$lib/assets/doctors.png";
     import Link from "$lib/atoms/homepage-button.svelte";
     import Header from "$lib/organisms/header.svelte";
     import Article from "$lib/organisms/article.svelte";
+    import Carrousel from "$lib/molecules/carrousel.svelte";
+
 
     /** @type {{ data: import('./$types').PageData }} */
     let { data } = $props();
@@ -20,16 +22,16 @@
     const infodoctors = data.doctors;
 
 
-    onMount(() => {
-        for (const carousel of document.querySelectorAll('.homepage-carrousel-content')) {
-            const { animationName } = window.getComputedStyle(carousel);
+    // onMount(() => {
+    //     for (const carousel of document.querySelectorAll('.homepage-carrousel-content')) {
+    //         const { animationName } = window.getComputedStyle(carousel);
 
-        if (animationName && animationName !== 'none') {
+    //     if (animationName && animationName !== 'none') {
 
-        for (const logo of Array.from(carousel.children)) {
-            carousel.appendChild(logo.cloneNode(true));
-        }}}
-    });
+    //     for (const logo of Array.from(carousel.children)) {
+    //         carousel.appendChild(logo.cloneNode(true));
+    //     }}}
+    // });
 </script>
 
 <svelte:head> 
@@ -60,6 +62,7 @@
 <main class="overlay">
 
     <Header></Header>
+    <Carrousel data={data} />
 
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
