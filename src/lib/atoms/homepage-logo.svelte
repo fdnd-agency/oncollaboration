@@ -1,6 +1,6 @@
 <script>
-    let { data } = $props();
     import "$lib/global.css";
+    let { data } = $props();
     const infologos = data.logos;
 </script>
 
