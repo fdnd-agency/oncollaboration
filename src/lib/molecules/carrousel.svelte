@@ -17,6 +17,17 @@
     });
 </script>
 
+<svelte:head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--primary-font-family);
+        }
+    </style>
+</svelte:head>
+
 <div class="homepage-carrousel-content">
     <Logos data={data}></Logos>
 </div>

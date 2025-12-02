@@ -1,13 +1,12 @@
 <script>
 
-    // import { onMount } from 'svelte';
     import doctorsavif from "$lib/assets/doctors.avif";
     import doctorswebp from "$lib/assets/doctors.webp";
     import doctorspng from "$lib/assets/doctors.png";
     import Link from "$lib/atoms/homepage-button.svelte";
     import Header from "$lib/organisms/header.svelte";
     import Article from "$lib/organisms/article.svelte";
-    import Carrousel from "$lib/molecules/carrousel.svelte";
+    import Carrousel from "$lib/organisms/logo-carrousel.svelte";
 
 
     /** @type {{ data: import('./$types').PageData }} */
@@ -21,17 +20,6 @@
     const infodoctor = data.doctorinfo;
     const infodoctors = data.doctors;
 
-
-    // onMount(() => {
-    //     for (const carousel of document.querySelectorAll('.homepage-carrousel-content')) {
-    //         const { animationName } = window.getComputedStyle(carousel);
-
-    //     if (animationName && animationName !== 'none') {
-
-    //     for (const logo of Array.from(carousel.children)) {
-    //         carousel.appendChild(logo.cloneNode(true));
-    //     }}}
-    // });
 </script>
 
 <svelte:head> 
@@ -62,7 +50,6 @@
 <main class="overlay">
 
     <Header></Header>
-    <Carrousel data={data} />
 
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
@@ -95,17 +82,7 @@
         <p class="info-partnerships">{infopartnerships.text}</p>
     </article>
 
-    <section class="homepage-carrousel">
-        <div class="homepage-carrousel-content">
-            {#each infologos as logo}
-                <picture class="logos-partnerships">
-                    <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=avif`} type="image/avif"/>
-                    <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=webp`} type="image/webp"/>
-                    <img src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name} loading="lazy"/>
-                </picture>
-            {/each}
-        </div>
-    </section>
+    <Carrousel data={data} />
 
     <section class="homepage-speakers home-mobile-styling">
         <h2 class="header-speakers">{infodoctor.heading}</h2>
@@ -228,6 +205,7 @@
     }
 
     .homepage-partnerships {
+        padding-top: 2rem;
 
         @media ( min-width: 56.25em ) {
             width: 100%;
@@ -258,49 +236,6 @@
         @media ( min-width: 56.25em ) {
             max-width: 48rem;
         }
-    }
-
-    .homepage-carrousel {
-        display: grid;
-        position: relative;
-        align-content: center;
-        max-width: 73.5rem;
-        row-gap: 2rem;
-        overflow: hidden;
-        padding-block: 1rem;
-
-        @media ( min-width: 56.25em ) {
-            padding-block: 2rem;
-        }
-    }
-
-    .homepage-carrousel-content {
-        display: flex;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-
-        @supports (animation: scroll 18s linear infinite) {
-            width: max-content;
-            animation: scroll 18s linear infinite;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            animation: none;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-        }    
-    }
-
-    .homepage-carrousel-content:hover {
-        animation-play-state: paused;
-    }
-
-    .logos-partnerships {
-        display: flex;
-        align-items: center;
-        object-fit: contain;
-        flex-shrink: 0; 
-        margin-left: 2rem;
     }
 
     .homepage-speakers {
@@ -385,11 +320,6 @@
         border-radius: 0.6rem;
         margin-top: -1.8rem;
         margin-bottom: 0.5rem;
-    }
-
-    @keyframes scroll {
-        0% {  transform: translateX(0); }
-        100% { transform: translateX(-50%); }
     }
 
 </style>    
