@@ -32,7 +32,8 @@
             window.addEventListener("mousemove", (e) => {
             gsap.to(".cursor", {
                 x: e.clientX,
-                y: e.clientY
+                y: e.clientY,
+                stagger: 0.1
             })
         });
     });
@@ -55,11 +56,9 @@
 
 <main class="overlay">
 
-    <div class="cursor">
-        <div class="red"></div>
-        <div class="orange"></div>
-        <div class="yellow"></div>
-    </div>
+    <div class="cursor red"></div>
+    <div class="cursor orange"></div>
+    <div class="cursor yellow"></div>
 
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
@@ -140,31 +139,36 @@
     }
 
     .cursor {
-        position: absolute;
-        top: 1rem;
-        left: 0.5rem;
-        pointer-events: none;
-    }
+    position: fixed; /* 'fixed' works better for cursors than 'absolute' */
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    border-radius: 50%; /* Optional: makes them circles */
+    
+    /* Center the pivot point so the mouse is in the middle of the div */
+    transform: translate(-50%, -50%); 
+}
 
-    .red {
-        width: 3rem;
-        height: 3rem;
-        background-color: red;
-    }
+.red {
+    width: 3rem;
+    height: 3rem;
+    background-color: red;
+    z-index: 3;
+}
 
-    .orange {
-        width: 2rem;
-        height: 2rem;
-        background-color: orange;
-        margin-left: 2rem;
-    }
+.orange {
+    width: 2rem;
+    height: 2rem;
+    background-color: orange;
+    z-index: 2;
+}
 
-    .yellow {
-        width: 1rem;
-        height: 1rem;
-        background-color: yellow;
-        margin-left: 4rem;
-    }
+.yellow {
+    width: 1rem;
+    height: 1rem;
+    background-color: yellow;
+    z-index: 1;
+}
 
     h1, h2 {
         font-size: var(--font-size-extra-large);
