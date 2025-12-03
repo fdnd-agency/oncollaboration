@@ -1,9 +1,11 @@
 <script>
 
     import { onMount } from 'svelte';
+    import { gsap } from "gsap";
     import doctorsavif from "$lib/assets/doctors.avif";
     import doctorswebp from "$lib/assets/doctors.webp";
     import doctorspng from "$lib/assets/doctors.png";
+
 
     /** @type {{ data: import('./$types').PageData }} */
     let { data } = $props();
@@ -26,7 +28,15 @@
         for (const logo of Array.from(carousel.children)) {
             carousel.appendChild(logo.cloneNode(true));
         }}}
+
+            window.addEventListener("mousemove", (e) => {
+            gsap.to(".cursor", {
+                x: e.clientX,
+                y: e.clientY
+            })
+        });
     });
+
 </script>
 
 <svelte:head> 
@@ -44,6 +54,13 @@
 
 
 <main class="overlay">
+
+    <div class="cursor">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+    </div>
+
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
         <p class="info-about">{infoabout.text}</p>
@@ -120,6 +137,33 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+    }
+
+    .cursor {
+        position: absolute;
+        top: 1rem;
+        left: 0.5rem;
+        pointer-events: none;
+    }
+
+    .red {
+        width: 3rem;
+        height: 3rem;
+        background-color: red;
+    }
+
+    .orange {
+        width: 2rem;
+        height: 2rem;
+        background-color: orange;
+        margin-left: 2rem;
+    }
+
+    .yellow {
+        width: 1rem;
+        height: 1rem;
+        background-color: yellow;
+        margin-left: 4rem;
     }
 
     h1, h2 {
