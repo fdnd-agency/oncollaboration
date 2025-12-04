@@ -141,16 +141,32 @@
             yoyo: true,
             ease: "power1.inOut",
         });
+
+        gsap.to("#cottagecore", {
+            duration: 20,
+            ease: "none",
+            repeat: -1,
+            motionPath: {
+                path: "#motionPath",
+                align: "#motionPath",
+                autoRotate: false,   
+                alignOrigin: [0.5, 0.5]
+            }
+        });
     });
 </script>
 
-<svg
-    width="300"
-    height="300"
+<svg 
+    width="500"
+    height="500"
     viewBox="0 0 800 636"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
 >
+
+<path id="motionPath" d="M 0 300 L 800 300" fill="none" stroke="none" />
+
+<g id="cottagecore">
     <!-- MARK: TEACUP -->
     <g id="teacup">
         <path
@@ -582,6 +598,7 @@
             <stop offset="1" stop-color="#CDCBCB" />
         </linearGradient>
     </defs>
+</g>
 </svg>
 
 <style>
