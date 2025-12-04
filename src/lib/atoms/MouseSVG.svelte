@@ -149,7 +149,7 @@
             motionPath: {
                 path: "#motionPath",
                 align: "#motionPath",
-                autoRotate: false,   
+                autoRotate: true,   
                 alignOrigin: [0.5, 0.5]
             }
         });
