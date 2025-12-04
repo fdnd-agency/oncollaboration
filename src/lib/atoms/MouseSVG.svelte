@@ -34,7 +34,7 @@
                 ease: "power1.inOut",
             });
 
-        gsap.set("#flower-2", { transformOrigin: " top center" });
+        gsap.set("#flower-2", { transformOrigin: "top center" });
 
         const tlFlower2 = gsap.timeline({ repeat: -1, yoyo: true });
 
@@ -80,6 +80,38 @@
             .to("#leaf-right-2", {
                 duration: 1,
                 rotation: 10,
+                ease: "power1.inOut",
+            });
+
+        gsap.set("#leaf-left-1", { transformOrigin: "bottom top" });
+
+        const tlLeafLeft1 = gsap.timeline({ repeat: -1, yoyo: true });
+
+        tlLeafLeft1
+            .to("#leaf-left-1", {
+                duration: 1,
+                rotation: -5,
+                ease: "power1.inOut",
+            })
+            .to("#leaf-left-1", {
+                duration: 1,
+                rotation: 5,
+                ease: "power1.inOut",
+            });
+
+        gsap.set("#leaf-left-2", { transformOrigin: "bottom center" });
+
+        const tlLeafLeft2 = gsap.timeline({ repeat: -1, yoyo: true });
+
+        tlLeafLeft2
+            .to("#leaf-left-2", {
+                duration: 1,
+                rotation: 5,
+                ease: "power1.inOut",
+            })
+            .to("#leaf-left-2", {
+                duration: 1,
+                rotation: -5,
                 ease: "power1.inOut",
             });
     });
@@ -402,7 +434,7 @@
             stroke="black"
         />
         <path
-            id="leaf-left-1"
+            id="leaf-left-2"
             d="M587.41 265.516C585.826 265.516 584.265 265.14 582.855 264.419L565.767 255.676C564.279 254.915 563.006 253.793 562.064 252.413L550.574 235.589C549.865 234.55 549.357 233.386 549.079 232.158L543.747 208.606C543.583 207.882 543.5 207.141 543.5 206.398V191.016C543.5 187.885 546.643 185.73 549.563 186.859L563.859 192.382C564.945 192.802 565.949 193.407 566.826 194.172L583.427 208.645C584.465 209.549 585.304 210.658 585.893 211.902L594 229.016L599.5 244.016L604.25 258.74C604.416 259.254 604.5 259.791 604.5 260.332C604.5 263.195 602.179 265.516 599.316 265.516H587.41Z"
             fill="#98C396"
             stroke="black"
