@@ -41,7 +41,7 @@
         tlFlower2
             .to("#flower-2", {
                 duration: 1,
-                rotation: -10,
+                rotation: -5,
                 ease: "power1.inOut",
             })
             .to("#flower-2", {
@@ -51,76 +51,103 @@
             });
 
         //LEAVES
-        gsap.set("#leaf-right-1", { transformOrigin: "bottom center" });
+        gsap.to("#leaf-right-1", {
+            duration: 1,
+            rotation: 10,
+            transformOrigin: "bottom center",
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+        });
 
-        const tlLeafRight1 = gsap.timeline({ repeat: -1, yoyo: true });
+        gsap.to("#leaf-right-2", {
+            duration: 1,
+            rotation: -10,
+            transformOrigin: "bottom center",
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+        });
 
-        tlLeafRight1
-            .to("#leaf-right-1", {
-                duration: 1,
-                rotation: 15,
-                ease: "power1.inOut",
-            })
-            .to("#leaf-right-1", {
-                duration: 1,
-                rotation: -10,
-                ease: "power1.inOut",
-            });
+        gsap.to("#leaf-left-1", {
+            duration: 1,
+            rotation: -5,
+            transformOrigin: "bottom center",
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+        });
 
-        gsap.set("#leaf-right-2", { transformOrigin: "bottom center" });
+        gsap.to("#leaf-left-2", {
+            duration: 1,
+            rotation: 5,
+            transformOrigin: "bottom center",
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+        });
 
-        const tlLeafRight2 = gsap.timeline({ repeat: -1, yoyo: true });
+        // //WHISKERS
+        gsap.to("#whisker-up-1", {
+            duration: 1,
+            rotation: 2,
+            transformOrigin: "bottom top",
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+        });
 
-        tlLeafRight2
-            .to("#leaf-right-2", {
-                duration: 1,
-                rotation: -10,
-                ease: "power1.inOut",
-            })
-            .to("#leaf-right-2", {
-                duration: 1,
-                rotation: 10,
-                ease: "power1.inOut",
-            });
+        gsap.to("#whisker-up-2", {
+            duration: 1,
+            rotation: 2,
+            transformOrigin: "bottom top",
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+        });
 
-        gsap.set("#leaf-left-1", { transformOrigin: "bottom top" });
+        gsap.to("#whisker-down-1", {
+            duration: 1,
+            rotation: 2,
+            transformOrigin: "top center",
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+        });
 
-        const tlLeafLeft1 = gsap.timeline({ repeat: -1, yoyo: true });
+        gsap.to("#whisker-down-2", {
+            duration: 1,
+            rotation: 2,
+            transformOrigin: "top center",
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+        });
 
-        tlLeafLeft1
-            .to("#leaf-left-1", {
-                duration: 1,
-                rotation: -5,
-                ease: "power1.inOut",
-            })
-            .to("#leaf-left-1", {
-                duration: 1,
-                rotation: 5,
-                ease: "power1.inOut",
-            });
+        gsap.to("#whisker-down-3", {
+            duration: 1,
+            rotation: 2,
+            transformOrigin: "top center",
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+        });
 
-        gsap.set("#leaf-left-2", { transformOrigin: "bottom center" });
-
-        const tlLeafLeft2 = gsap.timeline({ repeat: -1, yoyo: true });
-
-        tlLeafLeft2
-            .to("#leaf-left-2", {
-                duration: 1,
-                rotation: 5,
-                ease: "power1.inOut",
-            })
-            .to("#leaf-left-2", {
-                duration: 1,
-                rotation: -5,
-                ease: "power1.inOut",
-            });
+        gsap.to("#whisker-down-4", {
+            duration: 1,
+            rotation: 2,
+            transformOrigin: "top center",
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+        });
     });
 </script>
 
 <svg
     width="300"
     height="300"
-    viewBox="0 0 775 636"
+    viewBox="0 0 800 636"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
 >
