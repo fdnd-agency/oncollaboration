@@ -157,8 +157,8 @@
 </script>
 
 <svg 
-    width="300"
-    height="300"
+    width="250"
+    height="250"
     viewBox="0 0 800 636"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -607,8 +607,13 @@
         padding: 1em;
 
         @media (min-width: 600px) {
-            width: 500;
-            height: 500;
+            width: 500px;
+            height: 500px;
+        }
+
+        @media (min-width: 780px) {
+            width: 600px;
+            height: 600px;
         }
     }
 </style>
