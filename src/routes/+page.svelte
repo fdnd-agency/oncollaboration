@@ -37,10 +37,10 @@
             gsap.to(".cursor", {
                 x: e.clientX,
                 y: e.clientY,
-                stagger: 0.01,
+                stagger: 0.01, // stagger zorgt ervoor dat de divjes na elkaar bewegen en niet allemaal tegelijk
                 duration: 0.2,  
                 xPercent: -50,
-                yPercent: -50, // c & y procenten hier geschreven in css doet het effect anders soms raar terwijl ik het wel correct heb geschreven
+                yPercent: -50, // x & y procenten hier geschreven in css doet het effect anders soms raar terwijl ik het wel correct heb geschreven
                 opacity: 1,  // css heeft opacity 0 dit met timer setout zorgt ervoor dat als de cursor niet beweegt het effect verdwijnt.
                 overwrite: 'auto'  
             });
