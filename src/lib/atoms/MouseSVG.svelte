@@ -90,7 +90,7 @@
         // //WHISKERS
         gsap.to("#whisker-up-1", {
             duration: 1,
-            rotation: 2,
+            rotation: 3,
             transformOrigin: "bottom top",
             repeat: -1,
             yoyo: true,
@@ -99,7 +99,7 @@
 
         gsap.to("#whisker-up-2", {
             duration: 1,
-            rotation: 2,
+            rotation: 3,
             transformOrigin: "bottom top",
             repeat: -1,
             yoyo: true,
@@ -108,7 +108,7 @@
 
         gsap.to("#whisker-down-1", {
             duration: 1,
-            rotation: 2,
+            rotation: 3,
             transformOrigin: "top center",
             repeat: -1,
             yoyo: true,
@@ -117,7 +117,7 @@
 
         gsap.to("#whisker-down-2", {
             duration: 1,
-            rotation: 2,
+            rotation: 3,
             transformOrigin: "top center",
             repeat: -1,
             yoyo: true,
@@ -126,7 +126,7 @@
 
         gsap.to("#whisker-down-3", {
             duration: 1,
-            rotation: 2,
+            rotation: 3,
             transformOrigin: "top center",
             repeat: -1,
             yoyo: true,
@@ -135,7 +135,7 @@
 
         gsap.to("#whisker-down-4", {
             duration: 1,
-            rotation: 2,
+            rotation: 3,
             transformOrigin: "top center",
             repeat: -1,
             yoyo: true,
