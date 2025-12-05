@@ -143,7 +143,7 @@
         });
 
         gsap.to("#cottagecore", {
-            duration: 20,
+            duration: 30,
             ease: "none",
             repeat: -1,
             motionPath: {
