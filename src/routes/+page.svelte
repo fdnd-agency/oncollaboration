@@ -29,12 +29,28 @@
             carousel.appendChild(logo.cloneNode(true));
         }}}
 
-            window.addEventListener("mousemove", (e) => {
+        let timer; 
+
+        window.addEventListener("mousemove", (e) => {
+            clearTimeout(timer);
+
             gsap.to(".cursor", {
                 x: e.clientX,
                 y: e.clientY,
-                stagger: 0.1
-            })
+                stagger: 0.01,
+                duration: 0.2,  
+                xPercent: -50,
+                yPercent: -50, // c & y procenten hier geschreven in css doet het effect anders soms raar terwijl ik het wel correct heb geschreven
+                opacity: 1,  // css heeft opacity 0 dit met timer setout zorgt ervoor dat als de cursor niet beweegt het effect verdwijnt.
+                overwrite: 'auto'  
+            });
+
+            timer = setTimeout(() => {
+                gsap.to(".cursor", {
+                    opacity: 0,
+                    duration: 0.5 
+                });
+            }, 500); 
         });
     });
 
@@ -56,9 +72,13 @@
 
 <main class="overlay">
 
-    <div class="cursor red"></div>
-    <div class="cursor orange"></div>
+    <div class="cursor red redone"></div>
+    <div class="cursor red redtwo"></div>
+    <div class="cursor red redthree"></div>
+    <div class="cursor orange orangeone"></div>
+    <div class="cursor orange orangetwo"></div>
     <div class="cursor yellow"></div>
+    <div class="cursor orange orangethree"></div>
 
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
@@ -139,36 +159,71 @@
     }
 
     .cursor {
-    position: fixed; /* 'fixed' works better for cursors than 'absolute' */
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    border-radius: 50%; /* Optional: makes them circles */
-    
-    /* Center the pivot point so the mouse is in the middle of the div */
-    transform: translate(-50%, -50%); 
-}
+        position: fixed; 
+        top: 3.5rem;
+        left: 3.5rem;
+        pointer-events: none;
+        border-radius: 50%; 
+        opacity: 0;
+    }
 
-.red {
-    width: 3rem;
-    height: 3rem;
-    background-color: red;
-    z-index: 3;
-}
+    .red {
+        filter: blur(0.5rem);
+    }
 
-.orange {
-    width: 2rem;
-    height: 2rem;
-    background-color: orange;
-    z-index: 2;
-}
+    .orange {
+        filter: blur(0.7rem);
+    }
 
-.yellow {
-    width: 1rem;
-    height: 1rem;
-    background-color: yellow;
-    z-index: 1;
-}
+    .redone {
+        background-color: red;
+        width: 5rem;
+        height: 5rem;
+        z-index: 10;
+    }
+
+    .redtwo {
+        background-color: rgb(255, 68, 0);
+        width: 4.7rem;
+        height: 4.7rem;
+        z-index: 9;
+    }
+
+    .redthree {
+        background-color: rgb(255, 85, 0);
+        width: 4.4rem;
+        height: 4.4rem;
+        z-index: 8;
+    }
+
+    .orangeone {
+        background-color: orange;
+        width: 4.1rem;
+        height: 4.1rem;
+        z-index: 7;
+    }
+
+    .orangetwo {
+        background-color: rgb(255, 183, 0);
+        width: 3.8rem;
+        height: 3.8rem;
+        z-index: 6;
+    }
+
+    .orangethree {
+        background-color: rgb(255, 196, 0);
+        width: 3.5rem;
+        height: 3.5rem;
+        z-index: 5;
+    }
+
+    .yellow {
+        background-color: yellow;
+        width: 3.2rem;
+        height: 3.2rem;
+        z-index: 4;
+        filter: blur(1rem);
+    }
 
     h1, h2 {
         font-size: var(--font-size-extra-large);
