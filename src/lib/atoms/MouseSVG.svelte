@@ -159,7 +159,7 @@
 <svg 
     width="250"
     height="250"
-    viewBox="0 0 800 636"
+    viewBox="0 0 1000 636"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
 >
