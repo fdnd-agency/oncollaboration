@@ -9,7 +9,7 @@
     let { children } = $props();
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
     <style>
         * {
             margin: 0;
@@ -76,11 +76,11 @@
             <option value="Indonesian">Indonesian</option>
         </select>
     </nav>
-</header>
+</header> -->
 
 {@render children?.()}
 
-<footer>
+<!-- <footer>
         <div class="footer-logos">
             <img
                 class="avl-desktop-logo"
@@ -435,4 +435,4 @@
         font-family: var(--primary-font-family);
         font-style: var(--secondary-font-weight);
     }
-</style>
+</style> -->
