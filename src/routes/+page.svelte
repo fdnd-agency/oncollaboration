@@ -1,6 +1,9 @@
 <script>
 
     import { onMount } from 'svelte';
+    import doctorsavif from "$lib/assets/doctors.avif";
+    import doctorswebp from "$lib/assets/doctors.webp";
+    import doctorspng from "$lib/assets/doctors.png";
 
     /** @type {{ data: import('./$types').PageData }} */
     let { data } = $props();
@@ -49,9 +52,9 @@
             </svg>
         </a>
          <picture class="img-about" >
-            <source srcset="src/lib/assets/doctors.avif" type="image/avif">
-            <source srcset="src/lib/assets/doctors.webp" type="image/webp">
-            <img class="img-about" src="src/lib/assets/doctors.png" alt="group of doctors" loading="lazy">
+            <source srcset="{ doctorsavif }" type="image/avif">
+            <source srcset="{ doctorswebp }" type="image/webp">
+            <img class="img-about" src="{ doctorspng }" alt="group of doctors" loading="lazy">
          </picture>
     </article>
 
