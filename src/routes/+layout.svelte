@@ -20,7 +20,7 @@
     </style>
 </svelte:head>
 
-<header>
+<!-- <header>
     <div class="logo-hospitals">
         <a class="logo-avl" href={`/`}>
             <img
@@ -76,11 +76,11 @@
             <option value="Indonesian">Indonesian</option>
         </select>
     </nav>
-</header>
+</header> -->
 
 {@render children?.()}
 
-<footer>
+<!-- <footer>
         <div class="footer-logos">
             <img
                 class="avl-desktop-logo"
@@ -139,7 +139,7 @@
         </select>
 
         <p>© 2025 Oncollaboration. All rights reserved.</p>
-</footer>
+</footer> -->
 
 <style>
     header {
