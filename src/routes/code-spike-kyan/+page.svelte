@@ -1,4 +1,5 @@
 <script>
+    import "$lib/global.css";
     import la1 from "$lib/assets/line-art-1.svg";
     import la2 from "$lib/assets/line-art-2.svg";
     import la3 from "$lib/assets/line-art-3.svg";
@@ -13,3 +14,27 @@
     import la12 from "$lib/assets/line-art-12.svg";
     import la13 from "$lib/assets/line-art-13.svg";
 </script>
+
+
+<img src="{la1}" alt="line art">
+<img src="{la2}" alt="line art">
+<img src="{la3}" alt="line art">
+<img src="{la4}" alt="line art">
+<img src="{la5}" alt="line art">
+<img src="{la6}" alt="line art">
+<img src="{la7}" alt="line art">
+<img src="{la8}" alt="line art">
+<img src="{la9}" alt="line art">
+<img src="{la10}" alt="line art">
+<img src="{la11}" alt="line art">
+<img src="{la12}" alt="line art">
+<img src="{la13}" alt="line art">
+
+
+
+
+
+
+
+
+
