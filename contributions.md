@@ -67,3 +67,7 @@ Als er een tekstkopje aanwezig is dan een duidelijke naamgeving van het betreffe
 ### 28 november 2025 Extra
 - scrum master role serieus te nemen
 - goede benaming commits volgens de code conventies bijvoorbeeld fix: bug layout opgelost
+
+
+### Wat te doen bij Post-Mortem?
+Bij Post Mortem is het project of iets anders binnen het project hard gefaald ( denk bijvoorbeeld aan een datalek ), mocht dit gebeuren dan identificeer je het probleem en ga je zo snel mogelijk oplossingsgericht kijken hoe je dit probleem kan oplossen en de volgende keer kan vermijden. 
