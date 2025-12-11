@@ -11,12 +11,15 @@
 
 <h1>Moon</h1>
 
+<div class="cirkel">
 <div class="moon" style="--moons: url({mooncyclusPNG})"></div>
+</div>
 
 <img class="fore-img" src={foregroundPNG} alt="">
 </div>
 
 <style>
+
 
 .image-stack {
   position: relative; 
@@ -59,17 +62,27 @@ h1{
   background-size: 1192px 200px; 
   z-index: 2;
   position: absolute;
-  top: 15%;  
+  top:45%;  
   left: 50%;
   opacity: 80%;
 
-  animation: moon 10s steps(8) infinite;
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-200px);
+  transform-origin: 50% 200px; 
+
+  animation: moon 25s steps(8) infinite, moonCirkel 10s linear infinite;
+
+
 }
 
 @keyframes moon {
   from { background-position-x: 0; }
   to   { background-position-x: -1192px; }
 }
+
+@keyframes moonCirkel {
+    0% { transform: translate(-50%, -50%) rotate(0deg) translateY(-100px); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) translateY(-100px); }
+  }
 
 </style>
 
