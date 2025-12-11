@@ -50,6 +50,7 @@
   position: absolute;
   top: 15%;  
   left: 50%;
+  opacity: 80%;
 
   animation: moon 10s steps(8) infinite;
 }
