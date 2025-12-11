@@ -9,6 +9,8 @@
 <div class="image-stack">
 <img class="bg-img" src={backgroundPNG} alt="">
 
+<h1>Moon</h1>
+
 <div class="moon" style="--moons: url({mooncyclusPNG})"></div>
 
 <img class="fore-img" src={foregroundPNG} alt="">
@@ -21,6 +23,15 @@
   width: 100%;   
   height: 100vh;  
   object-fit: cover;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  position: relative; 
+  color: white;
+  padding: .5em;
+  z-index: 4;
 }
 
 .bg-img{

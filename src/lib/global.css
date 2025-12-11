@@ -108,7 +108,7 @@
     
     /* there is no defined h1 */
     
-    --primary-font-family: "Ubuntu", "inter";
+    --primary-font-family: 'Imperial Script', cursive;
     --primary-font-weight: bold;
     --secondary-font-weight:normal;
     --primary-line-height: 1.4;
@@ -121,13 +121,13 @@
     --border-radius-medium:16px;
     
     h1, h2, h3, h4, h5, h6, p, a, strong, address {
-        font-family: "Ubuntu", "inter";
+        font-family: 'Imperial Script', cursive;
         line-height: 1.4;
     }
 
     h1, h2{
         font-size: 2.5em;
-        font-weight: bold;
+        /* font-weight: bold; */
     }
 
     h3 {
