@@ -23,14 +23,13 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            overflow-x: hidden;
         }
         
     </style>
 </svelte:head>
 
 
-<section>
+<article class="span-wrapper">
     <span>D</span><span>i</span><span>s</span><span>a</span><span>s</span><span>t</span><span>r</span><span>o</span><span>u</span><span>s</span>
     <span class="space"></span>
     <span>l</span><span>i</span><span>n</span><span>e</span><span>-</span><span>a</span><span>r</span><span>t</span>
@@ -40,9 +39,9 @@
     <span>d</span><span>r</span><span>i</span><span>v</span><span>e</span><span>n</span>
     <span class="space"></span>
     <span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span>
-</section>
+</article>
 
-<section>
+<section class="img-wrapper">
     <img src="{la1}" alt="line art">
     <img src="{la2}" alt="line art">
     <img src="{la3}" alt="line art">
@@ -60,40 +59,34 @@
 
 <style>
 
-    /* h1 {
-        font-size: 4rem;
-        font-weight: 700;
-        text-align: center;
-        margin-top: 10rem;
-        margin-bottom: 30rem;
-    } */
-
     span {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 700;
         font-size: 3rem;
+        height: min-content;
     }
 
     .space {
         margin-left: 0.8rem;
     }
 
-    section:nth-of-type(1) {
+    .span-wrapper {
         display: flex;
-        justify-content: center;    
+        justify-content: center;  
+        margin-block: 35vh;
+        height: fit-content;
     }
     
-    section:nth-of-type(2) {
+    .img-wrapper {
         display: grid;
         grid-template-columns: repeat(6, 250px);
-        grid-template-rows: repeat(14, 1fr);
-        height: 300vh;
+        grid-template-rows: repeat(14, 350px);
+        padding-top: 35vh;
         width: 100vw;
         padding-inline: 2rem;
     }
 
     img {
-        animation-timeline: view();
         width: calc(sibling-index() * 50px);
         height: calc(sibling-index() * 50px);
         min-height: 200px;
@@ -102,11 +95,17 @@
     }
 
     img:nth-of-type(1) {
-        grid-column: 3/4;
+        animation: SvgOne 0.5s ease-in both;
+        animation-timeline: view();
+        animation-range: entry cover 40%;
+        grid-column: 2/3;
         grid-row: 1/2;
     }
 
     img:nth-of-type(2) {
+        animation: SvgTwo 0.5s ease-in both;
+        animation-timeline: view();
+        animation-range: entry cover 40%;
         grid-column: 5/7;
         grid-row: 2/3;
     }
@@ -173,6 +172,32 @@
 
         to {
             rotate: 1turn;
+        }
+    }
+
+    @keyframes SvgOne {
+        from {
+            transform: translateX(200%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0) rotateY(180deg);
+            opacity: 1;
+        }
+    }
+
+    @keyframes SvgTwo {
+        from {
+            scale: 0.5;
+            transform: translateX(-200%);
+            filter: blur(1rem);
+        }
+
+        to {
+            scale: 1;
+            transform: translateX(-0%);
+            filter: blur(0);
         }
     }
 </style>
