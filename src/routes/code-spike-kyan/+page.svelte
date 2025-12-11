@@ -15,6 +15,8 @@
     import la13 from "$lib/assets/line-art-13.svg";
 </script>
 
+<h1>Disastrous line-art scroll driven animation</h1>
+
 <section>
     <img src="{la1}" alt="line art">
     <img src="{la2}" alt="line art">
@@ -33,8 +35,28 @@
 
 <style>
 
+    h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 10rem;
+        margin-bottom: 30rem;
+    }
+
     section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(20, 1fr);
         height: 600vh;
+    }
+
+    img {
+        animation-timeline: view();
+    }
+
+    img:nth-of-type(1) {
+        grid-column: 1/2;
+        grid-row: 2/3;
     }
 </style>
 
