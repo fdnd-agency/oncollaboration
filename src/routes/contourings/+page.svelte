@@ -12,7 +12,6 @@
 <div class="moon" style="--moons: url({mooncyclusPNG})"></div>
 
 <img class="fore-img" src={foregroundPNG} alt="">
-
 </div>
 
 <style>
@@ -49,8 +48,8 @@
   background-size: 1192px 200px; 
   z-index: 2;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 15%;  
+  left: 50%;
 
   animation: moon 10s steps(8) infinite;
 }
