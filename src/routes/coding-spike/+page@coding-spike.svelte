@@ -120,7 +120,7 @@
         width: 99vw;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url('src/lib/assets/kirby-krackle-background.svg');
+        background-image: url('../lib/assets/kirby-krackle-background.svg');
         
         display: flex;
         flex-direction: column;
@@ -182,13 +182,14 @@
         display: flex;
         justify-content: space-around;
         
-        background-image: url('src/lib/assets/Vector 9.svg');
+        background-image: url('../lib/assets/Vector 9.svg');
         background-repeat: no-repeat;
         height: 120vh;
         width: 99vw;
         padding: 2em 0;
 
-        position: sticky;
+        /* position: sticky;
+        scroll-snap-type: x mandatory; */
     }
 
     #panel-1, #panel-2, #panel-3{
