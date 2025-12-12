@@ -35,28 +35,36 @@
         </article>
     </section>
     <!-- hier is de eerste page -->
-        <section id="page-1">
-            <article id="panel-1">
-                <p>After freeing myself of my shackles that bound me to earth
-                I have now roamed the cosmos for seven earth months.
-                </p>
-                <img src="src/lib/assets/surfer-facing-right.png" alt=""/>
-            </article>
-            <article id="panel-2">
-                <p>Though after such time of solitude one tends to yearn
-                    for the warmth of companionship. My time on earth left
-                    me with ties not so easily broken like the bonds that held me.
-                </p>
-                <img src="" alt=""/>
-            </article>
-            <article id="panel-3">
-                <p>Though I had the blessing of my new friends: The Fantastic Four
-                    to roam the cosmos freely. I cannot help but feel a duty to return.
-                    A duty to protect those I care for. 
-                </p>
-                <img src="" alt=""/>
-            </article>
-        </section>
+    <section id="page-1">
+        <article id="panel-1">
+            <p>After freeing myself of my shackles that bound me to earth
+            I have now roamed the cosmos for seven earth months.
+            </p>
+            <img src="src/lib/assets/surfer-facing-right.png" alt=""/>
+        </article>
+        <article id="panel-2">
+            <p>Though after such time of solitude one tends to yearn
+                for the warmth of companionship. My time on earth left
+                me with ties not so easily broken like the bonds that held me.
+            </p>
+            <img src="" alt=""/>
+        </article>
+        <article id="panel-3">
+            <p>Though I had the blessing of my new friends: The Fantastic Four
+                to roam the cosmos freely. I cannot help but feel a duty to return.
+                A duty to protect those I care for. 
+            </p>
+            <img src="" alt=""/>
+        </article>
+    </section>
+    <!-- hier is pagina twee -->
+    <section id="page-2">
+        <div class="triangle tri-1"></div>
+        <div class="triangle tri-2"></div>
+        <div class="circle"></div>
+        <div class="triangle tri-3"></div>
+        <div class="triangle tri-4"></div>
+    </section>
 </main>
 <style>
     @font-face {
@@ -87,12 +95,23 @@
 
     @keyframes move {
         from {
-            /* Move horizontally so that right edge is aligned against the viewport */
+            /* begin aan de linkerkant van het scherm */
             transform: translateX(-20vw);
         }
         to {
-            /* Move horizontally so that left edge is aligned against the viewport */
-            transform: translateX(120vw);
+            /* ga naar de rechterkant van het scherm */
+            transform: translateX(100vw);
+            display: none;
+        }
+    }
+
+    @keyframes reveal {
+        0% {
+            transform: rotateY(90deg);
+        }
+
+        100% {
+            transform: rotateY(0deg);
         }
     }
 
@@ -108,7 +127,7 @@
         justify-content: center;
         align-items: center;
 
-        /* Is de shorthand voor scroll-timeline name en de scroll-timeline-axis.
+        /* Is de shorthand voor scroll-timeline-name en de scroll-timeline-axis.
         page-scroll is dus een benaming van deze specifieke timeline en 
         de axis waarop het scrollt is een block. */
 	    scroll-timeline: --page-scroll block;
@@ -190,6 +209,8 @@
             box-shadow: 0.4em 0.4em red;
             padding: 0.4em;
 
+            animation: reveal ease-in-out forwards;
+            animation-timeline: view(y);
             
         }
     }
@@ -200,6 +221,54 @@
         margin-top: 1em;
 
         animation: move linear forwards;
+        /* inplaats van scroll() gebruik ik hier view() zodat de animatie afspeelt op basis van de viewport. */
         animation-timeline: view(y);
+    }
+
+    #page-2 {
+        height: 100vh;
+        width: 99vw;
+        background-color: black;
+        position: sticky;
+        overflow: hidden;
+    }
+
+    .triangle {
+        height: 10em;
+        width: 10em;
+        border-radius: 25%;
+        position: absolute;
+    }
+
+    .circle {
+        height: 10em;
+        width: 10em;
+        border-radius: 50%;
+        background-color: var(--comic-white);
+        position: absolute;
+        top: 40vh;
+        left: 45vw;
+    }
+
+    .tri-1, .tri-2, .tri-3, .tri-4 {
+        background-color: var(--comic-white);
+        corner-shape: bevel;
+    }
+
+    .tri-1 {
+        top: 10vh;
+        left: 10vw;
+    }
+    .tri-2 {
+        top: 70vh;
+        right: 10vw;
+    }
+    .tri-3 {
+        bottom: 10vh;
+        left: 10vw;
+    }
+    .tri-4 {
+        top: 10vh;
+        right: 10vw;
     }
 </style>
