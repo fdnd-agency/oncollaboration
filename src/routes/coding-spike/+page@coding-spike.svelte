@@ -135,6 +135,7 @@
             
             color: var(--comic-yellow);
             text-shadow: -0.08em 0.1em var(--comic-red);
+            -webkit-text-stroke: 1px black;
         }
         
         #subtext {
