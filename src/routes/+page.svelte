@@ -20,6 +20,24 @@
     const infodoctor = data.doctorinfo;
     const infodoctors = data.doctors;
 
+    import gsap from "gsap";
+    import { onMount } from "svelte";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(MotionPathPlugin, DrawSVGPlugin);
+}
+    onMount(() => {
+        const tl = gsap.timeline();
+
+    tl.from('.heartbeat', {
+        duration: 3,
+        drawSVG: 0,
+ease: "power2.inOut",
+    });
+});
+
 </script>
 
 <svelte:head> 
@@ -46,7 +64,15 @@
     </style>
 </svelte:head>
 
-
+<div class="splash fade">
+    <div class="ecg-wrapper">
+        <svg viewBox="0 0 300 100" class="ecg">
+          <polyline class="heartbeat"
+            points="0,50 40,50 55,50 65,20 75,80 85,50 140,50 160,50 170,30 180,70 190,50 300,50"
+          />
+        </svg>
+      </div>
+    Animatie. In GSAP on complete dan zet een class op deze div </div>
 <main class="overlay">
 
     <Header></Header>
@@ -105,6 +131,39 @@
 </main>
 
 <style>
+    .splash {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background: white;
+        pointer-events: none;
+    }
+
+    .splash.fade {
+        animation: fadeOut 0.3s forwards;
+    }
+
+    .ecg-wrapper {
+  width: 300px;
+  margin: 40px auto;
+}
+
+
+.ecg polyline {
+  fill: none;
+  stroke: #c62828;
+  stroke-width: 3;
+}
+
+ .heartbeat {
+        fill: none;
+        stroke-width: 2;
+        stroke: red;
+        
+    }
 
     .overlay {
         display: flex;
