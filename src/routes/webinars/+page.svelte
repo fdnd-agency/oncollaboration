@@ -180,8 +180,6 @@
 
     .container-thumbnail {
         position: relative;
-        display: flex;
-        justify-content: center;
         align-items: center;
     }
 
@@ -224,11 +222,10 @@
         border-radius: var(--border-radius-small);
         font-size: var(--font-size-small);
         width: fit-content;
-        position: absolute;
-        top: 8.5em;
         display: flex;
         align-items: center;
         gap: .5em;
+        margin: 1em 0em 0em 1em;
     }
 
     h3 {
