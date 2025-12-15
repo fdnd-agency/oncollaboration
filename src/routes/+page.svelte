@@ -1,9 +1,13 @@
 <script>
 
-    import { onMount } from 'svelte';
     import doctorsavif from "$lib/assets/doctors.avif";
     import doctorswebp from "$lib/assets/doctors.webp";
     import doctorspng from "$lib/assets/doctors.png";
+    import Link from "$lib/atoms/homepage-button.svelte";
+    import Header from "$lib/organisms/header.svelte";
+    import Article from "$lib/organisms/article.svelte";
+    import Carrousel from "$lib/organisms/logo-carrousel.svelte";
+
 
     /** @type {{ data: import('./$types').PageData }} */
     let { data } = $props();
@@ -16,17 +20,6 @@
     const infodoctor = data.doctorinfo;
     const infodoctors = data.doctors;
 
-
-    onMount(() => {
-        for (const carousel of document.querySelectorAll('.homepage-carrousel-content')) {
-            const { animationName } = window.getComputedStyle(carousel);
-
-        if (animationName && animationName !== 'none') {
-
-        for (const logo of Array.from(carousel.children)) {
-            carousel.appendChild(logo.cloneNode(true));
-        }}}
-    });
 </script>
 
 <svelte:head> 
@@ -38,19 +31,30 @@
             box-sizing: border-box;
             overflow-x: hidden;
         }
+
+        .about {
+            margin-top: 2.25em;
+            margin-bottom: 2.5em;
+        
+            @media ( min-width: 56.25em ) {
+                grid-column: 1/2;
+                align-self: self-end;
+                margin: 0;
+            }
+        }
         
     </style>
 </svelte:head>
 
 
 <main class="overlay">
+
+    <Header></Header>
+
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
         <p class="info-about">{infoabout.text}</p>
-        <a class="button-style link-homepage-about" href="/about">More about oncollaboration<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
-            </svg>
-        </a>
+        <Link class="about" href="/more">more about oncollaboration</Link>
          <picture class="img-about" >
             <source srcset="{ doctorsavif }" type="image/avif">
             <source srcset="{ doctorswebp }" type="image/webp">
@@ -59,22 +63,18 @@
     </article>
 
     <section class="homepage-webinars-contourings">
-        <article class="homepage-webinars home-mobile-styling">
-            <h2 class="header-webinars-contourings">{infowebinars.heading}</h2>
-            <p class="info-webinars-contourings">{infowebinars.text}</p>
-            <a class="button-style link-webinars-contourings" href="/webinars">More about webinars<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
-               </svg>
-            </a>
-        </article>
-        <article class="homepage-contourings home-mobile-styling">
-            <h2 class="header-webinars-contourings">{infocontourings.heading}</h2>
-            <p class="info-webinars-contourings">{infocontourings.text}</p>
-            <a class="button-style link-webinars-contourings" href="/contourings">More about contourings<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="#00193F"/>
-                </svg>
-            </a>
-        </article>
+        <Article
+            title={infowebinars.heading}
+            description={infowebinars.text} 
+            linkText="more about webinars"
+            href="/webinars"
+        />
+        <Article
+            title={infocontourings.heading}
+            description={infocontourings.text}
+            linkText="more about contourings"
+            href="/contourings"
+        />
     </section>
 
     <article class="homepage-partnerships home-mobile-styling">
@@ -82,17 +82,7 @@
         <p class="info-partnerships">{infopartnerships.text}</p>
     </article>
 
-    <section class="homepage-carrousel">
-        <div class="homepage-carrousel-content">
-            {#each infologos as logo}
-                <picture class="logos-partnerships">
-                    <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=avif`} type="image/avif"/>
-                    <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=webp`} type="image/webp"/>
-                    <img src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name} loading="lazy"/>
-                </picture>
-            {/each}
-        </div>
-    </section>
+    <Carrousel data={data} />
 
     <section class="homepage-speakers home-mobile-styling">
         <h2 class="header-speakers">{infodoctor.heading}</h2>
@@ -179,29 +169,6 @@
         }
     }
 
-    .link-homepage-about {
-        margin-top: 2.25em;
-        margin-bottom: 2.5em;
-        
-        @media ( min-width: 56.25em ) {
-            grid-column: 1/2;
-            align-self: self-end;
-            margin: 0;
-        }
-    }
-
-    .button-style {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: var(--primary-color-blue-dark-2);
-        background-color: var(--primary-color-aqua-dark-3);
-        width: clamp(16.25em, 100%, 20.625em);
-        height: 2.5em;
-        text-decoration: none;
-        gap: 0.25em;
-        border-radius: 0.5em;
-    }
 
     .img-about {
         width: clamp(16.25em, 100%, 37.5em);
@@ -237,36 +204,8 @@
         }
     }
 
-    .homepage-webinars, .homepage-contourings  {
-        max-width: 37.5rem;
-        margin-bottom: 2.5rem;
-        padding-bottom: 2.5rem;
-        background-color: var(--primary-color-blue-light-1);
-
-        @media ( min-width: 37.5em ) {
-            border-radius: 1em;
-            margin-bottom: 0;
-        }
-
-        @media ( min-width: 56.25em ) {
-            padding-inline: 1.5em;
-        }
-
-        @media ( min-width: 65em ) {
-            padding-inline: 3em;
-            max-width: 27em;
-        }
-    }
-
-    .header-webinars-contourings, .info-webinars-contourings, .link-webinars-contourings, .header-partnerships {
-        margin-top: 2rem;
-    }
-
-    .info-webinars-contourings {
-        padding-right: 1rem;
-    }
-
     .homepage-partnerships {
+        padding-top: 2rem;
 
         @media ( min-width: 56.25em ) {
             width: 100%;
@@ -297,49 +236,6 @@
         @media ( min-width: 56.25em ) {
             max-width: 48rem;
         }
-    }
-
-    .homepage-carrousel {
-        display: grid;
-        position: relative;
-        align-content: center;
-        max-width: 73.5rem;
-        row-gap: 2rem;
-        overflow: hidden;
-        padding-block: 1rem;
-
-        @media ( min-width: 56.25em ) {
-            padding-block: 2rem;
-        }
-    }
-
-    .homepage-carrousel-content {
-        display: flex;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-
-        @supports (animation: scroll 18s linear infinite) {
-            width: max-content;
-            animation: scroll 18s linear infinite;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            animation: none;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-        }    
-    }
-
-    .homepage-carrousel-content:hover {
-        animation-play-state: paused;
-    }
-
-    .logos-partnerships {
-        display: flex;
-        align-items: center;
-        object-fit: contain;
-        flex-shrink: 0; 
-        margin-left: 2rem;
     }
 
     .homepage-speakers {
@@ -424,11 +320,6 @@
         border-radius: 0.6rem;
         margin-top: -1.8rem;
         margin-bottom: 0.5rem;
-    }
-
-    @keyframes scroll {
-        0% {  transform: translateX(0); }
-        100% { transform: translateX(-50%); }
     }
 
 </style>    
