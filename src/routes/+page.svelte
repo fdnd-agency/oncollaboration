@@ -1,5 +1,4 @@
 <script>
-
     import doctorsavif from "$lib/assets/doctors.avif";
     import doctorswebp from "$lib/assets/doctors.webp";
     import doctorspng from "$lib/assets/doctors.png";
@@ -7,7 +6,6 @@
     import Header from "$lib/organisms/header.svelte";
     import Article from "$lib/organisms/article.svelte";
     import Carrousel from "$lib/organisms/logo-carrousel.svelte";
-
 
     /** @type {{ data: import('./$types').PageData }} */
     let { data } = $props();
@@ -22,27 +20,32 @@
 
     import gsap from "gsap";
     import { onMount } from "svelte";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+    import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+    import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(MotionPathPlugin, DrawSVGPlugin);
-}
+    if (typeof window !== "undefined") {
+        gsap.registerPlugin(MotionPathPlugin, DrawSVGPlugin);
+    }
     onMount(() => {
-        const tl = gsap.timeline();
+    const tl = gsap.timeline();
 
-    tl.from('.heartbeat', {
+    tl.from(".heartbeat", {
         duration: 3,
         drawSVG: 0,
-ease: "power2.inOut",
+        ease: "power2.inOut",
+    })
+    .to(".splash", {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: () => {
+            document.querySelector(".splash")?.remove();
+        }
     });
 });
-
 </script>
 
-<svelte:head> 
+<svelte:head>
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -53,45 +56,50 @@ ease: "power2.inOut",
         .about {
             margin-top: 2.25em;
             margin-bottom: 2.5em;
-        
-            @media ( min-width: 56.25em ) {
+
+            @media (min-width: 56.25em) {
                 grid-column: 1/2;
                 align-self: self-end;
                 margin: 0;
             }
         }
-        
     </style>
 </svelte:head>
 
-<div class="splash fade">
+<div class="splash">
     <div class="ecg-wrapper">
         <svg viewBox="0 0 300 100" class="ecg">
-          <polyline class="heartbeat"
-            points="0,50 40,50 55,50 65,20 75,80 85,50 140,50 160,50 170,30 180,70 190,50 300,50"
-          />
+            <polyline
+                class="heartbeat"
+                points="0,50 40,50 55,50 65,20 75,80 85,50 140,50 160,50 170,30 180,70 190,50 300,50"
+            />
         </svg>
-      </div>
-    Animatie. In GSAP on complete dan zet een class op deze div </div>
-<main class="overlay">
+    </div>
+</div>
 
+<main class="overlay">
     <Header></Header>
 
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
         <p class="info-about">{infoabout.text}</p>
         <Link class="about" href="/more">more about oncollaboration</Link>
-         <picture class="img-about" >
-            <source srcset="{ doctorsavif }" type="image/avif">
-            <source srcset="{ doctorswebp }" type="image/webp">
-            <img class="img-about" src="{ doctorspng }" alt="group of doctors" loading="lazy">
-         </picture>
+        <picture class="img-about">
+            <source srcset={doctorsavif} type="image/avif" />
+            <source srcset={doctorswebp} type="image/webp" />
+            <img
+                class="img-about"
+                src={doctorspng}
+                alt="group of doctors"
+                loading="lazy"
+            />
+        </picture>
     </article>
 
     <section class="homepage-webinars-contourings">
         <Article
             title={infowebinars.heading}
-            description={infowebinars.text} 
+            description={infowebinars.text}
             linkText="more about webinars"
             href="/webinars"
         />
@@ -108,21 +116,32 @@ ease: "power2.inOut",
         <p class="info-partnerships">{infopartnerships.text}</p>
     </article>
 
-    <Carrousel data={data} />
+    <Carrousel {data} />
 
     <section class="homepage-speakers home-mobile-styling">
         <h2 class="header-speakers">{infodoctor.heading}</h2>
         <p class="info-speakers">{infodoctor.text}</p>
 
         <section class="homepage-doctors-outlay">
-            {#each infodoctors as doctor} 
+            {#each infodoctors as doctor}
                 <article class="homepage-all-doctors">
                     <picture class="photo-doctor">
-                        <source srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=avif`} type="image/avif"/>
-                        <source srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=webp`} type="image/webp"/>
-                        <img class="photo-doctor" src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`} alt="{doctor.name}" loading="lazy"/>
-                      </picture>                   
-                      <h3 class="name-doctor">{doctor.name}</h3>
+                        <source
+                            srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=avif`}
+                            type="image/avif"
+                        />
+                        <source
+                            srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=webp`}
+                            type="image/webp"
+                        />
+                        <img
+                            class="photo-doctor"
+                            src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`}
+                            alt={doctor.name}
+                            loading="lazy"
+                        />
+                    </picture>
+                    <h3 class="name-doctor">{doctor.name}</h3>
                     <p class="function-doctor">{doctor.role}</p>
                 </article>
             {/each}
@@ -140,29 +159,25 @@ ease: "power2.inOut",
         z-index: 9999;
         background: white;
         pointer-events: none;
-    }
-
-    .splash.fade {
-        animation: fadeOut 0.3s forwards;
+        display: flex;
+        align-items: center;
     }
 
     .ecg-wrapper {
-  width: 300px;
-  margin: 40px auto;
-}
+        width: 400px;
+        margin: 40px auto;
+    }
 
+    .ecg polyline {
+        fill: none;
+        stroke: #c62828;
+        stroke-width: 3;
+    }
 
-.ecg polyline {
-  fill: none;
-  stroke: #c62828;
-  stroke-width: 3;
-}
-
- .heartbeat {
+    .heartbeat {
         fill: none;
         stroke-width: 2;
-        stroke: red;
-        
+        stroke: #c62828;
     }
 
     .overlay {
@@ -171,7 +186,8 @@ ease: "power2.inOut",
         flex-direction: column;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         font-size: var(--font-size-extra-large);
     }
 
@@ -187,7 +203,7 @@ ease: "power2.inOut",
         padding-top: 4em;
         padding-bottom: 2.5em;
 
-        @media ( min-width: 56.25em ) {
+        @media (min-width: 56.25em) {
             display: grid;
             grid-template-columns: 0.8fr 1fr;
             grid-template-rows: 18.5em 13.75em 3.125em;
@@ -195,12 +211,11 @@ ease: "power2.inOut",
             padding-inline: 2em;
         }
 
-        @media ( min-width: 62.5em ) {
+        @media (min-width: 62.5em) {
             grid-template-rows: 12.375em 12.625em 4.125em;
-
         }
 
-        @media ( min-width: 75em ) {
+        @media (min-width: 75em) {
             grid-template-columns: 30em 37.5em;
             justify-content: center;
             column-gap: 6em;
@@ -208,9 +223,9 @@ ease: "power2.inOut",
     }
 
     .header-about {
-        max-width: 37.5rem;  
+        max-width: 37.5rem;
 
-        @media ( min-width: 56.25em ) {
+        @media (min-width: 56.25em) {
             max-width: 30rem;
         }
     }
@@ -220,7 +235,7 @@ ease: "power2.inOut",
         margin-top: 1em;
         padding-right: 1rem;
 
-        @media ( min-width: 56.25em ) {
+        @media (min-width: 56.25em) {
             grid-column: 1/2;
             max-width: 30rem;
             margin-top: 0;
@@ -228,12 +243,11 @@ ease: "power2.inOut",
         }
     }
 
-
     .img-about {
         width: clamp(16.25em, 100%, 37.5em);
         border-radius: 1.563em;
 
-        @media ( min-width: 56.25em ) {
+        @media (min-width: 56.25em) {
             grid-column: 2/3;
             grid-row: 2/3;
             align-self: center;
@@ -244,11 +258,11 @@ ease: "power2.inOut",
         display: flex;
         flex-direction: column;
 
-        @media ( min-width: 37.5em ) {
+        @media (min-width: 37.5em) {
             gap: 2em;
         }
 
-        @media ( min-width: 56.25em ) {
+        @media (min-width: 56.25em) {
             justify-content: center;
             flex-direction: row;
             background-color: var(--primary-color-blue-dark-2);
@@ -258,7 +272,7 @@ ease: "power2.inOut",
             gap: 7em;
         }
 
-        @media ( min-width: 75em ) {
+        @media (min-width: 75em) {
             gap: 18.7em;
         }
     }
@@ -266,33 +280,31 @@ ease: "power2.inOut",
     .homepage-partnerships {
         padding-top: 2rem;
 
-        @media ( min-width: 56.25em ) {
+        @media (min-width: 56.25em) {
             width: 100%;
             align-items: start;
             padding-inline: 2rem;
         }
 
-        @media ( min-width: 75em ) {
+        @media (min-width: 75em) {
             position: relative;
             width: 78.125rem;
         }
     }
 
     .header-partnerships {
-
-        @media ( min-width: 75em ) {
+        @media (min-width: 75em) {
             width: 48rem;
-            text-align: start;        
+            text-align: start;
         }
     }
-
 
     .info-partnerships {
         margin-top: 2rem;
         max-width: 37.5rem;
         padding-right: 1rem;
 
-        @media ( min-width: 56.25em ) {
+        @media (min-width: 56.25em) {
             max-width: 48rem;
         }
     }
@@ -301,11 +313,11 @@ ease: "power2.inOut",
         padding-top: 2rem;
         max-width: 37.5em;
 
-        @media ( min-width: 37.5em ) {
+        @media (min-width: 37.5em) {
             border-radius: 1rem;
         }
 
-        @media ( min-width: 56.25em ) {
+        @media (min-width: 56.25em) {
             display: grid;
             grid-template-columns: 0.7fr 1fr;
             grid-template-rows: 0.2fr 1fr;
@@ -313,7 +325,7 @@ ease: "power2.inOut",
             padding-inline: 2rem;
         }
 
-        @media (min-width: 75em ) {
+        @media (min-width: 75em) {
             grid-template-columns: 30em 37.5em;
             column-gap: 6em;
         }
@@ -329,22 +341,22 @@ ease: "power2.inOut",
         padding-top: 2em;
         padding-bottom: 4em;
 
-        @media ( min-width: 56.25em ) {
+        @media (min-width: 56.25em) {
             padding-top: 0;
             grid-column: 2/3;
             grid-row: 1/3;
         }
     }
 
-        .header-speakers {
-            display: flex;
-            align-items: center;
-        }
+    .header-speakers {
+        display: flex;
+        align-items: center;
+    }
 
     .info-speakers {
         padding-right: 1rem;
 
-        @media ( min-width: 56.25em ) {
+        @media (min-width: 56.25em) {
             grid-column: 1/2;
         }
     }
@@ -380,5 +392,4 @@ ease: "power2.inOut",
         margin-top: -1.8rem;
         margin-bottom: 0.5rem;
     }
-
-</style>    
+</style>
