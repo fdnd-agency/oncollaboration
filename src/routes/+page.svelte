@@ -164,8 +164,12 @@
     }
 
     .ecg-wrapper {
-        width: 400px;
+        width: 300px;
         margin: 40px auto;
+
+        @media (min-width: 500px) {
+           width: 400px;
+        }
     }
 
     .ecg polyline {
