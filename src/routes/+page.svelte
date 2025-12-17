@@ -111,7 +111,7 @@
         flex-direction: column;
     }
 
-    .overlay > *, .homepage-webinars-contourings :global(.homepage-article), :global(.homepage-carrousel) {
+    .overlay > *, .homepage-webinars-contourings :global(.homepage-article), :global(.homepage-carrousel), .homepage-all-doctors {
         opacity: 0;
         animation: ScrollerOpacity 1s ease forwards;
         animation-timeline: view();
