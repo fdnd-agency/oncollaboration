@@ -29,7 +29,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            overflow-x: hidden;
         }
 
         .about {
@@ -110,6 +109,25 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+    }
+
+    .overlay > *, .homepage-webinars-contourings :global(.homepage-article), :global(.homepage-carrousel) {
+        opacity: 0;
+        animation: ScrollerOpacity 1s ease forwards;
+        animation-timeline: view();
+        animation-range: 10% 30%;
+    }
+
+    @keyframes ScrollerOpacity {
+        from {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0px);
+        }
     }
 
     h1, h2 {
