@@ -113,9 +113,31 @@
 
     .overlay > *, .homepage-webinars-contourings :global(.homepage-article), :global(.homepage-carrousel), .homepage-all-doctors {
         opacity: 0;
+        animation: ScrollerScale 1s ease forwards;
+        animation-timeline: view();
+        animation-range: 10% 30%;
+    }
+
+    .homepage-webinars-contourings {
+        opacity: 0;
         animation: ScrollerOpacity 1s ease forwards;
         animation-timeline: view();
         animation-range: 10% 30%;
+    }
+
+
+    @keyframes ScrollerScale {
+        from {
+            scale: 0.95;
+            opacity: 0;
+            transform: translateY(100px);
+        }
+
+        to {
+            scale: 1;
+            opacity: 1;
+            transform: translateY(0px);
+        }
     }
 
     @keyframes ScrollerOpacity {
