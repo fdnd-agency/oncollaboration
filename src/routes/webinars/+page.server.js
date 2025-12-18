@@ -1,10 +1,12 @@
+export async function load({ url, fetch }) {
+    const sortValue = url.searchParams.get('sort') || '-date' // Default to '-date' (New to Old) 
+    const filterValue = url.searchParams.get('filter') || ''
 
-export async function load(url) {
+    let apiUrl = `https://fdnd-agency.directus.app/items/avl_webinars?fields=slug,thumbnail.id,thumbnail.title,duration,title,speakers.avl_speakers_id.fullname,categories.avl_categories_id.name,date&sort=${sortValue}`;
     // trys to load the data and send it
-    try {
-        const webinars = await fetch(`https://fdnd-agency.directus.app/items/avl_webinars?fields=slug,thumbnail.id,thumbnail.title,duration,title,speakers.avl_speakers_id.fullname,categories.avl_categories_id.name,date`);   // Fetch webinars
-        const categories = await fetch('https://fdnd-agency.directus.app/items/avl_categories');  // Fetch categories
-
+        const webinars = await fetch(apiUrl); // Use the constructed API URL
+        const categories = await fetch('https://fdnd-agency.directus.app/items/avl_categories');  // Fetch categories
+ 
         if (!webinars.ok) {
             throw new Error(`HTTP error! status: ${webinars.status}`);
         }
@@ -19,14 +21,10 @@ export async function load(url) {
         return {
             webinars: webinarsData.data,
             categories: categoriesData.data,
-        };
-
-        // if there is error handles it and gives error message in return to the user
-    } catch (error) {
-        return {
-            webinars: null,
-            categories: null,
-            error: "Sorry, there was an error loading the data. Please try again."
-        };
-    }
+            // You can return the search parameters so they can be set as default
+            // values in the form when the page reloads.
+            searchParams: {
+                sort: sortValue,
+            }
+        }
 }
