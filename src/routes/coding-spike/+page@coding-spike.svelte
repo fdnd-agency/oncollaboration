@@ -120,7 +120,7 @@
         width: 99vw;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url('../lib/assets/kirby-krackle-background.svg');
+        background-image: url('src/lib/assets/kirby-krackle-background.svg');
         
         display: flex;
         flex-direction: column;
@@ -182,7 +182,7 @@
         display: flex;
         justify-content: space-around;
         
-        background-image: url('../lib/assets/Vector 9.svg');
+        background-image: url('src/lib/assets/Vector 9.svg');
         background-repeat: no-repeat;
         height: 120vh;
         width: 99vw;
