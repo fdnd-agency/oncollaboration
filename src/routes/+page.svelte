@@ -37,8 +37,12 @@
     .to(".splash", {
         opacity: 0,
         duration: 0.5,
+        onStart: () => {
+            document.querySelector("body").classList.add('no-scroll');
+        },
         onComplete: () => {
             document.querySelector(".splash")?.remove();
+            document.querySelector("body").classList.remove('no-scroll');
         }
     });
 });
@@ -182,6 +186,11 @@
         fill: none;
         stroke-width: 2;
         stroke: #c62828;
+    }
+
+    :global(.no-scroll ) {
+        height: 100vh;
+        overflow: hidden;
     }
 
     .overlay {
