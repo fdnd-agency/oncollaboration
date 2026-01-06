@@ -46,18 +46,27 @@ export async function load({ url }) {
         const homepageDoctorInfoData = await homepageDoctorInfo.json();
         const homepageDoctorsData = await homepageDoctors.json();
 
+        // i use mapping under here because i know that the logos id are all correct
+
+        const logosOrder = [5, 1, 2, 4, 3, 6];
+
+        const logosSorted = logosOrder.map(id => 
+            homepageLogosData.data.find(logo => logo.id === id)
+        );
 
         return {
             about: homepageAboutData.data,
             webinars: homepageWebinarsData.data,
             contourings: homepageContouringsData.data,
             partnerships: homepagePartnershipsData.data,
-            logos: homepageLogosData.data,
+            logos: logosSorted, // Aangepast: we geven nu de gesorteerde lijst door!
             doctorinfo: homepageDoctorInfoData.data,
             doctors: homepageDoctorsData.data,
             error: null
         };
-    } catch (error) {
+    } 
+    
+    catch (error) {
         return {
             about: null,
             webinars: null,
