@@ -37,6 +37,8 @@
         display: flex;
         overflow-x: auto;
         scroll-behavior: smooth;
+        /* background: linear-gradient(to right, var(--primary-color-blue-light-1), var(--primary-color-blue-dark-2));
+        padding-block: 1rem; */
 
         @supports (animation: scroll 18s linear infinite) {
             width: max-content;
