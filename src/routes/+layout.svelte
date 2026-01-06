@@ -20,7 +20,7 @@
     </style>
 </svelte:head>
 
-<!-- <header>
+<header>
     <div class="logo-hospitals">
         <a class="logo-avl" href={`/`}>
             <img
@@ -76,7 +76,7 @@
             <option value="Indonesian">Indonesian</option>
         </select>
     </nav>
-</header> -->
+</header>
 
 {@render children?.()}
 
@@ -142,7 +142,7 @@
 </footer>
 
 <style>
-    /* header {
+    header {
         background-color: var(--primary-color-blue-dark-2);
         display: flex;
         justify-content: space-between;
@@ -293,7 +293,7 @@
 
     .nav-header:target {
         right: 0;
-    } */
+    }
 
     footer {
         background-color: var(--primary-color-blue-dark-2);
