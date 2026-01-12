@@ -87,28 +87,6 @@
 </footer>
 
 <style>
-    header {
-        background-color: var(--primary-color-blue-dark-2);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5em;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-
-        @media (min-width: 900px) {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    .logo-hospitals {
-        display: flex;
-        align-items: center;
-        margin: 0em 0em 0em 2em;
-    }
-
     .avl-desktop-logo,
     .kemenkes-desktop-logo {
         display: none;
@@ -124,35 +102,6 @@
 
         @media (min-width: 600px) {
             display: none;
-        }
-    }
-
-    .nav-header {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        background: var(--primary-color-blue-dark-2);
-        transition: right 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 1em;
-
-        @media (min-width: 600px) {
-            padding: 1em 0em 0em 0em;
-            flex-direction: unset;
-        }
-
-        @media (min-width: 900px) {
-            position: static;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            gap: 2em;
-            padding: 0;
-            right: auto;
         }
     }
 
@@ -188,58 +137,7 @@
             margin: 0em 1em 0em 0em;
         }
     }
-
-    .menu-toggle {
-        display: none;
-    }
-
-    .close {
-        display: none;
-        position: absolute;
-        top: 1em;
-        right: 1.2em;
-
-        @media (min-width: 900px) {
-            display: none;
-        }
-    }
-
-    .menu-toggle {
-        display: block;
-
-        @media (min-width: 900px) {
-            display: none;
-        }
-    }
-
-    .nav-header ul {
-        gap: 1em;
-        padding: 1em;
-        flex-direction: column;
-
-        @media (min-width: 500px) {
-            flex-direction: unset;
-        }
-
-        @media (min-width: 900px) {
-            flex-direction: row;
-            gap: 2em;
-            padding: 0;
-        }
-    }
-
-    .nav-header .close {
-        display: block;
-
-        @media (min-width: 900px) {
-            display: none;
-        }
-    }
-
-    .nav-header:target {
-        right: 0;
-    }
-
+    
     footer {
         background-color: var(--primary-color-blue-dark-2);
         border: var(--primary-color-blue-dark-2);
