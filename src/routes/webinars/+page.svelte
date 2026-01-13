@@ -3,8 +3,6 @@
     let { data } = $props();
     const webinars = data.webinars;
 
-    import watchlist from "$lib/assets/watchlist.svg";
-    import arrow from "$lib/assets/arrow-right.svg";
     import { enhance } from "$app/forms";
     import { Filter} from '$lib/index.js'
 </script>
