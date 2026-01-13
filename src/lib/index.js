@@ -13,7 +13,8 @@ export { default as WebinarTitle } from './atoms/webinar-title.svelte'
 
 //Molecules
 export { default as ContainerFilters } from './molecules/ContainerFilters.svelte'
-export { default as WebinarTitle } from './molecules/WebinarTitle.svelte'
+export { default as ContainerCard} from './molecules/ContainerCard.svelte'
 
 //Organisms 
 export { default as Filter } from './organisms/Filter.svelte'
+export { default as WebinarCard } from './organisms/WebinarCard.svelte'
