@@ -29,32 +29,29 @@
         align-items: center;
         object-fit: contain;
         flex-shrink: 0; 
-        padding: 1rem;
+        padding: 2rem;
     }
 
-    .logos-partnerships:nth-of-type(1) {
-        background: linear-gradient(to right, var(--primary-color-blue-dark-2) 0%, var(--primary-color-blue-dark-2) 10%, var(--primary-color-blue-light-1) 40%,  var(--primary-color-blue-light-1) 100%);
+    /* gradient overgangen op logos */
+
+    .logos-partnerships:is(:nth-of-type(1), :nth-of-type(7)) {
+        background: linear-gradient(to right, var(--primary-color-blue-dark-2) 0%, var(--primary-color-blue-dark-2) 10%, var(--primary-color-blue-light-1) 37%, var(--primary-color-blue-light-1) 100%);
         padding-left: 10rem;
-
-    }
-
-    .logos-partnerships:is(:nth-of-type(2), :nth-of-type(7), :nth-of-type(8) ) {
-        background: var(--primary-color-blue-light-1);
     }
 
     .logos-partnerships:is(:nth-of-type(3), :nth-of-type(9)) {
-        background: linear-gradient(to right, var(--primary-color-blue-light-1) 0%, var(--primary-color-blue-light-1) 65%, var(--primary-color-blue-dark-2) 100%);
-        padding-right: 5rem;
+        background: linear-gradient(to right, var(--primary-color-blue-light-1) 0%, var(--primary-color-blue-light-1) 50%, var(--primary-color-blue-dark-2) 90%, var(--primary-color-blue-dark-2) 100%);
+        padding-right: 10rem;
+    }
+    
+    /* statische kleuren op logos */
+
+    .logos-partnerships:is(:nth-of-type(2), :nth-of-type(8)) {
+        background: var(--primary-color-blue-light-1);
     }
 
-    .logos-partnerships:is(:nth-of-type(4), :nth-of-type(5), :nth-of-type(6),  :nth-of-type(10)) {
+    .logos-partnerships:is(:nth-of-type(4), :nth-of-type(5), :nth-of-type(6), :nth-of-type(10)) {
         background: var(--primary-color-blue-dark-2);
-    }
-
-    .logos-partnerships:nth-of-type(7) {
-        background: linear-gradient(to right, var(--primary-color-blue-dark-2) 0%, var(--primary-color-blue-dark-2) 10%, var(--primary-color-blue-light-1) 40%,  var(--primary-color-blue-light-1) 100%);
-        padding-left: 10rem;
-
     }
     
     

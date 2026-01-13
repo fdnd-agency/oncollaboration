@@ -46,7 +46,7 @@ export async function load({ url }) {
         const homepageDoctorInfoData = await homepageDoctorInfo.json();
         const homepageDoctorsData = await homepageDoctors.json();
 
-        // i use mapping under here because i know that the logos id are all correct
+        // gebruik van mapping voor het ordenen van de logo's dit is deels gemaakt met hulp van ai
 
         const logosOrder = [5, 1, 2, 4, 3, 6];
 
@@ -59,7 +59,7 @@ export async function load({ url }) {
             webinars: homepageWebinarsData.data,
             contourings: homepageContouringsData.data,
             partnerships: homepagePartnershipsData.data,
-            logos: logosSorted, // Aangepast: we geven nu de gesorteerde lijst door!
+            logos: logosSorted, 
             doctorinfo: homepageDoctorInfoData.data,
             doctors: homepageDoctorsData.data,
             error: null
