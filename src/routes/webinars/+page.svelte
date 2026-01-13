@@ -5,6 +5,7 @@
 
     import { enhance } from "$app/forms";
     import { Filter} from '$lib/index.js'
+    import { WebinarCard} from '$lib/index.js'
 </script>
 
 <!--  MARK: svelte:head-->
@@ -31,8 +32,7 @@
     </p>
 </section>
 
-<Filter data={data}></Filter>
-<!-- <form action="" method="get" use:enhance>
+<form action="" method="get" use:enhance>
     <fieldset>
         <legend>Filters</legend>
         <p class="intro-filters">
@@ -69,7 +69,7 @@
             <button class="reset-filter" type="reset">Reset filter</button>
         </div>
     </fieldset>
-</form> -->
+</form>
 
 <section class="container-results">
     <h2>Results</h2>

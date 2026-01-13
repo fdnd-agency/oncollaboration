@@ -15,13 +15,12 @@
     <div class="container-thumbnail">
         <Thumbnail {webinar} />
 
-        <BadgeLabel class="duration">
-            text={webinar.duration}
-        </BadgeLabel>
+        <BadgeLabel class="duration" text={webinar.duration} />
 
-        <BadgeLabel class="category">
+        <BadgeLabel
+            class="category"
             text={webinar.categories[0].avl_categories_id.name}
-        </BadgeLabel>
+        />
 
         <Button type="button" class="watchlist">
             Add to watchlist
@@ -29,11 +28,11 @@
         </Button>
     </div>
 
-    <WebinarTitle></WebinarTitle>
-    <Speaker class="speakers-fullname"></Speaker>
+    <WebinarTitle {webinar}></WebinarTitle>
+    <Speaker class="speakers-fullname" {webinar}></Speaker>
 
-    <LinkButton class="to-webinar-detail" href={`/webinars/${webinar.slug}`} >
-        View webinar 
+    <LinkButton class="to-webinar-detail" href={`/webinars/${webinar.slug}`}>
+        View webinar
         <img src={arrow} alt="" aria-hidden="true" />
     </LinkButton>
 </article>
