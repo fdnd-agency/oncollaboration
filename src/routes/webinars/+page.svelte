@@ -33,7 +33,8 @@
     </p>
 </section>
 
-<form action="" method="get" use:enhance>
+<Filter data={data}></Filter>
+<!-- <form action="" method="get" use:enhance>
     <fieldset>
         <legend>Filters</legend>
         <p class="intro-filters">
@@ -70,7 +71,7 @@
             <button class="reset-filter" type="reset">Reset filter</button>
         </div>
     </fieldset>
-</form>
+</form> -->
 
 <section class="container-results">
     <h2>Results</h2>
@@ -253,7 +254,8 @@
     }
 
     .watchlist {
-        background-color: var(--primary-color-aqua-dark-3);
+        /* background-color: var(--primary-color-aqua-dark-3); */
+          background-color: var(--primary-color-aqua-dark-2);
         border: 1px solid var(--primary-color-aqua-dark-3);
         padding: 0.5em;
         border-radius: var(--border-radius-small);
@@ -280,7 +282,8 @@
     }
 
     .to-webinar-detail {
-        background-color: var(--primary-color-aqua-dark-2);
+        /* background-color: var(--primary-color-aqua-dark-2); */
+        background-color: var(--primary-color-aqua-dark-3);
         color: var(--neutral-color-lightest);
         border-radius: var(--border-radius-small);
         font-weight: var(--secondary-font-weight);
