@@ -12,14 +12,11 @@
 
 <article>
     <div class="container-thumbnail">
-        <Thumbnail />
+        <Thumbnail></Thumbnail>
 
-        <BadgeLabel class="duration" text={webinar.duration} />
+        <BadgeLabel class="duration" text={webinar.duration}></BadgeLabel>
 
-        <BadgeLabel
-            class="category"
-            text={webinar.categories[0].avl_categories_id.name}
-        />
+        <BadgeLabel class="category" text={webinar.categories[0].avl_categories_id.name}></BadgeLabel>
 
         <Button type="button" class="watchlist">
             Add to watchlist
