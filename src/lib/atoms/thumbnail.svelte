@@ -1,5 +1,5 @@
 <script>
-    
+        let { webinar } = $props();
 </script>
 
 <picture>
