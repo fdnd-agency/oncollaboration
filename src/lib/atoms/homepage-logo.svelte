@@ -44,12 +44,12 @@
 
     .logos-partnerships:is(:nth-of-type(1), :nth-of-type(7)) {
         background: linear-gradient(to right, var(--primary-color-blue-dark-2) 0%, var(--primary-color-blue-dark-2) 10%, var(--primary-color-blue-light-1) 37%, var(--primary-color-blue-light-1) 100%);
-        padding-left: 10rem;
+        padding-left: 15rem;
     }
 
     .logos-partnerships:is(:nth-of-type(3), :nth-of-type(9)) {
         background: linear-gradient(to right, var(--primary-color-blue-light-1) 0%, var(--primary-color-blue-light-1) 50%, var(--primary-color-blue-dark-2) 90%, var(--primary-color-blue-dark-2) 100%);
-        padding-right: 10rem;
+        padding-right: 15rem;
     }
     
     /* statische kleuren op logos */
