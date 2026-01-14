@@ -32,6 +32,14 @@
         padding: 2rem;
     }
 
+    .logos-partnerships:is(:nth-of-type(4), :nth-of-type(10)) {
+        padding-left: 0;
+    }
+
+    .logos-partnerships:is(:nth-of-type(6), :nth-of-type(12)) {
+        padding-right: 0;
+    }
+
     /* gradient overgangen op logos */
 
     .logos-partnerships:is(:nth-of-type(1), :nth-of-type(7)) {
