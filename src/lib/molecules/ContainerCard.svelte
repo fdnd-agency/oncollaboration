@@ -1,11 +1,5 @@
 <script>
-    import {
-        Thumbnail,
-        BadgeLabel,
-        LinkButton,
-        Speaker,
-        WebinarTitle,
-    } from "$lib/index.js";
+    import { Thumbnail, BadgeLabel, LinkButton, Speaker, WebinarTitle } from "$lib/index.js";
     import watchlist from "$lib/assets/watchlist.svg";
     import arrow from "$lib/assets/arrow-right.svg";
 </script>
