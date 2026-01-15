@@ -284,6 +284,10 @@
         display: flex;
         align-items: center;
         margin-bottom: 2rem;
+
+        @media ( min-width: 56.25em ) {
+            margin-bottom: 0;
+        }
     }
 
     .homepage-doctor-card {
@@ -301,6 +305,7 @@
     }
 
     .photo-doctor {
+        object-position: center top;
         background: var(--neutral-color-lightest);
         object-fit: cover;
         overflow: hidden;
@@ -312,6 +317,7 @@
     .name-doctor {
         font-size: 1.25rem;
         line-height: 1.1;
+        text-wrap: balance; 
         width: 100%;
         overflow: hidden;
         margin-top: 0.5rem;
@@ -319,6 +325,8 @@
 
     .function-doctor {
         overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;   
     }
 
     .view-doctor {
