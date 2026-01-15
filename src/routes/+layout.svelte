@@ -83,8 +83,8 @@
 
 {@render children?.()}
 
-<footer>
-        <!-- <div class="footer-logos">
+<!-- <footer>
+        <div class="footer-logos">
             <img
                 class="avl-desktop-logo"
                 src={logoAvlDesktop}
@@ -141,7 +141,7 @@
             <option value="Indonesian">Indonesian</option>
         </select>
 
-        <p>© 2025 Oncollaboration. All rights reserved.</p> -->
+        <p>© 2025 Oncollaboration. All rights reserved.</p> 
 </footer>
 
 <style>
@@ -436,4 +436,4 @@
         font-family: var(--primary-font-family);
         font-style: var(--secondary-font-weight);
     }
-</style>
+</style> -->

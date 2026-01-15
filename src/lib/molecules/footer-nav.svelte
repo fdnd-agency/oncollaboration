@@ -25,5 +25,6 @@
 <style>
     nav {
         display: grid;
+        grid-template-rows: 3.4em 10em;
     }
 </style>
