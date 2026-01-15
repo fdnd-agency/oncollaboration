@@ -45,3 +45,15 @@
             grid-template-rows: 15rem 2.3rem 4rem;
             gap: 1rem;
         }
+
+        container-name: footer;
+    }
+
+    @container footer (width >= 448px) {
+        .footer-nav {
+            grid-column: 1 / -1;
+            grid-row: 1 / 1;
+            align-content: flex-start;
+        }
+    }
+</style>
