@@ -16,7 +16,6 @@
     const infowebinars = data.webinars;
     const infocontourings = data.contourings;
     const infopartnerships = data.partnerships;
-    const infologos = data.logos;
     const infodoctor = data.doctorinfo;
     const infodoctors = data.doctors;
 
@@ -90,15 +89,18 @@
 
         <section class="homepage-doctors-outlay">
             {#each infodoctors as doctor} 
-                <article class="homepage-all-doctors">
+                <article class="homepage-doctor-card">
                     <picture class="photo-doctor">
                         <source srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=avif`} type="image/avif"/>
                         <source srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=webp`} type="image/webp"/>
                         <img class="photo-doctor" src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`} alt="{doctor.name}" loading="lazy"/>
                       </picture>                   
-                      <h3 class="name-doctor">{doctor.name}</h3>
+                    <h3 class="name-doctor">{doctor.name}</h3>
                     <p class="function-doctor">{doctor.role}</p>
-                    <Link class="view-doctor" href="/speakers">view speaker</Link>
+                    <a href="/" class="view-doctor">view doctor <svg class="arrow" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.8125 0.21875C6.9375 0.0625 7.1875 0.0625 7.34375 0.21875L13.875 6.75C14.0312 6.90625 14.0312 7.125 13.875 7.28125L7.34375 13.8125C7.1875 13.9688 6.9375 13.9688 6.8125 13.8125L6.1875 13.2188C6.03125 13.0625 6.03125 12.8125 6.1875 12.6875L11.0312 7.8125H0.375C0.15625 7.8125 0 7.65625 0 7.4375V6.5625C0 6.375 0.15625 6.1875 0.375 6.1875H11.0312L6.1875 1.34375C6.03125 1.21875 6.03125 0.96875 6.1875 0.8125L6.8125 0.21875Z" fill="currentColor"/>
+                        </svg>
+                        </a>
                 </article>
             {/each}
         </section>
@@ -283,10 +285,35 @@
         align-items: center;
     }
 
-    .homepage-all-doctors {
+    .homepage-doctor-card {
         display: flex;
         justify-content: center;
         flex-direction: column;
+        background: var(--primary-color-blue-light-1);
+        width: 100%; 
+        max-width: 200px;
+        height: 310px;
+        padding: 12px;
+        gap: 16px;
+        border-radius: 18px;
+        border: 2px solid var(--primary-color-blue-dark-2);
+    }
+
+    .photo-doctor {
+        background: var(--neutral-color-lightest);
+        object-fit: cover;
+        overflow: hidden;
+        aspect-ratio: 4 / 3;
+        width: 100%;
+        border-radius: 18px;
+    }
+
+    .name-doctor {
+        font-size: 1.25rem;
+        line-height: 1.1;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 8px;
     }
 
 </style>    
