@@ -14,16 +14,18 @@
         display: grid;
     }
 
-    li, a {
-        color: var(--neutral-color-lightest);
-    }
-
     li, a{
         font-family: var(--primary-font-family);
         font-style: var(--secondary-font-weight);
+         color: var(--neutral-color-lightest);
+    }
+
+    a {
+        padding: .5em;
     }
 
     a:focus {
-        border: 0 0 0 2px var(--primary-color-true-aqua);
+        outline: none;
+        box-shadow: 0 0 0 2px var(--primary-color-true-aqua);
     }
 </style>
