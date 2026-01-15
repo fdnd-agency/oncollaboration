@@ -28,3 +28,22 @@
         <img src={arrow} alt="" aria-hidden="true" />
     </LinkButton>
 </article>
+
+<style>
+      article {
+        background-color: var(--primary-color-blue-light-1);
+        border: 1px solid var(--primary-color-blue-dark-2);
+        border-radius: var(--border-radius-medium);
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        max-width: 17em;
+    }
+
+    .container-thumbnail {
+        position: relative;
+        align-items: center;
+    }
+    
+
+</style>

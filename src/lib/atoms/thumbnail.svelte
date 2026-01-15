@@ -20,3 +20,13 @@
         loading="lazy"
     />
 </picture>
+
+<style>
+       .thumbnail {
+        margin: 0.5em;
+        display: flex;
+        justify-self: center;
+        border-radius: var(--border-radius-medium);
+        display: block;
+    }
+</style>

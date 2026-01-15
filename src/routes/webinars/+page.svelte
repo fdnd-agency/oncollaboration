@@ -172,12 +172,11 @@
 
     /*CARDS*/
 
-    .container-cards {
+    /* .container-cards {
         margin: 1em;
         display: flex;
         flex-direction: column;
         align-items: baseline;
-        /* gap: 1em; */
         gap: 2em 3em;
         max-width: 60em;
         display: flex;
@@ -206,9 +205,9 @@
         @media (min-width: 1920px) {
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         }
-    } 
+    }  */
 
-    article {
+    /* article {
         background-color: var(--primary-color-blue-light-1);
         border: 1px solid var(--primary-color-blue-dark-2);
         border-radius: var(--border-radius-medium);
@@ -216,22 +215,22 @@
         flex-direction: column;
         align-self: center;
         max-width: 17em;
-    }
+    } */
 
-    .container-thumbnail {
+    /* .container-thumbnail {
         position: relative;
         align-items: center;
-    }
+    } */
 
-    .thumbnail {
+    /* .thumbnail {
         margin: 0.5em;
         display: flex;
         justify-self: center;
         border-radius: var(--border-radius-medium);
         display: block;
-    }
+    } */
 
-    .duration {
+    /* .duration {
         background-color: var(--neutral-color-darker);
         color: var(--neutral-color-lightest);
         font-size: var(--font-size-small);
@@ -241,9 +240,9 @@
         position: absolute;
         top: 1em;
         right: 1.5em;
-    }
+    } */
 
-    .category {
+    /* .category {
         background-color: var(--primary-color-blue-dark-2);
         color: var(--neutral-color-lightest);
         font-size: var(--font-size-small);
@@ -253,10 +252,9 @@
         position: absolute;
         top: 1em;
         left: 1.5em;
-    }
+    } */
 
-    .watchlist {
-        /* background-color: var(--primary-color-aqua-dark-3); */
+    /* .watchlist {
           background-color: var(--primary-color-aqua-dark-2);
         border: 1px solid var(--primary-color-aqua-dark-3);
         padding: 0.5em;
@@ -267,9 +265,9 @@
         align-items: center;
         gap: .5em;
         margin: 1em 0em 0em 1em;
-    }
+    } */
 
-    h3 {
+    /* h3 {
         width: 230px;
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -277,14 +275,13 @@
         overflow: hidden;
         text-overflow: ellipsis;
         margin: 1.5em 1em .5em 1em;
-    }
+    } */
 
-    .speakers-fullname {
+    /* .speakers-fullname {
         margin: 1em 1.5em;
-    }
+    } */
 
-    .to-webinar-detail {
-        /* background-color: var(--primary-color-aqua-dark-2); */
+    /* .to-webinar-detail {
         background-color: var(--primary-color-aqua-dark-3);
         color: var(--neutral-color-lightest);
         border-radius: var(--border-radius-small);
@@ -296,5 +293,5 @@
         align-self: start;
         align-items: center;
         gap: 0.4em;
-    }
+    } */
 </style>
