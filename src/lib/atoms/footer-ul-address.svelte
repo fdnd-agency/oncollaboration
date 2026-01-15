@@ -21,6 +21,7 @@
 <style>
     ul{
         display: grid;
+        padding-top: 1.4em;
     }
 
     li, a{
