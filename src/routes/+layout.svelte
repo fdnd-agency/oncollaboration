@@ -84,8 +84,6 @@
 {@render children?.()}
 
 <footer>
-    <Address></Address>
-    <FooterNav></FooterNav>
         <!-- <div class="footer-logos">
             <img
                 class="avl-desktop-logo"
