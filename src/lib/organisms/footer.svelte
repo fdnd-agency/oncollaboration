@@ -3,11 +3,12 @@
     import Logos from "$lib/atoms/header-logos.svelte";
     import FootNav from  "$lib/molecules/footer-nav.svelte";
     import Address from "$lib/molecules/address.svelte";
+    let { class: className, ...rest } = $props();
 </script>
 
 <footer>
-    <Logos class="logos"></Logos>
-    <FootNav class="footer-nav"></FootNav>
+    <Logos></Logos>
+    <FootNav></FootNav>
     <Address class="address"></Address>
 </footer>
 
@@ -45,15 +46,9 @@
             grid-template-rows: 15rem 2.3rem 4rem;
             gap: 1rem;
         }
-
-        container-name: footer;
     }
-
-    @container footer (width >= 448px) {
-        .footer-nav {
-            grid-column: 1 / -1;
-            grid-row: 1 / 1;
-            align-content: flex-start;
-        }
+    
+    footer :global(address){
+        background-color: red;
     }
 </style>
