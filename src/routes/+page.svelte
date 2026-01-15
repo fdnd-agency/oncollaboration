@@ -98,6 +98,7 @@
                       </picture>                   
                       <h3 class="name-doctor">{doctor.name}</h3>
                     <p class="function-doctor">{doctor.role}</p>
+                    <Link class="view-doctor" href="/speakers">view speaker</Link>
                 </article>
             {/each}
         </section>
@@ -277,49 +278,15 @@
         }
     }
 
-        .header-speakers {
-            display: flex;
-            align-items: center;
-        }
-
-    .info-speakers {
-        padding-right: 1rem;
-
-        @media ( min-width: 56.25em ) {
-            grid-column: 1/2;
-        }
+    .header-speakers {
+        display: flex;
+        align-items: center;
     }
 
     .homepage-all-doctors {
         display: flex;
-        align-items: center;
         justify-content: center;
         flex-direction: column;
-        background-color: var(--neutral-color-lightest);
-        border: 3px solid var(--primary-color-blue-dark-2);
-        border-radius: 0.6rem;
-        width: 200px;
-        height: 250px;
-        padding: 0.5rem;
-    }
-
-    .photo-doctor {
-        object-fit: cover;
-        height: 150px;
-        width: 150px;
-        overflow: hidden;
-        border-radius: 100px;
-    }
-
-    .name-doctor {
-        font-size: var(--font-size-small);
-        background-color: var(--primary-color-blue-light-1);
-        text-align: center;
-        padding-inline: 0.5rem;
-        padding-block: 0.25rem;
-        border-radius: 0.6rem;
-        margin-top: -1.8rem;
-        margin-bottom: 0.5rem;
     }
 
 </style>    
