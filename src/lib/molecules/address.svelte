@@ -28,5 +28,9 @@
     address {
         display: grid;
         padding-top: -1.4rem; 
+/* 
+        grid-column: var(--address-col, 1 / -1); 
+        grid-row:    var(--address-row, auto);
+        padding-top: var(--address-padding, 0); */
     }
 </style>

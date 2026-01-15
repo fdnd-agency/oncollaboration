@@ -46,9 +46,45 @@
             grid-template-rows: 15rem 2.3rem 4rem;
             gap: 1rem;
         }
+/* 
+        --address-col: 1 / -1;
+        --address-row: 3 / 4;
+        --address-padding: 1.4rem; */
+/*     
+        @media (width >= 448px) {
+            --address-col: 2 / 2;
+            --address-row: 2 / 2;
+            --address-padding: 0rem;
+        }
+     */
+        /* @media (width >= 767px) {
+            --address-col: 3 / 3;
+            --address-row: 1 / 2;
+            --address-padding: 0rem;
+        } */
+
+        container-type: inline-size;
+        container-name: footer;
     }
     
+
     footer :global(address){
-        background-color: red;
+        grid-row: 3 / 4;
+        grid-column: 1 / -1;
+        display: grid;
+        padding-top: 1.4rem;
+
+        @media (width >= 448px) {
+            grid-column: 2 / 2;
+            grid-row: 2 / 2;
+            padding-top: 0rem;
+        }
+
+        @media (width >= 767px){
+            grid-column: 3 / 3;
+            grid-row: 1 / 2;
+            padding-top: 0rem;
+        }
     }
+
 </style>
