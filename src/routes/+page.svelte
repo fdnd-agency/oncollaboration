@@ -100,7 +100,7 @@
                     <a href="/" class="view-doctor">view doctor <svg class="arrow" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.8125 0.21875C6.9375 0.0625 7.1875 0.0625 7.34375 0.21875L13.875 6.75C14.0312 6.90625 14.0312 7.125 13.875 7.28125L7.34375 13.8125C7.1875 13.9688 6.9375 13.9688 6.8125 13.8125L6.1875 13.2188C6.03125 13.0625 6.03125 12.8125 6.1875 12.6875L11.0312 7.8125H0.375C0.15625 7.8125 0 7.65625 0 7.4375V6.5625C0 6.375 0.15625 6.1875 0.375 6.1875H11.0312L6.1875 1.34375C6.03125 1.21875 6.03125 0.96875 6.1875 0.8125L6.8125 0.21875Z" fill="currentColor"/>
                         </svg>
-                        </a>
+                    </a>
                 </article>
             {/each}
         </section>
@@ -283,6 +283,7 @@
     .header-speakers {
         display: flex;
         align-items: center;
+        margin-bottom: 2rem;
     }
 
     .homepage-doctor-card {
@@ -293,8 +294,8 @@
         width: 100%; 
         max-width: 200px;
         height: 310px;
-        padding: 12px;
-        gap: 16px;
+        padding: 0.75rem;
+        gap: 1rem;
         border-radius: 18px;
         border: 2px solid var(--primary-color-blue-dark-2);
     }
@@ -313,7 +314,27 @@
         line-height: 1.1;
         width: 100%;
         overflow: hidden;
-        margin-top: 8px;
+        margin-top: 0.5rem;
+    }
+
+    .function-doctor {
+        overflow: hidden;
+    }
+
+    .view-doctor {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        width: fit-content;
+        height: 2rem;
+        padding-inline: 0.5rem;
+        border-radius: 0.5rem;
+        background: var(--primary-color-aqua-dark-3);
+        color: var(--primary-color-blue-dark-2);
+
+        svg {
+            fill: var(--primary-color-blue-dark-2);
+        }
     }
 
 </style>    
