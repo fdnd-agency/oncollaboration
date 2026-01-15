@@ -32,7 +32,9 @@
     </p>
 </section>
 
-<form action="" method="get" use:enhance>
+<Filter data={data}></Filter>
+
+<!-- <form action="" method="get" use:enhance>
     <fieldset>
         <legend>Filters</legend>
         <p class="intro-filters">
@@ -69,7 +71,7 @@
             <button class="reset-filter" type="reset">Reset filter</button>
         </div>
     </fieldset>
-</form>
+</form> -->
 
 <section class="container-results">
     <h2>Results</h2>
@@ -77,7 +79,9 @@
     <hr />
 </section>
 
-<div class="container-cards">
+<WebinarCard data={data}></WebinarCard>
+
+<!-- <div class="container-cards">
     {#each webinars as webinar}
         <article>
             <div class="container-thumbnail">
@@ -117,7 +121,7 @@
                 >View webinar <img src={arrow} alt="" aria-hidden="true" /></a>
         </article>
     {/each}
-</div>
+</div> -->
 
 <!--  MARK: CSS-->
 

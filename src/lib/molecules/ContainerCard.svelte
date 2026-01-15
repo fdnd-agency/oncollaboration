@@ -1,5 +1,5 @@
 <script>
-    import { Thumbnail, BadgeLabel, LinkButton, Speaker, WebinarTitle } from "$lib/index.js";
+    import { Thumbnail, BadgeLabel, LinkButton, Speaker, WebinarTitle, Button } from "$lib/index.js";
     import watchlist from "$lib/assets/watchlist.svg";
     import arrow from "$lib/assets/arrow-right.svg";
 
@@ -8,7 +8,7 @@
 
 <article>
     <div class="container-thumbnail">
-        <Thumbnail></Thumbnail>
+        <Thumbnail webinar={webinar} ></Thumbnail>
 
         <BadgeLabel class="duration" text={webinar.duration}></BadgeLabel>
 
