@@ -1,8 +1,11 @@
 <script>
     import "$lib/global.css"
+    let { children } = $props();
 </script>
 
-<strong>Contact Information</strong>
+<strong>
+    {@render children?.()}
+</strong>
 
 <style>
     strong {
