@@ -3,6 +3,7 @@
 export { default as Button } from './atoms/Button.svelte' 
 export { default as Select } from './atoms/Select.svelte' 
 export { default as SearchInput } from './atoms/SearchInput.svelte' 
+export { default as Language } from './atoms/header-language.svelte'
 
 
 
