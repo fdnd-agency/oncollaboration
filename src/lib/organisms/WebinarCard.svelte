@@ -18,7 +18,6 @@
         display: flex;
         flex-direction: column;
         align-items: baseline;
-        /* gap: 1em; */
         gap: 2em 3em;
         max-width: 60em;
         display: flex;

@@ -44,6 +44,4 @@
         position: relative;
         align-items: center;
     }
-    
-
 </style>

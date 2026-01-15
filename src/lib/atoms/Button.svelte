@@ -46,9 +46,9 @@
     }
 
     .watchlist {
-        /* background-color: var(--primary-color-aqua-dark-3); */
-          background-color: var(--primary-color-aqua-dark-2);
-        border: 1px solid var(--primary-color-aqua-dark-3);
+        background-color: var(--primary-color-aqua-dark-2);
+        color: var(--neutral-color-lightest);
+        border: 1px solid var(--primary-color-aqua-dark-2);
         padding: 0.5em;
         border-radius: var(--border-radius-small);
         font-size: var(--font-size-small);
