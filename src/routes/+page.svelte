@@ -261,25 +261,36 @@
         }
 
         @media (min-width: 75em ) {
-            grid-template-columns: 30em 37.5em;
-            column-gap: 6em;
+            grid-template-columns: 1fr 2fr;  
+            max-width: 77.75rem;
+            column-gap: 4rem;
+            /* 30em 37.5em */
         }
+    }
+
+    .header-speakers {
+        height: fit-content;
     }
 
     .homepage-doctors-outlay {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        max-width: 600px;
+        max-width: 37.5rem;
         gap: 1rem;
-        margin-top: 2rem;
         padding-top: 2em;
         padding-bottom: 4em;
 
         @media ( min-width: 56.25em ) {
-            padding-top: 0;
+            justify-content: flex-end;
+            padding-top: 0.5rem;
+            gap: 0.5rem;
             grid-column: 2/3;
             grid-row: 1/3;
+        }
+
+        @media (min-width: 75em ) {
+            max-width: 100%;
         }
     }
 
@@ -290,6 +301,17 @@
 
         @media ( min-width: 56.25em ) {
             margin-bottom: 0;
+        }
+
+        @media (min-width: 75em ) {
+            max-width: 22rem;
+        }
+    }
+
+    .info-speakers {
+
+        @media (min-width: 75em ) {
+            max-width: 22rem;
         }
     }
 
@@ -305,6 +327,10 @@
         gap: 1rem;
         border-radius: 18px;
         border: 2px solid var(--primary-color-blue-dark-2);
+
+        @media ( min-width: 75em ) {
+            max-width: 180px;
+        }
     }
 
     .photo-doctor {
