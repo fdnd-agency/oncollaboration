@@ -19,7 +19,8 @@
     <picture class="logos-partnerships">
         <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=avif`} type="image/avif"/>
         <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=webp`} type="image/webp"/>
-        <img src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name} loading="lazy"/>
+        <img src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt="Logos van de partners" loading="lazy"/>
+        <!-- <img src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name} loading="lazy"/> -->
     </picture>
 {/each}
 
