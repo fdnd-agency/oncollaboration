@@ -216,6 +216,7 @@
         @media ( min-width: 56.25em ) {
             width: 100%;
             align-items: start;
+            padding-top: 4rem;
             padding-inline: 2rem;
         }
 
@@ -245,7 +246,7 @@
     }
 
     .homepage-speakers {
-        padding-top: 2rem;
+        padding-block: 2rem;
         max-width: 37.5em;
 
         @media ( min-width: 37.5em ) {
@@ -258,11 +259,12 @@
             grid-template-rows: 0.2fr 1fr;
             max-width: 100%;
             padding-inline: 2rem;
+            padding-block: 4rem;
         }
 
         @media (min-width: 75em ) {
             grid-template-columns: 1fr 2fr;  
-            max-width: 77.75rem;
+            width: 78.125rem;
             column-gap: 4rem;
             /* 30em 37.5em */
         }
@@ -278,12 +280,12 @@
         flex-wrap: wrap;
         max-width: 37.5rem;
         gap: 1rem;
-        padding-top: 2em;
-        padding-bottom: 4em;
+        padding-top: 2rem;
 
         @media ( min-width: 56.25em ) {
+            align-items: flex-end;
             justify-content: flex-end;
-            padding-top: 0.5rem;
+            padding: 0rem;
             gap: 0.5rem;
             grid-column: 2/3;
             grid-row: 1/3;
@@ -317,19 +319,19 @@
 
     .homepage-doctor-card {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         flex-direction: column;
         background: var(--primary-color-blue-light-1);
         width: 100%; 
-        max-width: 200px;
-        height: 310px;
+        max-width: 12.5rem;
+        height: 19.375rem;
         padding: 0.75rem;
         gap: 1rem;
         border-radius: 18px;
         border: 2px solid var(--primary-color-blue-dark-2);
 
         @media ( min-width: 75em ) {
-            max-width: 180px;
+            max-width: 10.625rem;
         }
     }
 
