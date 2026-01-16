@@ -319,7 +319,7 @@
 
     .homepage-doctor-card {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         flex-direction: column;
         background: var(--primary-color-blue-light-1);
         width: 100%; 
@@ -364,6 +364,10 @@
         width: fit-content;
         height: fit-content;
         padding: 0.4rem;
+
+        @media ( min-width: 75em ) {
+            margin-top: auto;
+        }
     }
 
 </style>    
