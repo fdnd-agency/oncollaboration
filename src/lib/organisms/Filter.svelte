@@ -1,6 +1,7 @@
 <script>
     let { data } = $props();
     import { ContainerFilters} from '$lib/index.js'
+    import { enhance } from '$app/forms'
 </script>
 
 <form action="" method="get" use:enhance>

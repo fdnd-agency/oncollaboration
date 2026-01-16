@@ -4,7 +4,6 @@
     import doctorswebp from "$lib/assets/doctors.webp";
     import doctorspng from "$lib/assets/doctors.png";
     import Link from "$lib/atoms/homepage-button.svelte";
-    import Header from "$lib/organisms/header.svelte";
     import Article from "$lib/organisms/article.svelte";
     import Carrousel from "$lib/organisms/logo-carrousel.svelte";
 
@@ -48,8 +47,6 @@
 
 
 <main class="overlay">
-
-    <Header></Header>
 
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
