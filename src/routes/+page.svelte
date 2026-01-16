@@ -30,17 +30,6 @@
             box-sizing: border-box;
             overflow-x: hidden;
         }
-
-        .about {
-            margin-top: 2.25em;
-            margin-bottom: 2.5em;
-        
-            @media ( min-width: 56.25em ) {
-                grid-column: 1/2;
-                align-self: self-end;
-                margin: 0;
-            }
-        }
         
     </style>
 </svelte:head>
@@ -53,7 +42,7 @@
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
         <p class="info-about">{infoabout.text}</p>
-        <Link class="about" href="/more">more about oncollaboration</Link>
+        <Link class="link-about link-styling" href="/more">more about oncollaboration</Link>
          <picture class="img-about" >
             <source srcset="{ doctorsavif }" type="image/avif">
             <source srcset="{ doctorswebp }" type="image/webp">
@@ -97,10 +86,8 @@
                       </picture>                   
                     <h3 class="name-doctor">{doctor.name}</h3>
                     <p class="function-doctor">{doctor.role}</p>
-                    <a href="/" class="view-doctor">view doctor <svg class="arrow" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.8125 0.21875C6.9375 0.0625 7.1875 0.0625 7.34375 0.21875L13.875 6.75C14.0312 6.90625 14.0312 7.125 13.875 7.28125L7.34375 13.8125C7.1875 13.9688 6.9375 13.9688 6.8125 13.8125L6.1875 13.2188C6.03125 13.0625 6.03125 12.8125 6.1875 12.6875L11.0312 7.8125H0.375C0.15625 7.8125 0 7.65625 0 7.4375V6.5625C0 6.375 0.15625 6.1875 0.375 6.1875H11.0312L6.1875 1.34375C6.03125 1.21875 6.03125 0.96875 6.1875 0.8125L6.8125 0.21875Z" fill="currentColor"/>
-                        </svg>
-                    </a>
+                    
+                    <Link class="view-doctor" href="/speakers">view speakers</Link>
                 </article>
             {/each}
         </section>
@@ -108,6 +95,11 @@
 </main>
 
 <style>
+
+    :global(.link-styling) {
+            width: clamp(16.25em, 100%, 20.625em);
+            height: 2.5em;
+    }
 
     .overlay {
         display: flex;
@@ -183,6 +175,17 @@
             align-self: center;
         }
     }
+
+    :global(.link-about) {
+            margin-top: 2.25em;
+            margin-bottom: 2.5em;
+        
+            @media ( min-width: 56.25em ) {
+                grid-column: 1/2;
+                align-self: self-end;
+                margin: 0;
+            }
+        }
 
     .homepage-webinars-contourings {
         display: flex;
@@ -329,20 +332,10 @@
         white-space: nowrap;   
     }
 
-    .view-doctor {
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
+    :global(.view-doctor) {
         width: fit-content;
-        height: 2rem;
-        padding-inline: 0.5rem;
-        border-radius: 0.5rem;
-        background: var(--primary-color-aqua-dark-3);
-        color: var(--primary-color-blue-dark-2);
-
-        svg {
-            fill: var(--primary-color-blue-dark-2);
-        }
+        height: fit-content;
+        padding: 0.4rem;
     }
 
 </style>    
