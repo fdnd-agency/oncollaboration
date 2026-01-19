@@ -20,6 +20,8 @@
     </style>
 </svelte:head>
 
+<a href="#main-content" class="skip-link"> Skip naar de inhoud </a>
+
 <!-- <header>
     <div class="logo-hospitals">
         <a class="logo-avl" href={`/`}>
@@ -78,70 +80,89 @@
     </nav>
 </header> -->
 
-{@render children?.()}
+<main id="main-content">
+    {@render children?.()}
+</main>
 
 <footer>
-        <div class="footer-logos">
-            <img
-                class="avl-desktop-logo"
-                src={logoAvlDesktop}
-                alt="logo AVL"
-                height="50"
-                width="150"
-            />
-            
-            <img
-                class="avl-mobile-logo"
-                src={logoAvlMobile}
-                alt="logo AVL"
-                height="50"
-                width="50"
-            />
+    <div class="footer-logos">
+        <img
+            class="avl-desktop-logo"
+            src={logoAvlDesktop}
+            alt="logo AVL"
+            height="50"
+            width="150"
+        />
 
-            <img
-                class="kemenkes-desktop-logo"
-                src={logoKemenkesDesktop}
-                alt="logo Kemenkes"
-                height="60"
-                width="150"
-            />
-            <img
-                class="kemenkes-mobile-logo"
-                src={logoKemenkesMobile}
-                alt="logo Kemenkes"
-                height="50"
-                width="50"
-            />
-        </div>
-        <nav>
-            <strong>Navigation</strong>
-            <ul>
-                <li><a href={`/webinars`}>Webinars</a></li>
-                <li><a href={`/speakers`}>Speakers</a></li>
-                <li><a href={`/profile`}>Profile</a></li>
-                <li><a href={`/contourings`}>Contourings</a></li>
-            </ul>
-        </nav>
+        <img
+            class="avl-mobile-logo"
+            src={logoAvlMobile}
+            alt="logo AVL"
+            height="50"
+            width="50"
+        />
 
-        <address>
-            <strong>Contact Information</strong>
-            <ul>
-                <li>Indonesia & The Netherlands</li>
-                <li>AVL: <a href="tel:0205129111">020 512 9111</a></li>
-                <li>Kemenkes: <a href="tel:1500567">1500-567</a></li>
-            </ul>
-        </address>
+        <img
+            class="kemenkes-desktop-logo"
+            src={logoKemenkesDesktop}
+            alt="logo Kemenkes"
+            height="60"
+            width="150"
+        />
+        <img
+            class="kemenkes-mobile-logo"
+            src={logoKemenkesMobile}
+            alt="logo Kemenkes"
+            height="50"
+            width="50"
+        />
+    </div>
+    <nav>
+        <strong>Navigation</strong>
+        <ul>
+            <li><a href={`/webinars`}>Webinars</a></li>
+            <li><a href={`/speakers`}>Speakers</a></li>
+            <li><a href={`/profile`}>Profile</a></li>
+            <li><a href={`/contourings`}>Contourings</a></li>
+        </ul>
+    </nav>
 
-        <select id="language" name="language">
-            <option value="language">Language</option>
-            <option value="English">English</option>
-            <option value="Indonesian">Indonesian</option>
-        </select>
+    <address>
+        <strong>Contact Information</strong>
+        <ul>
+            <li>Indonesia & The Netherlands</li>
+            <li>AVL: <a href="tel:0205129111">020 512 9111</a></li>
+            <li>Kemenkes: <a href="tel:1500567">1500-567</a></li>
+        </ul>
+    </address>
 
-        <p>© 2025 Oncollaboration. All rights reserved.</p>
+    <select id="language" name="language">
+        <option value="language">Language</option>
+        <option value="English">English</option>
+        <option value="Indonesian">Indonesian</option>
+    </select>
+
+    <p>© 2025 Oncollaboration. All rights reserved.</p>
 </footer>
 
 <style>
+    .skip-link {
+        position: absolute;
+        background-color: var(--primary-color-aqua-dark-3);
+        color: var(--primary-color-blue-dark-2);
+        border-radius: var(--border-radius-small);
+        padding: 1em;
+        margin: 1em;
+        text-decoration: none;
+        z-index: 1000;
+        transform: translateY(-200%);
+        transition: transform 0.3s;
+
+        &:focus {
+            transform: translate(0%);
+        }
+    }
+
     /* header {
         background-color: var(--primary-color-blue-dark-2);
         display: flex;
@@ -300,10 +321,10 @@
         border: var(--primary-color-blue-dark-2);
         border-top-left-radius: var(--border-radius-small);
         border-top-right-radius: var(--border-radius-small);
-            @supports (corner-top-shape-left: bevel){
-                corner-top-shape-left: bevel;
-                corner-top-shape-right: bevel;
-            }
+        @supports (corner-top-shape-left: bevel) {
+            corner-top-shape-left: bevel;
+            corner-top-shape-right: bevel;
+        }
 
         display: grid;
         gap: 0.8rem;
@@ -335,7 +356,7 @@
             align-content: flex-start;
         }
 
-        @media (width >= 767px){
+        @media (width >= 767px) {
             display: grid;
             gap: 2rem;
             grid-column: 1 / 1;
@@ -343,7 +364,7 @@
     }
 
     .footer-logos img {
-        @media (width >= 767px){
+        @media (width >= 767px) {
             width: clamp(150px, 100%, 150px);
         }
     }
@@ -360,23 +381,26 @@
             grid-row: 2 / 2;
         }
 
-        @media (width >= 767px){
+        @media (width >= 767px) {
             justify-items: center;
             grid-column: 2 / 2;
             grid-row: 1 / 2;
         }
     }
 
-    footer nav a:focus, address a:focus {
+    footer nav a:focus,
+    address a:focus {
         outline: none;
         box-shadow: 0 0 0 2px var(--primary-color-true-aqua);
     }
 
-    footer ul{
+    footer ul {
         display: grid;
     }
 
-    footer p, li, strong {
+    footer p,
+    li,
+    strong {
         color: var(--neutral-color-lightest);
     }
 
@@ -389,30 +413,30 @@
             grid-row: 3 / 3;
         }
 
-        @media (width >= 767px){
+        @media (width >= 767px) {
             grid-column: 3 / 3;
             grid-row: 2 / 2;
         }
     }
-    
+
     footer p {
         grid-column: 1 / -1;
         grid-row: 5 / 6;
         text-align: center;
         padding-bottom: 1em;
 
-         @media (width >= 448px) {
+        @media (width >= 448px) {
             grid-column: 1 / -1;
             grid-row: 4 / 4;
         }
 
-        @media (width >= 767px){
+        @media (width >= 767px) {
             grid-column: 1 / -1;
             grid-row: 3 / 3;
         }
     }
 
-    address{
+    address {
         grid-row: 3 / 4;
         grid-column: 1 / -1;
         display: grid;
@@ -424,14 +448,16 @@
             padding-top: 0rem;
         }
 
-        @media (width >= 767px){
+        @media (width >= 767px) {
             grid-column: 3 / 3;
             grid-row: 1 / 2;
             padding-top: 0rem;
         }
     }
 
-    address li, a, strong{
+    address li,
+    a,
+    strong {
         font-family: var(--primary-font-family);
         font-style: var(--secondary-font-weight);
     }
