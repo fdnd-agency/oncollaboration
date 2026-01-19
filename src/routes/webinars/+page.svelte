@@ -7,6 +7,9 @@
     import arrow from "$lib/assets/arrow-right.svg";
     import { enhance } from "$app/forms";
     import { Filter} from '$lib/index.js'
+
+    const categories = []
+    const search = []
 </script>
 
 <!--  MARK: svelte:head-->
@@ -50,7 +53,7 @@
                     placeholder="Search..."
                 />
                 <button class="img-search"><img src={search} alt="" /></button>
-            </div>
+            </div>  
 
             <select name="category" id="category">
                 <option value="all">All</option>
