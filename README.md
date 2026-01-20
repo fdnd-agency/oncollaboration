@@ -12,6 +12,7 @@ discuss recent developments in their medical field.
   * [Description](#description)
   * [Features](#features)
        * [Design](#design)
+  * [Techniques](#techniques)
   * [Installation](#installation)
   * [Usage](#usage)
   * [Changelog](#changelog)
@@ -46,6 +47,27 @@ We made our stylesheet to make sure which colours we'll use. The Colours we'll b
 <img width="315" height="817" alt="webinar detail" src="https://github.com/user-attachments/assets/5bb89479-c553-4128-bf89-772202ae2e4a" />
 <br>
 <br>
+
+## Techniques
+### Common techniques:
+As is expected we've used some techniques that span across all pages. We have used these to make this website:
+![SvelteKit 5](https://img.shields.io/badge/SvelteKit-5-FF3E00?style=flat&logo=svelte&logoColor=white)
+![Svelte](https://img.shields.io/badge/Svelte-4A4A55?style=flat&logo=svelte&logoColor=FF3E00)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
+![npm](https://img.shields.io/badge/npm-CB3837?style=flat&logo=npm&logoColor=white)
+![Directus](https://img.shields.io/badge/Directus-64f?style=flat&logo=directus&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)
+ 
+
+### Homepage
+
+### Webinars page
+
+### Webinar detail page
 
 
 ## Installation
