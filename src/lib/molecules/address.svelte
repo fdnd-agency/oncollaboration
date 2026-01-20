@@ -1,5 +1,4 @@
 <script>
-    import "$lib/global.css"
     import Strong from "$lib/atoms/strong.svelte"
     import UlAddress from "$lib/atoms/footer-ul-address.svelte"
     import Language from "$lib/atoms/header-language.svelte"

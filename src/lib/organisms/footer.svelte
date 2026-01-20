@@ -1,5 +1,4 @@
 <script>
-    import "$lib/global.css";
     import Logos from "$lib/atoms/footer-logos.svelte";
     import FootNav from  "$lib/molecules/footer-nav.svelte";
     import Address from "$lib/molecules/address.svelte";
@@ -9,35 +8,31 @@
 <footer>
     <Logos class="logos"></Logos>
     <FootNav class="footnav"></FootNav>
-    <Address class="address"></Address>
+    <Address class="contact"></Address>
 </footer>
 
 <style>
     footer {
-        /* hier is de styling van de footer */
         width: 100%;
         background-color: var(--primary-color-blue-dark-2);
         border: var(--primary-color-blue-dark-2);
         border-top-left-radius: var(--border-radius-small);
         border-top-right-radius: var(--border-radius-small);
 
-        /* hier is de mooiere styling ALS de browser dit ondersteunt */
         @supports (corner-top-shape-left: bevel){
             corner-top-shape-left: bevel;
             corner-top-shape-right: bevel;
         }
 
-        /* hier is de positie die de elementen bepaalt */
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 15rem 12rem;
         padding: 1em;
         padding-top: 4em;
 
-        /* De media queries voor responsive design */
         @media (width >= 448px) {
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: 1fr 15rem 2.3em 2.5em;
+            grid-template-rows: 1fr 15rem;
         }
 
         @media (width >= 767px) {
@@ -54,7 +49,7 @@
     Door footer global:() in te voeren krijg ik dit component wel mee, omdat :global de id pakt die svelte zelf mee geeft
     aan components. */
 
-    footer :global(address){
+    footer :global(contact){
         display: grid;
     }
 
@@ -69,23 +64,28 @@
     }
 
     /* MARK: 448px */
-    @container footer (width >= 448px) {
+    @container footer (min-width: 448px) {
         footer :global(logos) {
-            grid-column: 1 / -1;
-            grid-row: 1 / 1;
+            grid-column: 2 / 2;
+            grid-row: 2 / 2;
             align-content: flex-start;
         }
 
         footer :global(footnav) {
             justify-items: center;
-            grid-column: 1 / 2;
+            grid-column: 1 / 1;
+            grid-row: 1 / 1;
+        }
+
+        footer :global(contact) {
+            grid-column: 2 / 2;
             grid-row: 2 / 2;
         }
     }
 
     /* MARK: 767px */
     @container footer (width >= 767px) {
-        footer :global(address){
+        footer :global(contact){
             grid-column: 3 / 3;
             grid-row: 1 / 2;
         }
