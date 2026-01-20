@@ -18,6 +18,8 @@ discuss recent developments in their medical field.
   * [Sources](#sources)
   * [License](#license)
 
+  ![SvelteKit 5](https://img.shields.io/badge/SvelteKit_5-Powered_by-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
+
 ## Description
 For an assignment we were asked to build a website where a doctor can watch a webinar about radiology. It is the goal that doctors from Indonesia can ask questions to Dutch Doctors and watch the webinars being held. 
 
