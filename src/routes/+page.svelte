@@ -1,5 +1,4 @@
 <script>
-
     import doctorsavif from "$lib/assets/doctors.avif";
     import doctorswebp from "$lib/assets/doctors.webp";
     import doctorspng from "$lib/assets/doctors.png";
