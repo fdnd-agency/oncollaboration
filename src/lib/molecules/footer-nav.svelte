@@ -1,5 +1,4 @@
 <script>
-    import "$lib/global.css"
     import FooterUlLinks from "$lib/atoms/footer-ul-links.svelte"
     import Strong from "$lib/atoms/strong.svelte"
     let { class: className, ...rest } = $props();

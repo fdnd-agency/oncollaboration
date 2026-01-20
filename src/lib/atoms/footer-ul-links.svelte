@@ -1,7 +1,3 @@
-<script>
-    import "$lib/global.css";
-</script>
-
 <ul>
     <li><a class="webinars" href={`/webinars`}>Webinars</a></li>
     <li><a class="contourings" href={`/contourings`}>Contourings</a></li>
@@ -21,7 +17,8 @@
     }
 
     a {
-        padding: .5em;
+        /* padding: .5em; */
+        padding: -1.4em;
     }
 
     a:focus {
