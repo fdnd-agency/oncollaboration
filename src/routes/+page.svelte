@@ -8,7 +8,6 @@
     import Article from "$lib/organisms/article.svelte";
     import Carrousel from "$lib/organisms/logo-carrousel.svelte";
 
-
     /** @type {{ data: import('./$types').PageData }} */
     let { data } = $props();
 
