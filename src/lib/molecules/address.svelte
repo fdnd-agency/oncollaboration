@@ -6,16 +6,6 @@
     let { class: className, ...rest } = $props();
 </script>
 
-<svelte:head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    </style>
-</svelte:head>
-
 <address class={className} {...rest}>
     <Strong>
         Contact Information
