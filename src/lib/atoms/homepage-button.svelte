@@ -15,7 +15,6 @@
         align-items: center;
         color: var(--primary-color-blue-dark-2);
         background: var(--primary-color-aqua-dark-3);
-        width: clamp(16.25em, 100%, 20.625em);
         height: 2.5em;
         text-decoration: none;
         gap: 0.4em;
