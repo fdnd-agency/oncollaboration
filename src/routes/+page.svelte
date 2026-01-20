@@ -319,14 +319,12 @@
 
     .homepage-doctor-card {
         display: flex;
-        justify-content: center;
         flex-direction: column;
         background: var(--primary-color-blue-light-1);
         width: 100%; 
         max-width: 12.5rem;
-        height: 19.375rem;
         padding: 0.75rem;
-        gap: 1rem;
+        gap: 1rem; 
         border-radius: 18px;
         border: 2px solid var(--primary-color-blue-dark-2);
 
@@ -340,7 +338,7 @@
         background: var(--neutral-color-lightest);
         object-fit: cover;
         overflow: hidden;
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 4 / 3; 
         width: 100%;
         border-radius: 18px;
     }
@@ -351,12 +349,11 @@
         text-wrap: balance; 
         width: 100%;
         overflow: hidden;
-        margin-top: 0.5rem;
+        height: 4.125rem; 
     }
 
     .function-doctor {
         overflow: hidden;
-        text-overflow: ellipsis;
         white-space: nowrap;   
     }
 
@@ -364,10 +361,6 @@
         width: fit-content;
         height: fit-content;
         padding: 0.4rem;
-
-        @media ( min-width: 75em ) {
-            margin-top: auto;
-        }
     }
 
 </style>    
