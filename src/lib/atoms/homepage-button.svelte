@@ -3,23 +3,27 @@
     let {href = '#', children, ...rest} = $props(); 
 </script>
 
-<a href={href} {...rest}> 
-    {@render children()}  
-      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.864 10.4C11.024 10.0587 11.1787 9.76 11.328 9.504C11.488 9.248 11.6427 9.03467 11.792 8.864H2.464V8.192H11.792C11.6427 8.01067 11.488 7.792 11.328 7.536C11.1787 7.28 11.024 6.98667 10.864 6.656H11.424C12.096 7.43467 12.8 8.01067 13.536 8.384V8.672C12.8 9.03467 12.096 9.61067 11.424 10.4H10.864Z" fill="currentColor"/>
+<a href={href} {...rest}>{@render children()}
+    <svg class="arrow" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.8125 0.21875C6.9375 0.0625 7.1875 0.0625 7.34375 0.21875L13.875 6.75C14.0312 6.90625 14.0312 7.125 13.875 7.28125L7.34375 13.8125C7.1875 13.9688 6.9375 13.9688 6.8125 13.8125L6.1875 13.2188C6.03125 13.0625 6.03125 12.8125 6.1875 12.6875L11.0312 7.8125H0.375C0.15625 7.8125 0 7.65625 0 7.4375V6.5625C0 6.375 0.15625 6.1875 0.375 6.1875H11.0312L6.1875 1.34375C6.03125 1.21875 6.03125 0.96875 6.1875 0.8125L6.8125 0.21875Z" fill="currentColor"/>
     </svg>
 </a>
+
 <style>
     a {
         display: flex;
         justify-content: center;
         align-items: center;
         color: var(--primary-color-blue-dark-2);
-        background-color: var(--primary-color-aqua-dark-3);
+        background: var(--primary-color-aqua-dark-3);
         width: clamp(16.25em, 100%, 20.625em);
         height: 2.5em;
         text-decoration: none;
-        gap: 0.25em;
+        gap: 0.5em;
         border-radius: 0.5em;    
+    }
+
+    svg {
+        fill: var(--primary-color-blue-dark-2);
     }
 </style>
