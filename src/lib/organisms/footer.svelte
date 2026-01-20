@@ -1,8 +1,9 @@
 <script>
+
     import Logos from "$lib/atoms/footer-logos.svelte";
     import FootNav from  "$lib/molecules/footer-nav.svelte";
     import Address from "$lib/molecules/address.svelte";
-    let { class: className, ...rest } = $props();
+    let { ...restProps } = $props();
 </script>
 
 <footer>
@@ -41,66 +42,41 @@
             gap: 1rem;
         }
 
-        container-type: inline-size;
-        container-name: footer;
+        /* container-type: inline-size;
+        container-name: footer; */
     }
     
     /* Omdat gewone classnames niet op de componenten kunnen worden gezet moet ik footer en dan Global gebruiken.
     Door footer global:() in te voeren krijg ik dit component wel mee, omdat :global de id pakt die svelte zelf mee geeft
     aan components. */
 
-    footer :global(contact){
+    footer :global(.contact){
         display: grid;
+
+        @media (min-width: 448px) {
+            grid-column: 2 / 2;
+            grid-row: 2 / 2;
+        }
+
+        @media (min-width: 767px) {
+            grid-column: 3 / 3;
+            grid-row: 1 /1;
+        }
     }
 
-    footer :global(logos) {
+    footer :global(.logos) {
         display: flex;
         justify-content: space-around;
         padding-bottom: 1.4rem;
-    }
 
-    footer :global(footnav) {
-        display: grid;
-    }
-
-    /* MARK: 448px */
-    @container footer (min-width: 448px) {
-        footer :global(logos) {
+        @media (min-width: 448px) {
             grid-column: 2 / 2;
             grid-row: 2 / 2;
             align-content: flex-start;
         }
-
-        footer :global(footnav) {
-            justify-items: center;
-            grid-column: 1 / 1;
-            grid-row: 1 / 1;
-        }
-
-        footer :global(contact) {
-            grid-column: 2 / 2;
-            grid-row: 2 / 2;
-        }
     }
 
-    /* MARK: 767px */
-    @container footer (width >= 767px) {
-        footer :global(contact){
-            grid-column: 3 / 3;
-            grid-row: 1 / 2;
-        }
-
-        footer :global(logos) {
-            display: grid;
-            gap: 2rem;
-            grid-column: 1 / 1;
-        }
-
-        footer :global(footnav) {
-            justify-items: center;
-            grid-column: 2 / 2;
-            grid-row: 1 / 2;
-        }
+    footer :global(.footnav) {
+        display: grid;
     }
-
 </style>
