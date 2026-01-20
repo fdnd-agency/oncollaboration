@@ -19,7 +19,7 @@
         width: clamp(16.25em, 100%, 20.625em);
         height: 2.5em;
         text-decoration: none;
-        gap: 0.5em;
+        gap: 0.4em;
         border-radius: 0.5em;    
     }
 
