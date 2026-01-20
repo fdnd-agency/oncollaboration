@@ -15,7 +15,6 @@
     const infowebinars = data.webinars;
     const infocontourings = data.contourings;
     const infopartnerships = data.partnerships;
-    const infologos = data.logos;
     const infodoctor = data.doctorinfo;
     const infodoctors = data.doctors;
 
@@ -30,17 +29,6 @@
             box-sizing: border-box;
             overflow-x: hidden;
         }
-
-        .about {
-            margin-top: 2.25em;
-            margin-bottom: 2.5em;
-        
-            @media ( min-width: 56.25em ) {
-                grid-column: 1/2;
-                align-self: self-end;
-                margin: 0;
-            }
-        }
         
     </style>
 </svelte:head>
@@ -53,7 +41,7 @@
     <article class="homepage-about home-mobile-styling">
         <h1 class="header-about">{infoabout.heading}</h1>
         <p class="info-about">{infoabout.text}</p>
-        <Link class="about" href="/more">more about oncollaboration</Link>
+        <Link class="link-about link-styling" href="/more">more about oncollaboration</Link>
          <picture class="img-about" >
             <source srcset="{ doctorsavif }" type="image/avif">
             <source srcset="{ doctorswebp }" type="image/webp">
@@ -89,14 +77,16 @@
 
         <section class="homepage-doctors-outlay">
             {#each infodoctors as doctor} 
-                <article class="homepage-all-doctors">
+                <article class="homepage-doctor-card">
                     <picture class="photo-doctor">
                         <source srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=avif`} type="image/avif"/>
                         <source srcSet={`https://fdnd-agency.directus.app/assets/${doctor.photo}?format=webp`} type="image/webp"/>
                         <img class="photo-doctor" src={`https://fdnd-agency.directus.app/assets/${doctor.photo}`} alt="{doctor.name}" loading="lazy"/>
                       </picture>                   
-                      <h3 class="name-doctor">{doctor.name}</h3>
+                    <h3 class="name-doctor">{doctor.name}</h3>
                     <p class="function-doctor">{doctor.role}</p>
+                    
+                    <Link class="view-doctor" href="/speakers">view speakers</Link>
                 </article>
             {/each}
         </section>
@@ -104,6 +94,11 @@
 </main>
 
 <style>
+
+    :global(.link-styling) {
+            width: clamp(16.25em, 100%, 20.625em);
+            height: 2.5em;
+    }
 
     .overlay {
         display: flex;
@@ -180,6 +175,17 @@
         }
     }
 
+    :global(.link-about) {
+            margin-top: 2.25em;
+            margin-bottom: 2.5em;
+        
+            @media ( min-width: 56.25em ) {
+                grid-column: 1/2;
+                align-self: self-end;
+                margin: 0;
+            }
+        }
+
     .homepage-webinars-contourings {
         display: flex;
         flex-direction: column;
@@ -209,6 +215,7 @@
         @media ( min-width: 56.25em ) {
             width: 100%;
             align-items: start;
+            padding-top: 4rem;
             padding-inline: 2rem;
         }
 
@@ -238,7 +245,7 @@
     }
 
     .homepage-speakers {
-        padding-top: 2rem;
+        padding-block: 2rem;
         max-width: 37.5em;
 
         @media ( min-width: 37.5em ) {
@@ -251,74 +258,108 @@
             grid-template-rows: 0.2fr 1fr;
             max-width: 100%;
             padding-inline: 2rem;
+            padding-block: 4rem;
         }
 
         @media (min-width: 75em ) {
-            grid-template-columns: 30em 37.5em;
-            column-gap: 6em;
+            grid-template-columns: 1fr 2fr;  
+            width: 78.125rem;
+            column-gap: 4rem;
+            /* 30em 37.5em */
         }
+    }
+
+    .header-speakers {
+        height: fit-content;
     }
 
     .homepage-doctors-outlay {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        max-width: 600px;
+        max-width: 37.5rem;
         gap: 1rem;
-        margin-top: 2rem;
-        padding-top: 2em;
-        padding-bottom: 4em;
+        padding-top: 2rem;
 
         @media ( min-width: 56.25em ) {
-            padding-top: 0;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 0rem;
+            gap: 0.5rem;
             grid-column: 2/3;
             grid-row: 1/3;
         }
-    }
 
-        .header-speakers {
-            display: flex;
-            align-items: center;
-        }
-
-    .info-speakers {
-        padding-right: 1rem;
-
-        @media ( min-width: 56.25em ) {
-            grid-column: 1/2;
+        @media (min-width: 75em ) {
+            max-width: 100%;
         }
     }
 
-    .homepage-all-doctors {
+    .header-speakers {
         display: flex;
         align-items: center;
-        justify-content: center;
+        margin-bottom: 2rem;
+
+        @media ( min-width: 56.25em ) {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 75em ) {
+            max-width: 22rem;
+        }
+    }
+
+    .info-speakers {
+
+        @media (min-width: 75em ) {
+            max-width: 22rem;
+        }
+    }
+
+    .homepage-doctor-card {
+        display: flex;
         flex-direction: column;
-        background-color: var(--neutral-color-lightest);
-        border: 3px solid var(--primary-color-blue-dark-2);
-        border-radius: 0.6rem;
-        width: 200px;
-        height: 250px;
-        padding: 0.5rem;
+        background: var(--primary-color-blue-light-1);
+        width: 100%; 
+        max-width: 12.5rem;
+        padding: 0.75rem;
+        gap: 1rem; 
+        border-radius: 18px;
+        border: 2px solid var(--primary-color-blue-dark-2);
+
+        @media ( min-width: 75em ) {
+            max-width: 10.625rem;
+        }
     }
 
     .photo-doctor {
+        object-position: center top;
+        background: var(--neutral-color-lightest);
         object-fit: cover;
-        height: 150px;
-        width: 150px;
         overflow: hidden;
-        border-radius: 100px;
+        aspect-ratio: 4 / 3; 
+        width: 100%;
+        border-radius: 18px;
     }
 
     .name-doctor {
-        font-size: var(--font-size-small);
-        background-color: var(--primary-color-blue-light-1);
-        text-align: center;
-        padding-inline: 0.5rem;
-        padding-block: 0.25rem;
-        border-radius: 0.6rem;
-        margin-top: -1.8rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+        line-height: 1.1;
+        text-wrap: balance; 
+        width: 100%;
+        overflow: hidden;
+        height: 4.125rem; 
+    }
+
+    .function-doctor {
+        overflow: hidden;
+        white-space: nowrap;   
+    }
+
+    :global(.view-doctor) {
+        width: fit-content;
+        height: fit-content;
+        padding: 0.4rem;
     }
 
 </style>    

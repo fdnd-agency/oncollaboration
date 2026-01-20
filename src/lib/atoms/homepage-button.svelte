@@ -1,6 +1,5 @@
 <script>
-    import "$lib/global.css";
-    let {href = '#', children, ...rest} = $props(); 
+    let { href, children, ...rest } = $props();
 </script>
 
 <a href={href} {...rest}>{@render children()}
