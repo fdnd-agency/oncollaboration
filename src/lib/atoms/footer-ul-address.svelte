@@ -2,16 +2,6 @@
     import "$lib/global.css";
 </script>
 
-<svelte:head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    </style>
-</svelte:head>
-
 <ul>
     <li>Indonesia & The Netherlands</li>
     <li>AVL: <a href="tel:0205129111">020 512 9111</a></li>
