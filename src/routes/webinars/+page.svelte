@@ -4,8 +4,10 @@
     const webinars = data.webinars;
 
     import { enhance } from "$app/forms";
-    import { Filter} from '$lib/index.js'
+    import { Filter } from '$lib/index.js'
     import { WebinarCard} from '$lib/index.js'
+    const search = []
+    const categories = []
 </script>
 
 <!--  MARK: svelte:head-->
