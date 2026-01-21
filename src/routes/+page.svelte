@@ -201,7 +201,7 @@
         }
 
         @media ( min-width: 75em ) {
-            gap: 18.7em;
+            gap: 19.4em;
         }
     }
 
@@ -287,6 +287,7 @@
 
         @media (min-width: 75em ) {
             max-width: 100%;
+            margin-right: 0.2rem;
         }
     }
 
