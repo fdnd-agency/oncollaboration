@@ -225,18 +225,23 @@
 
         @media ( min-width: 75em ) {
             width: 48rem;
-            text-align: start;        
+            text-align: start;   
+            margin-left: 0.3rem;     
         }
     }
 
 
     .info-partnerships {
-        margin-top: 2rem;
         max-width: 37.5rem;
         padding-right: 1rem;
+        margin-top: 2rem;
 
         @media ( min-width: 56.25em ) {
             max-width: 48rem;
+        }
+
+        @media ( min-width: 75em ) {
+            margin-left: 0.3rem;   
         }
     }
 
@@ -264,10 +269,6 @@
         }
     }
 
-    .header-speakers {
-        height: fit-content;
-    }
-
     .homepage-doctors-outlay {
         display: flex;
         justify-content: center;
@@ -287,13 +288,13 @@
 
         @media (min-width: 75em ) {
             max-width: 100%;
-            margin-right: 0.2rem;
         }
     }
 
     .header-speakers {
         display: flex;
         align-items: center;
+        height: fit-content;
         margin-bottom: 2rem;
 
         @media ( min-width: 56.25em ) {
@@ -302,6 +303,7 @@
 
         @media (min-width: 75em ) {
             max-width: 22rem;
+            margin-left: 0.3rem;   
         }
     }
 
@@ -309,6 +311,7 @@
 
         @media (min-width: 75em ) {
             max-width: 22rem;
+            margin-left: 0.3rem;   
         }
     }
 
