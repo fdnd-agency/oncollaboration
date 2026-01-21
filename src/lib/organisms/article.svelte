@@ -14,7 +14,7 @@
 <article {...rest} class="homepage-article">
     <h2 class="header-article">{title}</h2>
     <p class="info-article">{description}</p>   
-    <LinkButton href={href}>{linkText}</LinkButton> 
+    <LinkButton class="link-styling" href={href}>{linkText}</LinkButton> 
 </article>
 
 <style>

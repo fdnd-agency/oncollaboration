@@ -38,9 +38,9 @@
         overflow-x: auto;
         scroll-behavior: smooth;
 
-        @supports (animation: scroll 18s linear infinite) {
+        @supports (animation: scroll 10s linear infinite) {
             width: max-content;
-            animation: scroll 18s linear infinite;
+            animation: scroll 10s linear infinite;
         }
 
         @media (prefers-reduced-motion: reduce) {

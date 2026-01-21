@@ -1,4 +1,5 @@
 export async function load({ url, fetch }) {
+   
     const sortValue = url.searchParams.get('sort') || '-date' // Default to '-date' (New to Old) 
     const filterValue = url.searchParams.get('filter') || ''
 
@@ -6,17 +7,18 @@ export async function load({ url, fetch }) {
     // trys to load the data and send it
         const webinars = await fetch(apiUrl); // Use the constructed API URL
         const categories = await fetch('https://fdnd-agency.directus.app/items/avl_categories');  // Fetch categories
+         console.log('A', categories)
  
         if (!webinars.ok) {
             throw new Error(`HTTP error! status: ${webinars.status}`);
         }
 
-        if (!categories.ok) {
+        if (!categories?.ok) {
             throw new Error(`HTTP error! status: ${categories.status}`);
         }
 
         const webinarsData = await webinars.json();
-        const categoriesData = await categories.json();
+        const categoriesData = await categories?.json();
 
         return {
             webinars: webinarsData.data,

@@ -15,9 +15,9 @@
 
 <ul>
     <li><a class="webinars" href={`/webinars`}>Webinars</a></li>
-    <li><a class="contourings" href={`/contourings`}>Contourings</a></li>
-    <li><a class="speakers" href={`/speakers`}>Speakers</a></li>
-    <li><a class="profile" href={`/profile`}>Profile</a></li>
+    <li><a class="contourings" href={`/notworking`}>Contourings</a></li>
+    <li><a class="speakers" href={`/notworking`}>Speakers</a></li>
+    <li><a class="profile" href={`/notworking`}>Profile</a></li>
 </ul>
 
 <style>  

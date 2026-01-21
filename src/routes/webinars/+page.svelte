@@ -4,7 +4,7 @@
     const webinars = data.webinars;
 
     import { enhance } from "$app/forms";
-    import { Filter} from '$lib/index.js'
+    import { Filter } from '$lib/index.js'
     import { WebinarCard} from '$lib/index.js'
 </script>
 
