@@ -21,33 +21,59 @@ You can modify this data in the fdnd agency avl database, for which you need to 
 You can use these links in your fetch/post requests to retrieve or modify data from the database.
 
 ## Code structure
-All documents that work with dynamic code are in the `src` folder. All static documents are in the `static` folder.
-
-`static` contains the folders `css`, `fonts`, and `images`.
+All documents that work with dynamic code are in the `src` folder. 
 
 `src` is divided into `lib`, which contains reusable documents, `routes`, where each folder is a route name, and `app.html`, which contains the head for all files.
 
-We also have a separate folder for all JavaScript files. In `index.js` we import all components, so you only need one line of code to import multiple components.
+In `index.js` we import some components, so you only need one line of code to import multiple components.
 
 ## Component Structure Overview
 
-The `lib/` directory is organized into three main component folders: `reusables`, `pages`, and `globals`.
+The `lib/` directory is organized into four folders of which three are component based: `assets`, `atoms`, `molecules` and `organisms`
 
-## 1. Reusables (`lib/reusables/`)
-Components that can appear more than once and on different pages:
+## 1. Assets (`lib/assets/`)
+SVG's and other images that are used around the website:
 - **Bricks:** 
 - **Blocks:** 
 - **Constructions:** 
 - **Assemblages:** 
 
-## 2. Page Components (`lib/pages/`)
-Page-specific components, that only appear once:
-- **Webinars, Profile, Home:** Each contains `bricks`, `blocks`, `constructions`, and `assemblages` tailored to the page.
+## 2. Atoms (`lib/atoms/`)
+the most little building blocks of our organisms. These tiny parts of code start our components:
+- **Webinars, Webinar detail and Home:** Each contains `organisms` and `molecules` are build with `atoms`.
 
-## 3. Globals (`lib/globals/`)
-Shared components across the app:
-- **Navigation.svelte** – site-wide navigation  
-- **Footer.svelte** – site-wide footer
+## 3. Molecules (`lib/moelcules/`)
+The middle building bricks of organisms, molecules serve as conjoined elements serving as one. Example:
+```<article>
+    <div class="container-thumbnail">
+        <Thumbnail webinar={webinar} ></Thumbnail>
+
+        <BadgeLabel class="duration" text={webinar.duration}></BadgeLabel>
+
+        <BadgeLabel class="category" text={webinar.categories[0].avl_categories_id.name}></BadgeLabel>
+
+        <Button type="button" class="watchlist">
+            Add to watchlist
+            <img src={watchlist} alt="" aria-hidden="true" />
+        </Button>
+    </div>
+
+    <WebinarTitle as="h3">{webinar.title}</WebinarTitle>
+    <Speaker as="p" class="speakers-fullname">{webinar.speakers[0].avl_speakers_id.fullname}</Speaker>
+
+    <LinkButton class="to-webinar-detail" href={`/webinars/${webinar.slug}`}>
+        View webinar
+        <svg class="arrow" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.8125 0.21875C6.9375 0.0625 7.1875 0.0625 7.34375 0.21875L13.875 6.75C14.0312 6.90625 14.0312 7.125 13.875 7.28125L7.34375 13.8125C7.1875 13.9688 6.9375 13.9688 6.8125 13.8125L6.1875 13.2188C6.03125 13.0625 6.03125 12.8125 6.1875 12.6875L11.0312 7.8125H0.375C0.15625 7.8125 0 7.65625 0 7.4375V6.5625C0 6.375 0.15625 6.1875 0.375 6.1875H11.0312L6.1875 1.34375C6.03125 1.21875 6.03125 0.96875 6.1875 0.8125L6.8125 0.21875Z" fill="currentColor"/>
+        </svg>
+    </LinkButton>
+</article>
+```
+
+### 4 Organisms ('lib/organisms')
+
+The greatest of components. Great components like footer, header and logo-carousels are here. They are great works of molecules working together
+
 
 
 ## page.svelte files
