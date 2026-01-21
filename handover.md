@@ -1,55 +1,27 @@
 # Handover
 
-## What is the current status of this project ?
-For Oncollaboration, we worked with Quincy from CMD. We didn't have much time to complete the redesign, so we deliberately chose to create only the mobile version of the homepage. We implemented all the must-haves we had outlined for the homepages, with only a few minor bugs that we didn't get a chance to fixWat zijn de belangrijkste features die al werken?
-The new homepage is still linked to the old pages so when choosing one of the following call to actions, Doctors, Contourings and Webinars. It will take you to the old pages that where made. when redesigning the other pages, you can apply its functionalities to the newly redesigned pages.
+## Current status of this project
+Currently this project is in its early phases. We have pages on which we can view the home, webinars and the webinars detail page. Sorting seems to work with the webinar page, however filtering on specific categories or name is not yet implemented. We have completely redesigned this website to make sure everyone with either a mobile phone, tablet, laptop or desktop will be able to view this webpage. The pages that still need more work are the: contourings, profile, sign-in, sign-out, search and speakers.
 
-## What are the most important features that are currently working ?
+## Important features that do work
 
-**Old version functionalities** 
--	there are videos of the webinars available for the user to watch.
--	Video’s of the webinars have a timestamp feature
--	You can leave comments on the webinars video’s
--	You can filter when using the search feature
+Features that work in the website are: 
+- The watching of webinars
+- Navigating throughout the website
+- Choosing which webinar you'd like to see
+- Error page if no page is available
+- A carousel of the Oncollaboration partners
 
-**New version functionalities**
--	Reusable call to actions (you can customize as desired)
--	Carousell that shows all the doctors
+## Which are the core-challenges?
 
-## What are the biggest concerns or challenges?
+A few core challenges have occured and we've listed them here:
+- The API. The API is a bit messy in the way of nesting important parts of information which leads to a more difficult task of filtering for the right content.
+- The translation from English to Indonesian. Since Indonesian is an Asian language it's written right to left. Preferably use the modern iteration of the Indonesian language which uses 26 characters from the Latin alphabet as most languages use.
 
-**Login**
--	Make a working login system for the user
--	Comments are hard coded so the next step would be to connect the comments to the users that are currently logged in.
+## Most recommended first steps:
 
-## What's recommended as the first step for the next team?
-
-**1. When working on this project**
-
-When working on this project we strongly advice you to open and run this branch. So you can see the previous design with all the functionalities made prior. This will give you a better understanding of how it was build and how to implement it for the redesign for Oncollaboration.
-
-[first design](https://github.com/fdnd-agency/oncollaboration/tree/version-before-redesign)
-
-**2  Implement Login System:**
-
-•	Ensure a secure and user-friendly authentication system.
-
-•	Add validation to guarantee the integrity of user data.
-
-**3. Develop a Profile Page:**
-
-•	Design and implement a profile page where users can view and edit their data.
-
-**4. Link Comments to Accounts:**
-
-•	Work on the logic to connect comments and other interactions with user profiles.
-
-**5. redesign all the pages**
-
-Only the home pages has a redesign. Make sure that the other pages have a good redesign as well.
-
- 
-## Designrationale en StyleGuide
-[Oncollaboration DesignRationale StyleGuide.pdf](https://github.com/user-attachments/files/20840326/Oncollaboration.DesignRationale.StyleGuide.pdf)
-
-
+- Cleaning up the API for further use
+- Filtering system 
+- Comments and commenting on comments
+- Language translation
+- Working on the remaining pages
