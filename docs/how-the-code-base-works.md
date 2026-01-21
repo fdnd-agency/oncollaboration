@@ -42,7 +42,7 @@ SVG's and other images that are used around the website:
 the most little building blocks of our organisms. These tiny parts of code start our components:
 - **Webinars, Webinar detail and Home:** Each contains `organisms` and `molecules` are build with `atoms`.
 
-## 3. Molecules (`lib/moelcules/`)
+## 3. Molecules (`lib/molcules/`)
 The middle building bricks of organisms, molecules serve as conjoined elements serving as one. Example:
 ```<article>
     <div class="container-thumbnail">
