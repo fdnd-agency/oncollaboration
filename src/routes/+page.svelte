@@ -7,6 +7,7 @@
     import Header from "$lib/organisms/header.svelte";
     import Article from "$lib/organisms/article.svelte";
     import Carrousel from "$lib/organisms/logo-carrousel.svelte";
+    import Footer from "$lib/organisms/footer.svelte";
 
     /** @type {{ data: import('./$types').PageData }} */
     let { data } = $props();
@@ -91,6 +92,7 @@
             {/each}
         </section>
     </section>
+    <Footer></Footer>
 </main>
 
 <style>

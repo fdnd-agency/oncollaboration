@@ -6,6 +6,9 @@
     import logoKemenkesMobile from "$lib/assets/Kemenkes-logo-mobile.png";
     import open from "$lib/assets/hamburger-menu.svg";
     import close from "$lib/assets/close-menu.svg";
+    import FooterNav from "../lib/molecules/footer-nav.svelte";
+    import Address from "../lib/molecules/address.svelte";
+
     let { children } = $props();
 </script>
 
@@ -80,7 +83,7 @@
 
 {@render children?.()}
 
-<footer>
+<!-- <footer>
         <div class="footer-logos">
             <img
                 class="avl-desktop-logo"
@@ -138,7 +141,7 @@
             <option value="Indonesian">Indonesian</option>
         </select>
 
-        <p>© 2025 Oncollaboration. All rights reserved.</p>
+        <p>© 2025 Oncollaboration. All rights reserved.</p> 
 </footer>
 
 <style>
@@ -350,8 +353,6 @@
 
     footer nav {
         display: grid;
-        right: 0;
-        position: relative;
         grid-column: 1 / 1;
 
         @media (width >= 448px) {
@@ -435,4 +436,4 @@
         font-family: var(--primary-font-family);
         font-style: var(--secondary-font-weight);
     }
-</style>
+</style> -->
