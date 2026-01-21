@@ -46,18 +46,27 @@ export async function load({ url }) {
         const homepageDoctorInfoData = await homepageDoctorInfo.json();
         const homepageDoctorsData = await homepageDoctors.json();
 
+        // gebruik van mapping voor het ordenen van de logo's dit is deels gemaakt met hulp van ai
+
+        const logosOrder = [5, 1, 2, 4, 3, 6];
+
+        const logosSorted = logosOrder.map(id => 
+            homepageLogosData.data.find(logo => logo.id === id)
+        );
 
         return {
             about: homepageAboutData.data,
             webinars: homepageWebinarsData.data,
             contourings: homepageContouringsData.data,
             partnerships: homepagePartnershipsData.data,
-            logos: homepageLogosData.data,
+            logos: logosSorted, 
             doctorinfo: homepageDoctorInfoData.data,
             doctors: homepageDoctorsData.data,
             error: null
         };
-    } catch (error) {
+    } 
+    
+    catch (error) {
         return {
             about: null,
             webinars: null,
