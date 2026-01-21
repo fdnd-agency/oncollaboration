@@ -74,6 +74,7 @@
         list-style: none;
         display: flex;
     }
+    
     #webinar-bread-crumb{
         height: 2em;
         background-color: var(--primary-color-blue-light-1);

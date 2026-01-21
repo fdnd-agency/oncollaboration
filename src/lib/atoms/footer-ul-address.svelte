@@ -13,6 +13,7 @@
         display: grid;
         padding-top: 1.4em;
         gap: .7em;
+        list-style: none;
     }
 
     li, a{

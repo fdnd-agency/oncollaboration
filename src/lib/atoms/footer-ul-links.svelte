@@ -8,12 +8,13 @@
 <style>
     ul {
         display: grid;
+        list-style: none;
     }
 
     li, a{
         font-family: var(--primary-font-family);
         font-style: var(--secondary-font-weight);
-         color: var(--neutral-color-lightest);
+        color: var(--neutral-color-lightest);
     }
 
     a {
