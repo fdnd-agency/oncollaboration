@@ -4,23 +4,11 @@
     const infologos = data.logos;
 </script>
 
-<svelte:head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: var(--primary-font-family);
-        }
-    </style>
-</svelte:head>
-
 {#each infologos as logo}
     <picture class="logos-partnerships">
         <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=avif`} type="image/avif"/>
         <source srcSet={`https://fdnd-agency.directus.app/assets/${logo.logo}?format=webp`} type="image/webp"/>
         <img src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt="Logos van de partners" loading="lazy"/>
-        <!-- <img src={`https://fdnd-agency.directus.app/assets/${logo.logo}`} alt={logo.name} loading="lazy"/> -->
     </picture>
 {/each}
 
@@ -54,8 +42,4 @@
     .logos-partnerships:is(:nth-of-type(4), :nth-of-type(5), :nth-of-type(6), :nth-of-type(10)) {
         background: var(--primary-color-blue-dark-2);
     }
-    
-    
-
-
 </style>

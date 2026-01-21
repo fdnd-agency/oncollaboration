@@ -2,17 +2,6 @@
     import "$lib/global.css";
 </script>
 
-<svelte:head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: var(--primary-font-family);
-        }
-    </style>
-</svelte:head>
-
 <select id="language" name="language">
     <option value="language">Language</option>
     <option value="English">English</option>

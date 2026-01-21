@@ -2,17 +2,6 @@
     import "$lib/global.css";
 </script>
 
-<svelte:head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: var(--primary-font-family);
-        }
-    </style>
-</svelte:head>
-
 <ul>
     <li><a class="webinars" href={`/webinars`}>Webinars</a></li>
     <li><a class="contourings" href={`/notworking`}>Contourings</a></li>

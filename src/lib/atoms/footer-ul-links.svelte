@@ -18,7 +18,6 @@
     }
 
     a {
-        /* padding: .5em; */
         padding: -1.4em;
     }
 

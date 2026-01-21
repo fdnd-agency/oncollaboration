@@ -4,17 +4,6 @@
     let { data } = $props();
 </script>
 
-<svelte:head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: var(--primary-font-family);
-        }
-    </style>
-</svelte:head>
-
 <section class="homepage-carrousel">
     <Carrousel data={data} />
 </section>

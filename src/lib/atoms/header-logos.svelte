@@ -6,17 +6,6 @@
     import logoKemenkesMobile from "$lib/assets/Kemenkes-logo-mobile.png";
 </script>
 
-<svelte:head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: var(--primary-font-family);
-        }
-    </style>
-</svelte:head>
-
 <div class="logo-hospitals">
     <a class="logo-avl" href={`/`}>
         <img
