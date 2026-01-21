@@ -28,7 +28,6 @@
         }
     }
 
-
     li {
         font-weight: var(--secondary-font-weigh);
     }

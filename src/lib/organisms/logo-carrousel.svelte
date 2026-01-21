@@ -14,6 +14,7 @@
         position: relative;
         align-content: center;
         max-width: 73.5rem;
+        width: 80%;  /* ff checken nog */
         row-gap: 2rem;
         overflow: hidden;
         padding-block: 1rem;
