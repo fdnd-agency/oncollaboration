@@ -115,17 +115,6 @@ In this project we have used several colours and fonts. To see and use these sty
 - [Global CSS](https://github.com/fdnd-agency/oncollaboration/blob/dev/src/lib/global.css) used in the entire site.
 
 
-## Table of contents
-  * [Description](#description)
-  * [Features](#features)
-  * [Design](#design)
-  * [Techniques](#techniques)
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [Changelog](#changelog)
-  * [Sources](#sources)
-  * [License](#license)
-
 ## Teamleden
 
 * Sidney - Developer / Designer / Scrum-Master: https://github.com/Sidopjescherm
