@@ -4,7 +4,7 @@
     const webinars = data.webinars;
 
     import { enhance } from "$app/forms";
-    import { Filter} from '$lib/index.js'
+    import { Filter } from '$lib/index.js'
     import { WebinarCard} from '$lib/index.js'
     const search = []
     const categories = []
@@ -34,44 +34,7 @@
     </p>
 </section>
 
-<form action="" method="get" use:enhance>
-    <fieldset>
-        <legend>Filters</legend>
-        <p class="intro-filters">
-            View all speakers or use the filter to view your bookmarked speakers
-        </p>
-
-        <label class="label-search" for="webinarSearch">Type here a webinar you are looking for</label>
-
-        <div class="container-filters">
-            <div class="searchbar">
-                <input
-                    type="search"
-                    id="webinarSearch"
-                    placeholder="Search..."
-                />
-                <button class="img-search"><img src={search} alt="" /></button>
-            </div>  
-
-            <select name="category" id="category">
-                <option value="all">All</option>
-                {#each categories as category}
-                    <option value={category.name}>{category.name}</option>
-                {/each}
-            </select>
-
-            <select name="sort" id="new-old">
-                <option value="-date">New to Old</option>
-                <option value="date">Old to New</option>
-                <option value="title">A-Z</option>
-                <option value="-title">Z-A</option>
-            </select>
-
-            <button class="filteren" type="filteren">Filter webinars</button>
-            <button class="reset-filter" type="reset">Reset filter</button>
-        </div>
-    </fieldset>
-</form>
+<Filter data={data}></Filter>
 
 <section class="container-results">
     <h2>Results</h2>
