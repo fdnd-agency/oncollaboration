@@ -9,7 +9,7 @@
   * [Dev](#dev)
   * [Changelog](#changelog)
   * [Teammembers](#team-members)
-  * [Sources] (#sources)
+  * [Sources](#sources)
   * [License](#license)
 
 
