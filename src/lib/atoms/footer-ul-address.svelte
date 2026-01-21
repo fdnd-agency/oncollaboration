@@ -12,6 +12,7 @@
     ul{
         display: grid;
         padding-top: 1.4em;
+        gap: .7em;
     }
 
     li, a{

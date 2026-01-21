@@ -16,5 +16,6 @@
 <style>
     address {
         display: grid;
+        gap: .7em;
     }
 </style>
