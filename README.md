@@ -1,5 +1,17 @@
 # Oncollaboration
 
+## Table of contents
+  * [Description](#description)
+  * [Techniques](#techniques)
+  * [Installation](#installation)
+  * [User Manual](#user-manual)
+  * [Installation](#installation)
+  * [Dev](#dev)
+  * [Changelog](#changelog)
+  * [Teammembers](#team-members)
+  * [Sources] (#sources)
+  * [License](#license)
+
 
 ## Project Description
 
@@ -115,7 +127,7 @@ In this project we have used several colours and fonts. To see and use these sty
 - [Global CSS](https://github.com/fdnd-agency/oncollaboration/blob/dev/src/lib/global.css) used in the entire site.
 
 
-## Teamleden
+## Team Members
 
 * Sidney - Developer / Designer / Scrum-Master: https://github.com/Sidopjescherm
 * Nadia - Developer / Designer / Scrum-Master: https://github.com/nadiachaja
