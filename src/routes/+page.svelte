@@ -1,5 +1,4 @@
 <script>
-
     import doctorsavif from "$lib/assets/doctors.avif";
     import doctorswebp from "$lib/assets/doctors.webp";
     import doctorspng from "$lib/assets/doctors.png";
@@ -262,7 +261,6 @@
             grid-template-columns: 1fr 2fr;  
             width: 78.125rem;
             column-gap: 4rem;
-            /* 30em 37.5em */
         }
     }
 
