@@ -33,10 +33,6 @@ The `lib/` directory is organized into four folders of which three are component
 
 ## 1. Assets (`lib/assets/`)
 SVG's and other images that are used around the website:
-- **Bricks:** 
-- **Blocks:** 
-- **Constructions:** 
-- **Assemblages:** 
 
 ## 2. Atoms (`lib/atoms/`)
 the most little building blocks of our organisms. These tiny parts of code start our components:
@@ -44,7 +40,8 @@ the most little building blocks of our organisms. These tiny parts of code start
 
 ## 3. Molecules (`lib/molcules/`)
 The middle building bricks of organisms, molecules serve as conjoined elements serving as one. Example:
-```<article>
+```svelte
+<article>
     <div class="container-thumbnail">
         <Thumbnail webinar={webinar} ></Thumbnail>
 
@@ -70,9 +67,22 @@ The middle building bricks of organisms, molecules serve as conjoined elements s
 </article>
 ```
 
-### 4 Organisms ('lib/organisms')
+### 4 Organisms (`lib/organisms`)
 
-The greatest of components. Great components like footer, header and logo-carousels are here. They are great works of molecules working together
+The greatest of components. Great components like footer, header and logo-carousels are here. They are great works of molecules working together to make a whole. 
+Examples of this:
+```svelte
+<script>
+    import "$lib/global.css";
+    import Logos from "$lib/atoms/header-logos.svelte";
+    import Nav from  "$lib/molecules/header-nav.svelte";
+</script>
+
+
+<header>
+    <Logos></Logos>
+    <Nav></Nav>
+</header>```
 
 
 
@@ -80,97 +90,89 @@ The greatest of components. Great components like footer, header and logo-carous
 
 Make sure that the page files are clean and dry
 
-example:
+example of the layout:
 
 ```svelte
-<script>
-  import { HomeHero, HomeArrow, Carrousel, FAQ, HomeCallToAction, Partners, DoctorsUnited } from "$lib/index.js";
+    <script>
+        import "$lib/global.css";
+        import Header from "$lib/organisms/header.svelte"
+        import Footer from "$lib/organisms/footer.svelte"
+
+        let { children } = $props();
+    </script>
+
+    <a href="#main-content" class="skip-link"> Skip to content </a>
+    <Header></Header>
+    <main id="main-content">
+    {@render children?.()}
+    </main>
+    <Footer></Footer>
 
 
-  let { data } = $props();
-  let speakers = data.speakers;
-  let content = data.content;
-  let logos = data.logos;
-
-</script>
-
-
-  <HomeHero {content}/>
-  <HomeArrow />
-  <HomeCallToAction />
-  <DoctorsUnited {content}/>
-  <Carrousel {speakers}/>
-  <FAQ {content}/>
-  <Partners {logos}/>
+    <style>
+            .skip-link {
+            position: absolute;
+            background-color: var(--primary-color-aqua-dark-3);
+            color: var(--primary-color-blue-dark-2);
+            border-radius: var(--border-radius-small);
+            padding: 1em;
+            margin: 1em;
+            text-decoration: none;
+            z-index: 1000;
+            transform: translateY(-200%);
+            transition: transform 0.3s;
+            &:focus {
+                transform: translate(0%);
+            }
+        }
+    </style>
 ```
 
 ## Important components
 
-### Q&A section
-The Q&A section is a rather complex component. The Q&A section is built from the files `lib/Assemblages/q-a.svelte` and `lib/Blocks/comment.svelte`.
+### Header (`lib/organisms/header.svelte`)
+The header is the the main way of navigating if you're on the top part of the page. Although our components aren't too complex, because we divide the work with atomic design the header is a fine work of atoms and molecules working together to make a well made organism. To see more about the header as a regular made code and finally a component see these pull-requests:
 
-Forms with method post are used for posting a comment, liking, and replying to a comment. All these actions are handled on the server. In the `+page.server.js` file of the page where the component is used.
+- [Header in simple code](https://github.com/fdnd-agency/oncollaboration/pull/307)
+- [Header in a component](https://github.com/fdnd-agency/oncollaboration/pull/358)
 
-On the server side, the data is extracted from the form. As little data as possible is sent via the form for security. The data from the database is fetched and with a PATCH (like) or a POST (comment/reply) the data is updated or added in the database.
+### Footer (`lib/organisms/footer.svelte`)
+As the header is the navigation for the top part of the page the footer is the way of navigation and even contact for the bottom of the page. The footer is quite similar to the header, but as mentioned previously it also has contact information placed in it. To see more about the footer as a regular made code and finally a component see these pull-requests:
 
-If further work is done on this with a login system, you will need to change the user_id in the PATCH and POST to that of the logged-in user. Currently, it is hardcoded to user 1.
+- [Footer in simple code](https://github.com/fdnd-agency/oncollaboration/pull/309)
+- [Footer in a component](https://github.com/fdnd-agency/oncollaboration/pull/399)
 
-For a full explanation, see the [pull request](https://github.com/itsValyria/Oncollaboration/pull/6).
+### Carousel (`lib/organisms/carrousel.svelte`)
+The carrousel in this website is quite a fun and progressively enhanced one. It shows the partners that work together with Oncollaboration to make what it is today. The carrousel is interactive with the mouse when you hover above it and works on all devices. To see more about the carrousel see these pull requests:
 
-### Search
-When you use the search bar, a query is made from your input. This query is added to the URL (/search/query), causing the website data to be fetched again. It then goes through a filter that checks if the title of the webinar/contouring contains this query; if so, it is passed on and this data is loaded in the search results.
+- [Logo Carrousel simple code](https://github.com/fdnd-agency/oncollaboration/pull/305)
+- [PE Logoscroller](https://github.com/fdnd-agency/oncollaboration/pull/310)
+- [Logo Carrousel new color](https://github.com/fdnd-agency/oncollaboration/pull/394)
 
-There is a separate search page where you go and find the results. The search could be expanded, for example, by adding search tags to the contourings and webinars.
+### Webinarcard (`lib/organisms/WebinarCard.svelte`)
+The webinarcard is the most important part of the webinars page. It shows the webinars their cards with important pieces of information like: their category, the person giving the webinar,
+the title of the webinar, saving the webinar in your watchlist and the duration of the webinar. It gives the user precise information on what they might need to know beforehand. To see more about the webinarcard see these pull-requests:
 
-For a full explanation, see the [pull request](https://github.com/itsValyria/Oncollaboration/pull/1).
-
-### Filter
-The filter is used on the webinars and contourings pages. You can filter by one category, which is also how the client wants it.
-
-In `+layout.server.js`, it checks what the category is that is passed via the filter. It defaults to "all".
-
-To ensure you are filtering on the same page, you need to create a load function in the `+page.server.js` file of the page where the component is used. Here you use `parent`, which allows you to use the variables from `+layout.server.js`.
-
-You check what the category is and filter the data, passing this new data so that only the filtered data is visible.
-
-```
-export async function load({ parent }) {
-    return parent().then(({ contourings, category }) => {
-        if (category !== 'all') {
-            contourings = contourings.filter((contourings) =>
-                contourings.categories?.some((cat) =>
-                cat.avl_categories_id?.name?.toLowerCase() === category
-                )
-            );
-        }
-
-        return {
-            contourings
-        }
-    })
-}
-```
-
-You can read more about this in the pull requests: [filter](https://github.com/itsValyria/Oncollaboration/pull/5) and [filter results fix](https://github.com/itsValyria/Oncollaboration/pull/14)
+- [Webinarcard simple code](https://github.com/fdnd-agency/oncollaboration/pull/299)
+- [Webinarcard component](https://github.com/fdnd-agency/oncollaboration/pull/398)
 
 ## Other important parts
 
-### Speaker slug page
+### Use of Svelte and Sveltekit
 
-On this page, the data is set up so that you find all the info about a particular speaker based on the name in the params.
+We've talked a lot about Sveltekit and using it's components, but if you haven't worked with it before it might seem a lot. Sveltekit is a framework for webapplications that is to be used
+on top of of Svelte which is a UI compiler. To use Sveltekit in an effective way is it's important that you understand how frameworks work and the usage of components. I will not go in detail here, but I will go over a few key features.
 
-You will also find a section where you see all webinars in which that speaker appears.
+1. Routes: Routes are essential for a website as it is the thing that makes it able to be navigated through. Simply make a folder with the desired name and create a +page.svelte. You
+have now created a new route in your website, congratulations.
 
-### Favorites page
+2. Components: components are the very soul of frameworks. They are pieces of reuseable code throughout your website that are simply called by importing the link where the original code is placed. So if you wish to use the same button on every page is important to make that button a component so you'll only need to change the content within that button.
 
-In the server file of this page, you see which user id is fetched. If you change this number, you see a different user. There is also a second fetch that retrieves the favorites field of a particular user.
+3. Server vs Client: Sveltekit is a natural in making SSR (server side rendering) easy. Not only does it automatically render your HTML onto the server which is great for performance, but you can also create layout.server.js and page.server.layout for data that needs to be shown on every page. Quite a handy feature
 
-Everyone has their own favorite webinars, but there is not yet a function where they can add a webinar to their favorites themselves.
+### Directus API
+The Directus API is something that we have been using in previous project and this one as well. Directus is a headless CMS where you can create, manage and scale your content. We've been using is primarily to fetch, sort and filter the data in this project. To see more about Directus and it's ways of query parameters see these links:
 
-### Chapter and timestamp function
-
-On the slug page of the webinars, you will find a chapter field where you can navigate through the chapters of a video. That data comes from the chapter field in the webinars table. It contains, for example, the timestamp in full seconds, which is added to such a chapter button so you can jump to that point in the video. In addition, you can also write a timestamp yourself within the comments (super handy at 1:10:11).
-
-[chapter function](https://github.com/fdnd-agency/oncollaboration/issues/61?issue=fdnd-agency%7Concollaboration%7C63)  
-[chapter PE](https://github.com/fdnd-agency/oncollaboration/issues/61?issue=fdnd-agency%7Concollaboration%7C65)  
-[timestamp in comments](https://github.com/fdnd-agency/oncollaboration/issues/75#issuecomment-2858430311)
+- [Directus](https://directus.io/)
+- [Sorting fields](https://directus.io/docs/guides/connect/query-parameters#search)
+- [Filtering](https://directus.io/docs/guides/connect/filter-rules)
