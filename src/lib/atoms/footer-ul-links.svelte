@@ -18,10 +18,6 @@ li, a {
     font-style: var(--secondary-font-weight);
 }
 
-a {
-    padding: -1.4em;
-}
-
 a:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--primary-color-true-aqua);

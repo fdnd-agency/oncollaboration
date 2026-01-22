@@ -68,7 +68,6 @@ The middle building bricks of organisms, molecules serve as conjoined elements s
 ```
 
 ### 4 Organisms (`lib/organisms`)
-
 The greatest of components. Great components like footer, header and logo-carousels are here. They are great works of molecules working together to make a whole. 
 Examples of this:
 ```svelte
@@ -83,12 +82,6 @@ Examples of this:
     <Logos></Logos>
     <Nav></Nav>
 </header>```
-
-
-
-## page.svelte files
-
-Make sure that the page files are clean and dry
 
 example of the layout:
 
