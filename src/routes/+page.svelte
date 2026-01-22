@@ -357,22 +357,33 @@ p {
     padding: 0.4rem;
 }
 
-.overlay > *, .homepage-webinars-contourings :global(.homepage-article), :global(.homepage-carrousel) {
+.overlay > *, .homepage-webinars-contourings :global(.homepage-article), :global(.homepage-carrousel), .homepage-doctor-card {
+    opacity: 0;
+    animation: ScrollerOpacity 1s ease forwards;
+    animation-timeline: view();
+    animation-range: 10% 30%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .overlay > *, .homepage-webinars-contourings :global(.homepage-article), :global(.homepage-carrousel), .homepage-doctor-card {
+        opacity: 1;      
+        animation: none; 
+        transform: none; 
+    }
+}
+
+@keyframes ScrollerOpacity {
+    from {
         opacity: 0;
-        animation: ScrollerOpacity 1s ease forwards;
-        animation-timeline: view();
-        animation-range: 10% 30%;
+        transform: translateY(100px);
     }
-    @keyframes ScrollerOpacity {
-        from {
-            opacity: 0;
-            transform: translateY(100px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0px);
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
     }
+}
+
+
 
 
 </style>    
