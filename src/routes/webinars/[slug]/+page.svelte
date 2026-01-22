@@ -260,7 +260,7 @@ h4 {
     }
 }
 
-#webinar-qna, #speaker{
+details, #webinar-qna, #speaker{
     opacity: 0;
     animation: ScrollerOpacity 1s ease forwards;
     animation-timeline: view();
@@ -268,7 +268,7 @@ h4 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    #webinar-qna, #speaker{
+    details, #webinar-qna, #speaker{
         opacity: 1;      
         animation: none; 
         transform: none; 
