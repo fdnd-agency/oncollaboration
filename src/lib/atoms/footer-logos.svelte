@@ -43,32 +43,33 @@
 </div>
 
 <style>
-    .logo-hospitals {
+    
+.logo-hospitals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avl-desktop-logo,
+.kemenkes-desktop-logo {
+    display: none;
+
+    @media (width >= 925px) {
         display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
         align-items: center;
-        justify-content: center;
+        align-content: stretch;
     }
+}
 
-    .avl-desktop-logo,
-    .kemenkes-desktop-logo {
+.avl-mobile-logo,
+.kemenkes-mobile-logo {
+    display: block;
+
+    @media (width >= 925px) {
         display: none;
-
-        @media (width >= 925px) {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-content: stretch;
-            justify-content: space-around;
-        }
     }
-
-    .avl-mobile-logo,
-    .kemenkes-mobile-logo {
-        display: block;
-
-        @media (width >= 925px) {
-            display: none;
-        }
-    }
+}
 </style>

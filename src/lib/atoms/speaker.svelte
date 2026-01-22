@@ -6,8 +6,10 @@
     {@render children?.()}
   </svelte:element>
 
-  <style>
-    .speakers-fullname {
-        margin: 1em 1.5em;
-    }
-  </style>
+<style>
+
+.speakers-fullname {
+  margin: 1em 1.5em;
+}
+
+</style>

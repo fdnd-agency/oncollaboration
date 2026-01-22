@@ -7,11 +7,10 @@
 </strong>
 
 <style>
-    strong {
-        color: var(--neutral-color-lightest);
-        font-family: var(--primary-font-family);
-        font-style: var(--secondary-font-weight);
-
-        padding-right: 1.4em;
-    }
+strong {
+    color: var(--neutral-color-lightest);
+    font-family: var(--primary-font-family);
+    font-style: var(--secondary-font-weight);
+    padding-right: 1.4em;
+}
 </style>

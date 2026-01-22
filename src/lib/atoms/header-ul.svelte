@@ -10,30 +10,31 @@
 </ul>
 
 <style>  
-    ul {
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    list-style-type: none;
+
+    @media (min-width: 500px) {
+        flex-direction: unset;
+    }
+
+    @media (min-width: 900px) {
         display: flex;
-        list-style-type: none;
-        gap: 1em;
-        padding: 1em;
-        flex-direction: column;
-
-        @media (min-width: 500px) {
-            flex-direction: unset;
-        }
-
-        @media (min-width: 900px) {
-            flex-direction: row;
-            gap: 2em;
-            padding: 0;
-        }
+        flex-direction: row;
+        gap: 2em;
+        padding: 0;
     }
+}
 
+li {
+    font-weight: var(--secondary-font-weigh);
+}
 
-    li {
-        font-weight: var(--secondary-font-weigh);
-    }
-
-    a {
-        color: var(--neutral-color-lightest);
-    }
+a {
+    color: var(--neutral-color-lightest);
+}
 </style>

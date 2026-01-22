@@ -8,19 +8,19 @@
 
 <style>
     button {
-        font-size: var(--font-size-small);
-        font-family: var(--primary-font-family);
-        padding: 0.5em;
-    }
+    padding: 0.5em;
+    font-family: var(--primary-font-family);
+    font-size: var(--font-size-small);
+}
 
-    .filteren,
-    .reset-filter {
-        border-radius: var(--border-radius-small);
-        background-color: var(--primary-color-aqua-dark-3);
-        border: 1px solid var(--primary-color-aqua-dark-3);
-    }
+.filteren,
+.reset-filter {
+    background-color: var(--primary-color-aqua-dark-3);
+    border: 1px solid var(--primary-color-aqua-dark-3);
+    border-radius: var(--border-radius-small);
+}
 
-    @container (min-width: 700px) {
+@container (min-width: 700px) {
     .filteren {
         grid-column: 3;
         grid-row: 2;
@@ -34,29 +34,29 @@
     }
 }
 
-    .search-button {
-        position: absolute;
-        right: 0em;
-        top: 0em;
-        height: 100%;
-        width: 3em;
-        background-color: var(--primary-color-aqua-dark-3);
-        display: flex;
-        place-content: center;
-    }
+.search-button {
+    position: absolute;
+    top: 0em;
+    right: 0em;
+    display: flex;
+    place-content: center;
+    width: 3em;
+    height: 100%;
+    background-color: var(--primary-color-aqua-dark-3);
+}
 
-    .watchlist {
-        background-color: var(--primary-color-aqua-dark-2);
-        color: var(--neutral-color-lightest);
-        border: 1px solid var(--primary-color-aqua-dark-2);
-        padding: 0.5em;
-        border-radius: var(--border-radius-small);
-        font-size: var(--font-size-small);
-        width: fit-content;
-        display: flex;
-        align-items: center;
-        gap: .5em;
-        margin: 1em 0em 0em 1em;
-    }
+.watchlist {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    width: fit-content;
+    margin: 1em 0em 0em 1em;
+    padding: 0.5em;
+    background-color: var(--primary-color-aqua-dark-2);
+    border: 1px solid var(--primary-color-aqua-dark-2);
+    border-radius: var(--border-radius-small);
+    color: var(--neutral-color-lightest);
+    font-size: var(--font-size-small);
+}
 
 </style>

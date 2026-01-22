@@ -6,14 +6,15 @@
     {@render children?.()}
   </svelte:element>
 
-  <style>
-     h3 {
-        width: 230px;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin: 1.5em 1em .5em 1em;
-    }
+<style>
+
+h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 230px;
+  margin: 1.5em 1em .5em 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
   </style>

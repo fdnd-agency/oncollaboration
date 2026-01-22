@@ -9,24 +9,22 @@
 </ul>
 
 <style>
-    ul{
-        display: grid;
-        padding-top: 1.4em;
-        gap: .7em;
-        list-style: none;
-    }
+    
+ul {
+    display: grid;
+    gap: .7em;
+    padding-top: 1.4em;
+    list-style: none;
+}
 
-    li, a{
-        color: var(--neutral-color-lightest);
-    }
+li, a {
+    color: var(--neutral-color-lightest);
+    font-family: var(--primary-font-family);
+    font-style: var(--secondary-font-weight);
+}
 
-    li, a{
-        font-family: var(--primary-font-family);
-        font-style: var(--secondary-font-weight);
-    }
-
-    a:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px var(--primary-color-true-aqua);
-    }
+a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color-true-aqua);
+}
 </style>

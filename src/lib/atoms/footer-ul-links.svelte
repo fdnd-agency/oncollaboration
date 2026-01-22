@@ -6,23 +6,24 @@
 </ul>
 
 <style>
-    ul {
-        display: grid;
-        list-style: none;
-    }
+    
+ul {
+    display: grid;
+    list-style: none;
+}
 
-    li, a{
-        font-family: var(--primary-font-family);
-        font-style: var(--secondary-font-weight);
-        color: var(--neutral-color-lightest);
-    }
+li, a {
+    color: var(--neutral-color-lightest);
+    font-family: var(--primary-font-family);
+    font-style: var(--secondary-font-weight);
+}
 
-    a {
-        padding: -1.4em;
-    }
+a {
+    padding: -1.4em;
+}
 
-    a:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px var(--primary-color-true-aqua);
-    }
+a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color-true-aqua);
+}
 </style>

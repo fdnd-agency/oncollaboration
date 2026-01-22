@@ -7,23 +7,24 @@
   
 
 <style>
-    .close {
+    
+.close {
+    position: absolute;
+    top: 1em;
+    right: 1.2em;
+    display: none;
+
+    @media (min-width: 900px) {
         display: none;
-        position: absolute;
-        top: 1em;
-        right: 1.2em;
-
-        @media (min-width: 900px) {
-            display: none;
-        }
     }
+}
 
-    .close {
-        display: block;
+.close {
+    display: block;
 
-        @media (min-width: 900px) {
-            display: none;
-        }
+    @media (min-width: 900px) {
+        display: none;
     }
+}
 
 </style>

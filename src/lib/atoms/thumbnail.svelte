@@ -22,11 +22,11 @@
 </picture>
 
 <style>
-       .thumbnail {
-        margin: 0.5em;
-        display: flex;
-        justify-self: center;
-        border-radius: var(--border-radius-medium);
-        display: block;
-    }
+.thumbnail {
+    display: flex;
+    display: block;
+    justify-self: center;
+    margin: 0.5em;
+    border-radius: var(--border-radius-medium);
+}
 </style>

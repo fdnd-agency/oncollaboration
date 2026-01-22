@@ -9,19 +9,20 @@
 </a>
 
 <style>
-    a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: var(--primary-color-blue-dark-2);
-        background: var(--primary-color-aqua-dark-3);
-        height: 2.5em;
-        text-decoration: none;
-        gap: 0.4em;
-        border-radius: 0.5em;    
-    }
+    
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4em;
+    height: 2.5em;
+    background: var(--primary-color-aqua-dark-3);
+    border-radius: 0.5em;
+    color: var(--primary-color-blue-dark-2);
+    text-decoration: none;
+}
 
-    svg {
-        fill: var(--primary-color-blue-dark-2);
-    }
+svg {
+    fill: var(--primary-color-blue-dark-2);
+}
 </style>
