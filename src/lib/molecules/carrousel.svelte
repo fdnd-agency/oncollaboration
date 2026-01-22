@@ -22,30 +22,31 @@
 </div>
 
 <style>
-    .homepage-carrousel-content {
-        display: flex;
+
+.homepage-carrousel-content {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    @supports (animation: scroll 10s linear infinite) {
+        width: max-content;
+        animation: scroll 10s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
         overflow-x: auto;
+        animation: none;
         scroll-behavior: smooth;
+    }    
+}
 
-        @supports (animation: scroll 10s linear infinite) {
-            width: max-content;
-            animation: scroll 10s linear infinite;
-        }
+.homepage-carrousel-content:hover {
+    animation-play-state: paused;
+}
 
-        @media (prefers-reduced-motion: reduce) {
-            animation: none;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-        }    
-    }
-
-    .homepage-carrousel-content:hover {
-        animation-play-state: paused;
-    }
-
-    @keyframes scroll {
-        0% {  transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-    }
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
 
 </style>

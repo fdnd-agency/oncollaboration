@@ -14,8 +14,10 @@
 </address>
 
 <style>
-    address {
-        display: grid;
-        gap: .7em;
-    }
+
+address {
+    display: grid;
+    gap: .7em;
+}
+
 </style>

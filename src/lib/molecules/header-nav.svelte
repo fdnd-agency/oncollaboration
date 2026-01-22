@@ -28,38 +28,38 @@
 
 
 <style>
-    .nav-header {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        background: var(--primary-color-blue-dark-2);
-        transition: right 0.3s ease;
+    
+.nav-header {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+    background: var(--primary-color-blue-dark-2);
+    transition: right 0.3s ease;
+
+    @media (min-width: 600px) {
+        flex-direction: unset;
+        padding: 1em 0em 1em 0em;
+    }
+
+    @media (min-width: 900px) {
+        position: static;
+        right: auto;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 1em;
-
-        @media (min-width: 600px) {
-            padding: 1em 0em 1em 0em;
-            flex-direction: unset;
-        }
-
-        @media (min-width: 900px) {
-            position: static;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            gap: 2em;
-            padding: 0;
-            right: auto;
-        }
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 2em;
+        padding: 0;
     }
+}
 
-
-    .nav-header:target {
-        right: 0;
-    }
+.nav-header:target {
+    right: 0;
+}
 
 </style>

@@ -55,14 +55,14 @@
     container-type: inline-size;
 }
 
-    .all-filters {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5em;
-        padding: 1.5em 0em 0em 0em;
-    }
+.all-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 1.5em 0em 0em 0em;
+}
 
-    @container (min-width: 400px) {
+@container (min-width: 400px) {
     .all-filters {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -73,21 +73,20 @@
     .all-filters {
         grid-template-columns: repeat(5, 1fr);
         gap: 1em;
-        max-width: 65em; 
+        max-width: 65em;
     }
 }
 
-    .searchbar {
-        position: relative;
-        width: 100%;
-    }
+.searchbar {
+    position: relative;
+    width: 100%;
+}
 
-    @container (min-width: 400px) {
+@container (min-width: 400px) {
     .searchbar {
         grid-column: 1 / -1;
     }
 }
-
 
 @container (min-width: 700px) {
     .searchbar {
