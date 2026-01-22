@@ -56,7 +56,7 @@
             title={infocontourings.heading}
             description={infocontourings.text}
             linkText="more about contourings"
-            href="/contourings"
+            href="/notworking"
         />
     </section>
 
@@ -82,7 +82,7 @@
                     <h3 class="name-doctor">{doctor.name}</h3>
                     <p class="function-doctor">{doctor.role}</p>
                     
-                    <Link class="view-doctor" href="/speakers">view speakers</Link>
+                    <Link class="view-doctor" href="/notworking">view speakers</Link>
                 </article>
             {/each}
         </section>
