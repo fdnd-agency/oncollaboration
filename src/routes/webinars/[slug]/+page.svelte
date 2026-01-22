@@ -60,12 +60,7 @@
         <a href="speaker">save speaker</a>
         <p>{webinar.speakers[0].avl_speakers_id.fullname}</p>
     </article>
-
-
-    <!-- hier komen de comments -->
 </section>
-
-<!-- hier komt de footer -->
 
 <!--  MARK: CSS-->
 
