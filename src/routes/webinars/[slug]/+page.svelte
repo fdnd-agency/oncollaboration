@@ -259,4 +259,30 @@ h4 {
         text-align: center;
     }
 }
+
+#webinar-qna {
+    opacity: 0;
+    animation: ScrollerOpacity 1s ease forwards;
+    animation-timeline: view();
+    animation-range: 10% 30%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #webinar-qna{
+        opacity: 1;      
+        animation: none; 
+        transform: none; 
+    }
+}
+
+@keyframes ScrollerOpacity {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 </style>
