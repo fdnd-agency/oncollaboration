@@ -3,7 +3,6 @@
     let { data } = $props();
     const webinars = data.webinars;
 
-    import { enhance } from "$app/forms";
     import { Filter } from '$lib/index.js'
     import { WebinarCard} from '$lib/index.js'
 </script>
@@ -45,48 +44,46 @@
 <!--  MARK: CSS-->
 
 <style>
-    /*INTRO*/
-    .container-intro {
-        background-color: var(--primary-color-blue-light-1);
-        padding: 2em 1em 5em 1em;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5em;
-    }
+    
+.container-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 2em 1em 5em 1em;
+    background-color: var(--primary-color-blue-light-1);
+}
 
-    ul {
-        display: flex;
-        gap: 0.5em;
-        list-style-type: none;
-        padding: 1em;
-        font-weight: var(--primary-font-weight);
-    }
+ul {
+    display: flex;
+    gap: 0.5em;
+    padding: 1em;
+    list-style-type: none;
+    font-weight: var(--primary-font-weight);
+}
 
-    li a {
-        color: var(--neutral-color-darker);
-    }
+li a {
+    color: var(--neutral-color-darker);
+}
 
-    h1 {
-        margin: 0.5em;
-    }
+h1 {
+    margin: 0.5em;
+}
 
-    .intro-webinars {
-        margin: 1em;
-        max-width: clamp(20em, 40vw, 62.5em);
-        line-height: 1.4;
-    }
+.intro-webinars {
+    max-width: clamp(20em, 40vw, 62.5em);
+    margin: 1em;
+    line-height: 1.4;
+}
 
-    /*RESULTS*/
-    .container-results {
-        margin: 0.5em;
-        padding: 2em;
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-    }
+.container-results {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0.5em;
+    padding: 2em;
+}
 
-    h2 {
-        font-size: var(--font-size-large);
-    }
-
+h2 {
+    font-size: var(--font-size-large);
+}
 </style>

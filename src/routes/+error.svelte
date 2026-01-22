@@ -11,27 +11,27 @@
 
 <style>
 
-    .overlay {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        background: var(--primary-color-blue-light-1);
-        height: 100vh;
-        gap: 2rem;
-        padding-inline: 1rem;
-    }
+.overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 100vh;
+    padding-inline: 1rem;
+    background: var(--primary-color-blue-light-1);
+}
 
-    h1 {
-        text-align: center;
-        text-wrap: balance;
-        color: var(--primary-color-blue-dark-2);
-    }
+h1 {
+    color: var(--primary-color-blue-dark-2);
+    text-align: center;
+    text-wrap: balance;
+}
 
-    :global(.link-styling) {
-            width: clamp(16.25em, 100%, 20.625em);
-            height: 2.5em;
-    }
+:global(.link-styling) {
+    width: clamp(16.25em, 100%, 20.625em);
+    height: 2.5em;
+}
 
 
 </style>
