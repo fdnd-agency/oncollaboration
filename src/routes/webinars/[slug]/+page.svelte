@@ -65,199 +65,198 @@
 <!--  MARK: CSS-->
 
 <style>
-    ul{
-        list-style: none;
-        display: flex;
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+#webinar-bread-crumb {
+    height: 2em;
+    padding-left: 0.6rem;
+    background-color: var(--primary-color-blue-light-1);
+
+    @media (width >= 1023px) {
+        padding-left: 4.7rem;
     }
-    
-    #webinar-bread-crumb{
-        height: 2em;
-        background-color: var(--primary-color-blue-light-1);
-        padding-left: 0.6rem;
-        @media (width >= 1023px){
-            padding-left: 4.7rem;
-        }
+}
+
+section a {
+    padding: 0.8em;
+    background-color: var(--primary-color-true-aqua);
+    border-radius: var(--border-radius-medium);
+    color: var(--primary-color-blue-dark-2);
+    text-decoration: none;
+}
+
+li a {
+    color: var(--primary-color-blue-dark-2);
+    text-decoration: none;
+}
+
+#webinar-video {
+    display: grid;
+    gap: 1em;
+
+    @media (width <= 1023px) {
+        place-items: center;
     }
 
-    section a{
-        text-decoration: none;
-        color: var(--primary-color-blue-dark-2);
-        background-color: var(--primary-color-true-aqua);
-        padding: 0.8em;
+    @media (width >= 1023px) {
+        grid-template-columns: 60px 2fr 1fr 60px;
+        grid-template-rows: 5rem 16rem 3rem;
+    }
+}
+
+#webinar-video ul {
+    gap: 1em;
+
+    @media (width >= 1023px) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 3;
+    }
+}
+
+#webinar-video li {
+    align-self: center;
+    padding: 1em;
+    background-color: var(--primary-color-true-aqua);
+    border-radius: var(--border-radius-medium);
+    color: var(--primary-color-blue-dark-2);
+    text-align: center;
+}
+
+video {
+    width: clamp(18.75rem, 80%, 50rem);
+
+    @media (width >= 1023px) {
+        grid-column: 2 / 2;
+        grid-row: 2 / 2;
+        width: clamp(16rem, 100%, 55rem);
+        height: 16rem;
+    }
+}
+
+h1 {
+    padding-left: 0.6rem;
+    font-size: clamp(1.5rem, 80%, var(--font-size-extra-large));
+    line-height: 1.4;
+
+    @media (width >= 1023px) {
+        grid-column: 2 / 5;
+        grid-row: 1 / 1;
+    }
+}
+
+.description {
+    width: clamp(14rem, 63%, 30rem);
+
+    @media (width >= 1023px) {
+        grid-column: 3 / 4;
+        grid-row: 2 / 2;
+        width: 100%;
+        padding: 1rem;
+        background-color: var(--primary-color-blue-light-2);
+        border: solid black;
         border-radius: var(--border-radius-medium);
-    }
 
-    li a{
-        text-decoration: none;
-        color: var(--primary-color-blue-dark-2);
-    }
-
-    #webinar-video{
-        display: grid;
-        gap: 1em;
-
-        @media (width <= 1023px){
-             place-items: center;
-        }
-
-        @media (width >= 1023px){
-            grid-template-rows: 5rem 16rem 3rem;
-            grid-template-columns: 60px 2fr 1fr 60px;
+        @supports (corner-shape: scoop) {
+            corner-shape: squircle;
         }
     }
-    #webinar-video ul{
-        gap: 1em;
+}
 
-        @media (width >= 1023px){
-            grid-column: 2 / 3;
-            grid-row: 3 / 3;
-        }
+h2 {
+    text-align: center;
+}
+
+details {
+    display: flex;
+    justify-content: center;
+    width: clamp(14rem, 100%, 150rem);
+    background-color: var(--primary-color-blue-dark-3);
+
+    @media (width >= 1023px) {
+        grid-column: 2 / 4;
+        grid-row: 5 / 6;
+    }
+}
+
+summary {
+    color: var(--neutral-color-lightest);
+}
+
+summary::marker {
+    content: "";
+}
+
+h1, h2, h3, h4 {
+    color: var(--primary-color-blue-dark-2);
+}
+
+#webinar-qna {
+    display: grid;
+    gap: 1em;
+    padding-top: 1.5em;
+
+    @media (width <= 1023px) {
+        place-items: center;
     }
 
-    #webinar-video li{
-        background-color: var(--primary-color-true-aqua);
+    @media (width >= 1023px) {
+        grid-template-columns: 60px 10rem 2fr 15rem 60px;
+        grid-template-rows: repeat(4, 3rem) 15rem;
+    }
+}
+
+h3 {
+    @media (width >= 1023px) {
+        grid-column: 2 / 5;
+        grid-row: 1 / 1;
+    }
+}
+
+#speaker {
+    display: grid;
+    place-items: center;
+    gap: 1em;
+    width: clamp(14rem, 63%, 30rem);
+    background-color: var(--primary-color-blue-dark-1);
+
+    @media (width >= 1023px) {
+        grid-column: 4 / 4;
+        grid-row: 1 / 5;
+        width: 100%;
+        background-color: var(--primary-color-blue-dark-1);
+    }
+}
+
+#speaker img {
+    width: clamp(14rem, 100%, 30rem);
+}
+
+#speaker p {
+    color: var(--neutral-color-lightest);
+}
+
+h4 {
+    @media (width >= 1023px) {
+        grid-column: 2 / 5;
+        grid-row: 3 / 3;
+    }
+}
+
+.link-question {
+    align-self: start;
+    border-radius: var(--border-radius-medium);
+    text-align: center;
+
+    @media (width >= 1023px) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 2;
+        align-self: start;
         padding: 1em;
         text-align: center;
-        color: var(--primary-color-blue-dark-2);
-        align-self: center;
-
-        border-radius: var(--border-radius-medium);
     }
-
-    video {
-        width: clamp(18.75rem, 80%, 50rem);
-
-        @media (width >= 1023px){
-            width: clamp(16rem, 100%, 55rem);
-            height: 16rem;
-            grid-row: 2 / 2;
-            grid-column: 2 / 2;
-        }
-    }
-
-    h1{
-        font-size: clamp(1.5rem, 80%, var(--font-size-extra-large));
-        line-height: 1.4;
-        padding-left: 0.6rem;
-
-        @media (width >= 1023px){
-            grid-row: 1 / 1;
-            grid-column: 2 / 5;
-        }
-    }
-
-    .description{
-        width: clamp(14rem, 63%, 30rem);
-
-        @media (width >= 1023px){
-            padding: 1rem;
-            width: 100%;
-            background-color: var(--primary-color-blue-light-2);
-
-            grid-row: 2 / 2 ;
-            grid-column: 3 / 4;
-
-            border: solid black;
-
-            border-radius: var(--border-radius-medium);
-                @supports (corner-shape: scoop){
-                    corner-shape: squircle;
-                }
-        }
-    }
-
-    h2{
-        text-align: center;
-    }
-
-    details{
-        background-color: var(--primary-color-blue-dark-3);
-        width: clamp(14rem, 100%, 150rem);
-        display: flex;
-        justify-content: center;
-
-        @media (width >= 1023px){
-            grid-row: 5 / 6;
-            grid-column: 2 / 4;
-        }
-    }
-
-    summary{
-            color: var(--neutral-color-lightest);
-    }
-    summary::marker{
-            content: "";
-    }
-
-    h1, h2, h3, h4{
-        color: var(--primary-color-blue-dark-2);
-    }
-
-    #webinar-qna{
-        display: grid;
-        padding-top: 1.5em;
-        gap: 1em;
-
-        @media (width <= 1023px){
-            place-items: center;
-        }
-         @media (width >= 1023px){
-            grid-template-rows: repeat(4, 3rem) 15rem;
-            grid-template-columns: 60px 10rem 2fr 15rem 60px;
-         }
-    }
-
-    h3{
-        @media (width >= 1023px){
-            grid-row: 1 / 1;
-            grid-column: 2 / 5;
-        }
-    }
-
-    #speaker{
-        display: grid;
-        place-items: center;
-        gap: 1em;
-
-        background-color: var(--primary-color-blue-dark-1);
-        width: clamp(14rem, 63%, 30rem);
-
-        @media (width >= 1023px){
-            grid-column: 4 / 4;
-            grid-row: 1 / 5;
-
-            width: 100%;
-            background-color: var(--primary-color-blue-dark-1);
-        }
-    }
-
-    #speaker img{
-            width: clamp(14rem, 100%, 30rem);
-    }
-
-    #speaker p{
-            color: var(--neutral-color-lightest);
-    }
-
-    h4{
-        @media (width >= 1023px){
-            grid-column: 2 / 5;
-            grid-row: 3 / 3;
-        }
-    }
-
-    .link-question{
-        text-align: center;
-        align-self: start;
-        border-radius: var(--border-radius-medium);
-        @media (width >= 1023px){
-            grid-column: 2 / 3;
-            grid-row: 2 / 2;
-
-            text-align: center;
-            align-self: start;
-
-            padding: 1em;
-        }
-    }
+}
 </style>

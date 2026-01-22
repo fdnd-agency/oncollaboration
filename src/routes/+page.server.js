@@ -30,7 +30,7 @@ export async function load({ url }) {
             aboutRes.json(), webinarsRes.json(), contouringsRes.json(), partnershipsRes.json(), logosRes.json(), doctorInfoRes.json(), doctorsRes.json()
         ]);
 
-        // is choose to sort the logos from this way because this is from dark to light so it matches the carrousel
+        // i choose to sort the logos from this way because this is from dark to light so it matches the carrousel
 
         const logosOrder = [5, 1, 2, 4, 3, 6];
             const logosSorted = logosOrder.map(id => 
