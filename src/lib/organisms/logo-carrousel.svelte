@@ -9,17 +9,19 @@
 </section>
 
 <style>
-    .homepage-carrousel {
-        display: grid;
-        position: relative;
-        align-content: center;
-        max-width: 73.5rem;
-        row-gap: 2rem;
-        overflow: hidden;
-        padding-block: 1rem;
 
-        @media ( min-width: 56.25em ) {
-            padding-block: 2rem;
-        }
+.homepage-carrousel {
+    position: relative;
+    display: grid;
+    align-content: center;
+    max-width: 73.5rem;
+    row-gap: 2rem;
+    padding-block: 1rem;
+    overflow: hidden;
+
+    @media ( min-width: 56.25em ) {
+        padding-block: 2rem;
     }
+}
+
 </style>

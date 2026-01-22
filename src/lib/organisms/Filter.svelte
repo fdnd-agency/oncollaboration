@@ -15,23 +15,25 @@
 </form>
 
 <style>
-     form {
-        padding: 1em;
-        margin: -3em 1em 1em 1em;
-        background-color: var(--neutral-color-lightest);
-        border-radius: var(--border-radius-medium);
-    }
 
-    fieldset {
-        border: none;
-        margin: 1em;
-        padding: 1em;
-    }
+form {
+    margin: -3em 1em 1em 1em;
+    padding: 1em;
+    background-color: var(--neutral-color-lightest);
+    border-radius: var(--border-radius-medium);
+}
 
-    legend {
-        font-family: var(--primary-font-family);
-        font-weight: var(--primary-font-weight);
-        line-height: var(--primary-line-height);
-        font-size: var(--font-size-medium);
-    }
+fieldset {
+    margin: 1em;
+    padding: 1em;
+    border: none;
+}
+
+legend {
+    font-family: var(--primary-font-family);
+    font-size: var(--font-size-medium);
+    font-weight: var(--primary-font-weight);
+    line-height: var(--primary-line-height);
+}
+
 </style>

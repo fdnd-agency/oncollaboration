@@ -19,19 +19,19 @@
 
 <style>
 
-    .homepage-article {
-        display: flex;
-        flex-direction: column;
-        max-width: 37.5rem;
-        padding-inline: 1rem;
-        gap: 2rem;
-        margin-bottom: 2.5rem;
-        padding-bottom: 2.5rem;
-        background-color: var(--primary-color-blue-light-1);
+.homepage-article {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 37.5rem;
+    padding-inline: 1rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    background-color: var(--primary-color-blue-light-1);
 
     @media ( min-width: 37.5em ) {
-        border-radius: 1em;
         margin-bottom: 0;
+        border-radius: 1em;
     }
 
     @media ( min-width: 56.25em ) {
@@ -39,8 +39,8 @@
     }
 
     @media ( min-width: 65em ) {
-        padding-inline: 3em;
         max-width: 27em;
+        padding-inline: 3em;
     }
 }
 
@@ -50,5 +50,6 @@
 
 .info-article {
     padding-right: 1rem;
-}
+}   
+
 </style>
