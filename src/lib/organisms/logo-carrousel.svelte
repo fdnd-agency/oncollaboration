@@ -15,6 +15,7 @@
     display: grid;
     align-content: center;
     max-width: 73.5rem;
+    width: 100%;
     row-gap: 2rem;
     padding-block: 1rem;
     overflow: hidden;
