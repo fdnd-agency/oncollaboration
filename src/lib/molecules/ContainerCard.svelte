@@ -5,7 +5,7 @@
     let { webinar } = $props();
 </script>
 
-<article>
+<article class="container-card">
     <div class="container-thumbnail">
         <Thumbnail webinar={webinar} ></Thumbnail>
 
