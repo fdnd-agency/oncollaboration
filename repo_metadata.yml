@@ -1,5 +1,7 @@
 title: "Oncollaboration"
-status: "in progress"
+client: "Antoni van Leeuwenhoek"
+status: "inactive"
+years: [2]
 main_link: "https://oncollaboration.agency.fdnd.nl/"
 dev_link: "https://oncollaboration.dev.fdnd.nl/"
 tech_stack: ["SvelteKit", "Directus"]
